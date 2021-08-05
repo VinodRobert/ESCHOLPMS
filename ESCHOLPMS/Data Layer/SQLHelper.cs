@@ -95,7 +95,7 @@ namespace SQLHelper
             string _connectionString = "";
             if (ESCHOLPMS.GlobalVariables.connectedBy == 0)
             {
-                _connectionString = "Server = BERACHAH; Database = ESCHOLDB; User ID = Admin; Password = escholpms";
+                _connectionString = "Server = BERACHAH; Database = ESCHOLDB; User ID = AMS; Password = AMS@123";
             }
             else if (ESCHOLPMS.GlobalVariables.connectedBy == 1)
                 _connectionString = "Server =  bsdb.capaciteworld.com,15389; Database = BSBS_CAPACITE; User ID = BI; Password = BICAPACITE";

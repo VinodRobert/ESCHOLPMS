@@ -359,18 +359,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Layer\AMS.cs" />
+    <Compile Include="Business Layer\Common\ImportProperty.cs" />
+    <Compile Include="Business Layer\Common\QueryString.cs" />
+    <Compile Include="Business Layer\Common\UtilityFunctions.cs" />
     <Compile Include="Business Layer\GlobalVariables.cs" />
+    <Compile Include="Business Layer\HR\Department.cs" />
+    <Compile Include="Business Layer\HR\Designation.cs" />
     <Compile Include="Data Layer\SQLHelper.cs" />
-    <Compile Include="frmLogin.cs">
+    <Compile Include="Presentation Layer\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="Presentation Layer\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Login\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Login\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Masters\frmDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Masters\frmDepartment.Designer.cs">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="Presentation Layer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Login\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Masters\frmDepartment.resx">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -395,9 +418,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentation Layer\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Vettoor Logo.jpg" />
   </ItemGroup>
