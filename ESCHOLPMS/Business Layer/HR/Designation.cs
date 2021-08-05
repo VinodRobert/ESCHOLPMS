@@ -16,22 +16,22 @@ using System.Data.SqlClient;
 using SQLHelper;
 #endregion
 
-namespace ESHCOLPMS
+namespace ESCHOLPMS
 {
     public class Designation
     {
         #region Variables
 
-        private Int16 _designationCode;
+        private Int32 _designationCode;
         private string _designationName;
-        private Int16 _hierarchyOrder;
-        private Int16 _departmentID;
+        private Int32 _hierarchyOrder;
+        private Int32 _departmentID;
 
         #endregion
 
         #region Properties
 
-        public Int16 DesignationCode
+        public Int32 DesignationCode
         {
             get
             {
@@ -53,7 +53,7 @@ namespace ESHCOLPMS
                 _designationName = value;
             }
         }
-        public Int16 HierarchyOrder
+        public Int32 HierarchyOrder
         {
             get
             {
@@ -64,7 +64,7 @@ namespace ESHCOLPMS
                 _hierarchyOrder = value;
             }
         }
-        public Int16 DepartmentID
+        public Int32 DepartmentID
         {
             get { return _departmentID; }
             set { _departmentID = value; }
@@ -111,7 +111,7 @@ namespace ESHCOLPMS
             string _connectionString = SqlHelper.GetConnectionString();
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "HR.spSelectDesignation", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectDesignation", parameters);
-            ImportProperty.ImportData(this, ds);
+            ESHCOLPMS.ImportProperty.ImportData(this, ds);
         }
 
         public int Update()

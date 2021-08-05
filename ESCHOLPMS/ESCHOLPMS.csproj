@@ -378,6 +378,12 @@
     <Compile Include="Presentation Layer\Login\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\Masters\frmDesignation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Masters\frmDesignation.Designer.cs">
+      <DependentUpon>frmDesignation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\Masters\frmDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Login\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Masters\frmDesignation.resx">
+      <DependentUpon>frmDesignation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Masters\frmDepartment.resx">
       <DependentUpon>frmDepartment.cs</DependentUpon>

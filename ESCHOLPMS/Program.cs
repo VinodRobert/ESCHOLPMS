@@ -17,7 +17,7 @@ namespace ESCHOLPMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new frmLogin());
-            Application.Run(new frmDepartment());
+            Application.Run(new frmDesignation());
         }
     }
 }
