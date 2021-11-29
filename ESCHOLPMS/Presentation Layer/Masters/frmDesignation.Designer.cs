@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer metroSplitButtonRenderer1 = new Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer();
-            Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer metroSplitButtonRenderer2 = new Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer();
-            Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer metroSplitButtonRenderer3 = new Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn1 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn3 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn4 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer metroSplitButtonRenderer4 = new Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer();
+            Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer metroSplitButtonRenderer5 = new Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer();
+            Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer metroSplitButtonRenderer6 = new Syncfusion.Windows.Forms.Tools.MetroSplitButtonRenderer();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn5 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn6 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn7 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn8 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.btnAdd = new Syncfusion.Windows.Forms.Tools.SplitButton();
             this.btnClose = new Syncfusion.Windows.Forms.Tools.SplitButton();
             this.btnReset = new Syncfusion.Windows.Forms.Tools.SplitButton();
@@ -64,8 +64,8 @@
             this.btnAdd.Location = new System.Drawing.Point(211, 218);
             this.btnAdd.MinimumSize = new System.Drawing.Size(75, 23);
             this.btnAdd.Name = "btnAdd";
-            metroSplitButtonRenderer1.SplitButton = this.btnAdd;
-            this.btnAdd.Renderer = metroSplitButtonRenderer1;
+            metroSplitButtonRenderer4.SplitButton = this.btnAdd;
+            this.btnAdd.Renderer = metroSplitButtonRenderer4;
             this.btnAdd.ShowDropDownOnButtonClick = false;
             this.btnAdd.Size = new System.Drawing.Size(146, 42);
             this.btnAdd.Style = Syncfusion.Windows.Forms.Tools.SplitButtonVisualStyle.Metro;
@@ -86,8 +86,8 @@
             this.btnClose.Location = new System.Drawing.Point(538, 218);
             this.btnClose.MinimumSize = new System.Drawing.Size(75, 23);
             this.btnClose.Name = "btnClose";
-            metroSplitButtonRenderer2.SplitButton = this.btnClose;
-            this.btnClose.Renderer = metroSplitButtonRenderer2;
+            metroSplitButtonRenderer5.SplitButton = this.btnClose;
+            this.btnClose.Renderer = metroSplitButtonRenderer5;
             this.btnClose.ShowDropDownOnButtonClick = false;
             this.btnClose.Size = new System.Drawing.Size(146, 42);
             this.btnClose.Style = Syncfusion.Windows.Forms.Tools.SplitButtonVisualStyle.Metro;
@@ -108,8 +108,8 @@
             this.btnReset.Location = new System.Drawing.Point(374, 218);
             this.btnReset.MinimumSize = new System.Drawing.Size(75, 23);
             this.btnReset.Name = "btnReset";
-            metroSplitButtonRenderer3.SplitButton = this.btnReset;
-            this.btnReset.Renderer = metroSplitButtonRenderer3;
+            metroSplitButtonRenderer6.SplitButton = this.btnReset;
+            this.btnReset.Renderer = metroSplitButtonRenderer6;
             this.btnReset.ShowDropDownOnButtonClick = false;
             this.btnReset.Size = new System.Drawing.Size(146, 42);
             this.btnReset.Style = Syncfusion.Windows.Forms.Tools.SplitButtonVisualStyle.Metro;
@@ -148,26 +148,25 @@
             // gridDesignation
             // 
             this.gridDesignation.AccessibleName = "Table";
-            gridTextColumn1.HeaderText = "Designation ";
-            gridTextColumn1.MappingName = "DesignationName";
-            gridTextColumn1.Width = 500D;
-            gridTextColumn2.HeaderText = "Hierarchy";
-            gridTextColumn2.MappingName = "HierarchyOrder";
-            gridTextColumn2.Width = 150D;
-            gridTextColumn3.HeaderText = "DepartmentID";
-            gridTextColumn3.HeaderTextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            gridTextColumn3.MappingName = "DepartmentID";
-            gridTextColumn3.Visible = false;
-            gridTextColumn3.Width = 0D;
-            gridTextColumn4.HeaderText = "DesignationCode";
-            gridTextColumn4.MappingName = "DesignationCode";
-            gridTextColumn4.Visible = false;
-            gridTextColumn4.Width = 0D;
-            this.gridDesignation.Columns.Add(gridTextColumn1);
-            this.gridDesignation.Columns.Add(gridTextColumn2);
-            this.gridDesignation.Columns.Add(gridTextColumn3);
-            this.gridDesignation.Columns.Add(gridTextColumn4);
-            this.gridDesignation.FilterRowPosition = Syncfusion.WinForms.DataGrid.Enums.RowPosition.Top;
+            gridTextColumn5.HeaderText = "Designation ";
+            gridTextColumn5.MappingName = "DesignationName";
+            gridTextColumn5.Width = 500D;
+            gridTextColumn6.HeaderText = "Hierarchy";
+            gridTextColumn6.MappingName = "HierarchyOrder";
+            gridTextColumn6.Width = 150D;
+            gridTextColumn7.HeaderText = "DepartmentID";
+            gridTextColumn7.HeaderTextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            gridTextColumn7.MappingName = "DepartmentID";
+            gridTextColumn7.Visible = false;
+            gridTextColumn7.Width = 0D;
+            gridTextColumn8.HeaderText = "DesignationCode";
+            gridTextColumn8.MappingName = "DesignationCode";
+            gridTextColumn8.Visible = false;
+            gridTextColumn8.Width = 0D;
+            this.gridDesignation.Columns.Add(gridTextColumn5);
+            this.gridDesignation.Columns.Add(gridTextColumn6);
+            this.gridDesignation.Columns.Add(gridTextColumn7);
+            this.gridDesignation.Columns.Add(gridTextColumn8);
             this.gridDesignation.Location = new System.Drawing.Point(37, 266);
             this.gridDesignation.Name = "gridDesignation";
             this.gridDesignation.PreviewRowHeight = 35;
@@ -180,9 +179,9 @@
             // 
             this.autoLabel3.Location = new System.Drawing.Point(37, 57);
             this.autoLabel3.Name = "autoLabel3";
-            this.autoLabel3.Size = new System.Drawing.Size(111, 20);
+            this.autoLabel3.Size = new System.Drawing.Size(112, 20);
             this.autoLabel3.TabIndex = 9;
-            this.autoLabel3.Text = "Designation";
+            this.autoLabel3.Text = "Department";
             // 
             // cmbDepartment
             // 

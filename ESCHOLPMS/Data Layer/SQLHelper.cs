@@ -95,15 +95,43 @@ namespace SQLHelper
             string _connectionString = "";
             if (ESCHOLPMS.GlobalVariables.connectedBy == 0)
             {
-                _connectionString = "Server = BERACHAH; Database = ESCHOLDB; User ID = AMS; Password = AMS@123";
+                _connectionString = "Server = BERACHAH; Database = ESCHOLDB; User ID = BERACHAH; Password = beenaDIANA";
             }
             else if (ESCHOLPMS.GlobalVariables.connectedBy == 1)
-                _connectionString = "Server =  bsdb.capaciteworld.com,15389; Database = BSBS_CAPACITE; User ID = BI; Password = BICAPACITE";
-
+            {
+                _connectionString = "Server = 117.223.187.194; Database =ESCHOLDB; User ID = VINOD; Password = beenaDIANA";
+            }
             return _connectionString;
            
         }
 
+        public static string GetMasterDataConnectionString()
+        {
+            string _remoteconnectionString = "";
+            if (ESCHOLPMS.GlobalVariables.connectedBy == 0)
+            {
+                _remoteconnectionString = "Server =BERACHAH ; Database = 1718_ESHCOLVCEPVT; User ID = BERACHAH; Password = beenaDIANA";
+            }
+            else if (ESCHOLPMS.GlobalVariables.connectedBy == 1)
+            {
+                _remoteconnectionString = "Server = 117.223.187.194; Database =ESCHOLDB; User ID = VINOD; Password = beenaDIANA";
+            }
+            return _remoteconnectionString;
+
+        }
+        public static string GetConnectionStringAttachment()
+        {
+            string _connectionString = "";
+            if (ESCHOLPMS.GlobalVariables.connectedBy == 0)
+            {
+                _connectionString = "Server = BERACHAH; Database = ESCHOLATTACHMENT; User ID = AMS; Password = AMS@123";
+            }
+            else if (ESCHOLPMS.GlobalVariables.connectedBy == 1)
+               _connectionString = "Server =  bsdb.capaciteworld.com,15389; Database = BSBS_CAPACITE; User ID = BI; Password = BICAPACITE";
+
+            return _connectionString;
+
+        }
         public static string GetLocalConnectionString()
         {
             string _connectionString = "";

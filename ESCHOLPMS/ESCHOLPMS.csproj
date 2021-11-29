@@ -37,6 +37,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\Program Files (x86)\Syncfusion\Essential Studio\Windows\19.2.0.44\Assemblies\4.6\DemoCommon.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.12.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.12.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.BulletGraph.Windows, Version=19.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\Program Files (x86)\Syncfusion\Essential Studio\Windows\19.2.0.44\Assemblies\4.6\Syncfusion.BulletGraph.Windows.dll</HintPath>
@@ -347,6 +353,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -359,13 +366,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Layer\AMS.cs" />
+    <Compile Include="Business Layer\API\OauthToken.cs" />
+    <Compile Include="Business Layer\API\AccessSites.cs" />
     <Compile Include="Business Layer\Common\ImportProperty.cs" />
     <Compile Include="Business Layer\Common\QueryString.cs" />
     <Compile Include="Business Layer\Common\UtilityFunctions.cs" />
     <Compile Include="Business Layer\GlobalVariables.cs" />
+    <Compile Include="Business Layer\HR\AddressBook.cs" />
+    <Compile Include="Business Layer\HR\CostCentres.cs" />
     <Compile Include="Business Layer\HR\Department.cs" />
     <Compile Include="Business Layer\HR\Designation.cs" />
+    <Compile Include="Business Layer\HR\EmployeeImages.cs" />
+    <Compile Include="Business Layer\HR\EmployeeListing.cs" />
+    <Compile Include="Business Layer\HR\EmployeeMaster.cs" />
+    <Compile Include="Business Layer\HR\Ledger.cs" />
+    <Compile Include="Business Layer\HR\SalaryMaster.cs" />
     <Compile Include="Data Layer\SQLHelper.cs" />
+    <Compile Include="Presentation Layer\API\frmAccessSites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\API\frmAccessSites.Designer.cs">
+      <DependentUpon>frmAccessSites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\API\frmAuthToken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\API\frmAuthToken.Designer.cs">
+      <DependentUpon>frmAuthToken.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +405,12 @@
     </Compile>
     <Compile Include="Presentation Layer\Login\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Masters\frmCostCentre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Masters\frmCostCentre.Designer.cs">
+      <DependentUpon>frmCostCentre.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\Masters\frmDesignation.cs">
       <SubType>Form</SubType>
@@ -390,19 +424,46 @@
     <Compile Include="Presentation Layer\Masters\frmDepartment.Designer.cs">
       <DependentUpon>frmDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\Masters\frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Masters\frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Masters\frmListOfEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Masters\frmListOfEmployees.Designer.cs">
+      <DependentUpon>frmListOfEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation Layer\API\frmAccessSites.resx">
+      <DependentUpon>frmAccessSites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\API\frmAuthToken.resx">
+      <DependentUpon>frmAuthToken.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Login\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Masters\frmCostCentre.resx">
+      <DependentUpon>frmCostCentre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Masters\frmDesignation.resx">
       <DependentUpon>frmDesignation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Masters\frmDepartment.resx">
       <DependentUpon>frmDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Masters\frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Masters\frmListOfEmployees.resx">
+      <DependentUpon>frmListOfEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -414,6 +475,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -427,7 +489,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="NoImage.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Vettoor Logo.jpg" />
   </ItemGroup>

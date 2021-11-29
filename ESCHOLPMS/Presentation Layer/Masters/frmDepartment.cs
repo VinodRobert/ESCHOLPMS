@@ -22,8 +22,9 @@ namespace ESCHOLPMS
         Color oddRow = Color.Transparent;
         Color evenRow = Color.AliceBlue;
      
-        string _criteria;
-        Int16 _departmentCode = 0;
+      
+        Int16  departmentCode = 0;
+        PMS pms = new PMS();
 
         private void ResetGrid()
         {
@@ -46,7 +47,7 @@ namespace ESCHOLPMS
         private void ClearScreen()
         {
             txtDepartmentName.Text = "";
-            _departmentCode = 0;
+            departmentCode = 0;
             btnAdd.Text = "Save";
         }
 
@@ -62,9 +63,7 @@ namespace ESCHOLPMS
         {
             ResetGrid();
             ClearScreen();
-           
-       
-            DataSet dsDepartment = _de.Fetch(null, null, "DepartmentName");
+            DataSet dsDepartment = pms.fetchDepartment();
             List<Department> DepartmentListings = new List<Department>();
             DepartmentListings = ESCHOLPMS.UtilityFunctions.ConvertToList<Department>(dsDepartment.Tables[0]);
             gridDepartment.DataSource = DepartmentListings;
@@ -93,14 +92,14 @@ namespace ESCHOLPMS
         private void gridDepartment_CellClick(object sender, CellClickEventArgs e)
         {
         
-            int rowindex = e.DataRow.Index-2;
+            int rowindex = e.DataRow.Index-1;
             if (rowindex < 0)
                 return;
             var record = this.gridDepartment.View.Records.GetItemAt(rowindex);
             string departmentCodeString = record.GetType().GetProperty("DepartmentCode").GetValue(record).ToString();
             string departmentName = record.GetType().GetProperty("DepartmentName").GetValue(record).ToString();
             txtDepartmentName.Text = Convert.ToString(departmentName);
-            _departmentCode = Convert.ToInt16(departmentCodeString);
+            departmentCode = Convert.ToInt16(departmentCodeString);
             btnAdd.Text = "Update";
         }
 
@@ -111,15 +110,16 @@ namespace ESCHOLPMS
                 MessageBox.Show("Department Name Missing", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            _criteria = "DepartmentName='" + Convert.ToString(txtDepartmentName.Text.Trim()) + "' AND DepartmentCode<>" + Convert.ToString(_departmentCode);
 
-            if (Convert.ToBoolean(_de.CheckDuplicate(_criteria)) == true)
+            if ( Convert.ToInt16(pms.chkDepartment(txtDepartmentName.Text.Trim()))  ==1  )
             {
                 MessageBox.Show("Duplicate Entries", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if ((btnAdd.Text == "Update") && (_departmentCode == 0))
+
+            if ((btnAdd.Text == "Update") && (departmentCode == 0))
                 return false;
+
             return true;
         }
 
@@ -130,16 +130,13 @@ namespace ESCHOLPMS
             {
                 if (btnAdd.Text == "Save")
                 {
-                    _de.DepartmentCode = 0;
-                    _de.DepartmentName = Convert.ToString(txtDepartmentName.Text).Trim();
-                    _de.Update();
+                    int j = pms.addEditDepartment(0, txtDepartmentName.Text.Trim());
                 }
-                else if (btnAdd.Text == "Update")
+                else
                 {
-                    _de.DepartmentCode = _departmentCode;
-                    _de.DepartmentName = Convert.ToString(txtDepartmentName.Text).Trim();
-                    _de.Update();
+                    int k = pms.addEditDepartment(departmentCode, txtDepartmentName.Text.Trim());
                 }
+                MessageBox.Show("Success !!", "Success",  MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadGrid();
                 ClearScreen();
             }

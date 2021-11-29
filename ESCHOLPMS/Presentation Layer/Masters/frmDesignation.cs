@@ -19,8 +19,9 @@ namespace ESCHOLPMS
     {
         Designation desig = new Designation();
         Department  dept  = new Department();
+        PMS pms = new PMS();
 
-        Int16 desigsignationCode = 0;
+        Int32 desigsignationCode = 0;
         string _criteria;
     
         Color oddRow = Color.Transparent;
@@ -50,6 +51,8 @@ namespace ESCHOLPMS
             txtHierarchyOrder.Value = 0;
             desigsignationCode = 0;
             btnAdd.Text = "Save";
+            
+            gridDesignation.Visible = false;
         }
 
 
@@ -61,8 +64,9 @@ namespace ESCHOLPMS
 
         private void LoadDepartment()
         {
-            DataSet dsDepartment = dept.Fetch("DepartmentCode,DepartmentName", null, "DepartmentName");
+            DataSet dsDepartment = pms.fetchDepartment();
             cmbDepartment.DataSource = dsDepartment.Tables[0];
+            cmbDepartment.Text = "Select Department";
             cmbDepartment.Refresh();
         }
 
@@ -70,6 +74,7 @@ namespace ESCHOLPMS
         private void frmDepartment_Load(object sender, EventArgs e)
         {
             ClearScreen();
+            txtDesignationName.Enabled = false;
             LoadDepartment();
         }
 
@@ -84,7 +89,7 @@ namespace ESCHOLPMS
 
         private void gridDepartment_CellClick(object sender, CellClickEventArgs e)
         {
-            int rowindex = e.DataRow.Index-2;
+            int rowindex = e.DataRow.Index-1;
             if (rowindex < 0)
                 return;
             var record = this.gridDesignation.View.Records.GetItemAt(rowindex);
@@ -93,9 +98,10 @@ namespace ESCHOLPMS
             txtDesignationName.Text = Convert.ToString(designationName);
             string hierarchyOrderString = record.GetType().GetProperty("HierarchyOrder").GetValue(record).ToString();
             txtDesignationName.Text = Convert.ToString(designationName);
-            int hierarchyOrder = Convert.ToInt16(hierarchyOrderString);
+            int hierarchyOrder = Convert.ToInt16(hierarchyOrderString); 
             txtHierarchyOrder.Value = hierarchyOrder;
-            desigsignationCode = Convert.ToInt16(designationCodeString);
+            desigsignationCode = Convert.ToInt32(designationCodeString);
+             
             btnAdd.Text = "Update";
         }
 
@@ -113,8 +119,7 @@ namespace ESCHOLPMS
                 return false;
             }
 
-            _criteria = "DesignationName='" + Convert.ToString(txtDesignationName.Text.Trim()) + "' and DepartmentID=" + Convert.ToString(cmbDepartment.SelectedValue) + " AND DesignationCode<>" + Convert.ToString(desigsignationCode);
-            if (Convert.ToBoolean(desig.CheckDuplicate(_criteria)) == true)
+            if (  pms.chkDesignation(txtDesignationName.Text.Trim(),Convert.ToInt16(cmbDepartment.SelectedValue),Convert.ToInt16(txtHierarchyOrder.Value) )==1 )
             {
                 {
                     MessageBox.Show("Duplicate Entry", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -122,8 +127,11 @@ namespace ESCHOLPMS
                 }
 
             }
-            if (cmbDepartment.SelectedIndex == 0)
+            if (cmbDepartment.Text == "Select Department")
+            {
+                MessageBox.Show("Select Department");
                 return false;
+            }
             if ((btnAdd.Text == "Update") && (desigsignationCode == 0))
                 return false;
 
@@ -132,27 +140,23 @@ namespace ESCHOLPMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            int departmentID = Convert.ToInt16(cmbDepartment.SelectedValue);
+            int hierarchyOrder = Convert.ToInt16(txtHierarchyOrder.Value);
+            string designationName = Convert.ToString(txtDesignationName.Text).Trim();
             if (validEntry() == true)
             {
                 if (btnAdd.Text == "Save")
                 {
-                    desig.DepartmentID = Convert.ToInt16(cmbDepartment.SelectedValue);
-                    desig.DesignationName = Convert.ToString(txtDesignationName.Text.Trim());
-                    desig.DesignationCode = 0;
-                    desig.HierarchyOrder = Convert.ToInt16(txtHierarchyOrder.Value);
-                    desig.Update();
+                    int i = pms.addEditDesignation(departmentID,0, designationName, hierarchyOrder);
                 }
                 else if (btnAdd.Text == "Update")
                 {
-                    desig.DepartmentID = Convert.ToInt16(cmbDepartment.SelectedValue);
-                    desig.DesignationName = Convert.ToString(txtDesignationName.Text.Trim());
-                    desig.DesignationCode = Convert.ToInt16(desigsignationCode);
-                    desig.HierarchyOrder = Convert.ToInt16(txtHierarchyOrder.Value);
-                    desig.Update();
+                    int j = pms.addEditDesignation(departmentID, desigsignationCode, designationName, hierarchyOrder);
                 }
                 UtilityFunctions.Success();
-                LoadGrid();
                 ClearScreen();
+                LoadGrid();
+              
 
             }
         }
@@ -163,11 +167,14 @@ namespace ESCHOLPMS
         {
             ResetGrid();
             ClearScreen();
-            DataSet dsDesignation = desig.Fetch("DesignationCode,DesignationName,HierarchyOrder,DepartmentID", "DepartmentID=" + Convert.ToString(cmbDepartment.SelectedValue), "HierarchyOrder");
+            int departmentID = Convert.ToInt16(cmbDepartment.SelectedValue);
+            DataSet dsDesignation = pms.fetchDesignation(departmentID);
             List<Designation> designationListings = new List<Designation>();
             designationListings = ESCHOLPMS.UtilityFunctions.ConvertDataTable<Designation>(dsDesignation.Tables[0]);
             gridDesignation.DataSource = designationListings;
             gridDesignation.Refresh();
+            gridDesignation.Visible = true;
+            
         }
 
 
@@ -175,7 +182,10 @@ namespace ESCHOLPMS
 
         private void btnFetch_Click_1(object sender, EventArgs e)
         {
+            if (cmbDepartment.Text == "Select Department")
+                return;
             cmbDepartment.Enabled = false;
+            txtDesignationName.Enabled = true;
             btnFetch.Enabled = false;
             LoadGrid();
 

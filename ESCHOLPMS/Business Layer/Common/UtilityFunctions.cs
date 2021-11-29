@@ -57,7 +57,7 @@ namespace ESCHOLPMS
                         {
                             pro.SetValue(objT, row[pro.Name]);
                         }
-                        catch (Exception ex) { }
+                        catch (Exception ex) { MessageBox.Show(ex.Message);}
                     }
                 }
                 return objT;

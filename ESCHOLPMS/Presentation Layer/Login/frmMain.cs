@@ -50,5 +50,35 @@ namespace ESCHOLPMS
             frmDepartment department = new frmDepartment();
             department.Show();
         }
+
+        private void gettingKeyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAuthToken authToken = new frmAuthToken();
+            authToken.Show();
+        }
+
+        private void fetchAccessPointsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAccessSites accessSites = new frmAccessSites();
+            accessSites.Show();
+        }
+
+        private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListOfEmployees listEmployee = new frmListOfEmployees();
+            listEmployee.Show();
+        }
+
+        private void designationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDesignation frmDesignation = new frmDesignation();
+            frmDesignation.Show();
+        }
+
+        private void costCentresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCostCentre costCentre = new frmCostCentre();
+            costCentre.Show();
+        }
     }
 }

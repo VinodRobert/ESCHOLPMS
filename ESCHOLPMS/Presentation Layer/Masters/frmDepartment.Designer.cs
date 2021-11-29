@@ -117,21 +117,24 @@
             // gridDepartment
             // 
             this.gridDepartment.AccessibleName = "Table";
+            this.gridDepartment.AllowFiltering = true;
+            gridTextColumn1.AllowFiltering = true;
             gridTextColumn1.HeaderText = "Column1";
             gridTextColumn1.MappingName = "RowSlNo";
             gridTextColumn1.Visible = false;
             gridTextColumn1.Width = 0D;
+            gridTextColumn2.AllowFiltering = true;
             gridTextColumn2.HeaderText = "Column2";
             gridTextColumn2.MappingName = "DepartmentCode";
             gridTextColumn2.Visible = false;
             gridTextColumn2.Width = 0D;
+            gridTextColumn3.AllowFiltering = true;
             gridTextColumn3.HeaderText = "Department Name";
             gridTextColumn3.MappingName = "DepartmentName";
             gridTextColumn3.Width = 600D;
             this.gridDepartment.Columns.Add(gridTextColumn1);
             this.gridDepartment.Columns.Add(gridTextColumn2);
             this.gridDepartment.Columns.Add(gridTextColumn3);
-            this.gridDepartment.FilterRowPosition = Syncfusion.WinForms.DataGrid.Enums.RowPosition.Top;
             this.gridDepartment.Location = new System.Drawing.Point(74, 197);
             this.gridDepartment.Name = "gridDepartment";
             this.gridDepartment.PreviewRowHeight = 35;

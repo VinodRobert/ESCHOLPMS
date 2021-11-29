@@ -14,7 +14,7 @@ namespace ESCHOLPMS
 
     public partial class frmLogin : Form
     {
-        ESCHOLPMS.AMS ams = new AMS();
+        ESCHOLPMS.PMS ams = new PMS();
 
         public frmLogin()
         {
@@ -55,7 +55,7 @@ namespace ESCHOLPMS
             else
             {
                 GlobalVariables.UserName = Convert.ToString(ds.Tables[0].Rows[0]["LOGINNAME"]);
-                GlobalVariables.ProjectName = Convert.ToString(ds.Tables[0].Rows[0]["PROJECTNAME"]);
+           //   GlobalVariables.ProjectName = Convert.ToString(ds.Tables[0].Rows[0]["PROJECTNAME"]);
 
                 this.Visible = false;
                 frmMain _main = new frmMain();

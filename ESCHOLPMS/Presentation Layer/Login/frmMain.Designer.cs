@@ -33,6 +33,7 @@
             this.mastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.designationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRegistration = new System.Windows.Forms.ToolStripMenuItem();
             this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,11 +45,17 @@
             this.splitSalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.postToAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReports = new System.Windows.Forms.ToolStripMenuItem();
+            this.aPIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gettingKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fetchAccessPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLoginName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripProjectName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.bankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subLedgerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.costCentresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +69,8 @@
             this.menuRegistration,
             this.menuAttendance,
             this.salaryToolStripMenuItem,
-            this.menuReports});
+            this.menuReports,
+            this.aPIToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -74,13 +82,20 @@
             // 
             this.mastersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.departmentToolStripMenuItem,
-            this.designationToolStripMenuItem});
+            this.designationToolStripMenuItem,
+            this.employeeToolStripMenuItem,
+            this.bankToolStripMenuItem,
+            this.subLedgerToolStripMenuItem,
+            this.costCentresToolStripMenuItem});
+            this.mastersToolStripMenuItem.ForeColor = System.Drawing.Color.Fuchsia;
             this.mastersToolStripMenuItem.Name = "mastersToolStripMenuItem";
             this.mastersToolStripMenuItem.Size = new System.Drawing.Size(84, 27);
             this.mastersToolStripMenuItem.Text = "Masters";
             // 
             // departmentToolStripMenuItem
             // 
+            this.departmentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departmentToolStripMenuItem.ForeColor = System.Drawing.Color.MediumOrchid;
             this.departmentToolStripMenuItem.Name = "departmentToolStripMenuItem";
             this.departmentToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
             this.departmentToolStripMenuItem.Text = "Department";
@@ -88,9 +103,21 @@
             // 
             // designationToolStripMenuItem
             // 
+            this.designationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.designationToolStripMenuItem.ForeColor = System.Drawing.Color.MediumOrchid;
             this.designationToolStripMenuItem.Name = "designationToolStripMenuItem";
             this.designationToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
             this.designationToolStripMenuItem.Text = "Designation";
+            this.designationToolStripMenuItem.Click += new System.EventHandler(this.designationToolStripMenuItem_Click);
+            // 
+            // employeeToolStripMenuItem
+            // 
+            this.employeeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeToolStripMenuItem.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
+            this.employeeToolStripMenuItem.Text = "Employee";
+            this.employeeToolStripMenuItem.Click += new System.EventHandler(this.employeeToolStripMenuItem_Click);
             // 
             // menuRegistration
             // 
@@ -166,6 +193,29 @@
             this.menuReports.Size = new System.Drawing.Size(84, 27);
             this.menuReports.Text = "Reports";
             // 
+            // aPIToolStripMenuItem
+            // 
+            this.aPIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gettingKeyToolStripMenuItem,
+            this.fetchAccessPointsToolStripMenuItem});
+            this.aPIToolStripMenuItem.Name = "aPIToolStripMenuItem";
+            this.aPIToolStripMenuItem.Size = new System.Drawing.Size(49, 27);
+            this.aPIToolStripMenuItem.Text = "API";
+            // 
+            // gettingKeyToolStripMenuItem
+            // 
+            this.gettingKeyToolStripMenuItem.Name = "gettingKeyToolStripMenuItem";
+            this.gettingKeyToolStripMenuItem.Size = new System.Drawing.Size(238, 28);
+            this.gettingKeyToolStripMenuItem.Text = "Getting Key";
+            this.gettingKeyToolStripMenuItem.Click += new System.EventHandler(this.gettingKeyToolStripMenuItem_Click);
+            // 
+            // fetchAccessPointsToolStripMenuItem
+            // 
+            this.fetchAccessPointsToolStripMenuItem.Name = "fetchAccessPointsToolStripMenuItem";
+            this.fetchAccessPointsToolStripMenuItem.Size = new System.Drawing.Size(238, 28);
+            this.fetchAccessPointsToolStripMenuItem.Text = "Fetch Access Points";
+            this.fetchAccessPointsToolStripMenuItem.Click += new System.EventHandler(this.fetchAccessPointsToolStripMenuItem_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -204,6 +254,25 @@
             this.stripProjectName.Name = "stripProjectName";
             this.stripProjectName.Size = new System.Drawing.Size(125, 23);
             this.stripProjectName.Text = "Prroject Name";
+            // 
+            // bankToolStripMenuItem
+            // 
+            this.bankToolStripMenuItem.Name = "bankToolStripMenuItem";
+            this.bankToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
+            this.bankToolStripMenuItem.Text = "Bank";
+            // 
+            // subLedgerToolStripMenuItem
+            // 
+            this.subLedgerToolStripMenuItem.Name = "subLedgerToolStripMenuItem";
+            this.subLedgerToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
+            this.subLedgerToolStripMenuItem.Text = "Sub Ledger";
+            // 
+            // costCentresToolStripMenuItem
+            // 
+            this.costCentresToolStripMenuItem.Name = "costCentresToolStripMenuItem";
+            this.costCentresToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
+            this.costCentresToolStripMenuItem.Text = "Cost Centres";
+            this.costCentresToolStripMenuItem.Click += new System.EventHandler(this.costCentresToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -250,6 +319,13 @@
         private System.Windows.Forms.ToolStripMenuItem salaryPrepartionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem splitSalaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postToAccountsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aPIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gettingKeyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fetchAccessPointsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bankToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subLedgerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem costCentresToolStripMenuItem;
     }
 }
 

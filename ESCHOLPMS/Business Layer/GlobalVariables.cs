@@ -19,6 +19,7 @@ namespace ESCHOLPMS
             public static string projectLists;
             public static string UserName;
             public static Int16 UploadingRights;
-            
+            public static string access_token;
+            public static Int16 spintlyOrgID;
     }
 }
