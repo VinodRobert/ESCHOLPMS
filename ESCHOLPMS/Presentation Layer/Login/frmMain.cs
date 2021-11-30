@@ -80,5 +80,11 @@ namespace ESCHOLPMS
             frmCostCentre costCentre = new frmCostCentre();
             costCentre.Show();
         }
+
+        private void getOrganizationIDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrganizationID orgID = new frmOrganizationID();
+            orgID.Show();
+        }
     }
 }

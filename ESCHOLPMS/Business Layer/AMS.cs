@@ -10,7 +10,7 @@ namespace ESCHOLPMS
 {
     public class PMS
     {
-
+        #region Logins
         public DataSet Login(string userName, string password)
         {
             string _connectionString = SqlHelper.GetConnectionString();
@@ -18,6 +18,60 @@ namespace ESCHOLPMS
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
+
+        public DataSet GetAccessKeyDetails()
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql = "Select * From Authorize";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+
+        public int DeleteAllSites()
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql = "DELETE FROM AccessSites";
+            int i = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return i;
+        }
+
+        public int InsertSite(int siteID,string siteName,string siteLocation)
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql = "INSERT INTO AccessSites(SPINTLYSITEID,SITENAME,LOCATION) VALUES(";
+            sql = sql + Convert.ToString(siteID) + ",'" + Convert.ToString(siteName).Trim() + "','" + Convert.ToString(siteLocation) + "')";
+            int i = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return i;
+        }
+
+        public DataSet GetAccessSites()
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql = "SELECT * FROM AccessSites";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+        #endregion
+
+        #region API
+        public int UpdateAuthorizationKey(string authKey)
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql =  "UPDATE Authorize Set AuthorizationKey='" + Convert.ToString(authKey).ToString() + "'";
+            int j = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return 1;
+        }
+
+        public int UpdateAuthorizationKey(int organizationID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql = "UPDATE Authorize Set OrganizationID=" + Convert.ToString(organizationID).ToString();
+            int j = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return 1;
+        }
+        #endregion
+
+
 
         public DataSet fetchDepartment()
         {

@@ -20,8 +20,10 @@ namespace ESCHOLPMS
     public partial class frmAccessSites : Form
     {
         string spintlyOrgID = Convert.ToString(GlobalVariables.spintlyOrgID);
-        AccessSites accessControledProjets = new AccessSites();
+        string spintlyAccessToken = Convert.ToString(GlobalVariables.access_token);
 
+        AccessSites accessControledProjets = new AccessSites();
+        PMS pms = new PMS();
         public frmAccessSites()
         {
             InitializeComponent();
@@ -34,10 +36,10 @@ namespace ESCHOLPMS
 
         private async void FetchAcessPointSites()
         {
-            string url = "https://test.api.spintly.com/v2/organisationManagement/integrator/organisations/"+spintlyOrgID+"/sites";
+            string url = "https://api.spintly.com/v2/organisationManagement/integrator/organisations/" + spintlyOrgID+"/sites";
           
-            string accesstoken = Convert.ToString(GlobalVariables.access_token);
-            if (accesstoken.Length==0)
+         
+            if (spintlyAccessToken.Length==0)
             {
                 MessageBox.Show("First Authenticated. Then Run ");
                 return;
@@ -48,7 +50,7 @@ namespace ESCHOLPMS
                 RestClient client = new RestClient(url);
                 RestRequest request = new RestRequest(Method.POST);
                 request.AddHeader("Content-Type", "application/json");
-                request.AddHeader("Authorization", accesstoken);
+                request.AddHeader("Authorization", spintlyAccessToken);
             
            
                 IRestResponse response = await client.ExecuteAsync(request);
@@ -60,19 +62,27 @@ namespace ESCHOLPMS
                     return;
                 }
 
+                int i = pms.DeleteAllSites();
                 List<Sites> accessSitesList = new List<Sites>();
                 string siteName;
+                int siteID;
+                string siteLocation;
                 foreach (Sites s in accessControledProjets.message.sites)
                 {
-                    siteName = s.name;
+                    siteName = s.name.ToUpper();
+                    siteID = Convert.ToInt16(s.id);
+                    siteLocation = Convert.ToString(s.location).ToUpper();
+                    i = pms.InsertSite(siteID, siteName, siteLocation);
                 }
+                DataSet ds = pms.GetAccessSites();
+                gridSites.DataSource = ds.Tables[0];
             }
             catch (Exception d)
             {
                 string errorJson = "Error In Calling Access Points List " + d.Message;
                 MessageBox.Show(errorJson);
             }
-
+           
         }
     }
 }

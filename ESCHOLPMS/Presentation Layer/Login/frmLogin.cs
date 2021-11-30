@@ -55,7 +55,9 @@ namespace ESCHOLPMS
             else
             {
                 GlobalVariables.UserName = Convert.ToString(ds.Tables[0].Rows[0]["LOGINNAME"]);
-           //   GlobalVariables.ProjectName = Convert.ToString(ds.Tables[0].Rows[0]["PROJECTNAME"]);
+                ds = ams.GetAccessKeyDetails();
+                GlobalVariables.access_token = ds.Tables[0].Rows[0]["AuthorizationKey"].ToString();
+                GlobalVariables.spintlyOrgID = Convert.ToInt16(ds.Tables[0].Rows[0]["OrganizationID"]);
 
                 this.Visible = false;
                 frmMain _main = new frmMain();

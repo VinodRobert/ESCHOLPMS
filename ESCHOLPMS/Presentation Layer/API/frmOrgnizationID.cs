@@ -13,16 +13,20 @@ using System.IO;
 using Syncfusion.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using ESCHOLPMS.API.OauthToken;
+using ESCHOLPMS.Business_Layer.API;
 
 namespace ESCHOLPMS 
 {
-    public partial class frmAuthToken : Form
+    public partial class frmOrganizationID : Form
     {
-        OauthTokenRequest   oathRequest = new OauthTokenRequest();
-        OauthTokenResponse  oathResponse = new OauthTokenResponse();
+        OauthTokenRequest       oathRequest = new OauthTokenRequest();
+        OauthTokenResponse      oathResponse = new OauthTokenResponse();
+        ResponseOrganizationID  responseOrgID = new ResponseOrganizationID();
+
+
         PMS pms = new PMS();
 
-        public frmAuthToken()
+        public frmOrganizationID()
         {
             InitializeComponent();
         }
@@ -34,21 +38,7 @@ namespace ESCHOLPMS
 
         private async void Authenticate()
         {
-            string url = "https://qlwtofmb58.execute-api.ap-south-1.amazonaws.com/prod/saamsIdm/oauth/token";
-            string clientID = "ce681063-5d5e-4169-a4e5-2605fba34f6f";
-            string clientSecret = "27038351-68cb-4919-b821-88e07e6d484e";
-            string grantType = "urn:ietf:params:oauth:grant-type:client-credentials";
-            try
-            {
-                oathRequest.clientId = clientID;
-                oathRequest.clientSecret = clientSecret;
-                oathRequest.grantType = grantType;
-            }
-            catch (Exception f)
-            {
-                MessageBox.Show("Error In Formation"+ f.Message);
-
-            }
+            string url = "https://6ipiqdho0m.execute-api.ap-south-1.amazonaws.com/dev/saamsIdm/oauth/organisation";
 
             string strJson = String.Empty;
             try
@@ -65,23 +55,22 @@ namespace ESCHOLPMS
             try
             {
                 RestClient client = new RestClient(url);
-                RestRequest request = new RestRequest(Method.POST);
-                request.AddJsonBody(oathRequest);
-           
+                RestRequest request = new RestRequest(Method.GET);
+                request.AddHeader("Authorization", GlobalVariables.access_token);
                 IRestResponse response = await client.ExecuteAsync(request);
 
 
-                oathResponse = JsonConvert.DeserializeObject<OauthTokenResponse>(response.Content);
-                if (oathResponse.type != "success")
+                responseOrgID = JsonConvert.DeserializeObject<ResponseOrganizationID>(response.Content);
+                if (responseOrgID.type != "success")
                 {
                       MessageBox.Show("Unable To Call API - Failed Authentication ");
                       return;
                 }
-               
-                GlobalVariables.access_token = oathResponse.message.payload.access_token;
-                GlobalVariables.spintlyOrgID = 694;
-                txtToken.Text = Convert.ToString(GlobalVariables.access_token);
-                int i = pms.UpdateAuthorizationKey(GlobalVariables.access_token);
+
+
+                GlobalVariables.spintlyOrgID =Convert.ToInt16(responseOrgID.message.organisationId);
+                txtToken.Text = Convert.ToString(GlobalVariables.spintlyOrgID);
+                int i = pms.UpdateAuthorizationKey(GlobalVariables.spintlyOrgID);
 
             }
             catch (Exception d)
@@ -90,6 +79,11 @@ namespace ESCHOLPMS
                 MessageBox.Show(errorJson);
             }
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
