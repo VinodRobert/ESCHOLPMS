@@ -35,6 +35,15 @@ namespace ESCHOLPMS
             return i;
         }
 
+        public int DeleteAllAccessPoints()
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql = "DELETE FROM ACCESSPOINTS";
+            int i = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return i;
+        }
+
+
         public int InsertSite(int siteID,string siteName,string siteLocation)
         {
             string _connectionString = SqlHelper.GetConnectionString();
@@ -44,12 +53,36 @@ namespace ESCHOLPMS
             return i;
         }
 
+        public int InsertAccessPoint(int siteID,int accessPointID, string accessPointName)
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql = "INSERT INTO ACCESSPOINTS(SITEID,SPINTLYACCESSPOINTID,ACCESSPOINTNAME) VALUES(";
+            sql = sql + Convert.ToString(siteID) + "," + Convert.ToString(accessPointID).Trim() + ",'" + Convert.ToString(accessPointName) + "')";
+            int i = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return i;
+        }
         public DataSet GetAccessSites()
         {
             string _connectionString = SqlHelper.GetConnectionString();
             string sql = "SELECT * FROM AccessSites";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
+        }
+
+        public DataSet GetAccessPoints()
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql = "SELECT AP.ACCESSPOINTSID,AP.SITEID,S.SITENAME,AP.SPINTLYACCESSPOINTID,AP.ACCESSPOINTNAME ";
+            sql = sql + " FROM ACCESSPOINTS  AP INNER JOIN ACCESSSITES S ON AP.SITEID = S.SPINTLYSITEID ORDER BY AP.SITEID,AP.SPINTLYACCESSPOINTID";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+
+
+        public int InsertAccessUsers(int id,string userName,string createdAt,bool cardAssigned,string accessExpiresAt,
+                       bool accessExpired, string deactivatedOn,string employeeCode,string credentialId)
+        {
+
         }
         #endregion
 

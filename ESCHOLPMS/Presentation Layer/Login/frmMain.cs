@@ -86,5 +86,17 @@ namespace ESCHOLPMS
             frmOrganizationID orgID = new frmOrganizationID();
             orgID.Show();
         }
+
+        private void fetchAccessPointsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAccessPoints accessPoints = new frmAccessPoints();
+            accessPoints.Show();
+        }
+
+        private void fetchUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAccessUsers accessUsers = new frmAccessUsers();
+            accessUsers.Show();
+        }
     }
 }
