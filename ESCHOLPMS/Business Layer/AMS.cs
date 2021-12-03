@@ -11,6 +11,26 @@ namespace ESCHOLPMS
     public class PMS
     {
         #region Logins
+
+        public DataSet FetchAccessControlUsers()
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql = " SELECT * FROM ACCESSSTAFF ORDER BY SPINTLYID ";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+
+        public DataSet FetchAccessPoints()
+        {
+            string _connectionString = SqlHelper.GetConnectionString();
+            string sql = "SELECT 0 AS SPINTLYACCESSPOINTID,' - ALL ACCESS POINTS -- ' ACCESSPOINT UNION";
+            sql = sql + " SELECT AP.SPINTLYACCESSPOINTID,(S.SITENAME+'-'+AP.ACCESSPOINTNAME+'('+S.LOCATION+')' ) ACCESSPOINT ";
+            sql = sql + " FROM ACCESSPOINTS AP INNER JOIN ACCESSSITES S ON AP.SITEID = S.SPINTLYSITEID ORDER BY ACCESSPOINT ";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+
+
         public DataSet Login(string userName, string password)
         {
             string _connectionString = SqlHelper.GetConnectionString();
@@ -83,6 +103,30 @@ namespace ESCHOLPMS
                        bool accessExpired, string deactivatedOn,string employeeCode,string credentialId)
         {
 
+            SqlParameter[] arParms = new SqlParameter[9];
+            
+            arParms[0] = new SqlParameter("@SPINTLYID", SqlDbType.Int);
+            arParms[0].Value = id;
+            arParms[1] = new SqlParameter("@NAME", SqlDbType.Text);
+            arParms[1].Value = userName;
+            arParms[2] = new SqlParameter("@CREATED", SqlDbType.Text);
+            arParms[2].Value = createdAt;
+            arParms[3] = new SqlParameter("@CARDASSIGNED", SqlDbType.Bit);
+            arParms[3].Value = cardAssigned;
+            arParms[4]= new SqlParameter("@ACCESSEXPIREDAT", SqlDbType.Text);
+            arParms[4].Value = accessExpiresAt;
+            arParms[5] = new SqlParameter("@ACCESSEXPIRED", SqlDbType.Bit);
+            arParms[5].Value = accessExpired;
+            arParms[6] = new SqlParameter("@DEACTIVATEDON", SqlDbType.Text);
+            arParms[6].Value = deactivatedOn;
+            arParms[7] = new SqlParameter("@EMPLOYEECODE", SqlDbType.Text);
+            arParms[7].Value = employeeCode;
+            arParms[8] = new SqlParameter("@ACCESSCARDID", SqlDbType.Text);
+            arParms[8].Value = credentialId;
+            // Execute the stored procedure
+            string _connectionString = SqlHelper.GetConnectionString();
+            int i = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "InsertAccessUsers", arParms);
+            return i;
         }
         #endregion
 

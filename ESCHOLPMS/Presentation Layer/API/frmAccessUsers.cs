@@ -67,15 +67,15 @@ namespace ESCHOLPMS
 
            
                 List<User> singleUser = new List<User>();
-                string userName;
                 int id = 0;
-                string createdAt;
-                bool cardAssigned;
-                string accessExpiresAt;
-                bool accessExpired;
-                string deactivatedOn;
-                string employeeCode;
-                string credentialId;
+                string createdAt=string.Empty;
+                bool cardAssigned=false;
+                string accessExpiresAt=string.Empty;
+                bool accessExpired=false;
+                string deactivatedOn=string.Empty;
+                string employeeCode=string.Empty;
+                string credentialId=string.Empty;
+                string userName = string.Empty;
                 int success;
                 try
                 {
@@ -83,17 +83,17 @@ namespace ESCHOLPMS
                     {
                         id = Convert.ToInt16(u.id);
                         userName = u.name.ToString();
-                        createdAt = u.createdAt.ToString();
+                        createdAt = Convert.ToDateTime(u.createdAt).ToShortDateString();
                         cardAssigned = u.cardAssigned;
                         if (u.accessExpiresAt == null)
                             accessExpiresAt = "";
                         else
-                            accessExpiresAt = u.accessExpiresAt.ToString();
+                            accessExpiresAt = Convert.ToDateTime(u.accessExpiresAt).ToShortDateString();
                         accessExpired = u.accessExpired;
                         if (u.deactivatedOn == null)
                             deactivatedOn = "";
                         else
-                            deactivatedOn = u.deactivatedOn.ToString();
+                            deactivatedOn = Convert.ToDateTime(u.deactivatedOn).ToShortDateString();
                         if (u.employeeCode == null)
                             employeeCode = "";
                         else
@@ -102,9 +102,10 @@ namespace ESCHOLPMS
                             credentialId = "0";
                         else
                             credentialId = Convert.ToString(u.credentialId);
+                        success = pms.InsertAccessUsers(id, userName, createdAt, cardAssigned, accessExpiresAt,
+                            accessExpired, deactivatedOn, employeeCode, credentialId);
                     }
-                    success = pms.InsertAccessUsers(id,userName,createdAt,cardAssigned,accessExpiresAt,
-                        accessExpired,deactivatedOn,employeeCode,credentialId)
+                
                 }
                 catch
                 {
@@ -118,7 +119,10 @@ namespace ESCHOLPMS
                 string errorJson = "Error In Calling Access Points List " + d.Message;
                 MessageBox.Show(errorJson);
             }
-           
+
+            DataSet ds = pms.FetchAccessControlUsers();
+            gridUsers.DataSource = ds.Tables[0];
+            gridUsers.Refresh();
         }
     }
 }

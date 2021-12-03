@@ -366,6 +366,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Layer\AMS.cs" />
+    <Compile Include="Business Layer\API\AccessHistoryRequest.cs" />
+    <Compile Include="Business Layer\API\AccessHistoryResponse.cs" />
     <Compile Include="Business Layer\API\AcessPoints.cs" />
     <Compile Include="Business Layer\API\OauthToken.cs" />
     <Compile Include="Business Layer\API\AccessSites.cs" />
@@ -385,6 +387,12 @@
     <Compile Include="Business Layer\HR\Ledger.cs" />
     <Compile Include="Business Layer\HR\SalaryMaster.cs" />
     <Compile Include="Data Layer\SQLHelper.cs" />
+    <Compile Include="Presentation Layer\API\frmAccessHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\API\frmAccessHistory.Designer.cs">
+      <DependentUpon>frmAccessHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\API\frmAccessUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -459,6 +467,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation Layer\API\frmAccessHistory.resx">
+      <DependentUpon>frmAccessHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\API\frmAccessUsers.resx">
       <DependentUpon>frmAccessUsers.cs</DependentUpon>
     </EmbeddedResource>

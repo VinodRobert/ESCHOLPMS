@@ -32,11 +32,13 @@
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn3 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn4 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn5 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
+            Syncfusion.WinForms.DataGrid.GridCheckBoxColumn gridCheckBoxColumn1 = new Syncfusion.WinForms.DataGrid.GridCheckBoxColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn2 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.gridSites = new Syncfusion.WinForms.DataGrid.SfDataGrid();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSites)).BeginInit();
+            this.gridUsers = new Syncfusion.WinForms.DataGrid.SfDataGrid();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -44,11 +46,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(233, 9);
+            this.label1.Location = new System.Drawing.Point(431, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(401, 20);
+            this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "List of Access Points Where Access Users";
+            this.label1.Text = "List of Users";
             // 
             // btnGenerate
             // 
@@ -61,49 +63,58 @@
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
-            // gridSites
+            // gridUsers
             // 
-            this.gridSites.AccessibleName = "Table";
-            gridTextColumn1.HeaderText = "ACCESSPOINTSID";
-            gridTextColumn1.MappingName = "ACCESSPOINTSID";
-            gridTextColumn1.Visible = false;
-            gridTextColumn1.Width = 0D;
-            gridTextColumn2.HeaderText = "SITE ID";
-            gridTextColumn2.MappingName = "SITEID";
-            gridTextColumn2.Width = 100D;
-            gridTextColumn3.HeaderText = "Site Name";
-            gridTextColumn3.MappingName = "SITENAME";
-            gridTextColumn3.Width = 200D;
-            gridTextColumn4.HeaderText = "Access Point ID";
-            gridTextColumn4.MappingName = "SPINTLYACCESSPOINTID";
-            gridTextColumn4.Width = 120D;
-            gridTextColumn5.HeaderText = "Access Point Name";
-            gridTextColumn5.MappingName = "ACCESSPOINTNAME";
-            gridTextColumn5.Width = 250D;
-            this.gridSites.Columns.Add(gridTextColumn1);
-            this.gridSites.Columns.Add(gridTextColumn2);
-            this.gridSites.Columns.Add(gridTextColumn3);
-            this.gridSites.Columns.Add(gridTextColumn4);
-            this.gridSites.Columns.Add(gridTextColumn5);
-            this.gridSites.Location = new System.Drawing.Point(24, 85);
-            this.gridSites.Name = "gridSites";
-            this.gridSites.PreviewRowHeight = 35;
-            this.gridSites.Size = new System.Drawing.Size(898, 577);
-            this.gridSites.TabIndex = 2;
-            this.gridSites.Text = "sfDataGrid1";
+            this.gridUsers.AccessibleName = "Table";
+            gridTextColumn1.HeaderText = "Spintly ID";
+            gridTextColumn1.MappingName = "SPINTLYID";
+            gridTextColumn1.Width = 80D;
+            gridTextColumn2.HeaderText = "Name";
+            gridTextColumn2.MappingName = "NAME";
+            gridTextColumn2.Width = 150D;
+            gridTextColumn3.HeaderText = "Emp Code";
+            gridTextColumn3.MappingName = "EMPLOYEECODE";
+            gridTextColumn3.Width = 80D;
+            gridTextColumn4.HeaderText = "Access Card #";
+            gridTextColumn4.MappingName = "ACCESSCARDNO";
+            gridTextColumn4.Width = 80D;
+            gridDateTimeColumn1.HeaderText = "Exiprty ON";
+            gridDateTimeColumn1.MappingName = "ACCESSEXPIREDAT";
+            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn1.Width = 50D;
+            gridCheckBoxColumn1.HeaderText = "Expired";
+            gridCheckBoxColumn1.MappingName = "ACCESSEXPIRED";
+            gridCheckBoxColumn1.Width = 80D;
+            gridDateTimeColumn2.HeaderText = "Deactivated ON";
+            gridDateTimeColumn2.MappingName = "DEACTIVATEDON";
+            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn2.Width = 90D;
+            this.gridUsers.Columns.Add(gridTextColumn1);
+            this.gridUsers.Columns.Add(gridTextColumn2);
+            this.gridUsers.Columns.Add(gridTextColumn3);
+            this.gridUsers.Columns.Add(gridTextColumn4);
+            this.gridUsers.Columns.Add(gridDateTimeColumn1);
+            this.gridUsers.Columns.Add(gridCheckBoxColumn1);
+            this.gridUsers.Columns.Add(gridDateTimeColumn2);
+            this.gridUsers.Location = new System.Drawing.Point(24, 85);
+            this.gridUsers.Name = "gridUsers";
+            this.gridUsers.PreviewRowHeight = 35;
+            this.gridUsers.Size = new System.Drawing.Size(921, 577);
+            this.gridUsers.TabIndex = 2;
+            this.gridUsers.Text = "sfDataGrid1";
             // 
             // frmAccessUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 688);
-            this.Controls.Add(this.gridSites);
+            this.ClientSize = new System.Drawing.Size(973, 688);
+            this.Controls.Add(this.gridUsers);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.label1);
             this.Name = "frmAccessUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "API | Project Sites";
-            ((System.ComponentModel.ISupportInitialize)(this.gridSites)).EndInit();
+            this.Text = "API | Users";
+            ((System.ComponentModel.ISupportInitialize)(this.gridUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,6 +124,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGenerate;
-        private Syncfusion.WinForms.DataGrid.SfDataGrid gridSites;
+        private Syncfusion.WinForms.DataGrid.SfDataGrid gridUsers;
     }
 }

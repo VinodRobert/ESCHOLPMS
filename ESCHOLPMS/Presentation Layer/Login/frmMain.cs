@@ -98,5 +98,11 @@ namespace ESCHOLPMS
             frmAccessUsers accessUsers = new frmAccessUsers();
             accessUsers.Show();
         }
+
+        private void fetchAccessHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAccessHistory accessHistory = new frmAccessHistory();
+            accessHistory.Show();
+        }
     }
 }

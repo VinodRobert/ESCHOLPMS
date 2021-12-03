@@ -53,12 +53,13 @@
             this.getOrganizationIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fetchAccessPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fetchAccessPointsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fetchUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLoginName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripProjectName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.fetchUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fetchAccessHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -222,7 +223,8 @@
             this.getOrganizationIDToolStripMenuItem,
             this.fetchAccessPointsToolStripMenuItem,
             this.fetchAccessPointsToolStripMenuItem1,
-            this.fetchUsersToolStripMenuItem});
+            this.fetchUsersToolStripMenuItem,
+            this.fetchAccessHistoryToolStripMenuItem});
             this.aPIToolStripMenuItem.Name = "aPIToolStripMenuItem";
             this.aPIToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
             this.aPIToolStripMenuItem.Text = "API";
@@ -230,30 +232,37 @@
             // gettingKeyToolStripMenuItem
             // 
             this.gettingKeyToolStripMenuItem.Name = "gettingKeyToolStripMenuItem";
-            this.gettingKeyToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.gettingKeyToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.gettingKeyToolStripMenuItem.Text = "Getting Key";
             this.gettingKeyToolStripMenuItem.Click += new System.EventHandler(this.gettingKeyToolStripMenuItem_Click);
             // 
             // getOrganizationIDToolStripMenuItem
             // 
             this.getOrganizationIDToolStripMenuItem.Name = "getOrganizationIDToolStripMenuItem";
-            this.getOrganizationIDToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.getOrganizationIDToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.getOrganizationIDToolStripMenuItem.Text = "Get Organization ID";
             this.getOrganizationIDToolStripMenuItem.Click += new System.EventHandler(this.getOrganizationIDToolStripMenuItem_Click);
             // 
             // fetchAccessPointsToolStripMenuItem
             // 
             this.fetchAccessPointsToolStripMenuItem.Name = "fetchAccessPointsToolStripMenuItem";
-            this.fetchAccessPointsToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.fetchAccessPointsToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.fetchAccessPointsToolStripMenuItem.Text = "Fetch Sites";
             this.fetchAccessPointsToolStripMenuItem.Click += new System.EventHandler(this.fetchAccessPointsToolStripMenuItem_Click);
             // 
             // fetchAccessPointsToolStripMenuItem1
             // 
             this.fetchAccessPointsToolStripMenuItem1.Name = "fetchAccessPointsToolStripMenuItem1";
-            this.fetchAccessPointsToolStripMenuItem1.Size = new System.Drawing.Size(233, 26);
+            this.fetchAccessPointsToolStripMenuItem1.Size = new System.Drawing.Size(239, 26);
             this.fetchAccessPointsToolStripMenuItem1.Text = "Fetch Access Points";
             this.fetchAccessPointsToolStripMenuItem1.Click += new System.EventHandler(this.fetchAccessPointsToolStripMenuItem1_Click);
+            // 
+            // fetchUsersToolStripMenuItem
+            // 
+            this.fetchUsersToolStripMenuItem.Name = "fetchUsersToolStripMenuItem";
+            this.fetchUsersToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.fetchUsersToolStripMenuItem.Text = "Fetch Users";
+            this.fetchUsersToolStripMenuItem.Click += new System.EventHandler(this.fetchUsersToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -294,12 +303,12 @@
             this.stripProjectName.Size = new System.Drawing.Size(125, 23);
             this.stripProjectName.Text = "Prroject Name";
             // 
-            // fetchUsersToolStripMenuItem
+            // fetchAccessHistoryToolStripMenuItem
             // 
-            this.fetchUsersToolStripMenuItem.Name = "fetchUsersToolStripMenuItem";
-            this.fetchUsersToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
-            this.fetchUsersToolStripMenuItem.Text = "Fetch Users";
-            this.fetchUsersToolStripMenuItem.Click += new System.EventHandler(this.fetchUsersToolStripMenuItem_Click);
+            this.fetchAccessHistoryToolStripMenuItem.Name = "fetchAccessHistoryToolStripMenuItem";
+            this.fetchAccessHistoryToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.fetchAccessHistoryToolStripMenuItem.Text = "Fetch Access History";
+            this.fetchAccessHistoryToolStripMenuItem.Click += new System.EventHandler(this.fetchAccessHistoryToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -356,6 +365,7 @@
         private System.Windows.Forms.ToolStripMenuItem getOrganizationIDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fetchAccessPointsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem fetchUsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fetchAccessHistoryToolStripMenuItem;
     }
 }
 
