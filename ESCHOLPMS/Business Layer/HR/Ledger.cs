@@ -99,7 +99,7 @@ namespace ESCHOLPMS
 
         public DataSet Fetch(string _groupName)
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter parameter = new SqlParameter("@GroupName",_groupName);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[Accounts].[spGetLedgersUnderGroup]", parameter);
             return ds;
@@ -125,7 +125,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = orderby;
 
 
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "Accounts.spSelectLedgers", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "Accounts.spSelectLedgers", parameters);
             return ds;
@@ -151,7 +151,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = orderby;
 
 
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "Accounts.spSelectLedgers", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "Accounts.spSelectLedgers", parameters);
             DataTable _dt;
@@ -181,7 +181,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = orderby;
 
 
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "Accounts.spSelectControAccount", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "Accounts.spSelectControAccount", parameters);
             return ds;
@@ -207,7 +207,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = orderby;
 
 
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(22);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "Accounts.spSelectLedgersUnderSubLedger", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "Accounts.spSelectLedgersUnderSubLedger", parameters);
             return ds;
@@ -215,19 +215,19 @@ namespace ESCHOLPMS
 
         public DataSet Fetch()
         {
-            DataSet ds = SqlHelper.ExecuteDataset(SqlHelper.GetConnectionString(), CommandType.StoredProcedure, "Accounts.spSelectLedgers", new SqlParameter("GroupUnder",this.GroupID));
+            DataSet ds = SqlHelper.ExecuteDataset(SqlHelper.GetConnectionString(2), CommandType.StoredProcedure, "Accounts.spSelectLedgers", new SqlParameter("GroupUnder",this.GroupID));
             return ds;
         }
         
         public decimal getCurrentBalance()
         {
-            decimal _cb =Convert.ToDecimal( SqlHelper.ExecuteScalar(SqlHelper.GetConnectionString(), CommandType.StoredProcedure, "Accounts.spSelectLedgerCurrentBalance", new SqlParameter("LedgerCode", this.LedgerCode)));
+            decimal _cb =Convert.ToDecimal( SqlHelper.ExecuteScalar(SqlHelper.GetConnectionString(2), CommandType.StoredProcedure, "Accounts.spSelectLedgerCurrentBalance", new SqlParameter("LedgerCode", this.LedgerCode)));
             return _cb;
         }
 
         public string  getLedgerCategory()
         {
-            string _lc = Convert.ToString(SqlHelper.ExecuteScalar(SqlHelper.GetConnectionString(), CommandType.StoredProcedure, "[Accounts].[spLedgerCategory]", new SqlParameter("LedgerCode", this.LedgerCode)));
+            string _lc = Convert.ToString(SqlHelper.ExecuteScalar(SqlHelper.GetConnectionString(2), CommandType.StoredProcedure, "[Accounts].[spLedgerCategory]", new SqlParameter("LedgerCode", this.LedgerCode)));
             return _lc;
         }
 
@@ -236,7 +236,7 @@ namespace ESCHOLPMS
             SqlParameter[] parameters = new  SqlParameter[2];
             parameters[0] = new SqlParameter("@LedgerCode", _ledgerID);
             parameters[1] = new SqlParameter("@StartDate", _currentDate);
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[Accounts].[spSelectLedgersOpeningBalanceAsOn]", parameters);
             return Convert.ToDecimal(ds.Tables[0].Rows[0]["OpeningBalance"]);
         }
@@ -246,7 +246,7 @@ namespace ESCHOLPMS
             _qr.FieldList = " LedgerCode,Ledger,LedgerIdentifier,GroupID,OpeningBalance,OpeningBalanceDRCR,OpeningBalanceAsOn,AccountType,ControlAccountID,LedgerName";
             _qr.Criteria = "LedgerCode=" + this.LedgerCode.ToString();
             _qr.OrderBy = "LedgerCode";
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "Accounts.spSelectLedgers", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "Accounts.spSelectLedgers", parameters);
             ESHCOLPMS.ImportProperty.ImportData(this, ds);
@@ -257,41 +257,41 @@ namespace ESCHOLPMS
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = new SqlParameter("@LedgerCode", _ledgerID);
             parameters[1] = new SqlParameter("@StartDate", _currentDate);
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[Accounts].[spSelectLedgerTransactionsOn]", parameters);
             return ds;
         }
 
         public DataSet getPettyCashAccounts()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "accounts.spFetchPettyCashLedgers");
             return ds;
         }
         public DataSet FetchOpening()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[ACCOUNTS].[spRptLedgerOpeningBalance]");
             return ds;
         }
 
         public DataSet getBankLedgers()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "accounts.spFetchBanks");
             return ds;
         }
 
         public DataSet getNonBankCashLedgers()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[Accounts].[spNonBankCashLedgers]");
             return ds;
         }
         
         public DataSet getBankCashLedgers()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "accounts.spFetchBankAndCashLedgers");
             return ds;
         }
@@ -316,7 +316,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = orderby;
 
 
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "[Accounts].[spSelectLedgerGroups]", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[Accounts].[spSelectLedgerGroups]", parameters);
             return ds;
@@ -342,7 +342,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = orderby;
 
 
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "Accounts.spSelectContraLedgers", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "Accounts.spSelectContraLedgers", parameters);
             return ds;
@@ -369,14 +369,14 @@ namespace ESCHOLPMS
                 _qr.OrderBy = orderby;
 
 
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "Accounts.spSelectPettyCashLedgers", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "Accounts.spSelectPettyCashLedgers", parameters);
             return ds;
         }
         public DataSet getAccountCode(string _criteria)
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter parameter = new SqlParameter("@Criteria", _criteria);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[Accounts].[spLoadNextLedgerIdentifier]", parameter);
             return ds;

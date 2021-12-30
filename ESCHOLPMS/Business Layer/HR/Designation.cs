@@ -89,7 +89,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = "DesignationCode";
             else
                 _qr.OrderBy = orderby;
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "HR.spSelectDesignation", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectDesignation", parameters);
             return ds;
@@ -97,7 +97,7 @@ namespace ESCHOLPMS
 
         public DataSet Fetch()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectDesignation");
             return ds;
         }
@@ -108,7 +108,7 @@ namespace ESCHOLPMS
             _qr.FieldList = " DesignationCode,DepartmentID,DesignationName,HierarchyOrder ";
             _qr.Criteria = "DesignationCode=" + this.DesignationCode.ToString();
             _qr.OrderBy = "DesignationCode";
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "HR.spSelectDesignation", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectDesignation", parameters);
             ESHCOLPMS.ImportProperty.ImportData(this, ds);
@@ -116,7 +116,7 @@ namespace ESCHOLPMS
 
         public int Update()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(this, "HR.spAddEditDesignation", _connectionString);
             int _success = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "HR.spAddEditDesignation", parameters);
             DesignationCode = Convert.ToInt16(parameters[0].Value);
@@ -125,7 +125,7 @@ namespace ESCHOLPMS
 
         public int Delete()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(this, "HR.spDeleteDesignation", _connectionString);
             int _success = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "HR.spDeleteDesignation", parameters);
             return _success;
@@ -133,7 +133,7 @@ namespace ESCHOLPMS
 
         public bool CheckDuplicate(string criteria)
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@Criteria", criteria);
             int _duplicateCount = (int)SqlHelper.ExecuteScalar(_connectionString, CommandType.StoredProcedure, "HR.spCheckDesignation", parameters);

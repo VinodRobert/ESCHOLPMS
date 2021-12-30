@@ -24,7 +24,7 @@ namespace ESCHOLPMS
         {
             txtPassword.Text = "";
             txtUserName.Text = "";
-            rdLan.Checked = true;
+           
         }
         private void frmLogin_Load(object sender, EventArgs e)
         {
@@ -38,10 +38,7 @@ namespace ESCHOLPMS
                 return;
             if (txtPassword.Text == "")
                 return;
-            if (rdLan.Checked == true)
-                GlobalVariables.connectedBy = 0;
-            if (rdRemote.Checked == true)
-                GlobalVariables.connectedBy = 1;
+           
 
             DataSet ds = ams.Login(txtUserName.Text.Trim(), txtPassword.Text.Trim());
 

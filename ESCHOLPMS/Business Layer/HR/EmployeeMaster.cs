@@ -192,7 +192,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = "EmployeeCode";
             else
                 _qr.OrderBy = orderby;
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "HR.spSelectEmployeeMaster", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectEmployeeMaster", parameters);
             return ds;
@@ -204,7 +204,7 @@ namespace ESCHOLPMS
             _qr.FieldList = "EmployeeCode,EmployeeNumber,EmployeeName,DateOfBirth,DateJoinOrganization,DateJoinGrade,BloodGroup,Sex,PhotoFileName,LandLine,Mobile,Email,DepartmentID,DesignationID,PANNumber,PFNumber,ESINumber,BankID,BankAccountNumber,SubLedgerID,CostCentreID,AddressID,LeaveDetailsID,Status,AadhaarNo,EligibleForPF,EligibleForESI";
             _qr.Criteria = "EmployeeCode=" + this.EmployeeCode.ToString();
             _qr.OrderBy = "EmployeeCode";
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "HR.spSelectEmployeeMaster", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectEmployeeMaster", parameters);
             ESHCOLPMS.ImportProperty.ImportData(this, ds);
@@ -212,7 +212,7 @@ namespace ESCHOLPMS
 
         public int Update()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(this, "HR.spAddEditEmployeeMaster", _connectionString);
             int _success = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "HR.spAddEditEmployeeMaster", parameters);
             EmployeeCode = Convert.ToInt32(parameters[0].Value);
@@ -221,7 +221,7 @@ namespace ESCHOLPMS
 
         public int Delete()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(this, "HR.spDeleteEmployee", _connectionString);
             int _success = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "HR.spDeleteEmployee", parameters);
             return _success;
@@ -241,7 +241,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = "EmployeeCode";
             else
                 _qr.OrderBy = orderby;
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "[HR].[spSelectHRStatusDetails]", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[HR].[spSelectHRStatusDetails]", parameters);
             return ds;
@@ -249,7 +249,7 @@ namespace ESCHOLPMS
 
         public int AddNewEmployee(string employeeNumber,string employeeName)
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] arParms = new SqlParameter[2];
             arParms[0] = new SqlParameter("@EMPLOYEENUMBER", SqlDbType.Text);
             arParms[0].Value = employeeNumber.ToString();

@@ -94,7 +94,7 @@ namespace ESCHOLPMS
 
         public int update()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(this, "Accounts.spAddEditCostCentres", _connectionString);
             int _success = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "Accounts.spAddEditCostCentres", parameters);
             CostCentreCode = Convert.ToInt32(parameters[0].Value);
@@ -123,7 +123,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = orderby;
 
 
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "Accounts.spSelectCostCentres", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "Accounts.spSelectCostCentres", parameters);
             return ds;
@@ -132,14 +132,14 @@ namespace ESCHOLPMS
 
         private DataSet FetchExpenditureSummary()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[Accounts].[spRptCostCentreExpenditure]");
             return ds;
         }
 
         public DataSet FetchProjectDetails(int _costCentreID)
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@CostCentreCode", _costCentreID);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[Accounts].[spSelectProjectDetailsFromCostCentreCode]",parameters);
@@ -152,7 +152,7 @@ namespace ESCHOLPMS
             _qr.FieldList = " CostCentreCode,CostCentreIdentifier,CostCentre,ShortName,ParentID,Editable,PettyCashID,LastModified,LocalityID,SubLedgerID ";
             _qr.Criteria = "CostCentreCode=" + this.CostCentreCode.ToString();
             _qr.OrderBy = "CostCentreCode";
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "Accounts.spSelectCostCentres", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "Accounts.spSelectCostCentres", parameters);
             ESHCOLPMS.ImportProperty.ImportData(this, ds);
@@ -160,7 +160,7 @@ namespace ESCHOLPMS
 
         public DataSet getCostCentreCode(string _criteria)
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter parameter = new SqlParameter("@Criteria", _criteria);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[Accounts].[spLoadNextCostCentreIdentifier]", parameter);
             return ds;

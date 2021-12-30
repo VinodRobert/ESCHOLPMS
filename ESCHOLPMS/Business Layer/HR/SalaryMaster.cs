@@ -133,7 +133,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = "SalaryMasterCode";
             else
                 _qr.OrderBy = orderby;
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "HR.spSelectSalaryMaster", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectSalaryMaster", parameters);
             return ds;
@@ -141,7 +141,7 @@ namespace ESCHOLPMS
 
         public DataSet Fetch()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectSalaryMaster");
             return ds;
         }
@@ -152,7 +152,7 @@ namespace ESCHOLPMS
             _qr.FieldList = " * ";
             _qr.Criteria = "SalaryMasterCode=" + this.SalaryMasterCode.ToString();
             _qr.OrderBy = "SalaryMasterCode";
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "HR.spSelectSalaryMaster", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectSalaryMaster", parameters);
             ImportProperty.ImportData(this, ds);
@@ -160,7 +160,7 @@ namespace ESCHOLPMS
 
         public int Update()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(this, "HR.spAddEditSalaryMaster", _connectionString);
             int _success = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "HR.spAddEditSalaryMaster", parameters);
             SalaryMasterCode = Convert.ToInt32(parameters[0].Value);

@@ -72,18 +72,18 @@ namespace ESCHOLPMS
             else
                 _qr.OrderBy = orderby;
 
-            string _connectionString = SqlHelper.GetConnectionString();
-            string remoteConnectionString = SqlHelper.GetMasterDataConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            
 
 
-            SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "TWO", remoteConnectionString);
+            //SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "TWO", remoteConnectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "TWO");
             return ds;
         }
 
         public DataSet Fetch()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectDepartment");
             return ds;
         }
@@ -94,7 +94,7 @@ namespace ESCHOLPMS
             _qr.FieldList = " DepartmentCode,DepartmentName ";
             _qr.Criteria = "DepartmentCode=" + this.DepartmentCode.ToString();
             _qr.OrderBy = "DepartmentCode";
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "HR.spSelectDepartment", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectDepartment", parameters);
             ESHCOLPMS.ImportProperty.ImportData(this, ds);
@@ -102,7 +102,7 @@ namespace ESCHOLPMS
 
         public int Update()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(this, "HR.spAddEditDepartment", _connectionString);
             int _success = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "HR.spAddEditDepartment", parameters);
             DepartmentCode = Convert.ToInt32(parameters[0].Value);
@@ -111,7 +111,7 @@ namespace ESCHOLPMS
 
         public int Delete()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(this, "HR.spDeleteDepartment", _connectionString);
             int _success = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "HR.spDeleteDepartment", parameters);
             return _success;
@@ -119,7 +119,7 @@ namespace ESCHOLPMS
 
         public bool CheckDuplicate(string criteria)
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@Criteria", criteria);
             int _duplicateCount = (int)SqlHelper.ExecuteScalar(_connectionString, CommandType.StoredProcedure, "HR.spCheckDepartment", parameters);

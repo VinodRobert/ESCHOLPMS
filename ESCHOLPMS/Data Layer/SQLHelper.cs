@@ -83,42 +83,26 @@ namespace SQLHelper
             }
         }
 
-        public static string GetConnectionString(int x,int y)
+        public static string GetConnectionStringFromRegistry(int x,int y)
         {
             string _connectionString;
             _connectionString = ReadRegistryForConnectionString();
             return _connectionString;
         }
 
-        public static string GetConnectionString()
+        public static string GetConnectionString(int versionID)
         {
-            string _connectionString = "";
-            if (ESCHOLPMS.GlobalVariables.connectedBy == 0)
-            {
-                _connectionString = "Server = BERACHAH; Database = ESCHOLDB; User ID = BERACHAH; Password = beenaDIANA";
-            }
-            else if (ESCHOLPMS.GlobalVariables.connectedBy == 1)
-            {
-                _connectionString = "Server = 117.223.187.194; Database =ESCHOLDB; User ID = VINOD; Password = beenaDIANA";
-            }
-            return _connectionString;
+           string _connectionString = "";
+           if (versionID==1)
+             _connectionString = "Server = 103.171.181.42; Database = ESHCOLERP; User ID = ERPUSER; Password = ERPUSER"; 
+           else
+             _connectionString = "Server = 103.171.181.42; Database = ESHCOLDB ; User ID = ERPUSER; Password = ERPUSER";
+
+           return _connectionString;
            
         }
 
-        public static string GetMasterDataConnectionString()
-        {
-            string _remoteconnectionString = "";
-            if (ESCHOLPMS.GlobalVariables.connectedBy == 0)
-            {
-                _remoteconnectionString = "Server =BERACHAH ; Database = 1718_ESHCOLVCEPVT; User ID = BERACHAH; Password = beenaDIANA";
-            }
-            else if (ESCHOLPMS.GlobalVariables.connectedBy == 1)
-            {
-                _remoteconnectionString = "Server = 117.223.187.194; Database =ESCHOLDB; User ID = VINOD; Password = beenaDIANA";
-            }
-            return _remoteconnectionString;
-
-        }
+      
         public static string GetConnectionStringAttachment()
         {
             string _connectionString = "";
@@ -164,7 +148,7 @@ namespace SQLHelper
         }
 
 
-        public static string GetConnectionString(int Direct)
+        public static string GetConnectionStringDirect(int Direct)
         {
            
             string _connectionString;

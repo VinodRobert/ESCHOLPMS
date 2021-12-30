@@ -228,7 +228,7 @@ namespace ESCHOLPMS
                 _qr.OrderBy = "AddressCode";
             else
                 _qr.OrderBy = orderby;
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "HR.spSelectAddressBook", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectAddressBook", parameters);
             return ds;
@@ -236,7 +236,7 @@ namespace ESCHOLPMS
 
         public DataSet Fetch()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectAddressBook");
             return ds;
         }
@@ -247,7 +247,7 @@ namespace ESCHOLPMS
             _qr.FieldList = " AddressCode,PresentHouse,PresentStreet,PresentPostOffice,PresentPlace,PresentDistrict,PresentState,PresentPincode,PermanentHouse,PermanentStreet,PermanentPostOffice,PermanentPlace,PermanentDistrict,PermanentState,PermanentPincode ";
             _qr.Criteria = "AddressCode=" + this.AddressCode.ToString();
             _qr.OrderBy = "AddressCode";
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(_qr, "HR.spSelectAddressBook", _connectionString);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "HR.spSelectAddressBook", parameters);
             ImportProperty.ImportData(this, ds);
@@ -255,7 +255,7 @@ namespace ESCHOLPMS
 
         public int Update()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(this, "HR.spAddEditAddressBook", _connectionString);
             int _success = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "HR.spAddEditAddressBook", parameters);
             AddressCode = Convert.ToInt16(parameters[0].Value);
@@ -264,7 +264,7 @@ namespace ESCHOLPMS
 
         public int Delete()
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = SqlHelper.BindParameters(this, "HR.spDeleteAddressBook", _connectionString);
             int _success = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "HR.spDeleteAddressBook", parameters);
             return _success;
@@ -272,7 +272,7 @@ namespace ESCHOLPMS
 
         public bool CheckDuplicate(string criteria)
         {
-            string _connectionString = SqlHelper.GetConnectionString();
+            string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@Criteria", criteria);
             int _duplicateCount = (int)SqlHelper.ExecuteScalar(_connectionString, CommandType.StoredProcedure, "HR.spCheckAddressBook", parameters);
