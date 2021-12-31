@@ -43,22 +43,29 @@ namespace ESCHOLPMS
         {
             if (cmbAccessPoint.Text == "Select Access Point")
                 return;
-            FormRequestHeader();
-            FetchAcessHistory();
             DisplayAccessHistory();
         }
 
-        private void FormRequestHeader()
-        { 
+        private void UpdateTodaysSwipes()
+        {
+            FormRequestHeader();
+            FetchAcessHistory();
+        }
 
+
+        private void FormRequestHeader()
+        {
+            DateTime thisDay = DateTime.Today;
+            string thisDayString = thisDay.ToString("d");
+            
             List<int> rolesList = new List<int>() {   1750 };
             historyRequest = new AccessHistoryRequest();
 
             Filters f = new Filters();
             f.roles = new List<int>() { 1750 };
             
-            DateTime startTime   = Convert.ToDateTime(dtStartDate.Value);
-            DateTime endTime = Convert.ToDateTime(dtEndDate.Value);
+            DateTime startTime   = Convert.ToDateTime(thisDayString);
+            DateTime endTime = Convert.ToDateTime(thisDayString);
             string startTimeString = Convert.ToDateTime(startTime).ToString("yyyy-MM-dd HH:mm:ss +05:30");
             string endTimeString = Convert.ToDateTime(endTime).ToString("yyyy-MM-dd 23:59:59 +05:30");
             int accessPoint = Convert.ToInt16(cmbAccessPoint.SelectedValue);
@@ -88,49 +95,48 @@ namespace ESCHOLPMS
 
         private void DisplayAccessHistory()
         {
+            String startDateString;
+            String endDateString;
+            startDateString = Convert.ToDateTime(dtStartDate.Value).ToShortDateString();
+            endDateString = Convert.ToDateTime(dtEndDate.Value).ToShortDateString();
+            int selectedUser = Convert.ToInt16(cmbUsers.SelectedValue);
+            DataSet dsAttendance = pms.UpdateAttendanceHistory(startDateString, endDateString, selectedUser);
+            SkinManager.SetVisualStyle(this.gridHistory, VisualTheme.Office2010Blue);
+            SkinManager.SetVisualStyle(this, VisualTheme.Office2010Blue);
+            gridHistory.DataSource = dsAttendance.Tables[0];
 
-            //String startDateString;
-            //String endDateString;
-            //startDateString = Convert.ToDateTime(dtStartDate.Value).ToShortDateString();
-            //endDateString = Convert.ToDateTime(dtEndDate.Value).ToShortDateString();
-            //int selectedUser = Convert.ToInt16(cmbUsers.SelectedValue);
-            //DataSet dsAttendance = pms.UpdateAttendanceHistory(startDateString, endDateString, selectedUser);
-            //SkinManager.SetVisualStyle(this.gridHistory, VisualTheme.Office2010Blue);
-            //SkinManager.SetVisualStyle(this, VisualTheme.Office2010Blue);
-            //gridHistory.DataSource = dsAttendance.Tables[0];
+            gridHistory.TableDescriptor.Columns[0].HeaderText = "Site Name";
+            gridHistory.TableDescriptor.Columns[0].Width = 150;
+            gridHistory.TableDescriptor.Columns[0].AllowFilter = true;
 
-            //gridHistory.TableDescriptor.Columns[0].HeaderText = "Site Name";
-            //gridHistory.TableDescriptor.Columns[0].Width = 150;
-            //gridHistory.TableDescriptor.Columns[0].AllowFilter = true;
+            gridHistory.TableDescriptor.Columns[1].HeaderText = "Location";
+            gridHistory.TableDescriptor.Columns[1].Width = 150;
 
-            //gridHistory.TableDescriptor.Columns[1].HeaderText = "Location";
-            //gridHistory.TableDescriptor.Columns[1].Width = 150;
+            gridHistory.TableDescriptor.Columns[2].HeaderText = "Access Point Name";
+            gridHistory.TableDescriptor.Columns[2].Width = 150;
+            gridHistory.TableDescriptor.Columns[2].AllowFilter = true;
 
-            //gridHistory.TableDescriptor.Columns[2].HeaderText = "Access Point Name";
-            //gridHistory.TableDescriptor.Columns[2].Width = 150;
-            //gridHistory.TableDescriptor.Columns[2].AllowFilter = true;
+            gridHistory.TableDescriptor.Columns[3].HeaderText = "Staff Name";
+            gridHistory.TableDescriptor.Columns[3].Width = 150;
+            gridHistory.TableDescriptor.Columns[3].AllowFilter = true;
 
-            //gridHistory.TableDescriptor.Columns[3].HeaderText = "Staff Name";
-            //gridHistory.TableDescriptor.Columns[3].Width = 150;
-            //gridHistory.TableDescriptor.Columns[3].AllowFilter = true;
+            gridHistory.TableDescriptor.Columns[4].HeaderText = "Check In";
+            gridHistory.TableDescriptor.Columns[4].Width = 150;
+            gridHistory.TableDescriptor.Columns[4].Appearance.AnyCell.CellType = "DateTime";
 
-            //gridHistory.TableDescriptor.Columns[4].HeaderText = "Check In";
-            //gridHistory.TableDescriptor.Columns[4].Width = 150;
-            //gridHistory.TableDescriptor.Columns[4].Appearance.AnyCell.CellType = "DateTime";
-
-            //gridHistory.TableDescriptor.Columns[5].HeaderText = "Check Out";
-            //gridHistory.TableDescriptor.Columns[5].Width = 150;
-            //gridHistory.TableDescriptor.Columns[5].Appearance.AnyCell.CellType = "DateTime";
+            gridHistory.TableDescriptor.Columns[5].HeaderText = "Check Out";
+            gridHistory.TableDescriptor.Columns[5].Width = 150;
+            gridHistory.TableDescriptor.Columns[5].Appearance.AnyCell.CellType = "DateTime";
 
 
-            //foreach (Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor column in this.gridHistory.TableDescriptor.Columns)
-            //{
-            //    column.AllowFilter = true;
-            //}
+            foreach (Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor column in this.gridHistory.TableDescriptor.Columns)
+            {
+                column.AllowFilter = true;
+            }
 
-            //gridHistory.Refresh();
-            //gridHistory.Visible = true;
-
+            gridHistory.Refresh();
+            gridHistory.Visible = true;
+           
         }
 
 
@@ -174,7 +180,11 @@ namespace ESCHOLPMS
                 DateTime swipeLocalTime;
                 string localTimeString;
                 string[] dateInfo;
-                
+                string[] months = { "Jan", "Feb", "Mar", "Apr" ,"May", "Jun", "Jul", "Aug", "Sep", "Oct",  "Nov", "Dec" };
+                int monthID;
+                string monthShortName;
+                string revisedDateString;
+                 
                 int startIndex;
                 string datePortion;
                 string timePortion;
@@ -183,13 +193,6 @@ namespace ESCHOLPMS
                 System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
                 foreach (AccessHistory al in accessHistoryLists.message.accessHistory)
                 {
-                    //swipeTime = new DateTime(1970, 1, 1, 0, 0, 0, 0); //from start epoch time
-                    //accessID = Convert.ToInt32(al.id);
-                    //accessedTime = Convert.ToInt64(al.accessedAt);
-                    //swipeTime = swipeTime.AddSeconds(accessedTime);
-                    //swipeLocalTime = TimeZoneInfo.ConvertTimeFromUtc(swipeTime, INDIAN_ZONE);
-                    //userID = Convert.ToInt16(al.user.id);
-                    //userName = Convert.ToString(al.user.name);
                     accessPointID = Convert.ToInt16(al.accessPoint.id);
                     swipeTime = new DateTime(1970, 1, 1, 0, 0, 0, 0); //from start epoch time
                     accessID = Convert.ToInt32(al.id);
@@ -201,10 +204,15 @@ namespace ESCHOLPMS
                     startIndex = localTimeString.Length - 8;
                     timePortion = localTimeString.Substring(startIndex,8 );
                     dateInfo = datePortion.Split('/');
+                    monthID = Convert.ToInt16(dateInfo[1])-1;
+                    monthShortName = Convert.ToString(months[monthID]);
+                    revisedDateString = Convert.ToString(dateInfo[0]) + "/" + monthShortName + "/" + Convert.ToString(dateInfo[2]) + " " + timePortion;
 
+                    
+                        
                     userID = Convert.ToInt16(al.user.id);
                     userName = Convert.ToString(al.user.name);
-                    success = pms.InsertAccessHistory(accessPointID, userID, swipeLocalTime);
+                    success = pms.InsertAccessHistory(accessPointID, userID, revisedDateString);
                 }
                  
             }
@@ -279,6 +287,7 @@ namespace ESCHOLPMS
 
         private void frmAccessHistory_Load(object sender, EventArgs e)
         {
+            UpdateTodaysSwipes();
             ResetAll();
             LoadUsers(0);
             dtStartDate.DateTimePattern = DateTimePattern.LongDate;

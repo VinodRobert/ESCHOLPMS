@@ -185,11 +185,11 @@ namespace ESCHOLPMS
             return ds;
         }
 
-        public int InsertAccessHistory(int accessPointID,int userID,DateTime swipeLocalTime)
+        public int InsertAccessHistory(int accessPointID,int userID,string revisedDateString)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "INSERT INTO AccessHistory(ACCESSID,USERID,ACCESSTIME) VALUES(";
-            sql = sql + Convert.ToString(accessPointID) + "," + Convert.ToString(userID) + ",'" + Convert.ToDateTime(swipeLocalTime) + "')";
+            sql = sql + Convert.ToString(accessPointID) + "," + Convert.ToString(userID) + ",'" + revisedDateString + "')";
             int i = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
             return i;
         }
