@@ -12,7 +12,8 @@ namespace ESCHOLPMS
             public static Int16  UserRole;
             public static String UserID;
             public static Int16  connectedBy;
-            public static Int16  projectCode;
+            public static Int16  projectID;
+            public static Int16  costCentreID;
             public static Int16  borgID;
             public static List<Int16> previlagedMenus = new List<Int16>();
             public static string ProjectName;

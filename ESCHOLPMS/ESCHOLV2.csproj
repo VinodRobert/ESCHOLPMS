@@ -386,6 +386,8 @@
     <Compile Include="Business Layer\HR\EmployeeMaster.cs" />
     <Compile Include="Business Layer\HR\Ledger.cs" />
     <Compile Include="Business Layer\HR\SalaryMaster.cs" />
+    <Compile Include="Business Layer\LabourManagement\Labour.cs" />
+    <Compile Include="Business Layer\MIS\MIS.CS" />
     <Compile Include="Business Layer\V2\EscholV2.cs" />
     <Compile Include="Data Layer\SQLHelper.cs" />
     <Compile Include="Presentation Layer\API\frmAccessHistory.cs">
@@ -423,6 +425,18 @@
     </Compile>
     <Compile Include="Presentation Layer\API\frmAuthToken.Designer.cs">
       <DependentUpon>frmAuthToken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourLists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourLists.Designer.cs">
+      <DependentUpon>frmLabourLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmNewLabour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmNewLabour.Designer.cs">
+      <DependentUpon>frmNewLabour.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\Logins\frmLoginUsers.cs">
       <SubType>Form</SubType>
@@ -472,6 +486,12 @@
     <Compile Include="Presentation Layer\Masters\frmListOfEmployees.Designer.cs">
       <DependentUpon>frmListOfEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\MIS\ClientBIll\frmClientBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\MIS\ClientBIll\frmClientBill.Designer.cs">
+      <DependentUpon>frmClientBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation Layer\API\frmAccessHistory.resx">
@@ -491,6 +511,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\API\frmAuthToken.resx">
       <DependentUpon>frmAuthToken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourLists.resx">
+      <DependentUpon>frmLabourLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmNewLabour.resx">
+      <DependentUpon>frmNewLabour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Logins\frmLoginUsers.resx">
       <DependentUpon>frmLoginUsers.cs</DependentUpon>
@@ -515,6 +541,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Masters\frmListOfEmployees.resx">
       <DependentUpon>frmListOfEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\MIS\ClientBIll\frmClientBill.resx">
+      <DependentUpon>frmClientBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

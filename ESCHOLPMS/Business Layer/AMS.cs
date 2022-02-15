@@ -30,6 +30,22 @@ namespace ESCHOLPMS
             return ds;
         }
 
+        public DataSet FetchProjectDetails(int projectID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT * FROM EXT.PROJECTS WHERE PROJECTCODE = "+Convert.ToString(projectID);
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+
+        public DataSet FetchProjects(int loginID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT PROJECTCODE,LEFT(PROJECTNAME,50) PROJECTNAME FROM EXT.PROJECTS WHERE PROJECTCODE IN(SELECT PROJECTID ";
+            sql = sql + " FROM USERPROJECT WHERE LOGINID = " + Convert.ToString(loginID) + " ) ORDER BY PROJECTNAME ";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
 
         public DataSet Login(string userName, string password)
         {

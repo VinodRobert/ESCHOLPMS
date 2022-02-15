@@ -35,13 +35,16 @@
             this.lblPassword = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtUserName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.txtPassword = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.btnLogin = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnClose = new Syncfusion.WinForms.Controls.SfButton();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.lblProject = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.cmbProjects = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.btnLogin = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbProjects)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +52,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(382, -3);
+            this.label1.Location = new System.Drawing.Point(357, -4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(271, 46);
             this.label1.TabIndex = 2;
@@ -68,96 +71,127 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ESCHOLPMS.Properties.Resources.Vettoor_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(698, 78);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 283);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(283, 109);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblUserName
             // 
+            this.lblUserName.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.Location = new System.Drawing.Point(290, 93);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(103, 20);
+            this.lblUserName.Size = new System.Drawing.Size(105, 22);
             this.lblUserName.TabIndex = 3;
             this.lblUserName.Text = "User Name";
             // 
             // lblPassword
             // 
+            this.lblPassword.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(290, 147);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(89, 20);
+            this.lblPassword.Size = new System.Drawing.Size(94, 22);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password";
             // 
             // txtUserName
             // 
-            this.txtUserName.BeforeTouchSize = new System.Drawing.Size(214, 28);
+            this.txtUserName.BeforeTouchSize = new System.Drawing.Size(280, 28);
+            this.txtUserName.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(478, 93);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(214, 28);
-            this.txtUserName.TabIndex = 6;
+            this.txtUserName.Size = new System.Drawing.Size(280, 28);
+            this.txtUserName.TabIndex = 0;
             this.txtUserName.Text = "textBoxExt1";
             // 
             // txtPassword
             // 
-            this.txtPassword.BeforeTouchSize = new System.Drawing.Size(214, 28);
+            this.txtPassword.BeforeTouchSize = new System.Drawing.Size(280, 28);
+            this.txtPassword.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(478, 147);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(214, 28);
-            this.txtPassword.TabIndex = 7;
+            this.txtPassword.Size = new System.Drawing.Size(280, 28);
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "textBoxExt1";
+            // 
+            // autoLabel1
+            // 
+            this.autoLabel1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel1.ForeColor = System.Drawing.Color.Red;
+            this.autoLabel1.Location = new System.Drawing.Point(378, 361);
+            this.autoLabel1.Name = "autoLabel1";
+            this.autoLabel1.Size = new System.Drawing.Size(306, 19);
+            this.autoLabel1.TabIndex = 12;
+            this.autoLabel1.Text = "Release Date:01 Jan 2021  Version 1.0";
+            // 
+            // lblProject
+            // 
+            this.lblProject.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProject.ForeColor = System.Drawing.Color.Blue;
+            this.lblProject.Location = new System.Drawing.Point(290, 203);
+            this.lblProject.Name = "lblProject";
+            this.lblProject.Size = new System.Drawing.Size(70, 22);
+            this.lblProject.TabIndex = 13;
+            this.lblProject.Text = "Project";
+            // 
+            // cmbProjects
+            // 
+            this.cmbProjects.DisplayMember = "PROJECTNAME";
+            this.cmbProjects.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cmbProjects.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProjects.Location = new System.Drawing.Point(365, 193);
+            this.cmbProjects.Name = "cmbProjects";
+            this.cmbProjects.Size = new System.Drawing.Size(393, 32);
+            this.cmbProjects.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProjects.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProjects.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbProjects.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProjects.TabIndex = 2;
+            this.cmbProjects.Text = "Select Project Name";
+            this.cmbProjects.ValueMember = "PROJECTCODE";
             // 
             // btnLogin
             // 
             this.btnLogin.AccessibleName = "Button";
-            this.btnLogin.BackColor = System.Drawing.Color.MediumOrchid;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnLogin.FocusRectangleVisible = true;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnLogin.Location = new System.Drawing.Point(290, 216);
+            this.btnLogin.BackColor = System.Drawing.Color.Magenta;
+            this.btnLogin.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(378, 245);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(96, 28);
-            this.btnLogin.Style.BackColor = System.Drawing.Color.MediumOrchid;
-            this.btnLogin.TabIndex = 10;
+            this.btnLogin.Size = new System.Drawing.Size(112, 41);
+            this.btnLogin.Style.BackColor = System.Drawing.Color.Magenta;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnClose
+            // btnCancel
             // 
-            this.btnClose.AccessibleName = "Button";
-            this.btnClose.BackColor = System.Drawing.Color.Lavender;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnClose.Location = new System.Drawing.Point(596, 216);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(96, 28);
-            this.btnClose.Style.BackColor = System.Drawing.Color.Lavender;
-            this.btnClose.TabIndex = 11;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = false;
-            // 
-            // autoLabel1
-            // 
-            this.autoLabel1.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoLabel1.ForeColor = System.Drawing.Color.Red;
-            this.autoLabel1.Location = new System.Drawing.Point(344, 56);
-            this.autoLabel1.Name = "autoLabel1";
-            this.autoLabel1.Size = new System.Drawing.Size(309, 17);
-            this.autoLabel1.TabIndex = 12;
-            this.autoLabel1.Text = "Release Date:01 Jan 2021  Version 1.0";
+            this.btnCancel.AccessibleName = "Button";
+            this.btnCancel.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(646, 245);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(112, 41);
+            this.btnCancel.Style.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 299);
-            this.Controls.Add(this.autoLabel1);
-            this.Controls.Add(this.btnClose);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(770, 411);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.cmbProjects);
+            this.Controls.Add(this.lblProject);
+            this.Controls.Add(this.autoLabel1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lblPassword);
@@ -175,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbProjects)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,9 +224,11 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel lblPassword;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtUserName;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtPassword;
-        private Syncfusion.WinForms.Controls.SfButton btnLogin;
-        private Syncfusion.WinForms.Controls.SfButton btnClose;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel lblProject;
+        private Syncfusion.WinForms.ListView.SfComboBox cmbProjects;
+        private Syncfusion.WinForms.Controls.SfButton btnLogin;
+        private Syncfusion.WinForms.Controls.SfButton btnCancel;
     }
 }
 

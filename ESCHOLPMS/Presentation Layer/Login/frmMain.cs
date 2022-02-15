@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+ 
 
 namespace ESCHOLPMS 
 {
@@ -103,6 +104,23 @@ namespace ESCHOLPMS
         {
             frmAccessHistory accessHistory = new frmAccessHistory();
             accessHistory.Show();
+        }
+
+        private void clientBillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClientBill clientBill = new frmClientBill();
+            clientBill.Show();
+        }
+
+        private void newLabourToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLabourLists ll = new frmLabourLists();
+            ll.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
