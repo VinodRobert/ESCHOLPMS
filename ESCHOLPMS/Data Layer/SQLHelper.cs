@@ -94,9 +94,9 @@ namespace SQLHelper
         {
            string _connectionString = "";
            if (versionID==1)
-             _connectionString = "Server = 103.171.181.42; Database = ESHCOLERP; User ID = ERPUSER; Password = ERPUSER"; 
-           else
-             _connectionString = "Server = 103.171.181.42; Database = ESHCOLDB ; User ID = ERPUSER; Password = ERPUSER";
+             _connectionString = "Server = 103.171.181.42; Database = ATTACHMENTS; User ID = ERPUSER; Password = ERPUSER"; 
+           else if (versionID ==2)
+             _connectionString = "Server = 103.171.181.42; Database = VERSION2ESHCOL ; User ID = ERPUSER; Password = ERPUSER";
 
            return _connectionString;
            

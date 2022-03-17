@@ -373,6 +373,7 @@
     <Compile Include="Business Layer\API\AccessSites.cs" />
     <Compile Include="Business Layer\API\OrganizationID.cs" />
     <Compile Include="Business Layer\API\SpintlyUsers.cs" />
+    <Compile Include="Business Layer\Common\Common.cs" />
     <Compile Include="Business Layer\Common\ImportProperty.cs" />
     <Compile Include="Business Layer\Common\QueryString.cs" />
     <Compile Include="Business Layer\Common\UtilityFunctions.cs" />
@@ -387,6 +388,8 @@
     <Compile Include="Business Layer\HR\Ledger.cs" />
     <Compile Include="Business Layer\HR\SalaryMaster.cs" />
     <Compile Include="Business Layer\LabourManagement\Labour.cs" />
+    <Compile Include="Business Layer\LabourManagement\LabourList.cs" />
+    <Compile Include="Business Layer\LabourManagement\SingleLabour.cs" />
     <Compile Include="Business Layer\MIS\MIS.CS" />
     <Compile Include="Business Layer\V2\EscholV2.cs" />
     <Compile Include="Data Layer\SQLHelper.cs" />
@@ -426,11 +429,23 @@
     <Compile Include="Presentation Layer\API\frmAuthToken.Designer.cs">
       <DependentUpon>frmAuthToken.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourListsCertificate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourListsCertificate.Designer.cs">
+      <DependentUpon>frmLabourListsCertificate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\LabourManagement\frmLabourLists.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation Layer\LabourManagement\frmLabourLists.Designer.cs">
       <DependentUpon>frmLabourLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourCertificate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourCertificate.Designer.cs">
+      <DependentUpon>frmLabourCertificate.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\LabourManagement\frmNewLabour.cs">
       <SubType>Form</SubType>
@@ -512,8 +527,14 @@
     <EmbeddedResource Include="Presentation Layer\API\frmAuthToken.resx">
       <DependentUpon>frmAuthToken.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourListsCertificate.resx">
+      <DependentUpon>frmLabourListsCertificate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourLists.resx">
       <DependentUpon>frmLabourLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourCertificate.resx">
+      <DependentUpon>frmLabourCertificate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\frmNewLabour.resx">
       <DependentUpon>frmNewLabour.cs</DependentUpon>
@@ -571,6 +592,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NoImage.png" />
+    <None Include="Resources\Men.png" />
+    <None Include="Resources\Man.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Vettoor Logo.jpg" />

@@ -111,8 +111,11 @@ namespace ESCHOLPMS
             }
             else
             {
-                if (cmbProjects.Text == "Select Project")
+                if (cmbProjects.Text == "Select Project Name")
+                {
+                    btnLogin.Enabled = true;
                     return;
+                }
                 int projectID = Convert.ToInt16(cmbProjects.SelectedValue);
                 DataSet dsProjectDetails = ams.FetchProjectDetails(projectID);
                 GlobalVariables.costCentreID = Convert.ToInt16(dsProjectDetails.Tables[0].Rows[0]["CostCentreID"]);

@@ -74,12 +74,12 @@
             this.transferOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateJobStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLoginName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripProjectName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -405,6 +405,7 @@
             this.uploadDocumentsToolStripMenuItem.Name = "uploadDocumentsToolStripMenuItem";
             this.uploadDocumentsToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.uploadDocumentsToolStripMenuItem.Text = "Upload Documents";
+            this.uploadDocumentsToolStripMenuItem.Click += new System.EventHandler(this.uploadDocumentsToolStripMenuItem_Click);
             // 
             // approveDocumentsToolStripMenuItem
             // 
@@ -429,6 +430,13 @@
             this.updateJobStatusToolStripMenuItem.Name = "updateJobStatusToolStripMenuItem";
             this.updateJobStatusToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.updateJobStatusToolStripMenuItem.Text = "Update Job Status";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -468,13 +476,6 @@
             this.stripProjectName.Name = "stripProjectName";
             this.stripProjectName.Size = new System.Drawing.Size(125, 23);
             this.stripProjectName.Text = "Prroject Name";
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // frmMain
             // 

@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace ESCHOLPMS
 {
-    public partial class frmLabourLists : Form
+    public partial class frmLabourListsCertificate : Form
     {
         Labour lab = new Labour();
 
-        public frmLabourLists()
+        public frmLabourListsCertificate()
         {
             InitializeComponent();
         }
@@ -49,7 +49,7 @@ namespace ESCHOLPMS
         private void LoadLabours()
         {
             int costCentreID = Convert.ToInt16(GlobalVariables.costCentreID);
-            DataSet dslabours = lab.FetchCompleteLabours(costCentreID);
+            DataSet dslabours = lab.FetchCompleteLaboursForCertificate(costCentreID);
             List<LabourList> LabourListing = new List<LabourList>();
             LabourListing = CommonMethods.ConvertToList<LabourList>(dslabours.Tables[0]);
 
@@ -107,7 +107,7 @@ namespace ESCHOLPMS
             {
                 var record = (this.gridLabours.View.Records[rowIndex].Data as LabourList);
                 Int64 selectedLabour = Convert.ToInt64(record.LabourID.ToString());
-                frmNewLabour nl = new frmNewLabour(selectedLabour);
+                frmLabourCertificate nl = new frmLabourCertificate(selectedLabour);
                 nl.ShowDialog();
                 LoadLabours();
                  

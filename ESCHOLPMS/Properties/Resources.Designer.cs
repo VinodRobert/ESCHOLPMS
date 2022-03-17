@@ -73,6 +73,16 @@ namespace ESCHOLPMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Men {
+            get {
+                object obj = ResourceManager.GetObject("Men", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Vettoor_Logo {
             get {
                 object obj = ResourceManager.GetObject("Vettoor Logo", resourceCulture);

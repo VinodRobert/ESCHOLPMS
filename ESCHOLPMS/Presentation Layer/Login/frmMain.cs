@@ -122,5 +122,11 @@ namespace ESCHOLPMS
         {
             this.Close();
         }
+
+        private void uploadDocumentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLabourListsCertificate fc = new frmLabourListsCertificate();
+            fc.Show();
+        }
     }
 }
