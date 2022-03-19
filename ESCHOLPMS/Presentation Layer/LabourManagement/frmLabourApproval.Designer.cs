@@ -1,6 +1,6 @@
 ﻿namespace ESCHOLPMS 
 {
-    partial class frmLabourCertificate
+    partial class frmLabourApproval
     {
         /// <summary>
         /// Required designer variable.
@@ -67,8 +67,6 @@
             this.OpenFileEntrollment = new System.Windows.Forms.OpenFileDialog();
             this.OpenFileTradeCertificate = new System.Windows.Forms.OpenFileDialog();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.btnReUpload = new Syncfusion.WinForms.Controls.SfButton();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRollNumber)).BeginInit();
             this.panel1.SuspendLayout();
@@ -163,7 +161,8 @@
             this.btnBrowseEnrollment.TabIndex = 18;
             this.btnBrowseEnrollment.Text = "Browse";
             this.btnBrowseEnrollment.UseVisualStyleBackColor = false;
-            this.btnBrowseEnrollment.Click += new System.EventHandler(this.btnBrowseEnrollment_Click);
+            this.btnBrowseEnrollment.Visible = false;
+        
             // 
             // btnSave
             // 
@@ -175,7 +174,7 @@
             this.btnSave.Size = new System.Drawing.Size(96, 39);
             this.btnSave.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSave.TabIndex = 19;
-            this.btnSave.Text = "Upload";
+            this.btnSave.Text = "Approve";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -311,7 +310,8 @@
             this.btnBrowseTradeCertificate.TabIndex = 78;
             this.btnBrowseTradeCertificate.Text = "Browse";
             this.btnBrowseTradeCertificate.UseVisualStyleBackColor = false;
-            this.btnBrowseTradeCertificate.Click += new System.EventHandler(this.btnBrowseTradeCertificate_Click);
+            this.btnBrowseTradeCertificate.Visible = false;
+        
             // 
             // txtTradeCertificate
             // 
@@ -345,7 +345,8 @@
             this.btnBrowseIDProof.TabIndex = 81;
             this.btnBrowseIDProof.Text = "Browse";
             this.btnBrowseIDProof.UseVisualStyleBackColor = false;
-            this.btnBrowseIDProof.Click += new System.EventHandler(this.btnBrowseIDProof_Click);
+            this.btnBrowseIDProof.Visible = false;
+        
             // 
             // txtIDProofAttachment
             // 
@@ -449,9 +450,9 @@
             this.autoLabel8.Location = new System.Drawing.Point(454, 0);
             this.autoLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel8.Name = "autoLabel8";
-            this.autoLabel8.Size = new System.Drawing.Size(268, 29);
+            this.autoLabel8.Size = new System.Drawing.Size(292, 29);
             this.autoLabel8.TabIndex = 90;
-            this.autoLabel8.Text = "Uploading Certificates";
+            this.autoLabel8.Text = "Documents for Approval";
             // 
             // lblPhotoFileName
             // 
@@ -490,48 +491,18 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.Maroon;
-            this.lblStatus.Location = new System.Drawing.Point(776, 296);
+            this.lblStatus.Location = new System.Drawing.Point(719, 292);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(81, 29);
             this.lblStatus.TabIndex = 93;
             this.lblStatus.Text = "label1";
             // 
-            // btnReUpload
-            // 
-            this.btnReUpload.AccessibleName = "Button";
-            this.btnReUpload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnReUpload.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnReUpload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnReUpload.Location = new System.Drawing.Point(717, 553);
-            this.btnReUpload.Name = "btnReUpload";
-            this.btnReUpload.Size = new System.Drawing.Size(140, 39);
-            this.btnReUpload.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnReUpload.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnReUpload.TabIndex = 94;
-            this.btnReUpload.Text = "Re-Upload";
-            this.btnReUpload.UseVisualStyleBackColor = false;
-            this.btnReUpload.Click += new System.EventHandler(this.btnReUpload_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(343, 390);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(642, 16);
-            this.label1.TabIndex = 95;
-            this.label1.Text = "Please Make File Name Simple Without Special Characters - Size MUST be LESS THAN " +
-    "1 MB";
-            // 
-            // frmLabourCertificate
+            // frmLabourApproval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1166, 604);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnReUpload);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblPhotoFileName);
@@ -569,9 +540,9 @@
             this.Controls.Add(this.autoLabel2);
             this.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmLabourCertificate";
+            this.Name = "frmLabourApproval";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Labour | Certificate Upload";
+            this.Text = "Labour | Approve Documents";
             this.Load += new System.EventHandler(this.frmNewLabour_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRollNumber)).EndInit();
@@ -631,7 +602,5 @@
         private System.Windows.Forms.OpenFileDialog OpenFileEntrollment;
         private System.Windows.Forms.OpenFileDialog OpenFileTradeCertificate;
         private System.Windows.Forms.Label lblStatus;
-        private Syncfusion.WinForms.Controls.SfButton btnReUpload;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -429,6 +429,30 @@
     <Compile Include="Presentation Layer\API\frmAuthToken.Designer.cs">
       <DependentUpon>frmAuthToken.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourApproval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourApproval.Designer.cs">
+      <DependentUpon>frmLabourApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourDocumentApproval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourDocumentApproval.Designer.cs">
+      <DependentUpon>frmLabourDocumentApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTransferOutLabour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTransferOutLabour.Designer.cs">
+      <DependentUpon>frmTransferOutLabour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTransferOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTransferOut.Designer.cs">
+      <DependentUpon>frmTransferOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\LabourManagement\frmLabourListsCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -526,6 +550,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\API\frmAuthToken.resx">
       <DependentUpon>frmAuthToken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourApproval.resx">
+      <DependentUpon>frmLabourApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourDocumentApproval.resx">
+      <DependentUpon>frmLabourDocumentApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferOutLabour.resx">
+      <DependentUpon>frmTransferOutLabour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferOut.resx">
+      <DependentUpon>frmTransferOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourListsCertificate.resx">
       <DependentUpon>frmLabourListsCertificate.cs</DependentUpon>

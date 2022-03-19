@@ -1,6 +1,6 @@
 ﻿namespace ESCHOLPMS 
 {
-    partial class frmLabourListsCertificate
+    partial class frmTransferOut
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,9 @@
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn5 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn6 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn7 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
-            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn8 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn9 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.gridLabours = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.btnClose = new Syncfusion.WinForms.Controls.SfButton();
@@ -48,12 +48,12 @@
             // 
             this.autoLabel1.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel1.ForeColor = System.Drawing.Color.Blue;
-            this.autoLabel1.Location = new System.Drawing.Point(484, 9);
+            this.autoLabel1.Location = new System.Drawing.Point(363, 9);
             this.autoLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel1.Name = "autoLabel1";
-            this.autoLabel1.Size = new System.Drawing.Size(249, 23);
+            this.autoLabel1.Size = new System.Drawing.Size(531, 23);
             this.autoLabel1.TabIndex = 0;
-            this.autoLabel1.Text = "Document  Uploading ";
+            this.autoLabel1.Text = "List Of Labours - For Termination / Transfer Out";
             // 
             // gridLabours
             // 
@@ -77,42 +77,44 @@
             gridTextColumn3.AllowFiltering = true;
             gridTextColumn3.HeaderText = "Number";
             gridTextColumn3.MappingName = "LabourRollNo";
-            gridTextColumn3.Width = 130D;
+            gridTextColumn3.Width = 140D;
             gridTextColumn4.AllowEditing = false;
             gridTextColumn4.AllowFiltering = true;
             gridTextColumn4.HeaderText = "Name";
             gridTextColumn4.MappingName = "LabourName";
-            gridTextColumn4.Width = 245D;
+            gridTextColumn4.Width = 250D;
             gridTextColumn5.AllowEditing = false;
             gridTextColumn5.AllowFiltering = true;
-            gridTextColumn5.HeaderText = "Labour Type";
-            gridTextColumn5.MappingName = "TypeOfLabour";
-            gridTextColumn5.Width = 140D;
+            gridTextColumn5.HeaderText = "Mobile #";
+            gridTextColumn5.MappingName = "MobileNumber";
+            gridTextColumn5.Width = 120D;
             gridTextColumn6.AllowEditing = false;
             gridTextColumn6.AllowFiltering = true;
-            gridTextColumn6.HeaderText = "Skill";
-            gridTextColumn6.MappingName = "SkillType";
-            gridTextColumn6.Width = 110D;
+            gridTextColumn6.HeaderText = "Labour Type";
+            gridTextColumn6.MappingName = "TypeOfLabour";
+            gridTextColumn6.Width = 150D;
             gridTextColumn7.AllowEditing = false;
             gridTextColumn7.AllowFiltering = true;
-            gridTextColumn7.HeaderText = "Contractor";
-            gridTextColumn7.MappingName = "SubContractorName";
-            gridTextColumn7.Width = 180D;
-            gridDateTimeColumn1.AllowEditing = false;
-            gridDateTimeColumn1.AllowFiltering = true;
-            gridDateTimeColumn1.HeaderText = "Joining Date";
-            gridDateTimeColumn1.MappingName = "DateOfJoining";
-            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridTextColumn7.HeaderText = "Skill";
+            gridTextColumn7.MappingName = "SkillType";
+            gridTextColumn7.Width = 130D;
             gridTextColumn8.AllowEditing = false;
             gridTextColumn8.AllowFiltering = true;
-            gridTextColumn8.HeaderText = "Status";
-            gridTextColumn8.MappingName = "Status";
-            gridTextColumn8.Width = 210D;
+            gridTextColumn8.HeaderText = "Contractor";
+            gridTextColumn8.MappingName = "SubContractorName";
+            gridTextColumn8.Width = 180D;
             gridTextColumn9.AllowEditing = false;
             gridTextColumn9.AllowFiltering = true;
-            gridTextColumn9.HeaderText = "Column10";
-            gridTextColumn9.MappingName = "MobileNumber";
-            gridTextColumn9.Visible = false;
+            gridTextColumn9.HeaderText = "Status";
+            gridTextColumn9.MappingName = "Status";
+            gridTextColumn9.Width = 160D;
+            gridDateTimeColumn1.AllowEditing = false;
+            gridDateTimeColumn1.AllowFiltering = true;
+            gridDateTimeColumn1.HeaderText = "Column10";
+            gridDateTimeColumn1.MappingName = "DateOfJoining";
+            gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn1.Visible = false;
+            gridDateTimeColumn1.Width = 0D;
             this.gridLabours.Columns.Add(gridTextColumn1);
             this.gridLabours.Columns.Add(gridTextColumn2);
             this.gridLabours.Columns.Add(gridTextColumn3);
@@ -120,9 +122,9 @@
             this.gridLabours.Columns.Add(gridTextColumn5);
             this.gridLabours.Columns.Add(gridTextColumn6);
             this.gridLabours.Columns.Add(gridTextColumn7);
-            this.gridLabours.Columns.Add(gridDateTimeColumn1);
             this.gridLabours.Columns.Add(gridTextColumn8);
             this.gridLabours.Columns.Add(gridTextColumn9);
+            this.gridLabours.Columns.Add(gridDateTimeColumn1);
             this.gridLabours.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLabours.Location = new System.Drawing.Point(11, 67);
             this.gridLabours.Margin = new System.Windows.Forms.Padding(2);
@@ -151,7 +153,7 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // frmLabourListsCertificate
+            // frmTransferOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,9 +163,9 @@
             this.Controls.Add(this.autoLabel1);
             this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmLabourListsCertificate";
+            this.Name = "frmTransferOut";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Labour Lists | Upload Certificates";
+            this.Text = "Labour Lists";
             this.Load += new System.EventHandler(this.frmLabourLists_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridLabours)).EndInit();
             this.ResumeLayout(false);

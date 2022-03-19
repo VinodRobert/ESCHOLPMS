@@ -397,7 +397,7 @@
             // 
             this.newLabourToolStripMenuItem.Name = "newLabourToolStripMenuItem";
             this.newLabourToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.newLabourToolStripMenuItem.Text = "New Labour";
+            this.newLabourToolStripMenuItem.Text = "List - Labours";
             this.newLabourToolStripMenuItem.Click += new System.EventHandler(this.newLabourToolStripMenuItem_Click);
             // 
             // uploadDocumentsToolStripMenuItem
@@ -412,12 +412,14 @@
             this.approveDocumentsToolStripMenuItem.Name = "approveDocumentsToolStripMenuItem";
             this.approveDocumentsToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.approveDocumentsToolStripMenuItem.Text = "Approve Documents";
+            this.approveDocumentsToolStripMenuItem.Click += new System.EventHandler(this.approveDocumentsToolStripMenuItem_Click);
             // 
             // transferOutToolStripMenuItem
             // 
             this.transferOutToolStripMenuItem.Name = "transferOutToolStripMenuItem";
             this.transferOutToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.transferOutToolStripMenuItem.Text = "Transfer Out";
+            this.transferOutToolStripMenuItem.Click += new System.EventHandler(this.transferOutToolStripMenuItem_Click);
             // 
             // transferInToolStripMenuItem
             // 

@@ -128,5 +128,17 @@ namespace ESCHOLPMS
             frmLabourListsCertificate fc = new frmLabourListsCertificate();
             fc.Show();
         }
+
+        private void approveDocumentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLabourDocumentApproval fa = new frmLabourDocumentApproval();
+            fa.Show();
+        }
+
+        private void transferOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTransferOut  ft = new frmTransferOut();
+            ft.Show();
+        }
     }
 }

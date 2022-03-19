@@ -11,6 +11,14 @@ namespace ESCHOLPMS
 {
     class Labour
     {
+        public int ApproveDocuments(Int64 labourID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "Update LabourDetails set Status='Permanent Labour' WHERE LABOURID=" + Convert.ToString(labourID);
+            int k = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return k;
+        }
+
         public int ResetAttachments(Int64 labourID)
         {
              string _connectionString = SqlHelper.GetConnectionString(1);
@@ -157,6 +165,15 @@ namespace ESCHOLPMS
             return ds;
         }
 
+        public DataSet FetchLaboursForCertificateApproval(int costCentre)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,DATEOFJOINING,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
+            sql = sql + " FROM  LABOURDETAILS WHERE STATUS in ('Certificate Uploaded. Not Approved') AND CURRENTCOSTCENTREID= ";
+            sql = sql + Convert.ToString(costCentre) + "  ORDER BY LABOURROLLNO DESC ";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
         public DataSet FetchContractors(int costCentre)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);

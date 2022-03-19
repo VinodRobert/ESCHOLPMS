@@ -201,6 +201,34 @@ namespace ESCHOLPMS
             picPhoto.Image = newImage;
         }
 
+        private void  EnableControlsForPermanentLabour()
+        {
+            btnBrowse.Visible = false;
+            btnClear.Visible = false;
+            btnSave.Visible = false;
+            btnCancel.Visible = false;
+            txtName.Enabled = true;
+            txtIDProofNumberGiven.Enabled = true;
+            txtMobileNumber1.Enabled = true;
+            txtMobileNumber2.Enabled = true;
+            txtParentName.Enabled = true;
+            txtPemanentAddress.Enabled = true;
+            txtPIN.Enabled = true;
+            txtPresentAddress.Enabled = true;
+            txtRollNumber.Enabled = true;
+            cmbAccessCards.Enabled = true;
+            cmbBloodGroup.Enabled = true;
+            cmbGender.Enabled = true;
+            cmbIDProof.Enabled = true;
+            cmbJobType.Enabled = true;
+            cmbLabourType.Enabled = true;
+            cmbStates.Enabled = true;
+            cmbSubContractor.Enabled = true;
+            lblPhotoFileName.Visible = false;
+            lblStar.Visible = false;
+            lblMandatory.Visible = false;
+            
+        }
         private void LoadLabour(Int64 who)
         {
             if (who != 0)
@@ -235,6 +263,8 @@ namespace ESCHOLPMS
                 btnSave.Text = "Update";
                 if (currentStatus == "New")
                     OpenAllInputs();
+                else if (currentStatus == "Permanent Labour")
+                    EnableControlsForPermanentLabour();
                 else
                     OpenLimitedInputs();
             }

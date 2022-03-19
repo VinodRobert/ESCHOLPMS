@@ -17,7 +17,7 @@ using Syncfusion.Pdf.Parsing;
 
 namespace ESCHOLPMS
 {
-    public partial class frmLabourCertificate : Form
+    public partial class frmLabourApproval : Form
     {
         Int64 labourRollNumber;
         Int64 existingLabourID;
@@ -26,10 +26,7 @@ namespace ESCHOLPMS
         string connectionString;
         SqlConnection cn;
 
-      
-
-
-        public frmLabourCertificate(Int64 rollNumber)
+        public frmLabourApproval(Int64 rollNumber)
         {
             labourRollNumber = rollNumber;
             existingLabourID = labourRollNumber;
@@ -65,7 +62,7 @@ namespace ESCHOLPMS
             btnOpenEnrollment.Visible = false;
             btnOpenIDProof.Visible = false;
             btnOpenTradeCertificate.Visible = false;
-            btnReUpload.Visible = false;
+           
 
             lblStatus.Visible = false;
 
@@ -84,14 +81,11 @@ namespace ESCHOLPMS
 
         }
 
-
-
         private void frmNewLabour_Load(object sender, EventArgs e)
         {
             ReSetAll();
             LoadLabour(labourRollNumber);
         }
-
 
         private void GetImagesFromDatabase(Int64 who)
         {
@@ -139,28 +133,19 @@ namespace ESCHOLPMS
                 txtSubContractor.Text = Convert.ToString(dsWho["SubContractorName"]);
 
                 string currentStatus = Convert.ToString(dsWho["STATUS"]);
-                if (currentStatus == "New")
-                {
-                    lblStatus.Text = "Certificates Not Uploaded";
-                    btnOpenEnrollment.Visible = false;
-                    btnOpenIDProof.Visible = false;
-                    btnOpenTradeCertificate.Visible = false;
-                }
-                else if (currentStatus == "Certificate Uploaded. Not Approved")
-                {
-                    lblStatus.Text = "Certificate Uploaded; But not approved";
-                    btnBrowseEnrollment.Enabled = false;
-                    btnBrowseIDProof.Enabled = false;
-                    btnBrowseTradeCertificate.Enabled = false;
-                    btnReUpload.Visible = true;
-                    btnSave.Enabled = false;
-                }
-
+              
+                lblStatus.Text = "Certificate Uploaded; But not approved";
+                btnBrowseEnrollment.Enabled = false;
+                btnBrowseIDProof.Enabled = false;
+                btnBrowseTradeCertificate.Enabled = false;
+               
+                btnSave.Enabled = true;
+              
                 lblStatus.Visible = true;
                 LockAllInputs();
                 ShowPhoto();
                 ShowAttachments(who);
-                btnSave.Text = "Update";
+                btnSave.Text = "Approve";
 
             }
         }
@@ -193,8 +178,6 @@ namespace ESCHOLPMS
             }
         }
 
-
-
         private void LockAllInputs()
         {
             txtEnrollmentAttachment.ReadOnly = true;
@@ -209,12 +192,6 @@ namespace ESCHOLPMS
             txtTradeCertificate.ReadOnly = true;
         }
 
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ReSetAll();
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -224,98 +201,6 @@ namespace ESCHOLPMS
         {
             ReSetAll();
         }
-
-        private int ValidateEntry()
-        {
-            string errorArea = String.Empty;
-            string filetype;
-            string filename;
-
-            if (txtIDProofAttachment.Text == "")
-                errorArea = "ID Proof Attachment Missing ";
-            if (txtEnrollmentAttachment.Text == "")
-                errorArea = "Enrollment  Attachment Missing ";
-            if (txtTradeCertificate.Text == "")
-                errorArea = "Trader Certificate Missing ";
-
-            if (errorArea != "")
-            {
-                string errorMessage = "Missing Details - " + errorArea;
-                MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Default;
-                MessageBoxAdv.Show(this, errorMessage, "Error ?", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                return 0;
-            }
-
-
-            filename = txtIDProofAttachment.Text.Substring(Convert.ToInt32(txtIDProofAttachment.Text.LastIndexOf("\\")) + 1, txtIDProofAttachment.Text.Length - (Convert.ToInt32(txtIDProofAttachment.Text.LastIndexOf("\\")) + 1));
-            filetype = txtIDProofAttachment.Text.Substring(Convert.ToInt32(txtIDProofAttachment.Text.LastIndexOf(".")) + 1, txtIDProofAttachment.Text.Length - (Convert.ToInt32(txtIDProofAttachment.Text.LastIndexOf(".")) + 1));
-
-            if (filetype.ToUpper() != "PDF")
-            {
-                MessageBox.Show("Upload Only PDF Files");
-                return 0;
-            }
-
-            try
-            {
-                long allbytes = new FileInfo(txtIDProofAttachment.Text).Length;
-                if (allbytes > 1024000)
-                {
-                    MessageBox.Show("ID Proof Attachment Size Must Be Less Than 1 MB.");
-                    return 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error during File Read " + ex.ToString());
-            }
-
-            filename = txtEnrollmentAttachment.Text.Substring(Convert.ToInt32(txtEnrollmentAttachment.Text.LastIndexOf("\\")) + 1, txtEnrollmentAttachment.Text.Length - (Convert.ToInt32(txtEnrollmentAttachment.Text.LastIndexOf("\\")) + 1));
-            filetype = txtEnrollmentAttachment.Text.Substring(Convert.ToInt32(txtEnrollmentAttachment.Text.LastIndexOf(".")) + 1, txtEnrollmentAttachment.Text.Length - (Convert.ToInt32(txtEnrollmentAttachment.Text.LastIndexOf(".")) + 1));
-            if (filetype.ToUpper() != "PDF")
-            {
-                MessageBox.Show("Upload Only PDF Files");
-                return 0;
-            }
-            try
-            {
-                long allbytesEnroll = new FileInfo(txtEnrollmentAttachment.Text).Length;
-                if (allbytesEnroll > 1024000)
-                {
-                    MessageBox.Show("Enrollment  Attachment Size Must NOT Exceed 1 MB.");
-                    return 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error during File Read " + ex.ToString());
-            }
-
-            filename = txtTradeCertificate.Text.Substring(Convert.ToInt32(txtTradeCertificate.Text.LastIndexOf("\\")) + 1, txtTradeCertificate.Text.Length - (Convert.ToInt32(txtTradeCertificate.Text.LastIndexOf("\\")) + 1));
-            filetype = txtTradeCertificate.Text.Substring(Convert.ToInt32(txtTradeCertificate.Text.LastIndexOf(".")) + 1, txtTradeCertificate.Text.Length - (Convert.ToInt32(txtTradeCertificate.Text.LastIndexOf(".")) + 1));
-            if (filetype.ToUpper() != "PDF")
-            {
-                MessageBox.Show("Upload Only PDF Files");
-                return 0;
-            }
-
-            try
-            {
-                long allbytesTrade = new FileInfo(txtTradeCertificate.Text).Length;
-                if (allbytesTrade > 1024000)
-                {
-                    MessageBox.Show("Trade Certificate  Form Size Must Be Less Than 1 MB.");
-                    return 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error during File Read " + ex.ToString());
-            }
-            return 1;
-        }
-
-
 
         byte[] ReadFile(string sPath)
         {
@@ -379,54 +264,22 @@ namespace ESCHOLPMS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MessageBoxAdv.Show("Please Wait.Time Consuming...Press OK and Relax !!!");
-            btnSave.Enabled = false;
-            if (btnSave.Text == "Update")
+            string message = "Are You Sure To Approve ?";
+            string title = "Approval Confirmatikon";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBoxAdv.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
             {
-                if (ValidateEntry() == 1)
-                {
-                    SaveAttachments();
-                    UpdateLabourStatus();
-                }
+                int i = lab.ApproveDocuments(existingLabourID);
+                MessageBoxAdv.Show("Approved", "Approval Done");
                 this.Close();
             }
+            else
+            {
+                this.Close();
+            }
+
         }
-
-
-
-        private void SaveAttachments()
-        {
-            MemoryStream streamIDProof = new MemoryStream();
-            MemoryStream streamEnrollment = new MemoryStream();
-            MemoryStream streamTrade = new MemoryStream();
-            PdfLoadedDocument idProof = new PdfLoadedDocument(txtIDProofAttachment.Text);
-            PdfLoadedDocument idEnrollment = new PdfLoadedDocument(txtEnrollmentAttachment.Text);
-            PdfLoadedDocument idTrade = new PdfLoadedDocument(txtTradeCertificate.Text);
-            idProof.Save(streamIDProof);
-            idEnrollment.Save(streamEnrollment);
-            idTrade.Save(streamTrade);
-
-            string qry = "Update LabourAttachments SET ";
-            qry = qry + "IDPROOF        = @ImageIDProof   , IDPROOFFILENAME    =@IDProofFileName, ";
-            qry = qry + "ENROLLMENTFORM = @ImageEnrollment, ENROLLMENTFILENAME =@EnrollmentFileName,";
-            qry = qry + "TRADECERTIFICATE=@ImageTrade,      TRADECERTIFICATEFILENAME=@TradeCertificateFileName";
-            qry = qry + "     WHERE WORKERID=@WORKERID";
-            SqlCommand SqlCom = new SqlCommand(qry, cn);
-            SqlCom.Parameters.Add(new SqlParameter("@WORKERID", (object)existingLabourID));
-            SqlCom.Parameters.Add(new SqlParameter("@IDProofFileName", (object)txtIDProofAttachment.Text));
-            SqlCom.Parameters.Add(new SqlParameter("@ImageIDProof", streamIDProof.ToArray())); 
-            SqlCom.Parameters.Add(new SqlParameter("@EnrollmentFileName", (object)txtEnrollmentAttachment.Text));
-            SqlCom.Parameters.Add(new SqlParameter("@ImageEnrollment", streamEnrollment.ToArray()));
-            SqlCom.Parameters.Add(new SqlParameter("@TradeCertificateFileName", (object)txtTradeCertificate.Text));
-            SqlCom.Parameters.Add(new SqlParameter("@ImageTrade", streamTrade.ToArray()));
-      
-            cn.Open();
-            SqlCom.ExecuteNonQuery();
-            cn.Close();
-        }
-
-
-
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -455,79 +308,6 @@ namespace ESCHOLPMS
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void btnBrowseIDProof_Click(object sender, EventArgs e)
-        {
-            //opnAttachment.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
-
-            OpenFileIDProof.Title = "Select a PDF file";
-            OpenFileIDProof.FileName = "";
-            OpenFileIDProof.Multiselect = false;
-            OpenFileIDProof.Filter = "PDF files|*.pdf";
-            if (OpenFileIDProof.ShowDialog() == DialogResult.OK)
-            {
-                txtIDProofAttachment.Text = Convert.ToString(OpenFileIDProof.FileName);
-                txtIDProofAttachment.Tag = Convert.ToString(OpenFileIDProof.FileName);
-                btnBrowseIDProof.Enabled = true;
-                btnOpenIDProof.Text = "Open";
-                btnOpenIDProof.Visible = true;
-            }
-            else
-            {
-                txtIDProofAttachment.Text = "";
-                txtIDProofAttachment.Tag = "";
-                btnBrowseIDProof.Enabled = false;
-                btnOpenIDProof.Visible = false;
-            }
-        }
-
-        private void btnBrowseEnrollment_Click(object sender, EventArgs e)
-        {
-            OpenFileEntrollment.Title = "Select a PDF file";
-            OpenFileEntrollment.FileName = "";
-            OpenFileEntrollment.Multiselect = false;
-            OpenFileEntrollment.Filter = "PDF files|*.pdf";
-            if (OpenFileEntrollment.ShowDialog() == DialogResult.OK)
-            {
-                txtEnrollmentAttachment.Text = Convert.ToString(OpenFileEntrollment.FileName);
-                txtEnrollmentAttachment.Tag = Convert.ToString(OpenFileEntrollment.FileName);
-                btnBrowseEnrollment.Enabled = true;
-                btnOpenEnrollment.Text = "Open";
-                btnOpenEnrollment.Visible = true;
-            }
-            else
-            {
-                txtEnrollmentAttachment.Text = "";
-                txtEnrollmentAttachment.Tag = "";
-                btnBrowseEnrollment.Enabled = false;
-                btnOpenEnrollment.Visible = false;
-            }
-        }
-
-        private void btnBrowseTradeCertificate_Click(object sender, EventArgs e)
-        {
-
-            OpenFileTradeCertificate.Title = "Select a PDF file";
-            OpenFileTradeCertificate.FileName = "";
-            OpenFileTradeCertificate.Multiselect = false;
-            OpenFileTradeCertificate.Filter = "PDF files|*.pdf";
-
-            if (OpenFileTradeCertificate.ShowDialog() == DialogResult.OK)
-            {
-                txtTradeCertificate.Text = Convert.ToString(OpenFileTradeCertificate.FileName);
-                txtTradeCertificate.Tag = Convert.ToString(OpenFileTradeCertificate.FileName);
-                btnBrowseTradeCertificate.Enabled = true;
-                btnOpenTradeCertificate.Visible = true;
-                btnOpenTradeCertificate.Text = "Open";
-            }
-            else
-            {
-                txtTradeCertificate.Text = "";
-                txtTradeCertificate.Tag = "";
-                btnBrowseEnrollment.Enabled = false;
-                btnOpenTradeCertificate.Visible = false;
             }
         }
 
@@ -615,36 +395,6 @@ namespace ESCHOLPMS
             }
         }
 
-        private void btnReUpload_Click(object sender, EventArgs e)
-        {
-            string message = "Do you want to Re-Upload All Three Documents ?";
-            string title = "Upload Query";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, title, buttons);
-            if (result == DialogResult.No)
-            {
-                return;
-            }
-            else
-            {
-                int j = lab.ResetAttachments(existingLabourID);
-                txtEnrollmentAttachment.Text = "";
-                txtIDProofAttachment.Text = "";
-                txtTradeCertificate.Text = "";
-                btnOpenEnrollment.Text = "Open";
-                btnOpenIDProof.Text = "Open";
-                btnOpenTradeCertificate.Text = "Open";
-                btnOpenTradeCertificate.Visible = false;
-                btnOpenIDProof.Visible = false;
-                btnOpenEnrollment.Visible = false;
-                btnReUpload.Enabled = false;
-                btnSave.Enabled = true;
-                btnSave.Visible = true;
-                btnBrowseEnrollment.Enabled = true;
-                btnBrowseIDProof.Enabled = true;
-                btnBrowseTradeCertificate.Enabled = true;
-                lblStatus.Text = "Uploaded Files Removed. Upload New";
-            }
-        }
+       
     }
 }

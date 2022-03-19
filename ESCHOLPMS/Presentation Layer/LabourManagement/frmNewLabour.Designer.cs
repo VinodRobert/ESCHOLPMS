@@ -81,8 +81,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblStar = new System.Windows.Forms.Label();
+            this.lblMandatory = new System.Windows.Forms.Label();
             this.autoLabel20 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtPIN = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.openFilePhoto = new System.Windows.Forms.OpenFileDialog();
@@ -733,25 +733,25 @@
             this.label12.TabIndex = 67;
             this.label12.Text = "*";
             // 
-            // label13
+            // lblStar
             // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(357, 576);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(16, 19);
-            this.label13.TabIndex = 68;
-            this.label13.Text = "*";
+            this.lblStar.AutoSize = true;
+            this.lblStar.ForeColor = System.Drawing.Color.Red;
+            this.lblStar.Location = new System.Drawing.Point(357, 576);
+            this.lblStar.Name = "lblStar";
+            this.lblStar.Size = new System.Drawing.Size(16, 19);
+            this.lblStar.TabIndex = 68;
+            this.lblStar.Text = "*";
             // 
-            // label14
+            // lblMandatory
             // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(397, 577);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(143, 19);
-            this.label14.TabIndex = 69;
-            this.label14.Text = "Mandatory Fields";
+            this.lblMandatory.AutoSize = true;
+            this.lblMandatory.ForeColor = System.Drawing.Color.Red;
+            this.lblMandatory.Location = new System.Drawing.Point(397, 577);
+            this.lblMandatory.Name = "lblMandatory";
+            this.lblMandatory.Size = new System.Drawing.Size(143, 19);
+            this.lblMandatory.TabIndex = 69;
+            this.lblMandatory.Text = "Mandatory Fields";
             // 
             // autoLabel20
             // 
@@ -830,8 +830,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtPIN);
             this.Controls.Add(this.autoLabel20);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.lblMandatory);
+            this.Controls.Add(this.lblStar);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -970,8 +970,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblStar;
+        private System.Windows.Forms.Label lblMandatory;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel20;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtPIN;
         private System.Windows.Forms.OpenFileDialog openFilePhoto;
