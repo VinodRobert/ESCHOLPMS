@@ -120,7 +120,7 @@ namespace ESCHOLPMS
                 DataSet dsProjectDetails = ams.FetchProjectDetails(projectID);
                 GlobalVariables.costCentreID = Convert.ToInt16(dsProjectDetails.Tables[0].Rows[0]["CostCentreID"]);
                 GlobalVariables.ProjectName = Convert.ToString(cmbProjects.Text);
-               
+                GlobalVariables.UserID = Convert.ToString(txtUserName.Text);
                 DataSet dsSpintly = ams.GetAccessKeyDetails();
                 GlobalVariables.access_token = dsSpintly.Tables[0].Rows[0]["AuthorizationKey"].ToString();
                 GlobalVariables.spintlyOrgID = Convert.ToInt16(dsSpintly.Tables[0].Rows[0]["OrganizationID"]);

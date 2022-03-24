@@ -1,6 +1,6 @@
 ﻿namespace ESCHOLPMS 
 {
-    partial class frmTransferOutLabour
+    partial class frmTransferInLabour
     {
         /// <summary>
         /// Required designer variable.
@@ -51,9 +51,6 @@
             this.btnTransferOut = new Syncfusion.WinForms.Controls.SfButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblPhotoFileName = new System.Windows.Forms.Label();
-            this.btnBreak = new Syncfusion.WinForms.Controls.SfButton();
-            this.autoLabel4 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.txtTerminateRemarks = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubContractor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbJobType)).BeginInit();
@@ -63,7 +60,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTerminateRemarks)).BeginInit();
             this.SuspendLayout();
             // 
             // autoLabel2
@@ -78,7 +74,7 @@
             // 
             // txtName
             // 
-            this.txtName.BeforeTouchSize = new System.Drawing.Size(547, 95);
+            this.txtName.BeforeTouchSize = new System.Drawing.Size(130, 29);
             this.txtName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(178, 46);
             this.txtName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -168,12 +164,12 @@
             // btnClose
             // 
             this.btnClose.AccessibleName = "Button";
-            this.btnClose.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnClose.Location = new System.Drawing.Point(758, 391);
+            this.btnClose.Location = new System.Drawing.Point(623, 374);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(201, 42);
-            this.btnClose.Style.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnClose.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnClose.TabIndex = 21;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -217,7 +213,7 @@
             // 
             // txtRollNumber
             // 
-            this.txtRollNumber.BeforeTouchSize = new System.Drawing.Size(547, 95);
+            this.txtRollNumber.BeforeTouchSize = new System.Drawing.Size(130, 29);
             this.txtRollNumber.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRollNumber.Location = new System.Drawing.Point(176, 9);
             this.txtRollNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -286,35 +282,35 @@
             // btnTerminate
             // 
             this.btnTerminate.AccessibleName = "Button";
-            this.btnTerminate.BackColor = System.Drawing.Color.DeepPink;
+            this.btnTerminate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTerminate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnTerminate.Location = new System.Drawing.Point(474, 334);
+            this.btnTerminate.Location = new System.Drawing.Point(623, 188);
             this.btnTerminate.Name = "btnTerminate";
             this.btnTerminate.Size = new System.Drawing.Size(201, 40);
-            this.btnTerminate.Style.BackColor = System.Drawing.Color.DeepPink;
+            this.btnTerminate.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTerminate.TabIndex = 72;
-            this.btnTerminate.Text = "Terminate - Permanent";
+            this.btnTerminate.Text = "Un-Terminate";
             this.btnTerminate.UseVisualStyleBackColor = false;
             this.btnTerminate.Click += new System.EventHandler(this.btnTerminate_Click);
             // 
             // btnTransferOut
             // 
             this.btnTransferOut.AccessibleName = "Button";
-            this.btnTransferOut.BackColor = System.Drawing.Color.Aqua;
+            this.btnTransferOut.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnTransferOut.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnTransferOut.Location = new System.Drawing.Point(474, 392);
+            this.btnTransferOut.Location = new System.Drawing.Point(623, 280);
             this.btnTransferOut.Name = "btnTransferOut";
             this.btnTransferOut.Size = new System.Drawing.Size(201, 41);
-            this.btnTransferOut.Style.BackColor = System.Drawing.Color.Aqua;
+            this.btnTransferOut.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnTransferOut.TabIndex = 73;
-            this.btnTransferOut.Text = "Transfer Out From Project";
+            this.btnTransferOut.Text = "Transfer IN";
             this.btnTransferOut.UseVisualStyleBackColor = false;
             this.btnTransferOut.Click += new System.EventHandler(this.btnTransferOut_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(56, 346);
+            this.dataGridView1.Location = new System.Drawing.Point(944, 376);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(66, 40);
@@ -331,48 +327,12 @@
             this.lblPhotoFileName.Text = "label1";
             this.lblPhotoFileName.Visible = false;
             // 
-            // btnBreak
-            // 
-            this.btnBreak.AccessibleName = "Button";
-            this.btnBreak.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnBreak.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnBreak.Location = new System.Drawing.Point(758, 334);
-            this.btnBreak.Name = "btnBreak";
-            this.btnBreak.Size = new System.Drawing.Size(201, 40);
-            this.btnBreak.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnBreak.TabIndex = 76;
-            this.btnBreak.Text = "Long Leave/Short Break ";
-            this.btnBreak.UseVisualStyleBackColor = false;
-            this.btnBreak.Click += new System.EventHandler(this.btnBreak_Click);
-            // 
-            // autoLabel4
-            // 
-            this.autoLabel4.Location = new System.Drawing.Point(474, 163);
-            this.autoLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.autoLabel4.Name = "autoLabel4";
-            this.autoLabel4.Size = new System.Drawing.Size(303, 19);
-            this.autoLabel4.TabIndex = 77;
-            this.autoLabel4.Text = "Remarks (Maximum 100 Characters) :";
-            // 
-            // txtTerminateRemarks
-            // 
-            this.txtTerminateRemarks.BeforeTouchSize = new System.Drawing.Size(547, 95);
-            this.txtTerminateRemarks.Location = new System.Drawing.Point(474, 185);
-            this.txtTerminateRemarks.MaxLength = 100;
-            this.txtTerminateRemarks.Multiline = true;
-            this.txtTerminateRemarks.Name = "txtTerminateRemarks";
-            this.txtTerminateRemarks.Size = new System.Drawing.Size(547, 95);
-            this.txtTerminateRemarks.TabIndex = 78;
-            // 
-            // frmTransferOutLabour
+            // frmTransferInLabour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(1047, 445);
-            this.Controls.Add(this.txtTerminateRemarks);
-            this.Controls.Add(this.autoLabel4);
-            this.Controls.Add(this.btnBreak);
             this.Controls.Add(this.lblPhotoFileName);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTransferOut);
@@ -396,9 +356,9 @@
             this.Controls.Add(this.autoLabel2);
             this.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmTransferOutLabour";
+            this.Name = "frmTransferInLabour";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Transfer Out";
+            this.Text = "Transfer In";
             this.Load += new System.EventHandler(this.frmNewLabour_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubContractor)).EndInit();
@@ -409,7 +369,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTerminateRemarks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,8 +398,5 @@
         private Syncfusion.WinForms.Controls.SfButton btnTransferOut;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblPhotoFileName;
-        private Syncfusion.WinForms.Controls.SfButton btnBreak;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel4;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtTerminateRemarks;
     }
 }

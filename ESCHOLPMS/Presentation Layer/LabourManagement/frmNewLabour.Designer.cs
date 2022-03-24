@@ -43,9 +43,7 @@
             this.autoLabel11 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel12 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel13 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.txtMobileNumber1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel5 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.txtMobileNumber2 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel14 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel15 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtIDProofNumberGiven = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
@@ -90,12 +88,12 @@
             this.picPhoto = new System.Windows.Forms.PictureBox();
             this.lblPhotoFileName = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtMobileNumber1 = new Syncfusion.Windows.Forms.Tools.IntegerTextBox();
+            this.txtMobileNumber2 = new Syncfusion.Windows.Forms.Tools.IntegerTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtParentName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPemanentAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPresentAddress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMobileNumber1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMobileNumber2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProofNumberGiven)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubContractor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbStates)).BeginInit();
@@ -110,6 +108,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMobileNumber1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMobileNumber2)).BeginInit();
             this.SuspendLayout();
             // 
             // autoLabel2
@@ -124,9 +124,9 @@
             // 
             // txtName
             // 
-            this.txtName.BeforeTouchSize = new System.Drawing.Size(103, 29);
+            this.txtName.BeforeTouchSize = new System.Drawing.Size(180, 27);
             this.txtName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(178, 46);
+            this.txtName.Location = new System.Drawing.Point(176, 46);
             this.txtName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(422, 29);
@@ -145,9 +145,9 @@
             // 
             // txtParentName
             // 
-            this.txtParentName.BeforeTouchSize = new System.Drawing.Size(103, 29);
+            this.txtParentName.BeforeTouchSize = new System.Drawing.Size(180, 27);
             this.txtParentName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParentName.Location = new System.Drawing.Point(178, 90);
+            this.txtParentName.Location = new System.Drawing.Point(176, 90);
             this.txtParentName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtParentName.Name = "txtParentName";
             this.txtParentName.Size = new System.Drawing.Size(422, 29);
@@ -195,9 +195,9 @@
             // 
             // txtPemanentAddress
             // 
-            this.txtPemanentAddress.BeforeTouchSize = new System.Drawing.Size(103, 29);
+            this.txtPemanentAddress.BeforeTouchSize = new System.Drawing.Size(180, 27);
             this.txtPemanentAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPemanentAddress.Location = new System.Drawing.Point(178, 233);
+            this.txtPemanentAddress.Location = new System.Drawing.Point(176, 233);
             this.txtPemanentAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPemanentAddress.Multiline = true;
             this.txtPemanentAddress.Name = "txtPemanentAddress";
@@ -217,9 +217,9 @@
             // 
             // txtPresentAddress
             // 
-            this.txtPresentAddress.BeforeTouchSize = new System.Drawing.Size(103, 29);
+            this.txtPresentAddress.BeforeTouchSize = new System.Drawing.Size(180, 27);
             this.txtPresentAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPresentAddress.Location = new System.Drawing.Point(178, 329);
+            this.txtPresentAddress.Location = new System.Drawing.Point(176, 329);
             this.txtPresentAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPresentAddress.Multiline = true;
             this.txtPresentAddress.Name = "txtPresentAddress";
@@ -267,17 +267,6 @@
             this.autoLabel13.TabIndex = 22;
             this.autoLabel13.Text = "Name";
             // 
-            // txtMobileNumber1
-            // 
-            this.txtMobileNumber1.BeforeTouchSize = new System.Drawing.Size(103, 29);
-            this.txtMobileNumber1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobileNumber1.Location = new System.Drawing.Point(178, 391);
-            this.txtMobileNumber1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMobileNumber1.Name = "txtMobileNumber1";
-            this.txtMobileNumber1.Size = new System.Drawing.Size(377, 29);
-            this.txtMobileNumber1.TabIndex = 10;
-            this.txtMobileNumber1.Text = "textBoxExt7";
-            // 
             // autoLabel5
             // 
             this.autoLabel5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -287,17 +276,6 @@
             this.autoLabel5.Size = new System.Drawing.Size(140, 19);
             this.autoLabel5.TabIndex = 24;
             this.autoLabel5.Text = "Mobile Number 2";
-            // 
-            // txtMobileNumber2
-            // 
-            this.txtMobileNumber2.BeforeTouchSize = new System.Drawing.Size(103, 29);
-            this.txtMobileNumber2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobileNumber2.Location = new System.Drawing.Point(178, 431);
-            this.txtMobileNumber2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMobileNumber2.Name = "txtMobileNumber2";
-            this.txtMobileNumber2.Size = new System.Drawing.Size(377, 29);
-            this.txtMobileNumber2.TabIndex = 11;
-            this.txtMobileNumber2.Text = "textBoxExt8";
             // 
             // autoLabel14
             // 
@@ -321,9 +299,9 @@
             // 
             // txtIDProofNumberGiven
             // 
-            this.txtIDProofNumberGiven.BeforeTouchSize = new System.Drawing.Size(103, 29);
+            this.txtIDProofNumberGiven.BeforeTouchSize = new System.Drawing.Size(180, 27);
             this.txtIDProofNumberGiven.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDProofNumberGiven.Location = new System.Drawing.Point(178, 527);
+            this.txtIDProofNumberGiven.Location = new System.Drawing.Point(176, 527);
             this.txtIDProofNumberGiven.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtIDProofNumberGiven.MaxLength = 25;
             this.txtIDProofNumberGiven.Name = "txtIDProofNumberGiven";
@@ -355,7 +333,7 @@
             this.cmbSubContractor.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbSubContractor.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cmbSubContractor.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSubContractor.Location = new System.Drawing.Point(886, 54);
+            this.cmbSubContractor.Location = new System.Drawing.Point(890, 54);
             this.cmbSubContractor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbSubContractor.Name = "cmbSubContractor";
             this.cmbSubContractor.Size = new System.Drawing.Size(267, 30);
@@ -462,7 +440,7 @@
             this.cmbStates.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbStates.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cmbStates.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStates.Location = new System.Drawing.Point(178, 291);
+            this.cmbStates.Location = new System.Drawing.Point(176, 291);
             this.cmbStates.Name = "cmbStates";
             this.cmbStates.Size = new System.Drawing.Size(422, 28);
             this.cmbStates.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -482,7 +460,7 @@
             this.cmbGender.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbGender.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cmbGender.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbGender.Location = new System.Drawing.Point(178, 182);
+            this.cmbGender.Location = new System.Drawing.Point(176, 182);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(129, 28);
             this.cmbGender.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -551,20 +529,21 @@
             // dtDOB
             // 
             this.dtDOB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtDOB.Location = new System.Drawing.Point(178, 131);
+            this.dtDOB.Location = new System.Drawing.Point(176, 131);
             this.dtDOB.Name = "dtDOB";
             this.dtDOB.Size = new System.Drawing.Size(217, 31);
             this.dtDOB.TabIndex = 3;
             // 
             // txtRollNumber
             // 
-            this.txtRollNumber.BeforeTouchSize = new System.Drawing.Size(103, 29);
+            this.txtRollNumber.BeforeTouchSize = new System.Drawing.Size(180, 27);
+            this.txtRollNumber.Enabled = false;
             this.txtRollNumber.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRollNumber.Location = new System.Drawing.Point(176, 9);
             this.txtRollNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtRollNumber.Name = "txtRollNumber";
             this.txtRollNumber.Size = new System.Drawing.Size(130, 29);
-            this.txtRollNumber.TabIndex = 54;
+            this.txtRollNumber.TabIndex = 0;
             this.txtRollNumber.Text = "textBoxExt2";
             // 
             // cmbIDProof
@@ -574,9 +553,9 @@
             this.cmbIDProof.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbIDProof.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cmbIDProof.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbIDProof.Location = new System.Drawing.Point(178, 476);
+            this.cmbIDProof.Location = new System.Drawing.Point(176, 476);
             this.cmbIDProof.Name = "cmbIDProof";
-            this.cmbIDProof.Size = new System.Drawing.Size(174, 28);
+            this.cmbIDProof.Size = new System.Drawing.Size(181, 28);
             this.cmbIDProof.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cmbIDProof.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDProof.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -765,7 +744,7 @@
             // 
             // txtPIN
             // 
-            this.txtPIN.BeforeTouchSize = new System.Drawing.Size(103, 29);
+            this.txtPIN.BeforeTouchSize = new System.Drawing.Size(180, 27);
             this.txtPIN.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPIN.Location = new System.Drawing.Point(669, 290);
             this.txtPIN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -819,12 +798,40 @@
             this.dataGridView1.Visible = false;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
+            // txtMobileNumber1
+            // 
+            this.txtMobileNumber1.BeforeTouchSize = new System.Drawing.Size(180, 27);
+            this.txtMobileNumber1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMobileNumber1.IntegerValue = ((long)(0));
+            this.txtMobileNumber1.Location = new System.Drawing.Point(176, 391);
+            this.txtMobileNumber1.MaxValue = ((long)(9999999999));
+            this.txtMobileNumber1.MinValue = ((long)(0));
+            this.txtMobileNumber1.Name = "txtMobileNumber1";
+            this.txtMobileNumber1.NumberGroupSeparator = "";
+            this.txtMobileNumber1.Size = new System.Drawing.Size(180, 27);
+            this.txtMobileNumber1.TabIndex = 10;
+            // 
+            // txtMobileNumber2
+            // 
+            this.txtMobileNumber2.BeforeTouchSize = new System.Drawing.Size(180, 27);
+            this.txtMobileNumber2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMobileNumber2.IntegerValue = ((long)(0));
+            this.txtMobileNumber2.Location = new System.Drawing.Point(176, 431);
+            this.txtMobileNumber2.MaxValue = ((long)(9999999999));
+            this.txtMobileNumber2.MinValue = ((long)(0));
+            this.txtMobileNumber2.Name = "txtMobileNumber2";
+            this.txtMobileNumber2.NumberGroupSeparator = "";
+            this.txtMobileNumber2.Size = new System.Drawing.Size(180, 27);
+            this.txtMobileNumber2.TabIndex = 11;
+            // 
             // frmNewLabour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(1166, 604);
+            this.Controls.Add(this.txtMobileNumber2);
+            this.Controls.Add(this.txtMobileNumber1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblPhotoFileName);
             this.Controls.Add(this.panel1);
@@ -867,9 +874,7 @@
             this.Controls.Add(this.txtIDProofNumberGiven);
             this.Controls.Add(this.autoLabel15);
             this.Controls.Add(this.autoLabel14);
-            this.Controls.Add(this.txtMobileNumber2);
             this.Controls.Add(this.autoLabel5);
-            this.Controls.Add(this.txtMobileNumber1);
             this.Controls.Add(this.autoLabel13);
             this.Controls.Add(this.autoLabel12);
             this.Controls.Add(this.autoLabel11);
@@ -895,8 +900,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtParentName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPemanentAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPresentAddress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMobileNumber1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMobileNumber2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProofNumberGiven)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubContractor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbStates)).EndInit();
@@ -911,6 +914,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMobileNumber1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMobileNumber2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -932,9 +937,7 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel11;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel12;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel13;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtMobileNumber1;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel5;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtMobileNumber2;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel14;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel15;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtIDProofNumberGiven;
@@ -979,5 +982,7 @@
         private System.Windows.Forms.PictureBox picPhoto;
         private System.Windows.Forms.Label lblPhotoFileName;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtMobileNumber1;
+        private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtMobileNumber2;
     }
 }

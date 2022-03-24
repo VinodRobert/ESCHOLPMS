@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace ESCHOLPMS
 {
-    public partial class frmTransferOut : Form
+    public partial class frmTerminateList : Form
     {
         Labour lab = new Labour();
 
-        public frmTransferOut()
+        public frmTerminateList()
         {
             InitializeComponent();
         }
@@ -44,7 +44,7 @@ namespace ESCHOLPMS
         private void LoadLabours()
         {
             int costCentreID = Convert.ToInt16(GlobalVariables.costCentreID);
-            DataSet dslabours = lab.FetchCompleteLabours(costCentreID);
+            DataSet dslabours = lab.FetchTerminateLabours(costCentreID);
             List<LabourList> LabourListing = new List<LabourList>();
             LabourListing = CommonMethods.ConvertToList<LabourList>(dslabours.Tables[0]);
 
@@ -102,7 +102,7 @@ namespace ESCHOLPMS
             {
                 var record = (this.gridLabours.View.Records[rowIndex].Data as LabourList);
                 Int64 selectedLabour = Convert.ToInt64(record.LabourID.ToString());
-                frmTransferOutLabour nl = new frmTransferOutLabour(selectedLabour);
+                frmTerminate nl = new frmTerminate(selectedLabour);
                 nl.ShowDialog();
                 LoadLabours();
                  

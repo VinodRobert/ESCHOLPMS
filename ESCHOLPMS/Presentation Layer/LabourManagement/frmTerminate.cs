@@ -16,14 +16,14 @@ using Syncfusion.Windows.Forms;
 
 namespace ESCHOLPMS 
 {
-    public partial class frmTransferOutLabour : Form
+    public partial class frmTerminate : Form
     {
         Int64 labourRollNumber;
         Labour lab = new Labour();
       
      
 
-        public frmTransferOutLabour(Int64 rollNumber)
+        public frmTerminate(Int64 rollNumber)
         {
             labourRollNumber = rollNumber;
             InitializeComponent();
@@ -111,7 +111,7 @@ namespace ESCHOLPMS
             cmbLabourType.Text = Convert.ToString(dsWho["TypeOfLabour"]);
 
             cmbSubContractor.Text = Convert.ToString(dsWho["SubContractorName"]);
-
+            txtTerminateRemarks.Text = Convert.ToString(dsWho["TerminateComments"]);
             string currentStatus = Convert.ToString(dsWho["Status"]);
             ShowPhoto();
         }
@@ -212,19 +212,15 @@ namespace ESCHOLPMS
 
         private void btnTransferOut_Click(object sender, EventArgs e)
         {
-            if (txtTerminateRemarks.Text == "")
-            {
-                MessageBoxAdv.Show("Remarks Missing - Please Enter ", "Message - Error");
-                return;
-            }
-            string message = "Do you want to Transfer Out This Labour ?";
-            string title = "Transfer Out Labour";
+            
+            string message = "Do you Really Want To Terminate For Ever This Labour ?";
+            string title = "Terminate";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBoxAdv.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                int j = lab.ChangeActiveStatus(labourRollNumber, 3, txtTerminateRemarks.Text);
-                int k = lab.UpdateLog(GlobalVariables.UserID, txtRollNumber.Text, GlobalVariables.costCentreID, 4);
+                int j = lab.ChangeActiveStatus(labourRollNumber, 9, txtTerminateRemarks.Text);
+                int k = lab.UpdateLog(GlobalVariables.UserID, txtRollNumber.Text, GlobalVariables.costCentreID, 9);
                 MessageBoxAdv.Show("Success", "Terminate");
                 this.Close();
             }

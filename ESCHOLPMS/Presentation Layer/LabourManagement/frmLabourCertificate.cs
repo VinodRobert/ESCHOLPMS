@@ -53,7 +53,7 @@ namespace ESCHOLPMS
 
 
             btnBrowseEnrollment.Enabled = true;
-            btnCancel.Enabled = true;
+           
            
             btnClose.Enabled = true;
             btnSave.Enabled = true;
@@ -385,23 +385,44 @@ namespace ESCHOLPMS
             {
                 if (ValidateEntry() == 1)
                 {
-                    SaveAttachments();
-                    UpdateLabourStatus();
+                    int success = SaveAttachments();
+                    if (success == 1)
+                    {
+                        UpdateLabourStatus();
+                        int j = lab.UpdateLog(GlobalVariables.UserID, txtRollNumber.Text, GlobalVariables.costCentreID, 1);
+                        this.Close();
+                    }
                 }
-                this.Close();
+                
             }
         }
 
 
 
-        private void SaveAttachments()
+        private int SaveAttachments()
         {
             MemoryStream streamIDProof = new MemoryStream();
             MemoryStream streamEnrollment = new MemoryStream();
             MemoryStream streamTrade = new MemoryStream();
-            PdfLoadedDocument idProof = new PdfLoadedDocument(txtIDProofAttachment.Text);
-            PdfLoadedDocument idEnrollment = new PdfLoadedDocument(txtEnrollmentAttachment.Text);
-            PdfLoadedDocument idTrade = new PdfLoadedDocument(txtTradeCertificate.Text);
+            PdfLoadedDocument idProof;
+            PdfLoadedDocument idEnrollment;
+            PdfLoadedDocument idTrade;
+            try
+            {
+                idProof = new PdfLoadedDocument(txtIDProofAttachment.Text);
+                idEnrollment = new PdfLoadedDocument(txtEnrollmentAttachment.Text);
+                idTrade = new PdfLoadedDocument(txtTradeCertificate.Text);
+            }
+            catch
+            {
+                MessageBoxAdv.Show("Please Check The FILE NAME . It must be Very Simple !!!", "Error");
+                btnReUpload.Enabled = true;
+                btnReUpload.Visible = true;
+                btnSave.Enabled = true;
+                return 0;
+            }
+
+            
             idProof.Save(streamIDProof);
             idEnrollment.Save(streamEnrollment);
             idTrade.Save(streamTrade);
@@ -423,6 +444,7 @@ namespace ESCHOLPMS
             cn.Open();
             SqlCom.ExecuteNonQuery();
             cn.Close();
+            return 1;
         }
 
 

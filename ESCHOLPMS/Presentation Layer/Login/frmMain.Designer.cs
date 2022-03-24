@@ -74,7 +74,15 @@
             this.transferOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateJobStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listOfInactiveLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listOfSubContractorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.laboursUnderContractorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterContractorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.terminateLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labourAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLoginName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -98,7 +106,8 @@
             this.loginsToolStripMenuItem,
             this.mISToolStripMenuItem,
             this.labourManagementToolStripMenuItem,
-            this.logoutToolStripMenuItem});
+            this.logoutToolStripMenuItem,
+            this.labourAttendanceToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -385,10 +394,15 @@
             this.labourManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newLabourToolStripMenuItem,
             this.uploadDocumentsToolStripMenuItem,
-            this.approveDocumentsToolStripMenuItem,
             this.transferOutToolStripMenuItem,
             this.transferInToolStripMenuItem,
-            this.updateJobStatusToolStripMenuItem});
+            this.updateJobStatusToolStripMenuItem,
+            this.listOfInactiveLaboursToolStripMenuItem,
+            this.listOfSubContractorsToolStripMenuItem,
+            this.laboursUnderContractorsToolStripMenuItem,
+            this.alterContractorsToolStripMenuItem,
+            this.approveDocumentsToolStripMenuItem,
+            this.terminateLaboursToolStripMenuItem});
             this.labourManagementToolStripMenuItem.Name = "labourManagementToolStripMenuItem";
             this.labourManagementToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
             this.labourManagementToolStripMenuItem.Text = "Labour Management";
@@ -396,42 +410,74 @@
             // newLabourToolStripMenuItem
             // 
             this.newLabourToolStripMenuItem.Name = "newLabourToolStripMenuItem";
-            this.newLabourToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.newLabourToolStripMenuItem.Text = "List - Labours";
+            this.newLabourToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
+            this.newLabourToolStripMenuItem.Text = "List of Active Labours";
             this.newLabourToolStripMenuItem.Click += new System.EventHandler(this.newLabourToolStripMenuItem_Click);
             // 
             // uploadDocumentsToolStripMenuItem
             // 
             this.uploadDocumentsToolStripMenuItem.Name = "uploadDocumentsToolStripMenuItem";
-            this.uploadDocumentsToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.uploadDocumentsToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
             this.uploadDocumentsToolStripMenuItem.Text = "Upload Documents";
             this.uploadDocumentsToolStripMenuItem.Click += new System.EventHandler(this.uploadDocumentsToolStripMenuItem_Click);
             // 
             // approveDocumentsToolStripMenuItem
             // 
             this.approveDocumentsToolStripMenuItem.Name = "approveDocumentsToolStripMenuItem";
-            this.approveDocumentsToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.approveDocumentsToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
             this.approveDocumentsToolStripMenuItem.Text = "Approve Documents";
             this.approveDocumentsToolStripMenuItem.Click += new System.EventHandler(this.approveDocumentsToolStripMenuItem_Click);
             // 
             // transferOutToolStripMenuItem
             // 
             this.transferOutToolStripMenuItem.Name = "transferOutToolStripMenuItem";
-            this.transferOutToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.transferOutToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
             this.transferOutToolStripMenuItem.Text = "Transfer Out";
             this.transferOutToolStripMenuItem.Click += new System.EventHandler(this.transferOutToolStripMenuItem_Click);
             // 
             // transferInToolStripMenuItem
             // 
             this.transferInToolStripMenuItem.Name = "transferInToolStripMenuItem";
-            this.transferInToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.transferInToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
             this.transferInToolStripMenuItem.Text = "Transfer In";
             // 
             // updateJobStatusToolStripMenuItem
             // 
             this.updateJobStatusToolStripMenuItem.Name = "updateJobStatusToolStripMenuItem";
-            this.updateJobStatusToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.updateJobStatusToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
             this.updateJobStatusToolStripMenuItem.Text = "Update Job Status";
+            // 
+            // listOfInactiveLaboursToolStripMenuItem
+            // 
+            this.listOfInactiveLaboursToolStripMenuItem.Name = "listOfInactiveLaboursToolStripMenuItem";
+            this.listOfInactiveLaboursToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
+            this.listOfInactiveLaboursToolStripMenuItem.Text = "List of Inactive Labours";
+            // 
+            // listOfSubContractorsToolStripMenuItem
+            // 
+            this.listOfSubContractorsToolStripMenuItem.Name = "listOfSubContractorsToolStripMenuItem";
+            this.listOfSubContractorsToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
+            this.listOfSubContractorsToolStripMenuItem.Text = "List of Contractors";
+            this.listOfSubContractorsToolStripMenuItem.Click += new System.EventHandler(this.listOfSubContractorsToolStripMenuItem_Click);
+            // 
+            // laboursUnderContractorsToolStripMenuItem
+            // 
+            this.laboursUnderContractorsToolStripMenuItem.Name = "laboursUnderContractorsToolStripMenuItem";
+            this.laboursUnderContractorsToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
+            this.laboursUnderContractorsToolStripMenuItem.Text = "Labours Under Contractors";
+            // 
+            // alterContractorsToolStripMenuItem
+            // 
+            this.alterContractorsToolStripMenuItem.Name = "alterContractorsToolStripMenuItem";
+            this.alterContractorsToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
+            this.alterContractorsToolStripMenuItem.Text = "Alter Contractors";
+            // 
+            // terminateLaboursToolStripMenuItem
+            // 
+            this.terminateLaboursToolStripMenuItem.Name = "terminateLaboursToolStripMenuItem";
+            this.terminateLaboursToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
+            this.terminateLaboursToolStripMenuItem.Text = "Terminate Labours";
+            this.terminateLaboursToolStripMenuItem.Click += new System.EventHandler(this.terminateLaboursToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -439,6 +485,27 @@
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // labourAttendanceToolStripMenuItem
+            // 
+            this.labourAttendanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewAttendanceToolStripMenuItem,
+            this.alterAttendanceToolStripMenuItem});
+            this.labourAttendanceToolStripMenuItem.Name = "labourAttendanceToolStripMenuItem";
+            this.labourAttendanceToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.labourAttendanceToolStripMenuItem.Text = "Labour Attendance";
+            // 
+            // viewAttendanceToolStripMenuItem
+            // 
+            this.viewAttendanceToolStripMenuItem.Name = "viewAttendanceToolStripMenuItem";
+            this.viewAttendanceToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.viewAttendanceToolStripMenuItem.Text = "View Attendance";
+            // 
+            // alterAttendanceToolStripMenuItem
+            // 
+            this.alterAttendanceToolStripMenuItem.Name = "alterAttendanceToolStripMenuItem";
+            this.alterAttendanceToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.alterAttendanceToolStripMenuItem.Text = "Alter Attendance";
             // 
             // statusStrip
             // 
@@ -555,6 +622,14 @@
         private System.Windows.Forms.ToolStripMenuItem transferInToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateJobStatusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listOfInactiveLaboursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listOfSubContractorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem laboursUnderContractorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterContractorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem labourAttendanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewAttendanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterAttendanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem terminateLaboursToolStripMenuItem;
     }
 }
 

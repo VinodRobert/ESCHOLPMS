@@ -435,11 +435,35 @@
     <Compile Include="Presentation Layer\LabourManagement\frmLabourApproval.Designer.cs">
       <DependentUpon>frmLabourApproval.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourDocumentApproval.cs">
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourListDocumentApproval.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourDocumentApproval.Designer.cs">
-      <DependentUpon>frmLabourDocumentApproval.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\frmLabourListDocumentApproval.Designer.cs">
+      <DependentUpon>frmLabourListDocumentApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmInactiveLabourLists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmInactiveLabourLists.Designer.cs">
+      <DependentUpon>frmInactiveLabourLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTransferInLabour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTransferInLabour.Designer.cs">
+      <DependentUpon>frmTransferInLabour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTransferIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTransferIn.Designer.cs">
+      <DependentUpon>frmTransferIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTerminate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTerminate.Designer.cs">
+      <DependentUpon>frmTerminate.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\LabourManagement\frmTransferOutLabour.cs">
       <SubType>Form</SubType>
@@ -447,11 +471,17 @@
     <Compile Include="Presentation Layer\LabourManagement\frmTransferOutLabour.Designer.cs">
       <DependentUpon>frmTransferOutLabour.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTransferOut.cs">
+    <Compile Include="Presentation Layer\LabourManagement\frmTerminateList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTransferOut.Designer.cs">
-      <DependentUpon>frmTransferOut.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\frmTerminateList.Designer.cs">
+      <DependentUpon>frmTerminateList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTransferOutList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTransferOutList.Designer.cs">
+      <DependentUpon>frmTransferOutList.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\LabourManagement\frmLabourListsCertificate.cs">
       <SubType>Form</SubType>
@@ -554,14 +584,29 @@
     <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourApproval.resx">
       <DependentUpon>frmLabourApproval.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourDocumentApproval.resx">
-      <DependentUpon>frmLabourDocumentApproval.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourListDocumentApproval.resx">
+      <DependentUpon>frmLabourListDocumentApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmInactiveLabourLists.resx">
+      <DependentUpon>frmInactiveLabourLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferInLabour.resx">
+      <DependentUpon>frmTransferInLabour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferIn.resx">
+      <DependentUpon>frmTransferIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTerminate.resx">
+      <DependentUpon>frmTerminate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferOutLabour.resx">
       <DependentUpon>frmTransferOutLabour.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferOut.resx">
-      <DependentUpon>frmTransferOut.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTerminateList.resx">
+      <DependentUpon>frmTerminateList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferOutList.resx">
+      <DependentUpon>frmTransferOutList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourListsCertificate.resx">
       <DependentUpon>frmLabourListsCertificate.cs</DependentUpon>

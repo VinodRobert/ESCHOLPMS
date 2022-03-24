@@ -1,6 +1,6 @@
 ﻿namespace ESCHOLPMS 
 {
-    partial class frmTransferOutLabour
+    partial class frmTerminate
     {
         /// <summary>
         /// Required designer variable.
@@ -47,11 +47,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picPhoto = new System.Windows.Forms.PictureBox();
-            this.btnTerminate = new Syncfusion.WinForms.Controls.SfButton();
             this.btnTransferOut = new Syncfusion.WinForms.Controls.SfButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblPhotoFileName = new System.Windows.Forms.Label();
-            this.btnBreak = new Syncfusion.WinForms.Controls.SfButton();
             this.autoLabel4 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtTerminateRemarks = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
@@ -283,20 +281,6 @@
             this.picPhoto.TabIndex = 39;
             this.picPhoto.TabStop = false;
             // 
-            // btnTerminate
-            // 
-            this.btnTerminate.AccessibleName = "Button";
-            this.btnTerminate.BackColor = System.Drawing.Color.DeepPink;
-            this.btnTerminate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnTerminate.Location = new System.Drawing.Point(474, 334);
-            this.btnTerminate.Name = "btnTerminate";
-            this.btnTerminate.Size = new System.Drawing.Size(201, 40);
-            this.btnTerminate.Style.BackColor = System.Drawing.Color.DeepPink;
-            this.btnTerminate.TabIndex = 72;
-            this.btnTerminate.Text = "Terminate - Permanent";
-            this.btnTerminate.UseVisualStyleBackColor = false;
-            this.btnTerminate.Click += new System.EventHandler(this.btnTerminate_Click);
-            // 
             // btnTransferOut
             // 
             this.btnTransferOut.AccessibleName = "Button";
@@ -307,7 +291,7 @@
             this.btnTransferOut.Size = new System.Drawing.Size(201, 41);
             this.btnTransferOut.Style.BackColor = System.Drawing.Color.Aqua;
             this.btnTransferOut.TabIndex = 73;
-            this.btnTransferOut.Text = "Transfer Out From Project";
+            this.btnTransferOut.Text = "Confirmed";
             this.btnTransferOut.UseVisualStyleBackColor = false;
             this.btnTransferOut.Click += new System.EventHandler(this.btnTransferOut_Click);
             // 
@@ -331,20 +315,6 @@
             this.lblPhotoFileName.Text = "label1";
             this.lblPhotoFileName.Visible = false;
             // 
-            // btnBreak
-            // 
-            this.btnBreak.AccessibleName = "Button";
-            this.btnBreak.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnBreak.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnBreak.Location = new System.Drawing.Point(758, 334);
-            this.btnBreak.Name = "btnBreak";
-            this.btnBreak.Size = new System.Drawing.Size(201, 40);
-            this.btnBreak.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnBreak.TabIndex = 76;
-            this.btnBreak.Text = "Long Leave/Short Break ";
-            this.btnBreak.UseVisualStyleBackColor = false;
-            this.btnBreak.Click += new System.EventHandler(this.btnBreak_Click);
-            // 
             // autoLabel4
             // 
             this.autoLabel4.Location = new System.Drawing.Point(474, 163);
@@ -364,7 +334,7 @@
             this.txtTerminateRemarks.Size = new System.Drawing.Size(547, 95);
             this.txtTerminateRemarks.TabIndex = 78;
             // 
-            // frmTransferOutLabour
+            // frmTerminate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -372,11 +342,9 @@
             this.ClientSize = new System.Drawing.Size(1047, 445);
             this.Controls.Add(this.txtTerminateRemarks);
             this.Controls.Add(this.autoLabel4);
-            this.Controls.Add(this.btnBreak);
             this.Controls.Add(this.lblPhotoFileName);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTransferOut);
-            this.Controls.Add(this.btnTerminate);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbAccessCards);
@@ -396,7 +364,7 @@
             this.Controls.Add(this.autoLabel2);
             this.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmTransferOutLabour";
+            this.Name = "frmTerminate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transfer Out";
             this.Load += new System.EventHandler(this.frmNewLabour_Load);
@@ -435,11 +403,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picPhoto;
-        private Syncfusion.WinForms.Controls.SfButton btnTerminate;
         private Syncfusion.WinForms.Controls.SfButton btnTransferOut;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblPhotoFileName;
-        private Syncfusion.WinForms.Controls.SfButton btnBreak;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel4;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtTerminateRemarks;
     }

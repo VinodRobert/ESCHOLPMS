@@ -50,7 +50,7 @@ namespace ESCHOLPMS
 
 
             btnBrowseEnrollment.Enabled = true;
-            btnCancel.Enabled = true;
+            
            
             btnClose.Enabled = true;
             btnSave.Enabled = true;
@@ -265,12 +265,13 @@ namespace ESCHOLPMS
         private void btnSave_Click(object sender, EventArgs e)
         {
             string message = "Are You Sure To Approve ?";
-            string title = "Approval Confirmatikon";
+            string title = "Approval Confirmation";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBoxAdv.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
                 int i = lab.ApproveDocuments(existingLabourID);
+                int j = lab.UpdateLog(GlobalVariables.UserID, txtRollNumber.Text, GlobalVariables.costCentreID, 3);
                 MessageBoxAdv.Show("Approved", "Approval Done");
                 this.Close();
             }

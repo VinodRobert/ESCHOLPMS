@@ -16,14 +16,14 @@ using Syncfusion.Windows.Forms;
 
 namespace ESCHOLPMS 
 {
-    public partial class frmTransferOutLabour : Form
+    public partial class frmTransferInLabour : Form
     {
         Int64 labourRollNumber;
         Labour lab = new Labour();
       
      
 
-        public frmTransferOutLabour(Int64 rollNumber)
+        public frmTransferInLabour(Int64 rollNumber)
         {
             labourRollNumber = rollNumber;
             InitializeComponent();
@@ -113,6 +113,18 @@ namespace ESCHOLPMS
             cmbSubContractor.Text = Convert.ToString(dsWho["SubContractorName"]);
 
             string currentStatus = Convert.ToString(dsWho["Status"]);
+
+            if (currentStatus=="Terminated")
+            {
+                btnTerminate.Enabled = true;
+                btnTransferOut.Enabled = true;
+            }
+            else if (currentStatus=="Trasnsferred Out")
+            {
+                btnTerminate.Enabled = false;
+                btnTransferOut.Enabled = true;
+            }
+
             ShowPhoto();
         }
 
@@ -187,20 +199,14 @@ namespace ESCHOLPMS
 
         private void btnTerminate_Click(object sender, EventArgs e)
         {
-            if (txtTerminateRemarks.Text=="")
-            {
-                MessageBoxAdv.Show("Remarks Missing - Please Enter ", "Message - Error");
-                return;
-            }
             string message = "Do you want to Terminate This Labour ?";
             string title = "Terminate Labour";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBoxAdv.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                int j = lab.ChangeActiveStatus(labourRollNumber,1,txtTerminateRemarks.Text);
-                int k = lab.UpdateLog(GlobalVariables.UserID, txtRollNumber.Text, GlobalVariables.costCentreID, 9);
-                MessageBoxAdv.Show("Success", "Terminated");
+          //      int j = lab.TerminateLabour(labourRollNumber);
+                MessageBoxAdv.Show("Success", "Terminate");
                 this.Close();
             }
             else
@@ -212,19 +218,14 @@ namespace ESCHOLPMS
 
         private void btnTransferOut_Click(object sender, EventArgs e)
         {
-            if (txtTerminateRemarks.Text == "")
-            {
-                MessageBoxAdv.Show("Remarks Missing - Please Enter ", "Message - Error");
-                return;
-            }
+
             string message = "Do you want to Transfer Out This Labour ?";
             string title = "Transfer Out Labour";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBoxAdv.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                int j = lab.ChangeActiveStatus(labourRollNumber, 3, txtTerminateRemarks.Text);
-                int k = lab.UpdateLog(GlobalVariables.UserID, txtRollNumber.Text, GlobalVariables.costCentreID, 4);
+                int j = lab.TransferOut(labourRollNumber);
                 MessageBoxAdv.Show("Success", "Terminate");
                 this.Close();
             }
@@ -232,31 +233,6 @@ namespace ESCHOLPMS
             {
                 return;
             }
-        }
-
-        private void btnBreak_Click(object sender, EventArgs e)
-        {
-            if (txtTerminateRemarks.Text == "")
-            {
-                MessageBoxAdv.Show("Remarks Missing - Please Enter ", "Message - Error");
-                return;
-            }
-            string message = "Do you want to Mark Status as Long Leave/Short Break etc  ?";
-            string title = "Long Leave";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBoxAdv.Show(message, title, buttons);
-            if (result == DialogResult.Yes)
-            {
-                int j = lab.ChangeActiveStatus(labourRollNumber, 2, txtTerminateRemarks.Text);
-                int k = lab.UpdateLog(GlobalVariables.UserID, txtRollNumber.Text, GlobalVariables.costCentreID, 6);
-                MessageBoxAdv.Show("Success", "LongLeave");
-                this.Close();
-            }
-            else
-            {
-                return;
-            }
-
         }
     }
 }

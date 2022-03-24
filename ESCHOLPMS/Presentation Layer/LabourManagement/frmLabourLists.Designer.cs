@@ -38,6 +38,7 @@
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn8 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn9 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn10 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.gridLabours = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.btnNew = new Syncfusion.WinForms.Controls.SfButton();
@@ -79,12 +80,12 @@
             gridTextColumn3.AllowFiltering = true;
             gridTextColumn3.HeaderText = "Number";
             gridTextColumn3.MappingName = "LabourRollNo";
-            gridTextColumn3.Width = 140D;
+            gridTextColumn3.Width = 130D;
             gridTextColumn4.AllowEditing = false;
             gridTextColumn4.AllowFiltering = true;
             gridTextColumn4.HeaderText = "Name";
             gridTextColumn4.MappingName = "LabourName";
-            gridTextColumn4.Width = 250D;
+            gridTextColumn4.Width = 220D;
             gridTextColumn5.AllowEditing = false;
             gridTextColumn5.AllowFiltering = true;
             gridTextColumn5.HeaderText = "Mobile #";
@@ -109,7 +110,7 @@
             gridTextColumn9.AllowFiltering = true;
             gridTextColumn9.HeaderText = "Status";
             gridTextColumn9.MappingName = "Status";
-            gridTextColumn9.Width = 160D;
+            gridTextColumn9.Width = 220D;
             gridDateTimeColumn1.AllowEditing = false;
             gridDateTimeColumn1.AllowFiltering = true;
             gridDateTimeColumn1.HeaderText = "Column10";
@@ -117,6 +118,12 @@
             gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
             gridDateTimeColumn1.Visible = false;
             gridDateTimeColumn1.Width = 0D;
+            gridTextColumn10.AllowEditing = false;
+            gridTextColumn10.AllowFiltering = true;
+            gridTextColumn10.HeaderText = "Due";
+            gridTextColumn10.MappingName = "Due";
+            gridTextColumn10.Visible = false;
+            gridTextColumn10.Width = 0D;
             this.gridLabours.Columns.Add(gridTextColumn1);
             this.gridLabours.Columns.Add(gridTextColumn2);
             this.gridLabours.Columns.Add(gridTextColumn3);
@@ -127,6 +134,7 @@
             this.gridLabours.Columns.Add(gridTextColumn8);
             this.gridLabours.Columns.Add(gridTextColumn9);
             this.gridLabours.Columns.Add(gridDateTimeColumn1);
+            this.gridLabours.Columns.Add(gridTextColumn10);
             this.gridLabours.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLabours.Location = new System.Drawing.Point(11, 67);
             this.gridLabours.Margin = new System.Windows.Forms.Padding(2);

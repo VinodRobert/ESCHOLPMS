@@ -94,6 +94,13 @@ namespace ESCHOLPMS
         private string _subContractorName;
         private string _status;
         private DateTime _dateOfJoining;
+        private int _due;
+
+        public  int Due
+        {
+            get { return _due; }
+            set { _due = value; }
+        }
 
         public DateTime DateOfJoining
         {

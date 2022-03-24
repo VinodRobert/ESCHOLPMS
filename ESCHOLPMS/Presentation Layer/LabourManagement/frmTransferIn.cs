@@ -12,21 +12,16 @@ using System.Windows.Forms;
 
 namespace ESCHOLPMS
 {
-    public partial class frmLabourDocumentApproval : Form
+    public partial class frmTransferIn : Form
     {
         Labour lab = new Labour();
 
-        public frmLabourDocumentApproval()
+        public frmTransferIn()
         {
             InitializeComponent();
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-            frmNewLabour nl = new frmNewLabour(0);
-            nl.ShowDialog();
-            LoadLabours();
-        }
+      
 
         private void FormatGrid()
         {
@@ -49,7 +44,7 @@ namespace ESCHOLPMS
         private void LoadLabours()
         {
             int costCentreID = Convert.ToInt16(GlobalVariables.costCentreID);
-            DataSet dslabours = lab.FetchLaboursForCertificateApproval(costCentreID);
+            DataSet dslabours = lab.FetchCompleteLabours(costCentreID);
             List<LabourList> LabourListing = new List<LabourList>();
             LabourListing = CommonMethods.ConvertToList<LabourList>(dslabours.Tables[0]);
 
@@ -107,7 +102,7 @@ namespace ESCHOLPMS
             {
                 var record = (this.gridLabours.View.Records[rowIndex].Data as LabourList);
                 Int64 selectedLabour = Convert.ToInt64(record.LabourID.ToString());
-                frmLabourApproval nl = new frmLabourApproval(selectedLabour);
+                frmTransferOutLabour nl = new frmTransferOutLabour(selectedLabour);
                 nl.ShowDialog();
                 LoadLabours();
                  

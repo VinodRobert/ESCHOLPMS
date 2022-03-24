@@ -131,14 +131,25 @@ namespace ESCHOLPMS
 
         private void approveDocumentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLabourDocumentApproval fa = new frmLabourDocumentApproval();
+            frmLabourListDocumentApproval fa = new frmLabourListDocumentApproval();
             fa.Show();
         }
 
         private void transferOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTransferOut  ft = new frmTransferOut();
+            frmTransferOutList  ft = new frmTransferOutList();
             ft.Show();
+        }
+
+        private void listOfSubContractorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void terminateLaboursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTerminateList tr = new frmTerminateList();
+            tr.Show();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace ESCHOLPMS
         string editMode;
         string currentMobileNumber = string.Empty;
         string currentIDNumber = string.Empty;
-
+        string newLabourNumber = string.Empty;
 
         public frmNewLabour(Int64 rollNumber)
         {
@@ -347,7 +347,8 @@ namespace ESCHOLPMS
         {
              
             string errorArea=String.Empty;
-
+            if (cmbAccessCards.Text == "CardNumber")
+                errorArea = "Access Card Number";
             if (txtName.Text == "")
                 errorArea = "Name";
             if (cmbBloodGroup.Text == "Blood Group")
@@ -407,8 +408,8 @@ namespace ESCHOLPMS
             string currentAddress = Convert.ToString(txtPresentAddress.Text);
             string state = Convert.ToString(cmbStates.Text);
             string pin = Convert.ToString(txtPIN.Text);
-            string mobileNumber1 = Convert.ToString(txtMobileNumber1.Text);
-            string mobileNumber2 = Convert.ToString(txtMobileNumber2.Text);
+            string mobileNumber1 = Convert.ToString(txtMobileNumber1.IntegerValue);
+            string mobileNumber2 = Convert.ToString(txtMobileNumber2.IntegerValue);
             string idProof = Convert.ToString(cmbIDProof.Text);
             string idProofNumber = Convert.ToString(txtIDProofNumberGiven.Text);
             string typeOfLabour = Convert.ToString(cmbLabourType.Text);
@@ -419,19 +420,20 @@ namespace ESCHOLPMS
             DataSet dsNewLabour = lab.CreateNewLabour(name,gender,dob,parentName,bloodGroup,pmtAddress,currentAddress,state,
                 pin,mobileNumber1,mobileNumber2,idProof,idProofNumber,typeOfLabour,job,subbie,costCentre,cardNumber );
 
+
+            newLabourNumber = Convert.ToString(dsNewLabour.Tables[0].Rows[0]["LabourRollNo"]);
             
-            string newLabourRollNumber=Convert.ToString(dsNewLabour.Tables[0].Rows[0]["LabourRollNo"]);
             Int32 newLabourID = Convert.ToInt32(dsNewLabour.Tables[0].Rows[0]["LABOURID"]);
             SavePhoto(newLabourID);
 
         
-            txtRollNumber.Text = newLabourRollNumber.ToString();
+            txtRollNumber.Text = newLabourNumber.ToString();
 
             MessageBoxAdv.Office2007Theme = Office2007Theme.Managed;
 
             Office2007Colors.ApplyManagedColors(this, Color.Red);
 
-            MessageBoxAdv.Show(this,  "New Labour Created with Tempoary Number  "+newLabourRollNumber.ToString(), "New Labour Created", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            MessageBoxAdv.Show(this,  "New Labour Created with Tempoary Number  "+newLabourNumber.ToString(), "New Labour Created", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                                  
             LoadAccessCards();
             ReSetAll();
@@ -570,14 +572,20 @@ namespace ESCHOLPMS
             LoadAccessCards();
             ReSetAll();
         }
-
-
+         
+        private void UpdateLog()
+        {
+            int i = lab.UpdateLog(GlobalVariables.UserID, newLabourNumber, GlobalVariables.costCentreID, 0);
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (btnSave.Text == "Save")
             {
                 if (ValidateEntry() == 1)
+                {
                     SaveNewLabour();
+                    UpdateLog();
+                }
             }
             if (btnSave.Text == "Update")
             {

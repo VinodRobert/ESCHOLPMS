@@ -11,12 +11,60 @@ namespace ESCHOLPMS
 {
     class Labour
     {
+
+        
+
+        public int ChangeActiveStatus(Int64 labourRollNumber,int statusID,string comments)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string statusName=string.Empty;
+            int statusIndex=0;
+
+            if (statusID == 1)
+            {
+                statusName = "Terminated - Waiting HR Approval";
+                statusIndex = 9;
+            }
+            else if (statusID == 2)
+            {
+                statusName = "Tempoarily Made Inacte - Leave";
+                statusIndex = 8;
+            }
+            else if (statusID == 3)
+            {
+                statusName = "Transferred Out";
+                statusIndex = 5;
+            }
+            else if (statusID==9)
+            {
+                statusName = "Terminated For Ever";
+                statusIndex = 9;
+            }
+
+            string sql = "Update LabourDetails set Status='" + statusName.Trim() + "',STATUSID=" + Convert.ToString(statusIndex);
+            sql = sql + ",TERMINATECOMMENTS='" + comments.Trim() + "'";
+            sql = sql + "    WHERE LABOURID=" + Convert.ToString(labourRollNumber);  
+            int k = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return k;
+        }
+
+        public int TransferOut(Int64 labourID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "Update LabourDetails set Status='Transferred Out' WHERE LABOURID=" + Convert.ToString(labourID);
+            int k = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return k;
+        }
+
+
         public int ApproveDocuments(Int64 labourID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "Update LabourDetails set Status='Permanent Labour' WHERE LABOURID=" + Convert.ToString(labourID);
-            int k = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
-            return k;
+            SqlParameter[] arParms = new SqlParameter[1];
+            arParms[0] = new SqlParameter("@LABOURID", SqlDbType.BigInt);
+            arParms[0].Value = labourID;
+            int i= SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "[spApproveLabour]", arParms);
+            return 1;
         }
 
         public int ResetAttachments(Int64 labourID)
@@ -35,7 +83,7 @@ namespace ESCHOLPMS
         public int UpdateLabourStatus(string status, Int64 labourID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "Update LabourDetails set Status='"+Convert.ToString(status)+"' WHERE LABOURID=" + Convert.ToString(labourID);
+            string sql = "Update LabourDetails set STATUSID=1, Status='"+Convert.ToString(status)+"' WHERE LABOURID=" + Convert.ToString(labourID);
             int j = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
             return j;
         }
@@ -94,7 +142,22 @@ namespace ESCHOLPMS
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "[spNewLabour]", arParms);
             return ds;
         }
-
+         
+        public int UpdateLog(string userID, string  labourNumber, int costCentreID, int logactionID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            SqlParameter[] arParms = new SqlParameter[4];
+            arParms[0] = new SqlParameter("UserID", SqlDbType.Text);
+            arParms[0].Value = userID;
+            arParms[1] = new SqlParameter("LabourNumber", SqlDbType.Text);
+            arParms[1].Value = labourNumber;
+            arParms[2] = new SqlParameter("CostCentreID", SqlDbType.Int);
+            arParms[2].Value = costCentreID;
+            arParms[3] = new SqlParameter("LogActionID", SqlDbType.Int);
+            arParms[3].Value = logactionID;
+            int j = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "spUpdateLog", arParms);
+            return j;
+        }
 
         public int UpdateLabour(Int64 labourID, string name, string gender, DateTime dob, string parentName, string bloodGroup,
                                 string permanentAddress, string currentAddress, string state, string pinCode,
@@ -104,8 +167,6 @@ namespace ESCHOLPMS
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] arParms = new SqlParameter[19];
-            arParms[0] = new SqlParameter("@LABOURNAME", SqlDbType.Text);
-            arParms[0].Value = name;
             arParms[1] = new SqlParameter("@GENDER", SqlDbType.Text);
             arParms[1].Value = gender;
             arParms[2] = new SqlParameter("@DATEOFBIRTH", SqlDbType.DateTime);
@@ -149,16 +210,28 @@ namespace ESCHOLPMS
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
-            sql = sql + " FROM  LABOURDETAILS WHERE STATUS NOT IN ('Archived') AND CURRENTCOSTCENTREID= ";
+            sql = sql + " FROM  LABOURDETAILS WHERE STATUS NOT IN ('Terminated - Waiting HR Approval') AND CURRENTCOSTCENTREID= ";
             sql = sql +   Convert.ToString(costCentre)     +"  ORDER BY LABOURROLLNO DESC ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds; 
         }
 
+        public DataSet FetchTerminateLabours(int costCentre)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
+            sql = sql + " FROM  LABOURDETAILS WHERE STATUS = ('Terminated - Waiting HR Approval') ";
+            sql = sql + " ORDER BY LABOURROLLNO DESC ";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+
+
         public DataSet FetchCompleteLaboursForCertificate(int costCentre)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,DATEOFJOINING,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
+            sql = sql + ",DATEDIFF(day,CONVERT(DATE, DateOfJoining),GETDATE() ) AS DUE";
             sql = sql + " FROM  LABOURDETAILS WHERE STATUS in ('New','Certificate Uploaded. Not Approved') AND CURRENTCOSTCENTREID= ";
             sql = sql + Convert.ToString(costCentre) + "  ORDER BY LABOURROLLNO DESC ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
@@ -169,8 +242,8 @@ namespace ESCHOLPMS
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,DATEOFJOINING,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
-            sql = sql + " FROM  LABOURDETAILS WHERE STATUS in ('Certificate Uploaded. Not Approved') AND CURRENTCOSTCENTREID= ";
-            sql = sql + Convert.ToString(costCentre) + "  ORDER BY LABOURROLLNO DESC ";
+            sql =  sql + " FROM  LABOURDETAILS WHERE STATUS in ('Certificate Uploaded. Not Approved') ";
+            sql =  sql + "  ORDER BY LABOURROLLNO DESC ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }

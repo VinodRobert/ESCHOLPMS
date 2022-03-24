@@ -37,7 +37,6 @@
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.btnBrowseEnrollment = new Syncfusion.WinForms.Controls.SfButton();
             this.btnSave = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.btnClose = new Syncfusion.WinForms.Controls.SfButton();
             this.txtRollNumber = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -162,7 +161,6 @@
             this.btnBrowseEnrollment.Text = "Browse";
             this.btnBrowseEnrollment.UseVisualStyleBackColor = false;
             this.btnBrowseEnrollment.Visible = false;
-        
             // 
             // btnSave
             // 
@@ -178,26 +176,12 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnCancel
-            // 
-            this.btnCancel.AccessibleName = "Button";
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnCancel.Location = new System.Drawing.Point(407, 553);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(96, 39);
-            this.btnCancel.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnCancel.TabIndex = 20;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnClose
             // 
             this.btnClose.AccessibleName = "Button";
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnClose.Location = new System.Drawing.Point(503, 553);
+            this.btnClose.Location = new System.Drawing.Point(403, 553);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(96, 39);
             this.btnClose.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -311,7 +295,6 @@
             this.btnBrowseTradeCertificate.Text = "Browse";
             this.btnBrowseTradeCertificate.UseVisualStyleBackColor = false;
             this.btnBrowseTradeCertificate.Visible = false;
-        
             // 
             // txtTradeCertificate
             // 
@@ -346,7 +329,6 @@
             this.btnBrowseIDProof.Text = "Browse";
             this.btnBrowseIDProof.UseVisualStyleBackColor = false;
             this.btnBrowseIDProof.Visible = false;
-        
             // 
             // txtIDProofAttachment
             // 
@@ -528,7 +510,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtRollNumber);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnBrowseEnrollment);
             this.Controls.Add(this.autoLabel1);
@@ -572,7 +553,6 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
         private Syncfusion.WinForms.Controls.SfButton btnBrowseEnrollment;
         private Syncfusion.WinForms.Controls.SfButton btnSave;
-        private Syncfusion.WinForms.Controls.SfButton btnCancel;
         private Syncfusion.WinForms.Controls.SfButton btnClose;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtRollNumber;
         private System.Windows.Forms.Panel panel1;
