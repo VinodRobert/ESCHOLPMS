@@ -155,7 +155,7 @@ namespace ESCHOLPMS
                     btnReUpload.Visible = true;
                     btnSave.Enabled = false;
                 }
-
+                dtActionDate.Value = Convert.ToDateTime(dsWho["SiteActionDate"]);
                 lblStatus.Visible = true;
                 LockAllInputs();
                 ShowPhoto();

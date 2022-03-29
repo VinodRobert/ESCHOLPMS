@@ -447,6 +447,18 @@
     <Compile Include="Presentation Layer\LabourManagement\frmInactiveLabourLists.Designer.cs">
       <DependentUpon>frmInactiveLabourLists.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmSingleLabour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmSingleLabour.Designer.cs">
+      <DependentUpon>frmSingleLabour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTerminateForEverList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\frmTerminateForEverList.Designer.cs">
+      <DependentUpon>frmTerminateForEverList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\LabourManagement\frmTransferInLabour.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -589,6 +601,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\frmInactiveLabourLists.resx">
       <DependentUpon>frmInactiveLabourLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmSingleLabour.resx">
+      <DependentUpon>frmSingleLabour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTerminateForEverList.resx">
+      <DependentUpon>frmTerminateForEverList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferInLabour.resx">
       <DependentUpon>frmTransferInLabour.cs</DependentUpon>

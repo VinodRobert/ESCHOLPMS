@@ -41,7 +41,7 @@ namespace ESCHOLPMS
                 statusIndex = 9;
             }
 
-            string sql = "Update LabourDetails set Status='" + statusName.Trim() + "',STATUSID=" + Convert.ToString(statusIndex);
+            string sql = "Update LabourDetails set SITEACTIONDATE=GETDATE(), Status='" + statusName.Trim() + "',STATUSID=" + Convert.ToString(statusIndex);
             sql = sql + ",TERMINATECOMMENTS='" + comments.Trim() + "'";
             sql = sql + "    WHERE LABOURID=" + Convert.ToString(labourRollNumber);  
             int k = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
@@ -83,7 +83,7 @@ namespace ESCHOLPMS
         public int UpdateLabourStatus(string status, Int64 labourID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "Update LabourDetails set STATUSID=1, Status='"+Convert.ToString(status)+"' WHERE LABOURID=" + Convert.ToString(labourID);
+            string sql = "Update LabourDetails set STATUSID=1,SITEACTIONDATE=GETDATE(),Status='"+Convert.ToString(status)+"' WHERE LABOURID=" + Convert.ToString(labourID);
             int j = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
             return j;
         }
@@ -206,11 +206,20 @@ namespace ESCHOLPMS
             int j = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "spUpdateLabour", arParms);
             return j;
         }
+        public DataSet FetchTerminatedForEverLabours()
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
+            sql = sql + " FROM  LABOURDETAILS WHERE STATUS NOT IN ('Terminated For Ever') ";
+            sql = sql + "  ORDER BY LABOURROLLNO DESC ";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
         public DataSet FetchCompleteLabours(int costCentre)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
-            sql = sql + " FROM  LABOURDETAILS WHERE STATUS NOT IN ('Terminated - Waiting HR Approval') AND CURRENTCOSTCENTREID= ";
+            sql = sql + " FROM  LABOURDETAILS WHERE STATUS NOT IN ('Terminated For Ever','Transferred Out','Terminated - Waiting HR Approval') AND CURRENTCOSTCENTREID= ";
             sql = sql +   Convert.ToString(costCentre)     +"  ORDER BY LABOURROLLNO DESC ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds; 

@@ -66,6 +66,8 @@
             this.OpenFileEntrollment = new System.Windows.Forms.OpenFileDialog();
             this.OpenFileTradeCertificate = new System.Windows.Forms.OpenFileDialog();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.dtActionDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
+            this.autoLabel9 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRollNumber)).BeginInit();
             this.panel1.SuspendLayout();
@@ -439,7 +441,7 @@
             // lblPhotoFileName
             // 
             this.lblPhotoFileName.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhotoFileName.Location = new System.Drawing.Point(451, 333);
+            this.lblPhotoFileName.Location = new System.Drawing.Point(450, 362);
             this.lblPhotoFileName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPhotoFileName.Name = "lblPhotoFileName";
             this.lblPhotoFileName.Size = new System.Drawing.Size(129, 19);
@@ -473,11 +475,29 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.Maroon;
-            this.lblStatus.Location = new System.Drawing.Point(719, 292);
+            this.lblStatus.Location = new System.Drawing.Point(723, 323);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(81, 29);
             this.lblStatus.TabIndex = 93;
             this.lblStatus.Text = "label1";
+            // 
+            // dtActionDate
+            // 
+            this.dtActionDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.FullDateTime;
+            this.dtActionDate.Location = new System.Drawing.Point(782, 272);
+            this.dtActionDate.Name = "dtActionDate";
+            this.dtActionDate.Size = new System.Drawing.Size(373, 34);
+            this.dtActionDate.TabIndex = 99;
+            // 
+            // autoLabel9
+            // 
+            this.autoLabel9.ForeColor = System.Drawing.Color.Maroon;
+            this.autoLabel9.Location = new System.Drawing.Point(616, 287);
+            this.autoLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.autoLabel9.Name = "autoLabel9";
+            this.autoLabel9.Size = new System.Drawing.Size(125, 19);
+            this.autoLabel9.TabIndex = 98;
+            this.autoLabel9.Text = "Last Action On";
             // 
             // frmLabourApproval
             // 
@@ -485,6 +505,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1166, 604);
+            this.Controls.Add(this.dtActionDate);
+            this.Controls.Add(this.autoLabel9);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblPhotoFileName);
@@ -582,5 +604,7 @@
         private System.Windows.Forms.OpenFileDialog OpenFileEntrollment;
         private System.Windows.Forms.OpenFileDialog OpenFileTradeCertificate;
         private System.Windows.Forms.Label lblStatus;
+        private Syncfusion.WinForms.Input.SfDateTimeEdit dtActionDate;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel9;
     }
 }

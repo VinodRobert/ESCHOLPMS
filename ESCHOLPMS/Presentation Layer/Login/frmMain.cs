@@ -151,5 +151,11 @@ namespace ESCHOLPMS
             frmTerminateList tr = new frmTerminateList();
             tr.Show();
         }
+
+        private void listTerminatedLaboursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTerminatedForEverList trlist = new frmTerminatedForEverList();
+            trlist.Show();
+        }
     }
 }

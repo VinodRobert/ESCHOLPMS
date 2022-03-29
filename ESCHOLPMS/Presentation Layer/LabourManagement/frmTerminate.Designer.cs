@@ -52,6 +52,8 @@
             this.lblPhotoFileName = new System.Windows.Forms.Label();
             this.autoLabel4 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtTerminateRemarks = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.dtActionDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
+            this.autoLabel9 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubContractor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbJobType)).BeginInit();
@@ -334,12 +336,32 @@
             this.txtTerminateRemarks.Size = new System.Drawing.Size(547, 95);
             this.txtTerminateRemarks.TabIndex = 78;
             // 
+            // dtActionDate
+            // 
+            this.dtActionDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.FullDateTime;
+            this.dtActionDate.Location = new System.Drawing.Point(639, 309);
+            this.dtActionDate.Name = "dtActionDate";
+            this.dtActionDate.Size = new System.Drawing.Size(373, 34);
+            this.dtActionDate.TabIndex = 101;
+            // 
+            // autoLabel9
+            // 
+            this.autoLabel9.ForeColor = System.Drawing.Color.Maroon;
+            this.autoLabel9.Location = new System.Drawing.Point(473, 324);
+            this.autoLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.autoLabel9.Name = "autoLabel9";
+            this.autoLabel9.Size = new System.Drawing.Size(125, 19);
+            this.autoLabel9.TabIndex = 100;
+            this.autoLabel9.Text = "Last Action On";
+            // 
             // frmTerminate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(1047, 445);
+            this.Controls.Add(this.dtActionDate);
+            this.Controls.Add(this.autoLabel9);
             this.Controls.Add(this.txtTerminateRemarks);
             this.Controls.Add(this.autoLabel4);
             this.Controls.Add(this.lblPhotoFileName);
@@ -408,5 +430,7 @@
         private System.Windows.Forms.Label lblPhotoFileName;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel4;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtTerminateRemarks;
+        private Syncfusion.WinForms.Input.SfDateTimeEdit dtActionDate;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel9;
     }
 }

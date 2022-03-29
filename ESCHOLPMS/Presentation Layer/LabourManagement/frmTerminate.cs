@@ -113,6 +113,7 @@ namespace ESCHOLPMS
             cmbSubContractor.Text = Convert.ToString(dsWho["SubContractorName"]);
             txtTerminateRemarks.Text = Convert.ToString(dsWho["TerminateComments"]);
             string currentStatus = Convert.ToString(dsWho["Status"]);
+            dtActionDate.Value = Convert.ToDateTime(dsWho["SiteActionDate"]);
             ShowPhoto();
         }
 

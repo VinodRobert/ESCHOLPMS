@@ -140,7 +140,7 @@ namespace ESCHOLPMS
                 btnBrowseTradeCertificate.Enabled = false;
                
                 btnSave.Enabled = true;
-              
+                dtActionDate.Value = Convert.ToDateTime(dsWho["SITEACTIONDATE"]);
                 lblStatus.Visible = true;
                 LockAllInputs();
                 ShowPhoto();
