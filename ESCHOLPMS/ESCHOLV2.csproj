@@ -429,94 +429,106 @@
     <Compile Include="Presentation Layer\API\frmAuthToken.Designer.cs">
       <DependentUpon>frmAuthToken.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourApproval.cs">
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_Complete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourApproval.Designer.cs">
-      <DependentUpon>frmLabourApproval.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_Complete.Designer.cs">
+      <DependentUpon>frmList_Complete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourListDocumentApproval.cs">
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForChangingAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourListDocumentApproval.Designer.cs">
-      <DependentUpon>frmLabourListDocumentApproval.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForChangingAccounts.Designer.cs">
+      <DependentUpon>frmList_ForChangingAccounts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmInactiveLabourLists.cs">
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForTransferOut.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmInactiveLabourLists.Designer.cs">
-      <DependentUpon>frmInactiveLabourLists.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForTransferOut.Designer.cs">
+      <DependentUpon>frmList_ForTransferOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmSingleLabour.cs">
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForTransferIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmSingleLabour.Designer.cs">
-      <DependentUpon>frmSingleLabour.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForTransferIn.Designer.cs">
+      <DependentUpon>frmList_ForTransferIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTerminateForEverList.cs">
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmApproveCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTerminateForEverList.Designer.cs">
-      <DependentUpon>frmTerminateForEverList.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmApproveCertificate.Designer.cs">
+      <DependentUpon>frmApproveCertificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTransferInLabour.cs">
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ApproveCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTransferInLabour.Designer.cs">
-      <DependentUpon>frmTransferInLabour.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ApproveCertificate.Designer.cs">
+      <DependentUpon>frmList_ApproveCertificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTransferIn.cs">
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmChangeAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTransferIn.Designer.cs">
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmChangeAccounts.Designer.cs">
+      <DependentUpon>frmChangeAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmTransferIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmTransferIn.Designer.cs">
       <DependentUpon>frmTransferIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTerminate.cs">
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmSingleLabourDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTerminate.Designer.cs">
-      <DependentUpon>frmTerminate.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmSingleLabourDetails.Designer.cs">
+      <DependentUpon>frmSingleLabourDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTransferOutLabour.cs">
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ApproveTerminateForEver.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTransferOutLabour.Designer.cs">
-      <DependentUpon>frmTransferOutLabour.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ApproveTerminateForEver.Designer.cs">
+      <DependentUpon>frmList_ApproveTerminateForEver.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTerminateList.cs">
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmApproveTerminateForEver.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTerminateList.Designer.cs">
-      <DependentUpon>frmTerminateList.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmApproveTerminateForEver.Designer.cs">
+      <DependentUpon>frmApproveTerminateForEver.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTransferOutList.cs">
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmExit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmTransferOutList.Designer.cs">
-      <DependentUpon>frmTransferOutList.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmExit.Designer.cs">
+      <DependentUpon>frmExit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourListsCertificate.cs">
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForExit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourListsCertificate.Designer.cs">
-      <DependentUpon>frmLabourListsCertificate.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForExit.Designer.cs">
+      <DependentUpon>frmList_ForExit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourLists.cs">
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_CertificateUpload.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourLists.Designer.cs">
-      <DependentUpon>frmLabourLists.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_CertificateUpload.Designer.cs">
+      <DependentUpon>frmList_CertificateUpload.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourCertificate.cs">
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ActiveLabours.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmLabourCertificate.Designer.cs">
-      <DependentUpon>frmLabourCertificate.cs</DependentUpon>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ActiveLabours.Designer.cs">
+      <DependentUpon>frmList_ActiveLabours.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmNewLabour.cs">
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmCertificateUpload.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\LabourManagement\frmNewLabour.Designer.cs">
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmCertificateUpload.Designer.cs">
+      <DependentUpon>frmCertificateUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmNewLabour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmNewLabour.Designer.cs">
       <DependentUpon>frmNewLabour.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\Logins\frmLoginUsers.cs">
@@ -593,49 +605,55 @@
     <EmbeddedResource Include="Presentation Layer\API\frmAuthToken.resx">
       <DependentUpon>frmAuthToken.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourApproval.resx">
-      <DependentUpon>frmLabourApproval.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_Complete.resx">
+      <DependentUpon>frmList_Complete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourListDocumentApproval.resx">
-      <DependentUpon>frmLabourListDocumentApproval.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_ForChangingAccounts.resx">
+      <DependentUpon>frmList_ForChangingAccounts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmInactiveLabourLists.resx">
-      <DependentUpon>frmInactiveLabourLists.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_ForTransferOut.resx">
+      <DependentUpon>frmList_ForTransferOut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmSingleLabour.resx">
-      <DependentUpon>frmSingleLabour.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_ForTransferIn.resx">
+      <DependentUpon>frmList_ForTransferIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTerminateForEverList.resx">
-      <DependentUpon>frmTerminateForEverList.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmApproveCertificate.resx">
+      <DependentUpon>frmApproveCertificate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferInLabour.resx">
-      <DependentUpon>frmTransferInLabour.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_ApproveCertificate.resx">
+      <DependentUpon>frmList_ApproveCertificate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferIn.resx">
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmChangeAccounts.resx">
+      <DependentUpon>frmChangeAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmTransferIn.resx">
       <DependentUpon>frmTransferIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTerminate.resx">
-      <DependentUpon>frmTerminate.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmSingleLabourDetails.resx">
+      <DependentUpon>frmSingleLabourDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferOutLabour.resx">
-      <DependentUpon>frmTransferOutLabour.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_ApproveTerminateForEver.resx">
+      <DependentUpon>frmList_ApproveTerminateForEver.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTerminateList.resx">
-      <DependentUpon>frmTerminateList.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmApproveTerminateForEver.resx">
+      <DependentUpon>frmApproveTerminateForEver.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmTransferOutList.resx">
-      <DependentUpon>frmTransferOutList.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmExit.resx">
+      <DependentUpon>frmExit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourListsCertificate.resx">
-      <DependentUpon>frmLabourListsCertificate.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_ForExit.resx">
+      <DependentUpon>frmList_ForExit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourLists.resx">
-      <DependentUpon>frmLabourLists.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_CertificateUpload.resx">
+      <DependentUpon>frmList_CertificateUpload.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmLabourCertificate.resx">
-      <DependentUpon>frmLabourCertificate.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_ActiveLabours.resx">
+      <DependentUpon>frmList_ActiveLabours.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\LabourManagement\frmNewLabour.resx">
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmCertificateUpload.resx">
+      <DependentUpon>frmCertificateUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmNewLabour.resx">
       <DependentUpon>frmNewLabour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Logins\frmLoginUsers.resx">

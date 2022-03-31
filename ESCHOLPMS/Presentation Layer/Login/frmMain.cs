@@ -114,7 +114,7 @@ namespace ESCHOLPMS
 
         private void newLabourToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLabourLists ll = new frmLabourLists();
+            frmList_ActiveLabours ll = new frmList_ActiveLabours();
             ll.Show();
         }
 
@@ -125,20 +125,20 @@ namespace ESCHOLPMS
 
         private void uploadDocumentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLabourListsCertificate fc = new frmLabourListsCertificate();
+            frmList_CertificateUpload fc = new frmList_CertificateUpload();
             fc.Show();
         }
 
         private void approveDocumentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLabourListDocumentApproval fa = new frmLabourListDocumentApproval();
+            frmList_ApproveCertificate fa = new frmList_ApproveCertificate();
             fa.Show();
         }
 
         private void transferOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTransferOutList  ft = new frmTransferOutList();
-            ft.Show();
+            frmList_ForTransferOut to = new frmList_ForTransferOut();
+            to.Show();
         }
 
         private void listOfSubContractorsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -148,14 +148,32 @@ namespace ESCHOLPMS
 
         private void terminateLaboursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTerminateList tr = new frmTerminateList();
+            frmList_ApproveTerminateForEver tr = new frmList_ApproveTerminateForEver();
             tr.Show();
         }
 
         private void listTerminatedLaboursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTerminatedForEverList trlist = new frmTerminatedForEverList();
-            trlist.Show();
+            frmList_ApproveTerminateForEver fa = new frmList_ApproveTerminateForEver();
+            fa.Show();
+        }
+
+        private void transferInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmList_ForTransferIn ti = new frmList_ForTransferIn();
+            ti.Show();
+        }
+
+        private void updateJobStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmList_ForChangingAccounts ca = new frmList_ForChangingAccounts();
+            ca.Show();
+        }
+
+        private void listOfInactiveLaboursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmList_Complete cl = new frmList_Complete();
+            cl.Show();
         }
     }
 }

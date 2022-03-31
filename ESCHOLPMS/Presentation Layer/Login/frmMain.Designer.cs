@@ -73,12 +73,12 @@
             this.transferOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateJobStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listOfInactiveLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfSubContractorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.laboursUnderContractorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterContractorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approveDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminateLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listOfInactiveLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labourAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,7 +88,6 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripProjectName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.listTerminatedLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -403,8 +402,7 @@
             this.alterContractorsToolStripMenuItem,
             this.approveDocumentsToolStripMenuItem,
             this.terminateLaboursToolStripMenuItem,
-            this.listOfInactiveLaboursToolStripMenuItem,
-            this.listTerminatedLaboursToolStripMenuItem});
+            this.listOfInactiveLaboursToolStripMenuItem});
             this.labourManagementToolStripMenuItem.Name = "labourManagementToolStripMenuItem";
             this.labourManagementToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
             this.labourManagementToolStripMenuItem.Text = "Labour Management";
@@ -435,18 +433,14 @@
             this.transferInToolStripMenuItem.Name = "transferInToolStripMenuItem";
             this.transferInToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
             this.transferInToolStripMenuItem.Text = "Transfer In";
+            this.transferInToolStripMenuItem.Click += new System.EventHandler(this.transferInToolStripMenuItem_Click);
             // 
             // updateJobStatusToolStripMenuItem
             // 
             this.updateJobStatusToolStripMenuItem.Name = "updateJobStatusToolStripMenuItem";
             this.updateJobStatusToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
-            this.updateJobStatusToolStripMenuItem.Text = "Update Job Status";
-            // 
-            // listOfInactiveLaboursToolStripMenuItem
-            // 
-            this.listOfInactiveLaboursToolStripMenuItem.Name = "listOfInactiveLaboursToolStripMenuItem";
-            this.listOfInactiveLaboursToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
-            this.listOfInactiveLaboursToolStripMenuItem.Text = "List of Inactive Labours";
+            this.updateJobStatusToolStripMenuItem.Text = "Update Accounts";
+            this.updateJobStatusToolStripMenuItem.Click += new System.EventHandler(this.updateJobStatusToolStripMenuItem_Click);
             // 
             // listOfSubContractorsToolStripMenuItem
             // 
@@ -480,6 +474,13 @@
             this.terminateLaboursToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
             this.terminateLaboursToolStripMenuItem.Text = "Approve Termination";
             this.terminateLaboursToolStripMenuItem.Click += new System.EventHandler(this.terminateLaboursToolStripMenuItem_Click);
+            // 
+            // listOfInactiveLaboursToolStripMenuItem
+            // 
+            this.listOfInactiveLaboursToolStripMenuItem.Name = "listOfInactiveLaboursToolStripMenuItem";
+            this.listOfInactiveLaboursToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
+            this.listOfInactiveLaboursToolStripMenuItem.Text = "Complete List of Labours";
+            this.listOfInactiveLaboursToolStripMenuItem.Click += new System.EventHandler(this.listOfInactiveLaboursToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -547,13 +548,6 @@
             this.stripProjectName.Name = "stripProjectName";
             this.stripProjectName.Size = new System.Drawing.Size(125, 23);
             this.stripProjectName.Text = "Prroject Name";
-            // 
-            // listTerminatedLaboursToolStripMenuItem
-            // 
-            this.listTerminatedLaboursToolStripMenuItem.Name = "listTerminatedLaboursToolStripMenuItem";
-            this.listTerminatedLaboursToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
-            this.listTerminatedLaboursToolStripMenuItem.Text = "List Terminated Labours";
-            this.listTerminatedLaboursToolStripMenuItem.Click += new System.EventHandler(this.listTerminatedLaboursToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -639,7 +633,6 @@
         private System.Windows.Forms.ToolStripMenuItem viewAttendanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterAttendanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem terminateLaboursToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listTerminatedLaboursToolStripMenuItem;
     }
 }
 
