@@ -125,7 +125,7 @@
             // txtName
             // 
             this.txtName.BeforeTouchSize = new System.Drawing.Size(180, 27);
-            this.txtName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(176, 46);
             this.txtName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtName.Name = "txtName";
@@ -146,7 +146,7 @@
             // txtParentName
             // 
             this.txtParentName.BeforeTouchSize = new System.Drawing.Size(180, 27);
-            this.txtParentName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParentName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtParentName.Location = new System.Drawing.Point(176, 90);
             this.txtParentName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtParentName.Name = "txtParentName";
@@ -196,7 +196,7 @@
             // txtPemanentAddress
             // 
             this.txtPemanentAddress.BeforeTouchSize = new System.Drawing.Size(180, 27);
-            this.txtPemanentAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPemanentAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPemanentAddress.Location = new System.Drawing.Point(176, 233);
             this.txtPemanentAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPemanentAddress.Multiline = true;
@@ -218,7 +218,7 @@
             // txtPresentAddress
             // 
             this.txtPresentAddress.BeforeTouchSize = new System.Drawing.Size(180, 27);
-            this.txtPresentAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPresentAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPresentAddress.Location = new System.Drawing.Point(176, 329);
             this.txtPresentAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPresentAddress.Multiline = true;
@@ -300,7 +300,7 @@
             // txtIDProofNumberGiven
             // 
             this.txtIDProofNumberGiven.BeforeTouchSize = new System.Drawing.Size(180, 27);
-            this.txtIDProofNumberGiven.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDProofNumberGiven.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDProofNumberGiven.Location = new System.Drawing.Point(176, 527);
             this.txtIDProofNumberGiven.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtIDProofNumberGiven.MaxLength = 25;
@@ -329,19 +329,21 @@
             // 
             // cmbSubContractor
             // 
+            this.cmbSubContractor.BackColor = System.Drawing.Color.Black;
             this.cmbSubContractor.DisplayMember = "CONTRACTORNAME";
             this.cmbSubContractor.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbSubContractor.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbSubContractor.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubContractor.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSubContractor.Location = new System.Drawing.Point(890, 54);
             this.cmbSubContractor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbSubContractor.Name = "cmbSubContractor";
             this.cmbSubContractor.Size = new System.Drawing.Size(267, 30);
             this.cmbSubContractor.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbSubContractor.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSubContractor.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubContractor.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
+            this.cmbSubContractor.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubContractor.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSubContractor.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbSubContractor.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubContractor.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSubContractor.TabIndex = 16;
             this.cmbSubContractor.ValueMember = "CONTRACTORCODE";
             // 
@@ -436,18 +438,22 @@
             // cmbStates
             // 
             this.cmbStates.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbStates.BackColor = System.Drawing.Color.Black;
             this.cmbStates.DisplayMember = "STATENAME";
             this.cmbStates.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbStates.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbStates.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStates.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStates.ForeColor = System.Drawing.Color.White;
             this.cmbStates.Location = new System.Drawing.Point(176, 291);
             this.cmbStates.Name = "cmbStates";
             this.cmbStates.Size = new System.Drawing.Size(422, 28);
             this.cmbStates.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbStates.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStates.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStates.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
+            this.cmbStates.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStates.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
+            this.cmbStates.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStates.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbStates.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStates.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStates.TabIndex = 7;
             this.cmbStates.ValueMember = "STATECODE";
             // 
@@ -456,79 +462,93 @@
             this.cmbGender.AllowDrop = true;
             this.cmbGender.AllowDropDownResize = false;
             this.cmbGender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbGender.BackColor = System.Drawing.Color.White;
             this.cmbGender.DisplayMember = "SEX";
             this.cmbGender.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbGender.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbGender.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.ForeColor = System.Drawing.Color.White;
             this.cmbGender.Location = new System.Drawing.Point(176, 182);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(129, 28);
+            this.cmbGender.Style.ClearButtonStyle.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbGender.Style.ClearButtonStyle.FocusedForeColor = System.Drawing.Color.White;
             this.cmbGender.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbGender.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbGender.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.Style.EditorStyle.BackColor = System.Drawing.Color.White;
+            this.cmbGender.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
+            this.cmbGender.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbGender.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.TabIndex = 4;
             this.cmbGender.ValueMember = "SEX";
             // 
             // cmbBloodGroup
             // 
             this.cmbBloodGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbBloodGroup.BackColor = System.Drawing.Color.Black;
             this.cmbBloodGroup.DisplayMember = "BLOODGROUP";
             this.cmbBloodGroup.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbBloodGroup.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbBloodGroup.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloodGroup.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloodGroup.ForeColor = System.Drawing.Color.White;
             this.cmbBloodGroup.Location = new System.Drawing.Point(426, 182);
             this.cmbBloodGroup.Name = "cmbBloodGroup";
             this.cmbBloodGroup.Size = new System.Drawing.Size(129, 30);
             this.cmbBloodGroup.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbBloodGroup.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBloodGroup.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloodGroup.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
+            this.cmbBloodGroup.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloodGroup.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
+            this.cmbBloodGroup.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBloodGroup.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbBloodGroup.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloodGroup.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBloodGroup.TabIndex = 5;
             this.cmbBloodGroup.ValueMember = "BLOODGROUP";
             // 
             // cmbJobType
             // 
             this.cmbJobType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbJobType.BackColor = System.Drawing.Color.Black;
             this.cmbJobType.DisplayMember = "JOBTYPE";
             this.cmbJobType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbJobType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbJobType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbJobType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJobType.Location = new System.Drawing.Point(890, 109);
             this.cmbJobType.Name = "cmbJobType";
             this.cmbJobType.Size = new System.Drawing.Size(263, 30);
             this.cmbJobType.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbJobType.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbJobType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbJobType.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
+            this.cmbJobType.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbJobType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJobType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbJobType.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbJobType.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJobType.TabIndex = 17;
             this.cmbJobType.ValueMember = "JOBTYPE";
             // 
             // cmbLabourType
             // 
             this.cmbLabourType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbLabourType.BackColor = System.Drawing.Color.Black;
             this.cmbLabourType.DisplayMember = "LABOURTYPE";
             this.cmbLabourType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbLabourType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbLabourType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLabourType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLabourType.Location = new System.Drawing.Point(890, 9);
             this.cmbLabourType.Name = "cmbLabourType";
             this.cmbLabourType.Size = new System.Drawing.Size(263, 30);
             this.cmbLabourType.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbLabourType.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLabourType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLabourType.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
+            this.cmbLabourType.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLabourType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLabourType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbLabourType.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLabourType.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLabourType.TabIndex = 15;
             this.cmbLabourType.ValueMember = "LABOURTYPE";
             this.cmbLabourType.SelectedIndexChanged += new System.EventHandler(this.cmbLabourType_SelectedIndexChanged);
             // 
             // dtDOB
             // 
-            this.dtDOB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtDOB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtDOB.Location = new System.Drawing.Point(176, 131);
             this.dtDOB.Name = "dtDOB";
             this.dtDOB.Size = new System.Drawing.Size(217, 31);
@@ -536,31 +556,37 @@
             // 
             // txtRollNumber
             // 
+            this.txtRollNumber.BackColor = System.Drawing.Color.White;
             this.txtRollNumber.BeforeTouchSize = new System.Drawing.Size(180, 27);
             this.txtRollNumber.Enabled = false;
-            this.txtRollNumber.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRollNumber.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRollNumber.ForeColor = System.Drawing.Color.Black;
             this.txtRollNumber.Location = new System.Drawing.Point(176, 9);
             this.txtRollNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtRollNumber.Name = "txtRollNumber";
-            this.txtRollNumber.Size = new System.Drawing.Size(130, 29);
+            this.txtRollNumber.Size = new System.Drawing.Size(156, 29);
             this.txtRollNumber.TabIndex = 0;
             this.txtRollNumber.Text = "textBoxExt2";
             // 
             // cmbIDProof
             // 
             this.cmbIDProof.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbIDProof.BackColor = System.Drawing.Color.Black;
             this.cmbIDProof.DisplayMember = "IDPROOF";
             this.cmbIDProof.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbIDProof.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbIDProof.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIDProof.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIDProof.ForeColor = System.Drawing.Color.White;
             this.cmbIDProof.Location = new System.Drawing.Point(176, 476);
             this.cmbIDProof.Name = "cmbIDProof";
             this.cmbIDProof.Size = new System.Drawing.Size(181, 28);
             this.cmbIDProof.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbIDProof.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbIDProof.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIDProof.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
+            this.cmbIDProof.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIDProof.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
+            this.cmbIDProof.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDProof.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbIDProof.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIDProof.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDProof.TabIndex = 12;
             this.cmbIDProof.ValueMember = "IDPROOF";
             // 
@@ -577,18 +603,22 @@
             // cmbAccessCards
             // 
             this.cmbAccessCards.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbAccessCards.BackColor = System.Drawing.Color.Black;
             this.cmbAccessCards.DisplayMember = "CARDNUMBER";
             this.cmbAccessCards.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbAccessCards.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbAccessCards.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccessCards.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccessCards.ForeColor = System.Drawing.Color.White;
             this.cmbAccessCards.Location = new System.Drawing.Point(563, 476);
             this.cmbAccessCards.Name = "cmbAccessCards";
             this.cmbAccessCards.Size = new System.Drawing.Size(151, 28);
             this.cmbAccessCards.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbAccessCards.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbAccessCards.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccessCards.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
+            this.cmbAccessCards.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccessCards.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
+            this.cmbAccessCards.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAccessCards.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbAccessCards.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccessCards.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAccessCards.TabIndex = 13;
             this.cmbAccessCards.ValueMember = "CARDNUMBER";
             // 
@@ -745,7 +775,7 @@
             // txtPIN
             // 
             this.txtPIN.BeforeTouchSize = new System.Drawing.Size(180, 27);
-            this.txtPIN.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPIN.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPIN.Location = new System.Drawing.Point(669, 290);
             this.txtPIN.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPIN.MaxLength = 6;
@@ -793,7 +823,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(73, 38);
+            this.dataGridView1.Size = new System.Drawing.Size(107, 38);
             this.dataGridView1.TabIndex = 73;
             this.dataGridView1.Visible = false;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);

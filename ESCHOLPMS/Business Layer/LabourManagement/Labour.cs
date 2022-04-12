@@ -104,7 +104,7 @@ namespace ESCHOLPMS
         public DataSet FetchSingleLabour(Int64 labourID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT * FROM LABOURDETAILS WHERE LABOURID=" + Convert.ToString(labourID);
+            string sql = "SELECT * FROM LABOURDETAILS WHERE LABOURRUNNINGNUMBER=" + Convert.ToString(labourID);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
@@ -220,6 +220,8 @@ namespace ESCHOLPMS
             {
             string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] arParms = new SqlParameter[19];
+            arParms[0] = new SqlParameter("@LABOURNAME", SqlDbType.Text);
+            arParms[0].Value = name;
             arParms[1] = new SqlParameter("@GENDER", SqlDbType.Text);
             arParms[1].Value = gender;
             arParms[2] = new SqlParameter("@DATEOFBIRTH", SqlDbType.DateTime);
@@ -272,9 +274,9 @@ namespace ESCHOLPMS
         public DataSet FetchCompleteLabours(int costCentre)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
+            string sql = "SELECT LABOURRUNNINGNUMBER LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
             sql = sql + " FROM  LABOURDETAILS WHERE STATUS NOT IN ('Terminated For Ever','Transferred Out','Terminated - Waiting HR Approval') AND CURRENTCOSTCENTREID= ";
-            sql = sql +   Convert.ToString(costCentre)     +"  ORDER BY LABOURROLLNO DESC ";
+            sql = sql +   Convert.ToString(costCentre)     +"  ORDER BY LABOURNAME   ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds; 
         }

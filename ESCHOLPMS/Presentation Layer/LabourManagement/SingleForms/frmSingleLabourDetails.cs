@@ -18,9 +18,9 @@ namespace ESCHOLPMS
 {
     public partial class frmSingleLabourDetails : Form
     {
+       
         Int64 labourRollNumber;
         Labour lab = new Labour();
-        string editMode;
         string currentMobileNumber = string.Empty;
         string currentIDNumber = string.Empty;
         string newLabourNumber = string.Empty;
@@ -74,12 +74,13 @@ namespace ESCHOLPMS
         private void frmNewLabour_Load(object sender, EventArgs e)
         {
             LoadLabour(labourRollNumber);
-            ShowAttachments(labourRollNumber);
+            
         }
 
     
-        private void GetImagesFromDatabase(Int64 who)
+        private DataSet GetImagesFromDatabase(Int64 who)
         {
+            DataSet DS = new DataSet();
             try
             {
                 //Initialize SQL Server connection.
@@ -89,11 +90,11 @@ namespace ESCHOLPMS
 
                 //Initialize SQL adapter.
 
-                string sql = "SELECT PHOTO,PHOTOFILENAME FROM LABOURATTACHMENTS WHERE WORKERID=" + Convert.ToString(who);
+                string sql = "SELECT * FROM LABOURATTACHMENTS WHERE WORKERID=" + Convert.ToString(who);
                 SqlDataAdapter ADAP = new SqlDataAdapter(sql, CN);
 
                 //Initialize Dataset.
-                DataSet DS = new DataSet();
+              
 
                 //Fill dataset with ImagesStore table.
                 ADAP.Fill(DS, "Photo");
@@ -106,6 +107,7 @@ namespace ESCHOLPMS
             {
                 MessageBox.Show(ex.ToString());
             }
+            return DS;
         }
         private void ShowPhoto()
         {
@@ -130,7 +132,7 @@ namespace ESCHOLPMS
         private void LoadLabour(Int64 who)
         {
         
-                GetImagesFromDatabase(who);
+                dsAttachments = GetImagesFromDatabase(who);
                 DataSet dsSingleLabour = lab.FetchSingleLabour(who);
                 DataRow dsWho = dsSingleLabour.Tables[0].Rows[0];
                 txtRollNumber.Text = Convert.ToString(dsWho["LabourRollNo"]);
@@ -151,7 +153,7 @@ namespace ESCHOLPMS
                 cmbLabourType.Text = Convert.ToString(dsWho["TypeOfLabour"]);
                 cmbStates.Text = Convert.ToString(dsWho["State"]);
                 cmbSubContractor.Text = Convert.ToString(dsWho["SubContractorName"]);
-                editMode = "Edit";
+                
                 currentIDNumber = Convert.ToString(txtIDProofNumberGiven.Text);
                 currentMobileNumber = Convert.ToString(txtMobileNumber1.Text);
          
@@ -160,7 +162,7 @@ namespace ESCHOLPMS
                 dtLastUpdate.Value = Convert.ToDateTime(dsWho["SiteActionDate"]);
                 txtComments.Text = Convert.ToString(dsWho["TerminateComments"]);
                 ShowPhoto();
-              
+                ShowAttachments();
 
         }
 
@@ -194,14 +196,7 @@ namespace ESCHOLPMS
                 }
                 //This will open the PDF file so, the result will be seen in default PDF viewer
                 System.Diagnostics.Process.Start("IDProof.pdf");
-
-
-
             }
-
-
-
-
         }
 
         private void btnOpenEnrollment_Click(object sender, EventArgs e)
@@ -256,16 +251,10 @@ namespace ESCHOLPMS
         }
 
 
-        private void ShowAttachments(Int64 who)
+        private void ShowAttachments()
         {
             try
             {
-                string _connectionString = SqlHelper.GetConnectionString(1);
-                SqlConnection CN = new SqlConnection(_connectionString);
-                string sql = "SELECT IDPROOF,IDPROOFFILENAME,ENROLLMENTFORM,ENROLLMENTFILENAME,TRADECERTIFICATE,TRADECERTIFICATEFILENAME   FROM LABOURATTACHMENTS WHERE WORKERID=" + Convert.ToString(who);
-                SqlDataAdapter ADAP = new SqlDataAdapter(sql, CN);
-                dsAttachments = new DataSet();
-                ADAP.Fill(dsAttachments, "Attachments");
                 txtIDProofAttachment.Text = Convert.ToString(dsAttachments.Tables[0].Rows[0]["IDPROOFFILENAME"]);
                 txtEnrollmentAttachment.Text = Convert.ToString(dsAttachments.Tables[0].Rows[0]["ENROLLMENTFILENAME"]);
                 txtTradeCertificate.Text = Convert.ToString(dsAttachments.Tables[0].Rows[0]["TRADECERTIFICATEFILENAME"]);

@@ -117,10 +117,7 @@ namespace ESCHOLPMS
         private void frmNewLabour_Load(object sender, EventArgs e)
         {
             ReSetAll();
-            //foreach (Control ctl in this.Controls)
-            //{
-            //    ctl.KeyDown += myEventHander;
-            //}
+           
 
             LoadStates();
             LoadSex();
@@ -423,7 +420,7 @@ namespace ESCHOLPMS
 
             newLabourNumber = Convert.ToString(dsNewLabour.Tables[0].Rows[0]["LabourRollNo"]);
             
-            Int32 newLabourID = Convert.ToInt32(dsNewLabour.Tables[0].Rows[0]["LABOURID"]);
+            Int64 newLabourID = Convert.ToInt64(dsNewLabour.Tables[0].Rows[0]["LABOURRUNNINGNUMBER"]);
             SavePhoto(newLabourID);
 
         
@@ -502,33 +499,36 @@ namespace ESCHOLPMS
         {
             try
             {
-                //Read Image Bytes into a byte array
-                byte[] imageData = ReadFile(lblPhotoFileName.Text);
+                string path = Convert.ToString(lblPhotoFileName.Text).Trim();
+                if (File.Exists(path))
+                {
+                    byte[] imageData = ReadFile(lblPhotoFileName.Text);
 
-                string _connectionString = SqlHelper.GetConnectionString(1);
+                    string _connectionString = SqlHelper.GetConnectionString(1);
 
-                //Initialize SQL Server Connection
-                SqlConnection CN = new SqlConnection(_connectionString);
+                    //Initialize SQL Server Connection
+                    SqlConnection CN = new SqlConnection(_connectionString);
 
-                //Set insert query
-                string qry = "Update LabourAttachments SET PHOTO=@ImageData,PHOTOFILENAME=@ORIGINALPATH WHERE WORKERID=@WORKERID";
+                    //Set insert query
+                    string qry = "Update LabourAttachments SET PHOTO=@ImageData,PHOTOFILENAME=@ORIGINALPATH WHERE WORKERID=@WORKERID";
 
-                //Initialize SqlCommand object for insert.
-                SqlCommand SqlCom = new SqlCommand(qry, CN);
+                    //Initialize SqlCommand object for insert.
+                    SqlCommand SqlCom = new SqlCommand(qry, CN);
 
-                //We are passing Original Image Path and Image byte data as sql parameters.
+                    //We are passing Original Image Path and Image byte data as sql parameters.
 
-                SqlCom.Parameters.Add(new SqlParameter("@WORKERID", (object)existingLabourID));
-                SqlCom.Parameters.Add(new SqlParameter("@OriginalPath", (object)lblPhotoFileName.Text));
-                SqlCom.Parameters.Add(new SqlParameter("@ImageData", (object)imageData));
+                    SqlCom.Parameters.Add(new SqlParameter("@WORKERID", (object)existingLabourID));
+                    SqlCom.Parameters.Add(new SqlParameter("@OriginalPath", (object)lblPhotoFileName.Text));
+                    SqlCom.Parameters.Add(new SqlParameter("@ImageData", (object)imageData));
 
-                //Open connection and execute insert query.
-                CN.Open();
-                SqlCom.ExecuteNonQuery();
-                CN.Close();
+                    //Open connection and execute insert query.
+                    CN.Open();
+                    SqlCom.ExecuteNonQuery();
+                    CN.Close();
 
-                //Close form and return to list or images.
-                this.Close();
+                    //Close form and return to list or images.
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -570,7 +570,8 @@ namespace ESCHOLPMS
 
           
             LoadAccessCards();
-            ReSetAll();
+            this.Close();
+            return;
         }
          
         private void UpdateLog()

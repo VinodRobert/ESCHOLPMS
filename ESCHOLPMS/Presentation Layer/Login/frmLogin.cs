@@ -75,9 +75,15 @@ namespace ESCHOLPMS
             if (btnLogin.Text == "Login")
             {
                 if (txtUserName.Text == "")
+                {
+                    btnLogin.Enabled = true;
                     return;
+                }
                 if (txtPassword.Text == "")
+                {
+                    btnLogin.Enabled = true;
                     return;
+                }
                 dsLogin = ams.Login(txtUserName.Text.Trim(), txtPassword.Text.Trim());
 
                 int existing = Convert.ToInt16(dsLogin.Tables[0].Rows.Count);
@@ -89,8 +95,9 @@ namespace ESCHOLPMS
                 }
                 txtPassword.Enabled = false;
                 txtUserName.Enabled = false;
-                int loginID;
+                Int16 loginID;
                 loginID = Convert.ToInt16(dsLogin.Tables[0].Rows[0]["LOGINID"]);
+                GlobalVariables.LoginID = Convert.ToInt16(loginID);
                 GlobalVariables.UserName = Convert.ToString(dsLogin.Tables[0].Rows[0]["LOGINNAME"]);
                 dsProjects = ams.FetchProjects(loginID);
 

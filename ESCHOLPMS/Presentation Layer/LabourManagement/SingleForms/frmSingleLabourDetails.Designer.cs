@@ -461,6 +461,7 @@
             this.txtRollNumber.BeforeTouchSize = new System.Drawing.Size(180, 27);
             this.txtRollNumber.Enabled = false;
             this.txtRollNumber.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRollNumber.ForeColor = System.Drawing.Color.White;
             this.txtRollNumber.Location = new System.Drawing.Point(117, 16);
             this.txtRollNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtRollNumber.Name = "txtRollNumber";
@@ -481,7 +482,9 @@
             // txtName
             // 
             this.txtName.BeforeTouchSize = new System.Drawing.Size(180, 27);
+            this.txtName.BorderColor = System.Drawing.Color.Blue;
             this.txtName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.White;
             this.txtName.Location = new System.Drawing.Point(117, 53);
             this.txtName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtName.Name = "txtName";
@@ -561,7 +564,9 @@
             // txtParentName
             // 
             this.txtParentName.BeforeTouchSize = new System.Drawing.Size(180, 27);
+            this.txtParentName.BorderColor = System.Drawing.Color.Blue;
             this.txtParentName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParentName.ForeColor = System.Drawing.Color.White;
             this.txtParentName.Location = new System.Drawing.Point(117, 99);
             this.txtParentName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtParentName.Name = "txtParentName";
@@ -701,7 +706,9 @@
             // txtPemanentAddress
             // 
             this.txtPemanentAddress.BeforeTouchSize = new System.Drawing.Size(180, 27);
+            this.txtPemanentAddress.BorderColor = System.Drawing.Color.Blue;
             this.txtPemanentAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPemanentAddress.ForeColor = System.Drawing.Color.White;
             this.txtPemanentAddress.Location = new System.Drawing.Point(117, 148);
             this.txtPemanentAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPemanentAddress.Multiline = true;

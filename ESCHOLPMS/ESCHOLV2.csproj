@@ -377,6 +377,7 @@
     <Compile Include="Business Layer\Common\ImportProperty.cs" />
     <Compile Include="Business Layer\Common\QueryString.cs" />
     <Compile Include="Business Layer\Common\UtilityFunctions.cs" />
+    <Compile Include="Business Layer\General\General.cs" />
     <Compile Include="Business Layer\GlobalVariables.cs" />
     <Compile Include="Business Layer\HR\AddressBook.cs" />
     <Compile Include="Business Layer\HR\CostCentres.cs" />
@@ -470,6 +471,18 @@
     </Compile>
     <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmChangeAccounts.Designer.cs">
       <DependentUpon>frmChangeAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Utility\frmEshcolLogins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Utility\frmEshcolLogins.Designer.cs">
+      <DependentUpon>frmEshcolLogins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Utility\frmContractLabours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Utility\frmContractLabours.Designer.cs">
+      <DependentUpon>frmContractLabours.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmTransferIn.cs">
       <SubType>Form</SubType>
@@ -585,6 +598,24 @@
     <Compile Include="Presentation Layer\MIS\ClientBIll\frmClientBill.Designer.cs">
       <DependentUpon>frmClientBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\Utility\frmListOfProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Utility\frmListOfProjects.Designer.cs">
+      <DependentUpon>frmListOfProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Utility\frmNewLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Utility\frmNewLogin.Designer.cs">
+      <DependentUpon>frmNewLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Utility\frmSwitchProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Utility\frmSwitchProjects.Designer.cs">
+      <DependentUpon>frmSwitchProjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation Layer\API\frmAccessHistory.resx">
@@ -625,6 +656,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmChangeAccounts.resx">
       <DependentUpon>frmChangeAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Utility\frmEshcolLogins.resx">
+      <DependentUpon>frmEshcolLogins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Utility\frmContractLabours.resx">
+      <DependentUpon>frmContractLabours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmTransferIn.resx">
       <DependentUpon>frmTransferIn.cs</DependentUpon>
@@ -682,6 +719,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\MIS\ClientBIll\frmClientBill.resx">
       <DependentUpon>frmClientBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Utility\frmListOfProjects.resx">
+      <DependentUpon>frmListOfProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Utility\frmNewLogin.resx">
+      <DependentUpon>frmNewLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Utility\frmSwitchProjects.resx">
+      <DependentUpon>frmSwitchProjects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

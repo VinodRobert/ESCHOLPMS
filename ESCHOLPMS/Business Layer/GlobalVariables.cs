@@ -7,8 +7,8 @@ namespace ESCHOLPMS
 {
     class GlobalVariables
     {
-       
-             
+
+            public static Int16 LoginID;
             public static Int16  UserRole;
             public static String UserID;
             public static Int16  connectedBy;
