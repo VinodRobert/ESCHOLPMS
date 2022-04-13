@@ -318,11 +318,14 @@ namespace ESCHOLPMS
 
         private void OpenLimitedInputs()
         {
-            txtMobileNumber1.Enabled = true;
-            txtPemanentAddress.Enabled = true;
-            cmbJobType.Enabled = true;
+            txtMobileNumber2.Enabled = true;
+            txtPresentAddress.Enabled = true;
             cmbLabourType.Enabled = true;
-            cmbSubContractor.Enabled = true;
+            cmbLabourType.Style.EditorStyle.BackColor = Color.Aqua;
+            cmbLabourType.Style.EditorStyle.BorderColor = Color.Red;
+            cmbLabourType.Style.EditorStyle.ForeColor = Color.Blue;
+            cmbLabourType.Style.EditorStyle.Font = new Font("Arial", 10F, FontStyle.Bold);
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)

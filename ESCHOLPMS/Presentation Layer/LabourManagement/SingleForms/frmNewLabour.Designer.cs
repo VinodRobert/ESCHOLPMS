@@ -529,6 +529,8 @@
             // 
             this.cmbLabourType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbLabourType.BackColor = System.Drawing.Color.Black;
+            this.cmbLabourType.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cmbLabourType.CanOverrideStyle = true;
             this.cmbLabourType.DisplayMember = "LABOURTYPE";
             this.cmbLabourType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbLabourType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
@@ -858,7 +860,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Thistle;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1166, 604);
             this.Controls.Add(this.txtMobileNumber2);
             this.Controls.Add(this.txtMobileNumber1);
