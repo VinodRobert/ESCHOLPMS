@@ -85,12 +85,15 @@
             this.listOfProjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listContractorsAndLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listEshcolLoginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.switchProjetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fixTBDifferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.missingLedgerCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLoginName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripProjectName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.switchProjetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openingBalanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -506,7 +509,10 @@
             this.listOfProjectsToolStripMenuItem,
             this.listContractorsAndLaboursToolStripMenuItem,
             this.listEshcolLoginsToolStripMenuItem,
-            this.switchProjetsToolStripMenuItem});
+            this.switchProjetsToolStripMenuItem,
+            this.fixTBDifferenceToolStripMenuItem,
+            this.missingLedgerCodeToolStripMenuItem,
+            this.openingBalanceToolStripMenuItem});
             this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
             this.utilityToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.utilityToolStripMenuItem.Text = "Utility";
@@ -531,6 +537,27 @@
             this.listEshcolLoginsToolStripMenuItem.Size = new System.Drawing.Size(295, 26);
             this.listEshcolLoginsToolStripMenuItem.Text = "List Eshcol Logins";
             this.listEshcolLoginsToolStripMenuItem.Click += new System.EventHandler(this.listEshcolLoginsToolStripMenuItem_Click);
+            // 
+            // switchProjetsToolStripMenuItem
+            // 
+            this.switchProjetsToolStripMenuItem.Name = "switchProjetsToolStripMenuItem";
+            this.switchProjetsToolStripMenuItem.Size = new System.Drawing.Size(295, 26);
+            this.switchProjetsToolStripMenuItem.Text = "Switch Projets";
+            this.switchProjetsToolStripMenuItem.Click += new System.EventHandler(this.switchProjetsToolStripMenuItem_Click);
+            // 
+            // fixTBDifferenceToolStripMenuItem
+            // 
+            this.fixTBDifferenceToolStripMenuItem.Name = "fixTBDifferenceToolStripMenuItem";
+            this.fixTBDifferenceToolStripMenuItem.Size = new System.Drawing.Size(295, 26);
+            this.fixTBDifferenceToolStripMenuItem.Text = "Fix TB Difference";
+            this.fixTBDifferenceToolStripMenuItem.Click += new System.EventHandler(this.fixTBDifferenceToolStripMenuItem_Click);
+            // 
+            // missingLedgerCodeToolStripMenuItem
+            // 
+            this.missingLedgerCodeToolStripMenuItem.Name = "missingLedgerCodeToolStripMenuItem";
+            this.missingLedgerCodeToolStripMenuItem.Size = new System.Drawing.Size(295, 26);
+            this.missingLedgerCodeToolStripMenuItem.Text = "Missing Ledger Code";
+            this.missingLedgerCodeToolStripMenuItem.Click += new System.EventHandler(this.missingLedgerCodeToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -571,12 +598,11 @@
             this.stripProjectName.Size = new System.Drawing.Size(125, 23);
             this.stripProjectName.Text = "Prroject Name";
             // 
-            // switchProjetsToolStripMenuItem
+            // openingBalanceToolStripMenuItem
             // 
-            this.switchProjetsToolStripMenuItem.Name = "switchProjetsToolStripMenuItem";
-            this.switchProjetsToolStripMenuItem.Size = new System.Drawing.Size(295, 26);
-            this.switchProjetsToolStripMenuItem.Text = "Switch Projets";
-            this.switchProjetsToolStripMenuItem.Click += new System.EventHandler(this.switchProjetsToolStripMenuItem_Click);
+            this.openingBalanceToolStripMenuItem.Name = "openingBalanceToolStripMenuItem";
+            this.openingBalanceToolStripMenuItem.Size = new System.Drawing.Size(295, 26);
+            this.openingBalanceToolStripMenuItem.Text = "Opening Balance";
             // 
             // frmMain
             // 
@@ -665,6 +691,9 @@
         private System.Windows.Forms.ToolStripMenuItem listContractorsAndLaboursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listEshcolLoginsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem switchProjetsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fixTBDifferenceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem missingLedgerCodeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openingBalanceToolStripMenuItem;
     }
 }
 

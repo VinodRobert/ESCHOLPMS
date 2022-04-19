@@ -200,5 +200,17 @@ namespace ESCHOLPMS
             frmSwitchProjects sp = new frmSwitchProjects();
             sp.Show();
         }
+
+        private void fixTBDifferenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFixTB fixTB = new frmFixTB();
+            fixTB.Show();
+        }
+
+        private void missingLedgerCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCheckLedgerCode cl = new frmCheckLedgerCode();
+            cl.Show();
+        }
     }
 }

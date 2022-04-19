@@ -365,6 +365,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Layer\Accounts\Accounts.cs" />
     <Compile Include="Business Layer\AMS.cs" />
     <Compile Include="Business Layer\API\AccessHistoryRequest.cs" />
     <Compile Include="Business Layer\API\AccessHistoryResponse.cs" />
@@ -394,6 +395,24 @@
     <Compile Include="Business Layer\MIS\MIS.CS" />
     <Compile Include="Business Layer\V2\EscholV2.cs" />
     <Compile Include="Data Layer\SQLHelper.cs" />
+    <Compile Include="Presentation Layer\Accounts\frmCheckLedgerCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Accounts\frmCheckLedgerCode.Designer.cs">
+      <DependentUpon>frmCheckLedgerCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Accounts\frmFixTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Accounts\frmFixTB.Designer.cs">
+      <DependentUpon>frmFixTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Accounts\frmOpeningBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Accounts\frmOpeningBalance.Designer.cs">
+      <DependentUpon>frmOpeningBalance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\API\frmAccessHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -618,6 +637,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation Layer\Accounts\frmCheckLedgerCode.resx">
+      <DependentUpon>frmCheckLedgerCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Accounts\frmFixTB.resx">
+      <DependentUpon>frmFixTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Accounts\frmOpeningBalance.resx">
+      <DependentUpon>frmOpeningBalance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\API\frmAccessHistory.resx">
       <DependentUpon>frmAccessHistory.cs</DependentUpon>
     </EmbeddedResource>
