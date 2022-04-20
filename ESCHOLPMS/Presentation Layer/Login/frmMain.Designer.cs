@@ -88,12 +88,12 @@
             this.switchProjetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fixTBDifferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.missingLedgerCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openingBalanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLoginName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripProjectName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.openingBalanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -559,6 +559,13 @@
             this.missingLedgerCodeToolStripMenuItem.Text = "Missing Ledger Code";
             this.missingLedgerCodeToolStripMenuItem.Click += new System.EventHandler(this.missingLedgerCodeToolStripMenuItem_Click);
             // 
+            // openingBalanceToolStripMenuItem
+            // 
+            this.openingBalanceToolStripMenuItem.Name = "openingBalanceToolStripMenuItem";
+            this.openingBalanceToolStripMenuItem.Size = new System.Drawing.Size(295, 26);
+            this.openingBalanceToolStripMenuItem.Text = "Opening Balance";
+            this.openingBalanceToolStripMenuItem.Click += new System.EventHandler(this.openingBalanceToolStripMenuItem_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -597,12 +604,6 @@
             this.stripProjectName.Name = "stripProjectName";
             this.stripProjectName.Size = new System.Drawing.Size(125, 23);
             this.stripProjectName.Text = "Prroject Name";
-            // 
-            // openingBalanceToolStripMenuItem
-            // 
-            this.openingBalanceToolStripMenuItem.Name = "openingBalanceToolStripMenuItem";
-            this.openingBalanceToolStripMenuItem.Size = new System.Drawing.Size(295, 26);
-            this.openingBalanceToolStripMenuItem.Text = "Opening Balance";
             // 
             // frmMain
             // 

@@ -212,5 +212,11 @@ namespace ESCHOLPMS
             frmCheckLedgerCode cl = new frmCheckLedgerCode();
             cl.Show();
         }
+
+        private void openingBalanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOpeningBalance op = new frmOpeningBalance();
+            op.Show();
+        }
     }
 }
