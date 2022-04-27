@@ -57,24 +57,42 @@ namespace ESCHOLPMS
         {
             DateTime thisDay = DateTime.Today;
             string thisDayString = thisDay.ToString("d");
-            
-            List<int> rolesList = new List<int>() {   1750 };
-            historyRequest = new AccessHistoryRequest();
 
+            AccessFetchPagination ap = new AccessFetchPagination();
+            ap.perPage = 10000;
+            ap.page = 1;
+          
+            historyRequest = new AccessHistoryRequest();
+             
             Filters f = new Filters();
-            f.roles = new List<int>() { 1750 };
-            
-            DateTime startTime   = Convert.ToDateTime(thisDayString);
-            DateTime endTime = Convert.ToDateTime(thisDayString);
+
+            DateTime startTime;
+            string beginTimeString;
+            DataSet dsLastFetch = pms.FetchAccessHitoryFetch();
+            beginTimeString = Convert.ToString(dsLastFetch.Tables[0].Rows[0]["LastFetchDate"]).Trim();
+
+          
+            if (beginTimeString=="")
+            {
+                beginTimeString = "2000-JAN-01";
+                startTime = DateTime.Parse(beginTimeString);
+            }
+            else
+            {
+                startTime = Convert.ToDateTime(dsLastFetch.Tables[0].Rows[0]["LastFetchDate"]);
+            }
+
+            string endDate = "2099-DEC-01";
+            DateTime endTime = DateTime.Parse(endDate);
             string startTimeString = Convert.ToDateTime(startTime).ToString("yyyy-MM-dd HH:mm:ss +05:30");
             string endTimeString = Convert.ToDateTime(endTime).ToString("yyyy-MM-dd 23:59:59 +05:30");
             int accessPoint = Convert.ToInt16(cmbAccessPoint.SelectedValue);
-            if (accessPoint!=0)
-            {
-                f.accessPoints = new List<int> { accessPoint };
-            }
+             
             f.start = startTimeString;
             f.end = endTimeString;
+           
+
+            historyRequest.pagination = ap;
             historyRequest.filters = f;
             strJsonRequest = String.Empty;
             try
@@ -172,8 +190,8 @@ namespace ESCHOLPMS
                 List<AccessHistoryResponse> accessList = new List<AccessHistoryResponse>();
                 Int64 accessedTime;
                 Int64 accessID;
-                int accessPointID;
-                int userID;
+                Int64 accessPointID;
+                Int64 userID;
                 int success;
          
                 DateTime swipeTime;
@@ -193,9 +211,9 @@ namespace ESCHOLPMS
                 System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
                 foreach (AccessHistory al in accessHistoryLists.message.accessHistory)
                 {
-                    accessPointID = Convert.ToInt16(al.accessPoint.id);
+                    accessPointID = Convert.ToInt64(al.accessPoint.id);
                     swipeTime = new DateTime(1970, 1, 1, 0, 0, 0, 0); //from start epoch time
-                    accessID = Convert.ToInt32(al.id);
+                    accessID = Convert.ToInt64(al.id);
                     accessedTime = Convert.ToInt64(al.accessedAt);
                     swipeTime = swipeTime.AddSeconds(accessedTime);
                     swipeLocalTime = TimeZoneInfo.ConvertTimeFromUtc(swipeTime, INDIAN_ZONE);
@@ -210,7 +228,7 @@ namespace ESCHOLPMS
 
                     
                         
-                    userID = Convert.ToInt16(al.user.id);
+                    userID = Convert.ToInt64(al.user.id);
                     userName = Convert.ToString(al.user.name);
                     success = pms.InsertAccessHistory(accessPointID, userID, revisedDateString);
                 }

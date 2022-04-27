@@ -1,6 +1,6 @@
 ﻿namespace ESCHOLPMS 
 {
-    partial class frmAccessSites
+    partial class frmAccessGateways
     {
         /// <summary>
         /// Required designer variable.
@@ -43,11 +43,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(299, 9);
+            this.label1.Location = new System.Drawing.Point(364, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(395, 20);
+            this.label1.Size = new System.Drawing.Size(168, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "List of Sites Where Access Devices Fixed";
+            this.label1.Text = "List of Gateways";
             // 
             // btnGenerate
             // 
@@ -67,11 +67,11 @@
             gridTextColumn1.MappingName = "SITEID";
             gridTextColumn1.Visible = false;
             gridTextColumn1.Width = 0D;
-            gridTextColumn2.HeaderText = "SITE ID";
-            gridTextColumn2.MappingName = "SPINTLYSITEID";
+            gridTextColumn2.HeaderText = "GateWay ID";
+            gridTextColumn2.MappingName = "SPINTLYGATEWAYID";
             gridTextColumn2.Width = 100D;
-            gridTextColumn3.HeaderText = "Site Name";
-            gridTextColumn3.MappingName = "SITENAME";
+            gridTextColumn3.HeaderText = "Gate Way";
+            gridTextColumn3.MappingName = "GATEWAYNAME";
             gridTextColumn3.Width = 200D;
             gridTextColumn4.HeaderText = "Location";
             gridTextColumn4.MappingName = "LOCATION";
@@ -87,7 +87,7 @@
             this.gridSites.TabIndex = 2;
             this.gridSites.Text = "sfDataGrid1";
             // 
-            // frmAccessSites
+            // frmAccessGateways
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,9 +95,9 @@
             this.Controls.Add(this.gridSites);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.label1);
-            this.Name = "frmAccessSites";
+            this.Name = "frmAccessGateways";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "API | Project Sites";
+            this.Text = "API | Project Gateways";
             ((System.ComponentModel.ISupportInitialize)(this.gridSites)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

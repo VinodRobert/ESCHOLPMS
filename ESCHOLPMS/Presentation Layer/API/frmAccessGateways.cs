@@ -17,14 +17,14 @@ using ESCHOLPMS.API.AccessSites;
 
 namespace ESCHOLPMS 
 {
-    public partial class frmAccessSites : Form
+    public partial class frmAccessGateways : Form
     {
         string spintlyOrgID = Convert.ToString(GlobalVariables.spintlyOrgID);
         string spintlyAccessToken = Convert.ToString(GlobalVariables.access_token);
 
         AccessSites accessControledProjets = new AccessSites();
         PMS pms = new PMS();
-        public frmAccessSites()
+        public frmAccessGateways()
         {
             InitializeComponent();
         }
@@ -65,14 +65,18 @@ namespace ESCHOLPMS
                 int i = pms.DeleteAllSites();
                 List<Sites> accessSitesList = new List<Sites>();
                 string siteName;
+                string revisedSiteName;
                 int siteID;
                 string siteLocation;
+                string revisedSiteLocation;
                 foreach (Sites s in accessControledProjets.message.sites)
                 {
                     siteName = s.name.ToUpper();
+                    revisedSiteName =siteName.Replace("'", "");
                     siteID = Convert.ToInt16(s.id);
                     siteLocation = Convert.ToString(s.location).ToUpper();
-                    i = pms.InsertSite(siteID, siteName, siteLocation);
+                    revisedSiteLocation = siteLocation.Replace("'", "");
+                    i = pms.InsertSite(siteID, revisedSiteName, revisedSiteLocation);
                 }
                 DataSet ds = pms.GetAccessSites();
                 gridSites.DataSource = ds.Tables[0];

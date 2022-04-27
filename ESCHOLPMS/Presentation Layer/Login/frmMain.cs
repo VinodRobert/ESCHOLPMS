@@ -17,26 +17,10 @@ namespace ESCHOLPMS
         string ProjectName = ESCHOLPMS.GlobalVariables.ProjectName;
         int UserRolesList = ESCHOLPMS.GlobalVariables.UserRole;
 
-
-        
-
         public frmMain()
         {
             InitializeComponent();
         }
-
-        
-
-         
-
-        
-
-         
-
-         
-        
-
-       
 
         
         private void frmMain_Load(object sender, EventArgs e)
@@ -60,7 +44,7 @@ namespace ESCHOLPMS
 
         private void fetchAccessPointsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAccessSites accessSites = new frmAccessSites();
+            frmAccessGateways accessSites = new frmAccessGateways();
             accessSites.Show();
         }
 
@@ -217,6 +201,12 @@ namespace ESCHOLPMS
         {
             frmOpeningBalance op = new frmOpeningBalance();
             op.Show();
+        }
+
+        private void assignAccessPointsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProjectAccessPoints pa = new frmProjectAccessPoints();
+            pa.Show();
         }
     }
 }

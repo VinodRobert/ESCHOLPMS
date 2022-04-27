@@ -419,6 +419,12 @@
     <Compile Include="Presentation Layer\API\frmAccessHistory.Designer.cs">
       <DependentUpon>frmAccessHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\API\frmProjectAccessPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\API\frmProjectAccessPoints.Designer.cs">
+      <DependentUpon>frmProjectAccessPoints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\API\frmAccessUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -431,11 +437,11 @@
     <Compile Include="Presentation Layer\API\frmAccessPoints.Designer.cs">
       <DependentUpon>frmAccessPoints.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\API\frmAccessSites.cs">
+    <Compile Include="Presentation Layer\API\frmAccessGateways.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\API\frmAccessSites.Designer.cs">
-      <DependentUpon>frmAccessSites.cs</DependentUpon>
+    <Compile Include="Presentation Layer\API\frmAccessGateways.Designer.cs">
+      <DependentUpon>frmAccessGateways.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\API\frmOrgnizationID.cs">
       <SubType>Form</SubType>
@@ -649,14 +655,17 @@
     <EmbeddedResource Include="Presentation Layer\API\frmAccessHistory.resx">
       <DependentUpon>frmAccessHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\API\frmProjectAccessPoints.resx">
+      <DependentUpon>frmProjectAccessPoints.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\API\frmAccessUsers.resx">
       <DependentUpon>frmAccessUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\API\frmAccessPoints.resx">
       <DependentUpon>frmAccessPoints.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\API\frmAccessSites.resx">
-      <DependentUpon>frmAccessSites.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\API\frmAccessGateways.resx">
+      <DependentUpon>frmAccessGateways.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\API\frmOrgnizationID.resx">
       <DependentUpon>frmOrgnizationID.cs</DependentUpon>

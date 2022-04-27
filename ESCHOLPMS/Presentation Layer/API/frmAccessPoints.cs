@@ -69,13 +69,15 @@ namespace ESCHOLPMS
                 int accessPointID;
                 int siteID;
                 string accessPointName;
+                string accessPointRevised;
                 foreach (AccessPoint ap in accessControledPoints.message.accessPoints)
                 {
                     
                     siteID = Convert.ToInt16(ap.siteId);
                     accessPointID = Convert.ToInt16(ap.id);
                     accessPointName = Convert.ToString(ap.name).ToUpper();
-                    i = pms.InsertAccessPoint(siteID, accessPointID,accessPointName);
+                    accessPointRevised = accessPointName.Replace("'", "");
+                    i = pms.InsertAccessPoint(siteID, accessPointID,accessPointRevised);
                 }
                 DataSet ds = pms.GetAccessPoints();
                 gridSites.DataSource = ds.Tables[0];

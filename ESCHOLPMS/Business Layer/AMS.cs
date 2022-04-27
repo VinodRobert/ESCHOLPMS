@@ -12,6 +12,33 @@ namespace ESCHOLPMS
     {
         #region Logins
 
+        public int ChangeStatus(Int16 projectID, Int16 gateWayID, Int16 accessPointID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "UPDATE [dbo].[ProjectAccessPoints] set status=0 where  ProjectID=" + Convert.ToString(projectID) + " AND ";
+            sql = sql + " GateWayID=" + Convert.ToString(gateWayID) + " AND AccessPointID=" + Convert.ToString(accessPointID);
+            sql = sql + " AND STATUS=1";
+            int result = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return result;
+        }
+
+        public int AddProjectAccessPoint(Int16 projectID,Int16 gateWayID,Int16 accessPointID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "INSERT INTO [dbo].[ProjectAccessPoints]([ProjectID],[OrgID],[GateWayID],[AccessPointID],[Status],[UpdatedOn])";
+            sql = sql + " VALUES (" + Convert.ToString(projectID) + "," + Convert.ToString(634) + ",";
+            sql = sql + Convert.ToString(gateWayID) + "," + Convert.ToString(accessPointID) + ",1,'" + DateTime.UtcNow.ToString("dd-MMM-yyyy") + "')";
+            int result = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return result;
+        }
+        public DataSet FetchAccessPointsOfGateWay(int gateWayID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT SPINTLYACCESSPOINTID,ACCESSPOINTNAME FROM ACCESSPOINTS WHERE GATEWAYID=";
+            sql = sql + Convert.ToString(gateWayID);
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
         public DataSet FetchAccessControlUsers()
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
@@ -19,7 +46,17 @@ namespace ESCHOLPMS
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
-
+        public DataSet FetchProjectAccessPoints()
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = " SELECT UPPER(P.PROJECTNAME) PROJECTNAME ,PAP.GATEWAYID,G.GATEWAYNAME,PAP.ACCESSPOINTID,UPPER(AP.ACCESSPOINTNAME) ACCESSPOINTNAME,PAP.UPDATEDON  ";
+            sql = sql + " FROM PROJECTACCESSPOINTS PAP  INNER JOIN  EXT.PROJECTS P  ON PAP.PROJECTID = P.PROJECTCODE ";
+            sql = sql + " INNER JOIN  ACCESSGATEWAYS G ON PAP.GATEWAYID = G.SPINTLYGATEWAYID ";
+            sql = sql + " INNER JOIN  ACCESSPOINTS AP ON PAP.ACCESSPOINTID = AP.SPINTLYACCESSPOINTID  WHERE STATUS = 1 ";
+            sql = sql + " ORDER BY PROJECTNAME ";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
         public DataSet FetchAccessPoints()
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
@@ -66,7 +103,7 @@ namespace ESCHOLPMS
         public int DeleteAllSites()
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "DELETE FROM AccessSites";
+            string sql = "DELETE FROM AccessGateways";
             int i = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
             return i;
         }
@@ -83,7 +120,7 @@ namespace ESCHOLPMS
         public int InsertSite(int siteID,string siteName,string siteLocation)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "INSERT INTO AccessSites(SPINTLYSITEID,SITENAME,LOCATION) VALUES(";
+            string sql = "INSERT INTO AccessGateways(SPINTLYGATEWAYID,GATEWAYNAME,LOCATION) VALUES(";
             sql = sql + Convert.ToString(siteID) + ",'" + Convert.ToString(siteName).Trim() + "','" + Convert.ToString(siteLocation) + "')";
             int i = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
             return i;
@@ -92,7 +129,7 @@ namespace ESCHOLPMS
         public int InsertAccessPoint(int siteID,int accessPointID, string accessPointName)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "INSERT INTO ACCESSPOINTS(SITEID,SPINTLYACCESSPOINTID,ACCESSPOINTNAME) VALUES(";
+            string sql = "INSERT INTO ACCESSPOINTS(GATEWAYID,SPINTLYACCESSPOINTID,ACCESSPOINTNAME) VALUES(";
             sql = sql + Convert.ToString(siteID) + "," + Convert.ToString(accessPointID).Trim() + ",'" + Convert.ToString(accessPointName) + "')";
             int i = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
             return i;
@@ -101,16 +138,25 @@ namespace ESCHOLPMS
         public DataSet GetAccessSites()
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT * FROM AccessSites";
+            string sql = "SELECT * FROM AccessGateways";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
 
+        public DataSet FetchAccessHitoryFetch()
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT MAX(ACCESSTIME) LASTFETCHDATE FROM ACCESSHISTORY";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+
+         
         public DataSet GetAccessPoints()
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT AP.ACCESSPOINTSID,AP.SITEID,S.SITENAME,AP.SPINTLYACCESSPOINTID,AP.ACCESSPOINTNAME ";
-            sql = sql + " FROM ACCESSPOINTS  AP INNER JOIN ACCESSSITES S ON AP.SITEID = S.SPINTLYSITEID ORDER BY AP.SITEID,AP.SPINTLYACCESSPOINTID";
+            string sql = "SELECT AP.ACCESSPOINTSID,AP.GATEWAYID,S.GATEWAYNAME,AP.SPINTLYACCESSPOINTID,AP.ACCESSPOINTNAME ";
+            sql = sql + " FROM ACCESSPOINTS  AP INNER JOIN ACCESSGATEWAYS S ON AP.GATEWAYID = S.SPINTLYGATEWAYID ORDER BY AP.GATEWAYID,AP.SPINTLYACCESSPOINTID";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
@@ -201,7 +247,7 @@ namespace ESCHOLPMS
             return ds;
         }
 
-        public int InsertAccessHistory(int accessPointID,int userID,string revisedDateString)
+        public int InsertAccessHistory(Int64 accessPointID,Int64 userID,string revisedDateString)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "INSERT INTO AccessHistory(ACCESSID,USERID,ACCESSTIME) VALUES(";

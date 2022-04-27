@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace ESCHOLPMS.API.AccessHistoryRequest
 {
  
-    public class Pagination
+    public class AccessFetchPagination
     {
-        public int page { get; set; }
-        public int perPage { get; set; }
+        public Int32 page { get; set; }
+        public Int32 perPage { get; set; }
     }
 
     public class S
@@ -37,7 +37,7 @@ namespace ESCHOLPMS.API.AccessHistoryRequest
 
     public class AccessHistoryRequest
     {
-        public Pagination pagination { get; set; }
+        public AccessFetchPagination pagination { get; set; }
         public Filters filters { get; set; }
     }
 

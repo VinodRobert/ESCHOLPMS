@@ -22,5 +22,7 @@ namespace ESCHOLPMS
             public static Int16 UploadingRights;
             public static string access_token;
             public static Int16 spintlyOrgID;
+            public static Int16 spintlySiteID;
+            public static Int16 spintlyAccessPointID;
     }
 }

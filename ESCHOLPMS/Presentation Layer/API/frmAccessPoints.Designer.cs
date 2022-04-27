@@ -68,11 +68,11 @@
             gridTextColumn1.MappingName = "ACCESSPOINTSID";
             gridTextColumn1.Visible = false;
             gridTextColumn1.Width = 0D;
-            gridTextColumn2.HeaderText = "SITE ID";
-            gridTextColumn2.MappingName = "SITEID";
+            gridTextColumn2.HeaderText = "GateWay ID";
+            gridTextColumn2.MappingName = "GATEWAYID";
             gridTextColumn2.Width = 100D;
-            gridTextColumn3.HeaderText = "Site Name";
-            gridTextColumn3.MappingName = "SITENAME";
+            gridTextColumn3.HeaderText = "Gate Way Name";
+            gridTextColumn3.MappingName = "GATEWAYNAME";
             gridTextColumn3.Width = 200D;
             gridTextColumn4.HeaderText = "Access Point ID";
             gridTextColumn4.MappingName = "SPINTLYACCESSPOINTID";
