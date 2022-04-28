@@ -12,6 +12,15 @@ namespace ESCHOLPMS
     {
         #region Logins
 
+        public DataSet FetchAccessPointsDetails(int projectID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "Select * from ProjectAccessPoints where ProjectID=" + Convert.ToString(projectID);
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+
+
         public int ChangeStatus(Int16 projectID, Int16 gateWayID, Int16 accessPointID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
@@ -26,7 +35,7 @@ namespace ESCHOLPMS
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "INSERT INTO [dbo].[ProjectAccessPoints]([ProjectID],[OrgID],[GateWayID],[AccessPointID],[Status],[UpdatedOn])";
-            sql = sql + " VALUES (" + Convert.ToString(projectID) + "," + Convert.ToString(634) + ",";
+            sql = sql + " VALUES (" + Convert.ToString(projectID) + "," + Convert.ToString(674) + ",";
             sql = sql + Convert.ToString(gateWayID) + "," + Convert.ToString(accessPointID) + ",1,'" + DateTime.UtcNow.ToString("dd-MMM-yyyy") + "')";
             int result = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
             return result;
@@ -78,7 +87,8 @@ namespace ESCHOLPMS
         public DataSet FetchProjects(int loginID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT PROJECTCODE,LEFT(PROJECTNAME,50) PROJECTNAME FROM EXT.PROJECTS WHERE PROJECTCODE IN(SELECT PROJECTID ";
+            string sql = "SELECT -1 PROJECTCODE,'HEAD OFFICE' AS PROJECTNAME  UNION ";
+            sql = sql +  "SELECT PROJECTCODE,LEFT(PROJECTNAME,50) PROJECTNAME FROM EXT.PROJECTS WHERE PROJECTCODE IN(SELECT PROJECTID ";
             sql = sql + " FROM USERPROJECT WHERE LOGINID = " + Convert.ToString(loginID) + " ) ORDER BY PROJECTNAME ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
@@ -233,7 +243,7 @@ namespace ESCHOLPMS
             return j;
         }
 
-        public DataSet  UpdateAttendanceHistory(string startDate,string endDate,int selectedUser)
+        public DataSet  UpdateAttendanceHistory(string startDate,string endDate,int accessPointID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             SqlParameter[] arParms = new SqlParameter[3];
@@ -241,8 +251,8 @@ namespace ESCHOLPMS
             arParms[0].Value = startDate;
             arParms[1] = new SqlParameter("@ENDDATESTRING", SqlDbType.Text);
             arParms[1].Value = endDate;
-            arParms[2] = new SqlParameter("@USERSELECTED", SqlDbType.Int);
-            arParms[2].Value = selectedUser;
+            arParms[2] = new SqlParameter("@ACCESSPOINTID", SqlDbType.Int);
+            arParms[2].Value = accessPointID;
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "UpdateAttendanceHistory",arParms);
             return ds;
         }

@@ -23,16 +23,16 @@ namespace ESCHOLPMS.API.AccessHistoryRequest
 
     public class Filters
     {
-        public List<int> accessPoints { get; set; }
-        public int reportingManager { get; set; }
-        public List<int> roles { get; set; }
-        public List<int> terms { get; set; }
-        public List<int> users { get; set; }
-        public string direction { get; set; }
-        public List<string> accessTypes { get; set; }
+        ////public List<int> accessPoints { get; set; }
+        ////public int reportingManager { get; set; }
+        ////public List<int> roles { get; set; }
+        ////public List<int> terms { get; set; }
+        ////public List<int> users { get; set; }
+        ////public string direction { get; set; }
+        ////public List<string> accessTypes { get; set; }
         public string start { get; set; }
         public string end { get; set; }
-        public S s { get; set; }
+      //  public S s { get; set; }
     }
 
     public class AccessHistoryRequest

@@ -20,6 +20,7 @@ using Syncfusion.WinForms.Input.Enums;
 
 using Syncfusion.Windows.Forms.Grid;
 using Syncfusion.Windows.Forms.Grid.Grouping;
+using Syncfusion.GridHelperClasses;
 
 namespace ESCHOLPMS 
 {
@@ -41,8 +42,7 @@ namespace ESCHOLPMS
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            if (cmbAccessPoint.Text == "Select Access Point")
-                return;
+           
             DisplayAccessHistory();
         }
 
@@ -86,7 +86,6 @@ namespace ESCHOLPMS
             DateTime endTime = DateTime.Parse(endDate);
             string startTimeString = Convert.ToDateTime(startTime).ToString("yyyy-MM-dd HH:mm:ss +05:30");
             string endTimeString = Convert.ToDateTime(endTime).ToString("yyyy-MM-dd 23:59:59 +05:30");
-            int accessPoint = Convert.ToInt16(cmbAccessPoint.SelectedValue);
              
             f.start = startTimeString;
             f.end = endTimeString;
@@ -117,8 +116,8 @@ namespace ESCHOLPMS
             String endDateString;
             startDateString = Convert.ToDateTime(dtStartDate.Value).ToShortDateString();
             endDateString = Convert.ToDateTime(dtEndDate.Value).ToShortDateString();
-            int selectedUser = Convert.ToInt16(cmbUsers.SelectedValue);
-            DataSet dsAttendance = pms.UpdateAttendanceHistory(startDateString, endDateString, selectedUser);
+            int accessPointID = Convert.ToInt16(GlobalVariables.spintlyAccessPointID);
+            DataSet dsAttendance = pms.UpdateAttendanceHistory(startDateString, endDateString, accessPointID);
             SkinManager.SetVisualStyle(this.gridHistory, VisualTheme.Office2010Blue);
             SkinManager.SetVisualStyle(this, VisualTheme.Office2010Blue);
             gridHistory.DataSource = dsAttendance.Tables[0];
@@ -141,11 +140,25 @@ namespace ESCHOLPMS
             gridHistory.TableDescriptor.Columns[4].HeaderText = "Check In";
             gridHistory.TableDescriptor.Columns[4].Width = 150;
             gridHistory.TableDescriptor.Columns[4].Appearance.AnyCell.CellType = "DateTime";
+            gridHistory.TableDescriptor.Columns[4].AllowFilter = true;
+
 
             gridHistory.TableDescriptor.Columns[5].HeaderText = "Check Out";
             gridHistory.TableDescriptor.Columns[5].Width = 150;
             gridHistory.TableDescriptor.Columns[5].Appearance.AnyCell.CellType = "DateTime";
+            gridHistory.TableDescriptor.Columns[5].AllowFilter = true;
+            this.gridHistory.TopLevelGroupOptions.ShowFilterBar = true;
 
+
+            //Customize the DateFormat.
+            this.gridHistory.TableDescriptor.Columns[4].Appearance.FilterBarCell.Format = "dd-MMM-yyyy";
+            this.gridHistory.TopLevelGroupOptions.ShowFilterBar = true;
+            for (int i = 0; i < this.gridHistory.TableDescriptor.Columns.Count; i++)
+            {
+                this.gridHistory.TableDescriptor.Columns[i].AllowFilter = true;
+            }
+            GridDynamicFilter dynamicFilter = new GridDynamicFilter();
+            dynamicFilter.WireGrid(this.gridHistory);
 
             foreach (Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor column in this.gridHistory.TableDescriptor.Columns)
             {
@@ -157,6 +170,7 @@ namespace ESCHOLPMS
            
         }
 
+        
 
         private async void FetchAcessHistory()
         {
@@ -178,6 +192,8 @@ namespace ESCHOLPMS
                 request.AddParameter("application/json", strJsonRequest, ParameterType.RequestBody);
 
                 IRestResponse response = await client.ExecuteAsync(request);
+
+
 
                 AccessHistoryResponse accessHistoryLists = JsonConvert.DeserializeObject<AccessHistoryResponse>(response.Content);
                 if (accessHistoryLists.type != "success")
@@ -242,13 +258,7 @@ namespace ESCHOLPMS
 
         }
 
-        private void LoadAccessPoints()
-        {
-            DataSet dsAccessPoint = pms.FetchAccessPoints();
-            cmbAccessPoint.DataSource = dsAccessPoint.Tables[0];
-            cmbAccessPoint.Refresh();
-            cmbAccessPoint.Text = "Select Access Point";
-        }
+      
 
         private void ResetAll()
         {
@@ -270,49 +280,28 @@ namespace ESCHOLPMS
             this.gridHistory.GridVisualStyles = Syncfusion.Windows.Forms.GridVisualStyles.Office2007Blue;
             this.gridHistory.Font = new Font("Calibri", 10.0f);
             this.gridHistory.TopLevelGroupOptions.ShowFilterBar = true;
-            rdWorker.Checked = false;
-            rdStaff.Checked = false;
-            rdBoth.Checked = true;
+          
             gridHistory.Visible = false;
         }
 
-        private void rdStaff_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdStaff.Checked == true)
-                LoadUsers(1);
-        }
+     
 
-        private void rdWorker_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdWorker.Checked == true)
-                LoadUsers(2);
-        }
+       
 
-        private void rdBoth_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdBoth.Checked == true)
-                LoadUsers(0);
-        }
+       
 
-        private void LoadUsers(int i)
-        {
-            DataSet dsUsers = pms.GetAccessUsers(i);
-            cmbUsers.DataSource = null;
-            cmbUsers.DataSource = dsUsers.Tables[0];
-            cmbUsers.Refresh();
-            cmbUsers.Text = "--ALL USERS--";
-        }
+       
 
         private void frmAccessHistory_Load(object sender, EventArgs e)
         {
             UpdateTodaysSwipes();
             ResetAll();
-            LoadUsers(0);
+           
             dtStartDate.DateTimePattern = DateTimePattern.LongDate;
             dtEndDate.DateTimePattern = DateTimePattern.LongDate;
             dtStartDate.Format = "yyyy-MM-dd hh:mm:ss";
             dtEndDate.Format = "yyyy-MM-dd hh:mm:ss";
-            LoadAccessPoints();
+           
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -320,8 +309,30 @@ namespace ESCHOLPMS
             gridHistory.DataSource = null;
             gridHistory.Refresh();
             gridHistory.Visible = false;
-            LoadUsers(0);
+           
             ResetAll();
+        }
+
+        private void gridHistory_TableControlDrawCellDisplayText_1(object sender, GridTableControlDrawCellDisplayTextEventArgs e)
+        {
+            GridTableCellStyleInfo style = (GridTableCellStyleInfo)e.Inner.Style;
+            if (style.TableCellIdentity.Column != null && style.TableCellIdentity.Column.Name == "Date" && style.TableCellIdentity.TableCellType == GridTableCellType.FilterBarCell)
+            {
+                if (style.Text != "(All)" && style.Text != "(Custom....)" && style.Text != "(Empty)")
+                    e.Inner.DisplayText = string.Format("{0:dd-MMM-yyyy}", Convert.ToDateTime(style.Text));
+            }
+        }
+
+        private void gridHistory_FilterBarSelectedItemChanged_1(object sender, FilterBarSelectedItemChangedEventArgs e)
+        {
+            if (e.Column != null && e.Column.Name == "CheckIn")
+            {
+                int row = this.gridHistory.TableControl.CurrentCell.RowIndex;
+                int col = this.gridHistory.TableControl.CurrentCell.ColIndex;
+                GridTableCellStyleInfo style = this.gridHistory.TableControl.GetTableViewStyleInfo(row, col);
+                GridTableFilterBarExtCellRenderer renderer = this.gridHistory.TableControl.GetCellRenderer(row, col) as GridTableFilterBarExtCellRenderer;
+                renderer.ControlText = string.Format("{0:dd-MMM-yyyy}", Convert.ToDateTime(style.Text));
+            }
         }
     }
 }

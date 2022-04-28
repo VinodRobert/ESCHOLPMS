@@ -125,14 +125,30 @@ namespace ESCHOLPMS
                 }
                 int projectID = Convert.ToInt16(cmbProjects.SelectedValue);
                 DataSet dsProjectDetails = ams.FetchProjectDetails(projectID);
-                GlobalVariables.costCentreID = Convert.ToInt16(dsProjectDetails.Tables[0].Rows[0]["CostCentreID"]);
+                if (dsProjectDetails.Tables[0].Rows.Count == 0)
+                    GlobalVariables.costCentreID = 0;
+                else
+                    GlobalVariables.costCentreID = Convert.ToInt16(dsProjectDetails.Tables[0].Rows[0]["CostCentreID"]);
                 GlobalVariables.ProjectName = Convert.ToString(cmbProjects.Text);
                 GlobalVariables.UserID = Convert.ToString(txtUserName.Text);
                 DataSet dsSpintly = ams.GetAccessKeyDetails();
                 GlobalVariables.access_token = dsSpintly.Tables[0].Rows[0]["AuthorizationKey"].ToString();
                 GlobalVariables.spintlyOrgID = Convert.ToInt16(dsSpintly.Tables[0].Rows[0]["OrganizationID"]);
 
-                this.Visible = false;
+                DataSet dsAccessPoints = ams.FetchAccessPointsDetails(projectID);
+                if (dsAccessPoints.Tables[0].Rows.Count == 0)
+                {
+                    GlobalVariables.spintlyOrgID = 0;
+                    GlobalVariables.spintlySiteID = 0;
+                    GlobalVariables.spintlyAccessPointID = 0;
+                }
+                else
+                {
+                    GlobalVariables.spintlyOrgID = Convert.ToInt16(dsAccessPoints.Tables[0].Rows[0]["OrgID"]);
+                    GlobalVariables.spintlySiteID = Convert.ToInt16(dsAccessPoints.Tables[0].Rows[0]["GateWayID"]);
+                    GlobalVariables.spintlyAccessPointID = Convert.ToInt16(dsAccessPoints.Tables[0].Rows[0]["AccessPointID"]);
+                }
+                    this.Visible = false;
                 frmMain _main = new frmMain();
                 _main.Show();
             }
