@@ -43,7 +43,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(577, 9);
+            this.label1.Location = new System.Drawing.Point(499, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(299, 29);
             this.label1.TabIndex = 0;
@@ -52,9 +52,9 @@
             // btnGenerate
             // 
             this.btnGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(1190, 24);
+            this.btnGenerate.Location = new System.Drawing.Point(709, 31);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(119, 39);
+            this.btnGenerate.Size = new System.Drawing.Size(119, 34);
             this.btnGenerate.TabIndex = 1;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -63,7 +63,7 @@
             // autoLabel1
             // 
             this.autoLabel1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoLabel1.Location = new System.Drawing.Point(24, 44);
+            this.autoLabel1.Location = new System.Drawing.Point(24, 9);
             this.autoLabel1.Name = "autoLabel1";
             this.autoLabel1.Size = new System.Drawing.Size(57, 19);
             this.autoLabel1.TabIndex = 3;
@@ -72,7 +72,7 @@
             // dtStartDate
             // 
             this.dtStartDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtStartDate.Location = new System.Drawing.Point(24, 67);
+            this.dtStartDate.Location = new System.Drawing.Point(24, 31);
             this.dtStartDate.Name = "dtStartDate";
             this.dtStartDate.Size = new System.Drawing.Size(317, 34);
             this.dtStartDate.TabIndex = 4;
@@ -80,7 +80,7 @@
             // dtEndDate
             // 
             this.dtEndDate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtEndDate.Location = new System.Drawing.Point(356, 67);
+            this.dtEndDate.Location = new System.Drawing.Point(366, 31);
             this.dtEndDate.Name = "dtEndDate";
             this.dtEndDate.Size = new System.Drawing.Size(317, 34);
             this.dtEndDate.TabIndex = 5;
@@ -89,11 +89,11 @@
             // 
             this.gridHistory.AlphaBlendSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.gridHistory.BackColor = System.Drawing.SystemColors.Window;
-            this.gridHistory.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridHistory.Location = new System.Drawing.Point(24, 124);
+            this.gridHistory.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridHistory.Location = new System.Drawing.Point(24, 82);
             this.gridHistory.Name = "gridHistory";
             this.gridHistory.ShowCurrentCellBorderBehavior = Syncfusion.Windows.Forms.Grid.GridShowCurrentCellBorder.GrayWhenLostFocus;
-            this.gridHistory.Size = new System.Drawing.Size(1285, 536);
+            this.gridHistory.Size = new System.Drawing.Size(1285, 578);
             this.gridHistory.TabIndex = 9;
             this.gridHistory.Text = "gridGroupingControl1";
             this.gridHistory.UseRightToLeftCompatibleTextBox = true;
@@ -104,7 +104,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(1190, 62);
+            this.btnReset.Location = new System.Drawing.Point(1190, 26);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(119, 39);
             this.btnReset.TabIndex = 15;

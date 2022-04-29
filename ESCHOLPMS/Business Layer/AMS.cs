@@ -51,7 +51,7 @@ namespace ESCHOLPMS
         public DataSet FetchAccessControlUsers()
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = " SELECT * FROM ACCESSSTAFF ORDER BY SPINTLYID ";
+            string sql = " SELECT * FROM ACCESSSPINTLYUSERDUMP ORDER BY SPINTLYID ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
@@ -185,13 +185,13 @@ namespace ESCHOLPMS
 
 
         }
-        public int InsertAccessUsers(int id,string userName,string createdAt,bool cardAssigned,string accessExpiresAt,
+        public int InsertAccessUsers(Int64 id,string userName,string createdAt,bool cardAssigned,string accessExpiresAt,
                        bool accessExpired, string deactivatedOn,string employeeCode,string credentialId)
         {
 
             SqlParameter[] arParms = new SqlParameter[9];
             
-            arParms[0] = new SqlParameter("@SPINTLYID", SqlDbType.Int);
+            arParms[0] = new SqlParameter("@SPINTLYID", SqlDbType.BigInt);
             arParms[0].Value = id;
             arParms[1] = new SqlParameter("@NAME", SqlDbType.Text);
             arParms[1].Value = userName;

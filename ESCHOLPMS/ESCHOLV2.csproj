@@ -367,6 +367,7 @@
   <ItemGroup>
     <Compile Include="Business Layer\Accounts\Accounts.cs" />
     <Compile Include="Business Layer\AMS.cs" />
+    <Compile Include="Business Layer\API\AccessUserDump.cs" />
     <Compile Include="Business Layer\API\AccessHistoryRequest.cs" />
     <Compile Include="Business Layer\API\AccessHistoryResponse.cs" />
     <Compile Include="Business Layer\API\AcessPoints.cs" />

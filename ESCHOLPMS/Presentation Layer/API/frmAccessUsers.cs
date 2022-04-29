@@ -13,6 +13,7 @@ using System.IO;
 using Syncfusion.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using ESCHOLPMS.API.OauthToken;
+using ESCHOLPMS.API.AccessUserDump;
 using ESCHOLPMS.API.SpintlyUsers;
 
 namespace ESCHOLPMS 
@@ -40,8 +41,11 @@ namespace ESCHOLPMS
         private async void FetchAcessPointSites()
         {
             string url = "https://api.spintly.com/v2/organisationManagement/integrator/organisations/" + spintlyOrgID+ "/users/list";
-          
-         
+
+            AccessFetchPagination ap = new AccessFetchPagination();
+            ap.perPage = 10000;
+            ap.page = 1;
+
             if (spintlyAccessToken.Length==0)
             {
                 MessageBox.Show("First Authenticated. Then Run ");
@@ -50,12 +54,28 @@ namespace ESCHOLPMS
 
             try
             {
+
+                AccessUserDump userDumpRequest = new AccessUserDump();
+                userDumpRequest.pagination = ap;
+                string strJsonRequest = String.Empty;
+                try
+                {
+                    strJsonRequest = JsonConvert.SerializeObject(userDumpRequest);
+                }
+                catch (Exception ex)
+                {
+                    string errorJson = "Your Data Failed To Convert To Json " + ex.Message;
+                    MessageBox.Show(errorJson);
+                }
+
+
                 RestClient client = new RestClient(url);
                 RestRequest request = new RestRequest(Method.POST);
                 request.AddHeader("Content-Type", "application/json");
                 request.AddHeader("Authorization", spintlyAccessToken);
-            
-           
+                request.AddParameter("application/json", strJsonRequest, ParameterType.RequestBody);
+
+ 
                 IRestResponse response = await client.ExecuteAsync(request);
 
                 spintlyUserCollection = JsonConvert.DeserializeObject<SpintlyUserLists>(response.Content);
@@ -67,7 +87,7 @@ namespace ESCHOLPMS
 
            
                 List<User> singleUser = new List<User>();
-                int id = 0;
+                Int64 spintlyID = 0;
                 string createdAt=string.Empty;
                 bool cardAssigned=false;
                 string accessExpiresAt=string.Empty;
@@ -81,7 +101,7 @@ namespace ESCHOLPMS
                 {
                     foreach (User u in spintlyUserCollection.message.users)
                     {
-                        id = Convert.ToInt16(u.id);
+                        spintlyID = Convert.ToInt64(u.id);
                         userName = u.name.ToString();
                         createdAt = Convert.ToDateTime(u.createdAt).ToShortDateString();
                         cardAssigned = u.cardAssigned;
@@ -102,14 +122,14 @@ namespace ESCHOLPMS
                             credentialId = "0";
                         else
                             credentialId = Convert.ToString(u.credentialId);
-                        success = pms.InsertAccessUsers(id, userName, createdAt, cardAssigned, accessExpiresAt,
+                        success = pms.InsertAccessUsers(spintlyID, userName, createdAt, cardAssigned, accessExpiresAt,
                             accessExpired, deactivatedOn, employeeCode, credentialId);
                     }
                 
                 }
-                catch
+                catch (Exception d)
                 {
-                    string errorMessage = "Error in ID" + Convert.ToString(id);
+                    string errorMessage = "Error in ID" + Convert.ToString(spintlyID)+" -- " + Convert.ToString(d.Message);
                     MessageBox.Show(errorMessage);
                 }
                

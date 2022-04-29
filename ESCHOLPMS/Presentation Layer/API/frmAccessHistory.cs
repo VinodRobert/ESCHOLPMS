@@ -123,30 +123,34 @@ namespace ESCHOLPMS
             gridHistory.DataSource = dsAttendance.Tables[0];
 
             gridHistory.TableDescriptor.Columns[0].HeaderText = "Site Name";
-            gridHistory.TableDescriptor.Columns[0].Width = 150;
+            gridHistory.TableDescriptor.Columns[0].Width = 125;
             gridHistory.TableDescriptor.Columns[0].AllowFilter = true;
 
             gridHistory.TableDescriptor.Columns[1].HeaderText = "Location";
-            gridHistory.TableDescriptor.Columns[1].Width = 150;
+            gridHistory.TableDescriptor.Columns[1].Width = 125;
 
             gridHistory.TableDescriptor.Columns[2].HeaderText = "Access Point Name";
-            gridHistory.TableDescriptor.Columns[2].Width = 150;
+            gridHistory.TableDescriptor.Columns[2].Width = 125;
             gridHistory.TableDescriptor.Columns[2].AllowFilter = true;
 
-            gridHistory.TableDescriptor.Columns[3].HeaderText = "Staff Name";
-            gridHistory.TableDescriptor.Columns[3].Width = 150;
+            gridHistory.TableDescriptor.Columns[3].HeaderText = "Access Card#";
+            gridHistory.TableDescriptor.Columns[3].Width = 125;
             gridHistory.TableDescriptor.Columns[3].AllowFilter = true;
 
-            gridHistory.TableDescriptor.Columns[4].HeaderText = "Check In";
+            gridHistory.TableDescriptor.Columns[4].HeaderText = "Staff Name";
             gridHistory.TableDescriptor.Columns[4].Width = 150;
-            gridHistory.TableDescriptor.Columns[4].Appearance.AnyCell.CellType = "DateTime";
             gridHistory.TableDescriptor.Columns[4].AllowFilter = true;
 
-
-            gridHistory.TableDescriptor.Columns[5].HeaderText = "Check Out";
-            gridHistory.TableDescriptor.Columns[5].Width = 150;
+            gridHistory.TableDescriptor.Columns[5].HeaderText = "Check In";
+            gridHistory.TableDescriptor.Columns[5].Width = 135;
             gridHistory.TableDescriptor.Columns[5].Appearance.AnyCell.CellType = "DateTime";
             gridHistory.TableDescriptor.Columns[5].AllowFilter = true;
+
+
+            gridHistory.TableDescriptor.Columns[6].HeaderText = "Check Out";
+            gridHistory.TableDescriptor.Columns[6].Width = 135;
+            gridHistory.TableDescriptor.Columns[6].Appearance.AnyCell.CellType = "DateTime";
+            gridHistory.TableDescriptor.Columns[6].AllowFilter = true;
             this.gridHistory.TopLevelGroupOptions.ShowFilterBar = true;
 
 
