@@ -49,7 +49,7 @@ namespace ESCHOLPMS
         private void LoadLabours()
         {
             int costCentreID = Convert.ToInt16(GlobalVariables.costCentreID);
-            DataSet dslabours = lab.FetchCompleteLabours(costCentreID);
+            DataSet dslabours = lab.FetchActiveUsers(costCentreID);
             List<LabourList> LabourListing = new List<LabourList>();
             LabourListing = CommonMethods.ConvertToList<LabourList>(dslabours.Tables[0]);
 

@@ -39,6 +39,10 @@
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn9 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn1 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn10 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn11 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn12 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn2 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
+            Syncfusion.WinForms.DataGrid.GridNumericColumn gridNumericColumn1 = new Syncfusion.WinForms.DataGrid.GridNumericColumn();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.gridLabours = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.btnNew = new Syncfusion.WinForms.Controls.SfButton();
@@ -54,9 +58,9 @@
             this.autoLabel1.Location = new System.Drawing.Point(529, 9);
             this.autoLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel1.Name = "autoLabel1";
-            this.autoLabel1.Size = new System.Drawing.Size(172, 23);
+            this.autoLabel1.Size = new System.Drawing.Size(231, 22);
             this.autoLabel1.TabIndex = 0;
-            this.autoLabel1.Text = "List Of Labours";
+            this.autoLabel1.Text = "List Of Active Labours";
             // 
             // gridLabours
             // 
@@ -80,37 +84,38 @@
             gridTextColumn3.AllowFiltering = true;
             gridTextColumn3.HeaderText = "Number";
             gridTextColumn3.MappingName = "LabourRollNo";
-            gridTextColumn3.Width = 130D;
+            gridTextColumn3.Width = 100D;
             gridTextColumn4.AllowEditing = false;
             gridTextColumn4.AllowFiltering = true;
             gridTextColumn4.HeaderText = "Name";
             gridTextColumn4.MappingName = "LabourName";
-            gridTextColumn4.Width = 220D;
+            gridTextColumn4.Width = 190D;
             gridTextColumn5.AllowEditing = false;
             gridTextColumn5.AllowFiltering = true;
             gridTextColumn5.HeaderText = "Mobile #";
             gridTextColumn5.MappingName = "MobileNumber";
-            gridTextColumn5.Width = 120D;
+            gridTextColumn5.Visible = false;
+            gridTextColumn5.Width = 0D;
             gridTextColumn6.AllowEditing = false;
             gridTextColumn6.AllowFiltering = true;
             gridTextColumn6.HeaderText = "Labour Type";
             gridTextColumn6.MappingName = "TypeOfLabour";
-            gridTextColumn6.Width = 150D;
+            gridTextColumn6.Width = 125D;
             gridTextColumn7.AllowEditing = false;
             gridTextColumn7.AllowFiltering = true;
             gridTextColumn7.HeaderText = "Skill";
             gridTextColumn7.MappingName = "SkillType";
-            gridTextColumn7.Width = 130D;
+            gridTextColumn7.Width = 120D;
             gridTextColumn8.AllowEditing = false;
             gridTextColumn8.AllowFiltering = true;
             gridTextColumn8.HeaderText = "Contractor";
             gridTextColumn8.MappingName = "SubContractorName";
-            gridTextColumn8.Width = 180D;
+            gridTextColumn8.Width = 130D;
             gridTextColumn9.AllowEditing = false;
             gridTextColumn9.AllowFiltering = true;
             gridTextColumn9.HeaderText = "Status";
             gridTextColumn9.MappingName = "Status";
-            gridTextColumn9.Width = 220D;
+            gridTextColumn9.Width = 100D;
             gridDateTimeColumn1.AllowEditing = false;
             gridDateTimeColumn1.AllowFiltering = true;
             gridDateTimeColumn1.HeaderText = "Column10";
@@ -124,6 +129,27 @@
             gridTextColumn10.MappingName = "Due";
             gridTextColumn10.Visible = false;
             gridTextColumn10.Width = 0D;
+            gridTextColumn11.AllowEditing = false;
+            gridTextColumn11.AllowFiltering = true;
+            gridTextColumn11.HeaderText = "Spintly ID";
+            gridTextColumn11.MappingName = "SpintlyID";
+            gridTextColumn11.Width = 80D;
+            gridTextColumn12.AllowEditing = false;
+            gridTextColumn12.AllowFiltering = true;
+            gridTextColumn12.HeaderText = "Access Card #";
+            gridTextColumn12.MappingName = "AccessCardNumber";
+            gridTextColumn12.Width = 80D;
+            gridDateTimeColumn2.AllowEditing = false;
+            gridDateTimeColumn2.AllowFiltering = true;
+            gridDateTimeColumn2.HeaderText = "Last CheckIn";
+            gridDateTimeColumn2.MappingName = "LastCheckIn";
+            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn2.Width = 110D;
+            gridNumericColumn1.AllowEditing = false;
+            gridNumericColumn1.AllowFiltering = true;
+            gridNumericColumn1.HeaderText = "CheckIns";
+            gridNumericColumn1.MappingName = "CheckInCount";
+            gridNumericColumn1.Width = 100D;
             this.gridLabours.Columns.Add(gridTextColumn1);
             this.gridLabours.Columns.Add(gridTextColumn2);
             this.gridLabours.Columns.Add(gridTextColumn3);
@@ -135,6 +161,10 @@
             this.gridLabours.Columns.Add(gridTextColumn9);
             this.gridLabours.Columns.Add(gridDateTimeColumn1);
             this.gridLabours.Columns.Add(gridTextColumn10);
+            this.gridLabours.Columns.Add(gridTextColumn11);
+            this.gridLabours.Columns.Add(gridTextColumn12);
+            this.gridLabours.Columns.Add(gridDateTimeColumn2);
+            this.gridLabours.Columns.Add(gridNumericColumn1);
             this.gridLabours.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLabours.Location = new System.Drawing.Point(11, 67);
             this.gridLabours.Margin = new System.Windows.Forms.Padding(2);
@@ -196,7 +226,7 @@
             this.btnExport.Text = "Export To Excel";
             this.btnExport.UseVisualStyleBackColor = false;
             // 
-            // frmLabourLists
+            // frmList_ActiveLabours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -208,7 +238,7 @@
             this.Controls.Add(this.autoLabel1);
             this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmLabourLists";
+            this.Name = "frmList_ActiveLabours";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Labour Lists";
             this.Load += new System.EventHandler(this.frmLabourLists_Load);

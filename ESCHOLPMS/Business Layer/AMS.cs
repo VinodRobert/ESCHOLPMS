@@ -12,6 +12,15 @@ namespace ESCHOLPMS
     {
         #region Logins
 
+        public int UpdateAccessCard(Int64 labourIDKey,Int64 newUserID,Int64 accessCardNumber)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql1 = "Update LabourDetails Set AccessCardNumber=" + Convert.ToString(accessCardNumber) + " Where labourID=" + Convert.ToString(labourIDKey);
+            string sql2 = "Update LabourDetails Set SpintlyUserID="+Convert.ToString(newUserID)+" where labourID="+ Convert.ToString(labourIDKey);
+            int i = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql1);
+            int j = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql2);
+            return  0;
+        }
         public DataSet FetchAccessPointsDetails(int projectID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
@@ -88,7 +97,7 @@ namespace ESCHOLPMS
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "SELECT -1 PROJECTCODE,'HEAD OFFICE' AS PROJECTNAME  UNION ";
-            sql = sql +  "SELECT PROJECTCODE,LEFT(PROJECTNAME,50) PROJECTNAME FROM EXT.PROJECTS WHERE PROJECTCODE IN(SELECT PROJECTID ";
+            sql = sql +  "SELECT PROJECTCODE,LEFT(PROJECTNAME,50) PROJECTNAME FROM EXT.PROJECTS WHERE PROJECTSTATUS='Open' AND PROJECTCODE IN(SELECT PROJECTID ";
             sql = sql + " FROM USERPROJECT WHERE LOGINID = " + Convert.ToString(loginID) + " ) ORDER BY PROJECTNAME ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;

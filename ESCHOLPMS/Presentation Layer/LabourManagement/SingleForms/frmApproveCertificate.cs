@@ -47,7 +47,7 @@ namespace ESCHOLPMS
             txtLabourType.Text = "";
             txtSubContractor.Text = "";
             txtTradeCertificate.Text = "";
-
+            rejectionPanel.Visible = false;
 
             btnBrowseEnrollment.Enabled = true;
             
@@ -396,6 +396,19 @@ namespace ESCHOLPMS
             }
         }
 
-       
+        private void sfButton1_Click(object sender, EventArgs e)
+        {
+            rejectionPanel.Visible = true;
+        }
+
+        private void btnRejectionSave_Click(object sender, EventArgs e)
+        {
+            string rejectionComment = Convert.ToString(txtRejectionComments.Text).Trim();
+            Int64 workerID = existingLabourID;
+            int i = lab.InsertRejection(workerID, rejectionComment);
+            int j = lab.UpdateLabourRejectionStatus(workerID);
+            MessageBox.Show("Rejection Successfully Recorded");
+            this.Close();
+        }
     }
 }

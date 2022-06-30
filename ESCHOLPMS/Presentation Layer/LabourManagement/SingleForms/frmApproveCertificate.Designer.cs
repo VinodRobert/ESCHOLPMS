@@ -68,6 +68,11 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.dtActionDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.autoLabel9 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
+            this.rejectionPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtRejectionComments = new System.Windows.Forms.TextBox();
+            this.btnRejectionSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRollNumber)).BeginInit();
             this.panel1.SuspendLayout();
@@ -81,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProofSubmitted)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProofNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.rejectionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // autoLabel2
@@ -434,7 +440,7 @@
             this.autoLabel8.Location = new System.Drawing.Point(454, 0);
             this.autoLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel8.Name = "autoLabel8";
-            this.autoLabel8.Size = new System.Drawing.Size(292, 29);
+            this.autoLabel8.Size = new System.Drawing.Size(282, 27);
             this.autoLabel8.TabIndex = 90;
             this.autoLabel8.Text = "Documents for Approval";
             // 
@@ -453,6 +459,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1103, 537);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(51, 55);
             this.dataGridView1.TabIndex = 92;
@@ -477,7 +484,7 @@
             this.lblStatus.ForeColor = System.Drawing.Color.Maroon;
             this.lblStatus.Location = new System.Drawing.Point(723, 323);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(81, 29);
+            this.lblStatus.Size = new System.Drawing.Size(79, 27);
             this.lblStatus.TabIndex = 93;
             this.lblStatus.Text = "label1";
             // 
@@ -499,12 +506,70 @@
             this.autoLabel9.TabIndex = 98;
             this.autoLabel9.Text = "Last Action On";
             // 
-            // frmLabourApproval
+            // sfButton1
+            // 
+            this.sfButton1.AccessibleName = "Button";
+            this.sfButton1.BackColor = System.Drawing.Color.White;
+            this.sfButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.sfButton1.ForeColor = System.Drawing.Color.Red;
+            this.sfButton1.Location = new System.Drawing.Point(740, 553);
+            this.sfButton1.Name = "sfButton1";
+            this.sfButton1.Size = new System.Drawing.Size(96, 39);
+            this.sfButton1.Style.BackColor = System.Drawing.Color.White;
+            this.sfButton1.Style.ForeColor = System.Drawing.Color.Red;
+            this.sfButton1.TabIndex = 100;
+            this.sfButton1.Text = "Reject";
+            this.sfButton1.UseVisualStyleBackColor = false;
+            this.sfButton1.Click += new System.EventHandler(this.sfButton1_Click);
+            // 
+            // rejectionPanel
+            // 
+            this.rejectionPanel.BackColor = System.Drawing.Color.LightCoral;
+            this.rejectionPanel.Controls.Add(this.btnRejectionSave);
+            this.rejectionPanel.Controls.Add(this.txtRejectionComments);
+            this.rejectionPanel.Controls.Add(this.label1);
+            this.rejectionPanel.Location = new System.Drawing.Point(562, 362);
+            this.rejectionPanel.Name = "rejectionPanel";
+            this.rejectionPanel.Size = new System.Drawing.Size(593, 185);
+            this.rejectionPanel.TabIndex = 101;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(215, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Rejection Comments";
+            // 
+            // txtRejectionComments
+            // 
+            this.txtRejectionComments.Location = new System.Drawing.Point(15, 23);
+            this.txtRejectionComments.MaxLength = 200;
+            this.txtRejectionComments.Multiline = true;
+            this.txtRejectionComments.Name = "txtRejectionComments";
+            this.txtRejectionComments.Size = new System.Drawing.Size(559, 105);
+            this.txtRejectionComments.TabIndex = 1;
+            // 
+            // btnRejectionSave
+            // 
+            this.btnRejectionSave.Location = new System.Drawing.Point(233, 135);
+            this.btnRejectionSave.Name = "btnRejectionSave";
+            this.btnRejectionSave.Size = new System.Drawing.Size(101, 34);
+            this.btnRejectionSave.TabIndex = 2;
+            this.btnRejectionSave.Text = "Save";
+            this.btnRejectionSave.UseVisualStyleBackColor = true;
+            this.btnRejectionSave.Click += new System.EventHandler(this.btnRejectionSave_Click);
+            // 
+            // frmApproveCertificate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1166, 604);
+            this.Controls.Add(this.rejectionPanel);
+            this.Controls.Add(this.sfButton1);
             this.Controls.Add(this.dtActionDate);
             this.Controls.Add(this.autoLabel9);
             this.Controls.Add(this.lblStatus);
@@ -543,7 +608,7 @@
             this.Controls.Add(this.autoLabel2);
             this.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmLabourApproval";
+            this.Name = "frmApproveCertificate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Labour | Approve Documents";
             this.Load += new System.EventHandler(this.frmNewLabour_Load);
@@ -560,6 +625,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProofSubmitted)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProofNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.rejectionPanel.ResumeLayout(false);
+            this.rejectionPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -606,5 +673,10 @@
         private System.Windows.Forms.Label lblStatus;
         private Syncfusion.WinForms.Input.SfDateTimeEdit dtActionDate;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel9;
+        private Syncfusion.WinForms.Controls.SfButton sfButton1;
+        private System.Windows.Forms.Panel rejectionPanel;
+        private System.Windows.Forms.Button btnRejectionSave;
+        private System.Windows.Forms.TextBox txtRejectionComments;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -83,7 +83,8 @@ namespace ESCHOLPMS
     }
     public class LabourList
     {
-   
+        private Int64 _spintlyID;
+        private string _accessCardNumber;
         private Int64 _labourID;
         private string _projectName;
         private string _labourRollNo;
@@ -95,6 +96,25 @@ namespace ESCHOLPMS
         private string _status;
         private DateTime _dateOfJoining;
         private int _due;
+        private DateTime _lastCheckInDate;
+        private int _checkInCount;
+       
+      
+        public DateTime LastCheckIn
+        {
+            get { return _lastCheckInDate; }
+            set { _lastCheckInDate = value; }
+        }
+        public int CheckInCount
+        {
+            get { return _checkInCount; }
+            set { _checkInCount = value; }
+        }
+        public string AccessCardNumber
+        {
+            get { return _accessCardNumber; }
+            set { _accessCardNumber = value; }
+        }
 
         public  int Due
         {
@@ -160,6 +180,11 @@ namespace ESCHOLPMS
             set { _subContractorName = value; }
         }
 
-       
+        public Int64 SpintlyID
+        {
+            get { return _spintlyID; }
+            set { _spintlyID = value; }
+        }
+
     }
 }

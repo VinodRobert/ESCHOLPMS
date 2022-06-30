@@ -44,13 +44,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(431, 9);
+            this.label1.Location = new System.Drawing.Point(537, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.Size = new System.Drawing.Size(417, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "List of Users";
+            this.label1.Text = "List of Spintly Registered Users";
             // 
             // btnGenerate
             // 
@@ -66,29 +66,37 @@
             // gridUsers
             // 
             this.gridUsers.AccessibleName = "Table";
+            this.gridUsers.AllowFiltering = true;
+            gridTextColumn1.AllowFiltering = true;
             gridTextColumn1.HeaderText = "Spintly ID";
             gridTextColumn1.MappingName = "SPINTLYID";
             gridTextColumn1.Width = 80D;
+            gridTextColumn2.AllowFiltering = true;
             gridTextColumn2.HeaderText = "Name";
             gridTextColumn2.MappingName = "NAME";
-            gridTextColumn2.Width = 150D;
+            gridTextColumn2.Width = 200D;
+            gridTextColumn3.AllowFiltering = true;
             gridTextColumn3.HeaderText = "Emp Code";
             gridTextColumn3.MappingName = "EMPLOYEECODE";
-            gridTextColumn3.Width = 80D;
+            gridTextColumn3.Width = 150D;
+            gridTextColumn4.AllowFiltering = true;
             gridTextColumn4.HeaderText = "Access Card #";
             gridTextColumn4.MappingName = "ACCESSCARDNO";
-            gridTextColumn4.Width = 80D;
+            gridTextColumn4.Width = 150D;
+            gridDateTimeColumn1.AllowFiltering = true;
             gridDateTimeColumn1.HeaderText = "Exiprty ON";
             gridDateTimeColumn1.MappingName = "ACCESSEXPIREDAT";
             gridDateTimeColumn1.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridDateTimeColumn1.Width = 50D;
+            gridDateTimeColumn1.Width = 120D;
+            gridCheckBoxColumn1.AllowFiltering = true;
             gridCheckBoxColumn1.HeaderText = "Expired";
             gridCheckBoxColumn1.MappingName = "ACCESSEXPIRED";
-            gridCheckBoxColumn1.Width = 80D;
+            gridCheckBoxColumn1.Width = 120D;
+            gridDateTimeColumn2.AllowFiltering = true;
             gridDateTimeColumn2.HeaderText = "Deactivated ON";
             gridDateTimeColumn2.MappingName = "DEACTIVATEDON";
             gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
-            gridDateTimeColumn2.Width = 90D;
+            gridDateTimeColumn2.Width = 120D;
             this.gridUsers.Columns.Add(gridTextColumn1);
             this.gridUsers.Columns.Add(gridTextColumn2);
             this.gridUsers.Columns.Add(gridTextColumn3);
@@ -99,7 +107,8 @@
             this.gridUsers.Location = new System.Drawing.Point(24, 85);
             this.gridUsers.Name = "gridUsers";
             this.gridUsers.PreviewRowHeight = 35;
-            this.gridUsers.Size = new System.Drawing.Size(921, 577);
+            this.gridUsers.ShowGroupDropArea = true;
+            this.gridUsers.Size = new System.Drawing.Size(1325, 577);
             this.gridUsers.TabIndex = 2;
             this.gridUsers.Text = "sfDataGrid1";
             // 
@@ -107,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 688);
+            this.ClientSize = new System.Drawing.Size(1381, 688);
             this.Controls.Add(this.gridUsers);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.label1);

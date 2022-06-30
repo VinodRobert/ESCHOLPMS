@@ -41,8 +41,29 @@ namespace ESCHOLPMS
             {
                 GlobalVariables.projectID = Convert.ToInt16(newProjectID);
                 DataSet dsProjectDetails = pm.FetchProjectDetails(newProjectID);
-                GlobalVariables.costCentreID = Convert.ToInt16(dsProjectDetails.Tables[0].Rows[0]["CostCentreID"]);
                 GlobalVariables.ProjectName = Convert.ToString(cmbProjects.Text);
+           
+             
+                if (dsProjectDetails.Tables[0].Rows.Count == 0)
+                    GlobalVariables.costCentreID = 0;
+                else
+                    GlobalVariables.costCentreID = Convert.ToInt16(dsProjectDetails.Tables[0].Rows[0]["CostCentreID"]);
+
+
+                DataSet dsAccessPoints = pm.FetchAccessPointsDetails(newProjectID);
+                if (dsAccessPoints.Tables[0].Rows.Count == 0)
+                {
+                    GlobalVariables.spintlyOrgID = 0;
+                    GlobalVariables.spintlySiteID = 0;
+                    GlobalVariables.spintlyAccessPointID = 0;
+                }
+                else
+                {
+                    GlobalVariables.spintlyOrgID = Convert.ToInt16(dsAccessPoints.Tables[0].Rows[0]["OrgID"]);
+                    GlobalVariables.spintlySiteID = Convert.ToInt16(dsAccessPoints.Tables[0].Rows[0]["GateWayID"]);
+                    GlobalVariables.spintlyAccessPointID = Convert.ToInt16(dsAccessPoints.Tables[0].Rows[0]["AccessPointID"]);
+                }
+
                 this.Visible = false;
                 this.Close();
                 frmMain _main = new frmMain();

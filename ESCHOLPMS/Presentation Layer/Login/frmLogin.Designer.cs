@@ -54,7 +54,7 @@
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(357, -4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 46);
+            this.label1.Size = new System.Drawing.Size(264, 45);
             this.label1.TabIndex = 2;
             this.label1.Text = "ESCHOL  V2";
             // 
@@ -84,7 +84,7 @@
             this.lblUserName.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.Location = new System.Drawing.Point(290, 93);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(105, 22);
+            this.lblUserName.Size = new System.Drawing.Size(100, 21);
             this.lblUserName.TabIndex = 3;
             this.lblUserName.Text = "User Name";
             // 
@@ -93,7 +93,7 @@
             this.lblPassword.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(290, 147);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(94, 22);
+            this.lblPassword.Size = new System.Drawing.Size(89, 21);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password";
             // 
@@ -124,9 +124,9 @@
             this.autoLabel1.ForeColor = System.Drawing.Color.Red;
             this.autoLabel1.Location = new System.Drawing.Point(378, 361);
             this.autoLabel1.Name = "autoLabel1";
-            this.autoLabel1.Size = new System.Drawing.Size(306, 19);
+            this.autoLabel1.Size = new System.Drawing.Size(309, 19);
             this.autoLabel1.TabIndex = 12;
-            this.autoLabel1.Text = "Release Date:01 Jan 2021  Version 1.0";
+            this.autoLabel1.Text = "Release Date:01 May 2022  Version 1.0";
             // 
             // lblProject
             // 
@@ -134,7 +134,7 @@
             this.lblProject.ForeColor = System.Drawing.Color.Blue;
             this.lblProject.Location = new System.Drawing.Point(290, 203);
             this.lblProject.Name = "lblProject";
-            this.lblProject.Size = new System.Drawing.Size(70, 22);
+            this.lblProject.Size = new System.Drawing.Size(66, 21);
             this.lblProject.TabIndex = 13;
             this.lblProject.Text = "Project";
             // 

@@ -43,9 +43,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(499, -1);
+            this.label1.Location = new System.Drawing.Point(639, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 29);
+            this.label1.Size = new System.Drawing.Size(291, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "List of Access History";
             // 
@@ -93,7 +93,7 @@
             this.gridHistory.Location = new System.Drawing.Point(24, 82);
             this.gridHistory.Name = "gridHistory";
             this.gridHistory.ShowCurrentCellBorderBehavior = Syncfusion.Windows.Forms.Grid.GridShowCurrentCellBorder.GrayWhenLostFocus;
-            this.gridHistory.Size = new System.Drawing.Size(1285, 578);
+            this.gridHistory.Size = new System.Drawing.Size(1416, 578);
             this.gridHistory.TabIndex = 9;
             this.gridHistory.Text = "gridGroupingControl1";
             this.gridHistory.UseRightToLeftCompatibleTextBox = true;
@@ -104,7 +104,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(1190, 26);
+            this.btnReset.Location = new System.Drawing.Point(1321, 26);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(119, 39);
             this.btnReset.TabIndex = 15;
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1343, 688);
+            this.ClientSize = new System.Drawing.Size(1472, 688);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.gridHistory);
             this.Controls.Add(this.dtEndDate);

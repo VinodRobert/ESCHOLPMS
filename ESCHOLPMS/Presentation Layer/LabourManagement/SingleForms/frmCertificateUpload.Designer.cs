@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Syncfusion.WinForms.DataGrid.GridDateTimeColumn gridDateTimeColumn2 = new Syncfusion.WinForms.DataGrid.GridDateTimeColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn2 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel13 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -70,6 +72,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.autoLabel9 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.dtActionDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
+            this.btnReSubmission = new Syncfusion.WinForms.Controls.SfButton();
+            this.panelRejection = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.gridRejection = new Syncfusion.WinForms.DataGrid.SfDataGrid();
+            this.btnCloseRejection = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRollNumber)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,6 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProofSubmitted)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProofNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelRejection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRejection)).BeginInit();
             this.SuspendLayout();
             // 
             // autoLabel2
@@ -436,7 +445,7 @@
             this.autoLabel8.Location = new System.Drawing.Point(454, 0);
             this.autoLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel8.Name = "autoLabel8";
-            this.autoLabel8.Size = new System.Drawing.Size(268, 29);
+            this.autoLabel8.Size = new System.Drawing.Size(262, 27);
             this.autoLabel8.TabIndex = 90;
             this.autoLabel8.Text = "Uploading Certificates";
             // 
@@ -455,6 +464,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1103, 537);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(51, 55);
             this.dataGridView1.TabIndex = 92;
@@ -479,7 +489,7 @@
             this.lblStatus.ForeColor = System.Drawing.Color.Maroon;
             this.lblStatus.Location = new System.Drawing.Point(776, 323);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(81, 29);
+            this.lblStatus.Size = new System.Drawing.Size(79, 27);
             this.lblStatus.TabIndex = 93;
             this.lblStatus.Text = "label1";
             // 
@@ -489,7 +499,7 @@
             this.btnReUpload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnReUpload.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.btnReUpload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnReUpload.Location = new System.Drawing.Point(717, 553);
+            this.btnReUpload.Location = new System.Drawing.Point(670, 553);
             this.btnReUpload.Name = "btnReUpload";
             this.btnReUpload.Size = new System.Drawing.Size(140, 39);
             this.btnReUpload.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -506,7 +516,7 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(343, 390);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(642, 16);
+            this.label1.Size = new System.Drawing.Size(596, 16);
             this.label1.TabIndex = 95;
             this.label1.Text = "Please Make File Name Simple Without Special Characters - Size MUST be LESS THAN " +
     "1 MB";
@@ -529,12 +539,81 @@
             this.dtActionDate.Size = new System.Drawing.Size(373, 34);
             this.dtActionDate.TabIndex = 97;
             // 
-            // frmLabourCertificate
+            // btnReSubmission
+            // 
+            this.btnReSubmission.AccessibleName = "Button";
+            this.btnReSubmission.BackColor = System.Drawing.Color.Red;
+            this.btnReSubmission.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnReSubmission.ForeColor = System.Drawing.Color.White;
+            this.btnReSubmission.Location = new System.Drawing.Point(858, 553);
+            this.btnReSubmission.Name = "btnReSubmission";
+            this.btnReSubmission.Size = new System.Drawing.Size(140, 39);
+            this.btnReSubmission.Style.BackColor = System.Drawing.Color.Red;
+            this.btnReSubmission.Style.ForeColor = System.Drawing.Color.White;
+            this.btnReSubmission.TabIndex = 98;
+            this.btnReSubmission.Text = "Re-Submission";
+            this.btnReSubmission.UseVisualStyleBackColor = false;
+            this.btnReSubmission.Click += new System.EventHandler(this.btnReSubmission_Click);
+            // 
+            // panelRejection
+            // 
+            this.panelRejection.BackColor = System.Drawing.Color.Honeydew;
+            this.panelRejection.Controls.Add(this.btnCloseRejection);
+            this.panelRejection.Controls.Add(this.gridRejection);
+            this.panelRejection.Controls.Add(this.label2);
+            this.panelRejection.Location = new System.Drawing.Point(544, 197);
+            this.panelRejection.Name = "panelRejection";
+            this.panelRejection.Size = new System.Drawing.Size(573, 333);
+            this.panelRejection.TabIndex = 99;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(197, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 19);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Rejection Remarks";
+            // 
+            // gridRejection
+            // 
+            this.gridRejection.AccessibleName = "Table";
+            gridDateTimeColumn2.HeaderText = "Date";
+            gridDateTimeColumn2.MappingName = "RejectionDate";
+            gridDateTimeColumn2.MaxDateTime = new System.DateTime(9999, 12, 31, 23, 59, 59, 999);
+            gridDateTimeColumn2.Width = 100D;
+            gridTextColumn2.HeaderText = "Remarks";
+            gridTextColumn2.MappingName = "Remarks";
+            gridTextColumn2.Width = 400D;
+            this.gridRejection.Columns.Add(gridDateTimeColumn2);
+            this.gridRejection.Columns.Add(gridTextColumn2);
+            this.gridRejection.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridRejection.Location = new System.Drawing.Point(4, 41);
+            this.gridRejection.Name = "gridRejection";
+            this.gridRejection.PreviewRowHeight = 35;
+            this.gridRejection.Size = new System.Drawing.Size(566, 235);
+            this.gridRejection.TabIndex = 1;
+            this.gridRejection.Text = "sfDataGrid1";
+            // 
+            // btnCloseRejection
+            // 
+            this.btnCloseRejection.AccessibleName = "Button";
+            this.btnCloseRejection.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnCloseRejection.Location = new System.Drawing.Point(225, 295);
+            this.btnCloseRejection.Name = "btnCloseRejection";
+            this.btnCloseRejection.Size = new System.Drawing.Size(96, 28);
+            this.btnCloseRejection.TabIndex = 2;
+            this.btnCloseRejection.Text = "Close";
+            this.btnCloseRejection.Click += new System.EventHandler(this.btnCloseRejection_Click);
+            // 
+            // frmCertificateUpload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(1166, 604);
+            this.Controls.Add(this.panelRejection);
+            this.Controls.Add(this.btnReSubmission);
             this.Controls.Add(this.dtActionDate);
             this.Controls.Add(this.autoLabel9);
             this.Controls.Add(this.label1);
@@ -575,7 +654,7 @@
             this.Controls.Add(this.autoLabel2);
             this.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmLabourCertificate";
+            this.Name = "frmCertificateUpload";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Labour | Certificate Upload";
             this.Load += new System.EventHandler(this.frmNewLabour_Load);
@@ -592,6 +671,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProofSubmitted)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProofNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelRejection.ResumeLayout(false);
+            this.panelRejection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRejection)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -640,5 +722,10 @@
         private System.Windows.Forms.Label label1;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel9;
         private Syncfusion.WinForms.Input.SfDateTimeEdit dtActionDate;
+        private Syncfusion.WinForms.Controls.SfButton btnReSubmission;
+        private System.Windows.Forms.Panel panelRejection;
+        private Syncfusion.WinForms.Controls.SfButton btnCloseRejection;
+        private Syncfusion.WinForms.DataGrid.SfDataGrid gridRejection;
+        private System.Windows.Forms.Label label2;
     }
 }

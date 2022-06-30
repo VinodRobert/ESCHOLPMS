@@ -90,6 +90,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtMobileNumber1 = new Syncfusion.Windows.Forms.Tools.IntegerTextBox();
             this.txtMobileNumber2 = new Syncfusion.Windows.Forms.Tools.IntegerTextBox();
+            this.autoLabel21 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.txtYears = new Syncfusion.WinForms.Input.SfNumericTextBox();
+            this.txtMonths = new Syncfusion.WinForms.Input.SfNumericTextBox();
+            this.autoLabel22 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.autoLabel23 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtParentName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPemanentAddress)).BeginInit();
@@ -115,6 +121,7 @@
             // autoLabel2
             // 
             this.autoLabel2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel2.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel2.Location = new System.Drawing.Point(11, 9);
             this.autoLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel2.Name = "autoLabel2";
@@ -136,6 +143,7 @@
             // autoLabel3
             // 
             this.autoLabel3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel3.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel3.Location = new System.Drawing.Point(11, 98);
             this.autoLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel3.Name = "autoLabel3";
@@ -157,6 +165,7 @@
             // autoLabel4
             // 
             this.autoLabel4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel4.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel4.Location = new System.Drawing.Point(11, 144);
             this.autoLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel4.Name = "autoLabel4";
@@ -167,6 +176,7 @@
             // autoLabel6
             // 
             this.autoLabel6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel6.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel6.Location = new System.Drawing.Point(11, 193);
             this.autoLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel6.Name = "autoLabel6";
@@ -176,6 +186,7 @@
             // 
             // autoLabel7
             // 
+            this.autoLabel7.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel7.Location = new System.Drawing.Point(311, 193);
             this.autoLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel7.Name = "autoLabel7";
@@ -186,6 +197,7 @@
             // autoLabel8
             // 
             this.autoLabel8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel8.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel8.Location = new System.Drawing.Point(11, 260);
             this.autoLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel8.Name = "autoLabel8";
@@ -208,6 +220,7 @@
             // autoLabel9
             // 
             this.autoLabel9.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel9.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel9.Location = new System.Drawing.Point(11, 241);
             this.autoLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel9.Name = "autoLabel9";
@@ -230,6 +243,7 @@
             // autoLabel10
             // 
             this.autoLabel10.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel10.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel10.Location = new System.Drawing.Point(11, 355);
             this.autoLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel10.Name = "autoLabel10";
@@ -240,6 +254,7 @@
             // autoLabel11
             // 
             this.autoLabel11.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel11.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel11.Location = new System.Drawing.Point(11, 304);
             this.autoLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel11.Name = "autoLabel11";
@@ -250,6 +265,7 @@
             // autoLabel12
             // 
             this.autoLabel12.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel12.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel12.Location = new System.Drawing.Point(11, 399);
             this.autoLabel12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel12.Name = "autoLabel12";
@@ -260,6 +276,7 @@
             // autoLabel13
             // 
             this.autoLabel13.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel13.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel13.Location = new System.Drawing.Point(11, 54);
             this.autoLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel13.Name = "autoLabel13";
@@ -270,6 +287,7 @@
             // autoLabel5
             // 
             this.autoLabel5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel5.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel5.Location = new System.Drawing.Point(11, 431);
             this.autoLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel5.Name = "autoLabel5";
@@ -280,6 +298,7 @@
             // autoLabel14
             // 
             this.autoLabel14.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel14.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel14.Location = new System.Drawing.Point(11, 488);
             this.autoLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel14.Name = "autoLabel14";
@@ -290,6 +309,7 @@
             // autoLabel15
             // 
             this.autoLabel15.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel15.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel15.Location = new System.Drawing.Point(11, 535);
             this.autoLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel15.Name = "autoLabel15";
@@ -306,12 +326,13 @@
             this.txtIDProofNumberGiven.MaxLength = 25;
             this.txtIDProofNumberGiven.Name = "txtIDProofNumberGiven";
             this.txtIDProofNumberGiven.Size = new System.Drawing.Size(226, 29);
-            this.txtIDProofNumberGiven.TabIndex = 14;
+            this.txtIDProofNumberGiven.TabIndex = 13;
             this.txtIDProofNumberGiven.Text = "textBoxExt9";
             // 
             // autoLabel16
             // 
-            this.autoLabel16.Location = new System.Drawing.Point(731, 9);
+            this.autoLabel16.ForeColor = System.Drawing.Color.Fuchsia;
+            this.autoLabel16.Location = new System.Drawing.Point(709, 9);
             this.autoLabel16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel16.Name = "autoLabel16";
             this.autoLabel16.Size = new System.Drawing.Size(107, 19);
@@ -320,7 +341,8 @@
             // 
             // autoLabel17
             // 
-            this.autoLabel17.Location = new System.Drawing.Point(731, 65);
+            this.autoLabel17.ForeColor = System.Drawing.Color.Fuchsia;
+            this.autoLabel17.Location = new System.Drawing.Point(669, 120);
             this.autoLabel17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel17.Name = "autoLabel17";
             this.autoLabel17.Size = new System.Drawing.Size(131, 19);
@@ -329,27 +351,28 @@
             // 
             // cmbSubContractor
             // 
-            this.cmbSubContractor.BackColor = System.Drawing.Color.Black;
-            this.cmbSubContractor.DisplayMember = "CONTRACTORNAME";
+            this.cmbSubContractor.BackColor = System.Drawing.Color.YellowGreen;
+            this.cmbSubContractor.DisplayMember = "SUBCONTRACTOR";
             this.cmbSubContractor.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbSubContractor.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbSubContractor.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSubContractor.Location = new System.Drawing.Point(890, 54);
+            this.cmbSubContractor.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubContractor.Location = new System.Drawing.Point(821, 109);
             this.cmbSubContractor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbSubContractor.Name = "cmbSubContractor";
-            this.cmbSubContractor.Size = new System.Drawing.Size(267, 30);
-            this.cmbSubContractor.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbSubContractor.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
-            this.cmbSubContractor.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSubContractor.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubContractor.Size = new System.Drawing.Size(336, 30);
+            this.cmbSubContractor.Style.DropDownStyle.BorderColor = System.Drawing.Color.White;
+            this.cmbSubContractor.Style.EditorStyle.BackColor = System.Drawing.Color.YellowGreen;
+            this.cmbSubContractor.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubContractor.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSubContractor.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbSubContractor.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSubContractor.TabIndex = 16;
-            this.cmbSubContractor.ValueMember = "CONTRACTORCODE";
+            this.cmbSubContractor.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubContractor.TabIndex = 15;
+            this.cmbSubContractor.ValueMember = "SUBCONTRACTORCODE";
             // 
             // autoLabel18
             // 
-            this.autoLabel18.Location = new System.Drawing.Point(731, 120);
+            this.autoLabel18.ForeColor = System.Drawing.Color.Fuchsia;
+            this.autoLabel18.Location = new System.Drawing.Point(731, 67);
             this.autoLabel18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel18.Name = "autoLabel18";
             this.autoLabel18.Size = new System.Drawing.Size(85, 19);
@@ -442,18 +465,18 @@
             this.cmbStates.DisplayMember = "STATENAME";
             this.cmbStates.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbStates.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbStates.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStates.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStates.ForeColor = System.Drawing.Color.White;
             this.cmbStates.Location = new System.Drawing.Point(176, 291);
             this.cmbStates.Name = "cmbStates";
             this.cmbStates.Size = new System.Drawing.Size(422, 28);
             this.cmbStates.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cmbStates.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
-            this.cmbStates.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStates.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStates.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
-            this.cmbStates.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStates.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStates.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbStates.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStates.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStates.TabIndex = 7;
             this.cmbStates.ValueMember = "STATECODE";
             // 
@@ -466,7 +489,7 @@
             this.cmbGender.DisplayMember = "SEX";
             this.cmbGender.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbGender.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbGender.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.ForeColor = System.Drawing.Color.White;
             this.cmbGender.Location = new System.Drawing.Point(176, 182);
             this.cmbGender.Name = "cmbGender";
@@ -475,11 +498,11 @@
             this.cmbGender.Style.ClearButtonStyle.FocusedForeColor = System.Drawing.Color.White;
             this.cmbGender.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cmbGender.Style.EditorStyle.BackColor = System.Drawing.Color.White;
-            this.cmbGender.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
-            this.cmbGender.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbGender.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.TabIndex = 4;
             this.cmbGender.ValueMember = "SEX";
             // 
@@ -490,61 +513,67 @@
             this.cmbBloodGroup.DisplayMember = "BLOODGROUP";
             this.cmbBloodGroup.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbBloodGroup.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbBloodGroup.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloodGroup.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBloodGroup.ForeColor = System.Drawing.Color.White;
             this.cmbBloodGroup.Location = new System.Drawing.Point(426, 182);
             this.cmbBloodGroup.Name = "cmbBloodGroup";
             this.cmbBloodGroup.Size = new System.Drawing.Size(129, 30);
             this.cmbBloodGroup.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cmbBloodGroup.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
-            this.cmbBloodGroup.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloodGroup.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBloodGroup.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
-            this.cmbBloodGroup.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloodGroup.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBloodGroup.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbBloodGroup.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloodGroup.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBloodGroup.TabIndex = 5;
             this.cmbBloodGroup.ValueMember = "BLOODGROUP";
             // 
             // cmbJobType
             // 
             this.cmbJobType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbJobType.BackColor = System.Drawing.Color.Black;
-            this.cmbJobType.DisplayMember = "JOBTYPE";
+            this.cmbJobType.BackColor = System.Drawing.Color.White;
+            this.cmbJobType.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cmbJobType.DisplayMember = "CONTRACTORTYPE";
             this.cmbJobType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbJobType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbJobType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbJobType.Location = new System.Drawing.Point(890, 109);
+            this.cmbJobType.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbJobType.ForeColor = System.Drawing.Color.Black;
+            this.cmbJobType.Location = new System.Drawing.Point(844, 56);
             this.cmbJobType.Name = "cmbJobType";
-            this.cmbJobType.Size = new System.Drawing.Size(263, 30);
-            this.cmbJobType.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbJobType.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
-            this.cmbJobType.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbJobType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbJobType.Size = new System.Drawing.Size(310, 30);
+            this.cmbJobType.Style.DropDownStyle.BorderColor = System.Drawing.Color.White;
+            this.cmbJobType.Style.EditorStyle.BackColor = System.Drawing.Color.White;
+            this.cmbJobType.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbJobType.Style.EditorStyle.ForeColor = System.Drawing.Color.Black;
+            this.cmbJobType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJobType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbJobType.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbJobType.TabIndex = 17;
-            this.cmbJobType.ValueMember = "JOBTYPE";
+            this.cmbJobType.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbJobType.TabIndex = 16;
+            this.cmbJobType.ValueMember = "CONTRACTORTYPECODE";
+            this.cmbJobType.SelectedValueChanged += new System.EventHandler(this.cmbJobType_SelectedValueChanged);
             // 
             // cmbLabourType
             // 
             this.cmbLabourType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbLabourType.BackColor = System.Drawing.Color.Black;
+            this.cmbLabourType.BackColor = System.Drawing.Color.White;
             this.cmbLabourType.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.cmbLabourType.CanOverrideStyle = true;
             this.cmbLabourType.DisplayMember = "LABOURTYPE";
             this.cmbLabourType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbLabourType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbLabourType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLabourType.Location = new System.Drawing.Point(890, 9);
+            this.cmbLabourType.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLabourType.ForeColor = System.Drawing.Color.Black;
+            this.cmbLabourType.Location = new System.Drawing.Point(844, 9);
             this.cmbLabourType.Name = "cmbLabourType";
-            this.cmbLabourType.Size = new System.Drawing.Size(263, 30);
+            this.cmbLabourType.Size = new System.Drawing.Size(309, 30);
             this.cmbLabourType.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cmbLabourType.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
-            this.cmbLabourType.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLabourType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLabourType.Style.EditorStyle.BackColor = System.Drawing.Color.White;
+            this.cmbLabourType.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLabourType.Style.EditorStyle.ForeColor = System.Drawing.Color.Black;
+            this.cmbLabourType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLabourType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbLabourType.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLabourType.TabIndex = 15;
+            this.cmbLabourType.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLabourType.TabIndex = 17;
             this.cmbLabourType.ValueMember = "LABOURTYPE";
             this.cmbLabourType.SelectedIndexChanged += new System.EventHandler(this.cmbLabourType_SelectedIndexChanged);
             // 
@@ -555,6 +584,7 @@
             this.dtDOB.Name = "dtDOB";
             this.dtDOB.Size = new System.Drawing.Size(217, 31);
             this.dtDOB.TabIndex = 3;
+            this.dtDOB.ValueChanged += new Syncfusion.WinForms.Input.Events.DateTimeValueChangedEventHandler(this.dtDOB_ValueChanged);
             // 
             // txtRollNumber
             // 
@@ -577,24 +607,25 @@
             this.cmbIDProof.DisplayMember = "IDPROOF";
             this.cmbIDProof.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbIDProof.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbIDProof.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIDProof.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDProof.ForeColor = System.Drawing.Color.White;
             this.cmbIDProof.Location = new System.Drawing.Point(176, 476);
             this.cmbIDProof.Name = "cmbIDProof";
             this.cmbIDProof.Size = new System.Drawing.Size(181, 28);
             this.cmbIDProof.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cmbIDProof.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
-            this.cmbIDProof.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIDProof.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDProof.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
-            this.cmbIDProof.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIDProof.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDProof.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbIDProof.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIDProof.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDProof.TabIndex = 12;
             this.cmbIDProof.ValueMember = "IDPROOF";
             // 
             // autoLabel19
             // 
             this.autoLabel19.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel19.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel19.Location = new System.Drawing.Point(397, 485);
             this.autoLabel19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel19.Name = "autoLabel19";
@@ -609,19 +640,19 @@
             this.cmbAccessCards.DisplayMember = "CARDNUMBER";
             this.cmbAccessCards.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cmbAccessCards.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cmbAccessCards.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccessCards.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAccessCards.ForeColor = System.Drawing.Color.White;
             this.cmbAccessCards.Location = new System.Drawing.Point(563, 476);
             this.cmbAccessCards.Name = "cmbAccessCards";
-            this.cmbAccessCards.Size = new System.Drawing.Size(151, 28);
+            this.cmbAccessCards.Size = new System.Drawing.Size(207, 28);
             this.cmbAccessCards.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cmbAccessCards.Style.EditorStyle.BackColor = System.Drawing.Color.Black;
-            this.cmbAccessCards.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccessCards.Style.EditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAccessCards.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
-            this.cmbAccessCards.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccessCards.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAccessCards.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbAccessCards.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbAccessCards.TabIndex = 13;
+            this.cmbAccessCards.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccessCards.TabIndex = 14;
             this.cmbAccessCards.ValueMember = "CARDNUMBER";
             // 
             // label1
@@ -703,6 +734,7 @@
             this.label8.Size = new System.Drawing.Size(16, 19);
             this.label8.TabIndex = 63;
             this.label8.Text = "*";
+            this.label8.Visible = false;
             // 
             // label9
             // 
@@ -718,7 +750,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(867, 9);
+            this.label10.Location = new System.Drawing.Point(822, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(16, 19);
             this.label10.TabIndex = 65;
@@ -728,7 +760,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(867, 56);
+            this.label11.Location = new System.Drawing.Point(822, 56);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(16, 19);
             this.label11.TabIndex = 66;
@@ -738,7 +770,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(867, 109);
+            this.label12.Location = new System.Drawing.Point(800, 109);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(16, 19);
             this.label12.TabIndex = 67;
@@ -767,6 +799,7 @@
             // autoLabel20
             // 
             this.autoLabel20.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel20.ForeColor = System.Drawing.Color.Fuchsia;
             this.autoLabel20.Location = new System.Drawing.Point(613, 300);
             this.autoLabel20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel20.Name = "autoLabel20";
@@ -856,12 +889,81 @@
             this.txtMobileNumber2.Size = new System.Drawing.Size(180, 27);
             this.txtMobileNumber2.TabIndex = 11;
             // 
+            // autoLabel21
+            // 
+            this.autoLabel21.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel21.ForeColor = System.Drawing.Color.Tomato;
+            this.autoLabel21.Location = new System.Drawing.Point(412, 143);
+            this.autoLabel21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.autoLabel21.Name = "autoLabel21";
+            this.autoLabel21.Size = new System.Drawing.Size(39, 19);
+            this.autoLabel21.TabIndex = 74;
+            this.autoLabel21.Text = "Age";
+            // 
+            // txtYears
+            // 
+            this.txtYears.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtYears.Location = new System.Drawing.Point(479, 142);
+            this.txtYears.Name = "txtYears";
+            this.txtYears.ReadOnly = true;
+            this.txtYears.Size = new System.Drawing.Size(61, 27);
+            this.txtYears.Style.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtYears.TabIndex = 75;
+            // 
+            // txtMonths
+            // 
+            this.txtMonths.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMonths.Location = new System.Drawing.Point(555, 142);
+            this.txtMonths.Name = "txtMonths";
+            this.txtMonths.ReadOnly = true;
+            this.txtMonths.Size = new System.Drawing.Size(61, 27);
+            this.txtMonths.Style.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtMonths.TabIndex = 76;
+            // 
+            // autoLabel22
+            // 
+            this.autoLabel22.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel22.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.autoLabel22.Location = new System.Drawing.Point(479, 120);
+            this.autoLabel22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.autoLabel22.Name = "autoLabel22";
+            this.autoLabel22.Size = new System.Drawing.Size(52, 19);
+            this.autoLabel22.TabIndex = 77;
+            this.autoLabel22.Text = "Years";
+            // 
+            // autoLabel23
+            // 
+            this.autoLabel23.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel23.ForeColor = System.Drawing.Color.Crimson;
+            this.autoLabel23.Location = new System.Drawing.Point(555, 120);
+            this.autoLabel23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.autoLabel23.Name = "autoLabel23";
+            this.autoLabel23.Size = new System.Drawing.Size(67, 19);
+            this.autoLabel23.TabIndex = 78;
+            this.autoLabel23.Text = "Months";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Green;
+            this.label13.Location = new System.Drawing.Point(407, 536);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(313, 19);
+            this.label13.TabIndex = 79;
+            this.label13.Text = "(If Aadhar Only Numbers and No Dash)";
+            // 
             // frmNewLabour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1166, 604);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.autoLabel23);
+            this.Controls.Add(this.autoLabel22);
+            this.Controls.Add(this.txtMonths);
+            this.Controls.Add(this.txtYears);
+            this.Controls.Add(this.autoLabel21);
             this.Controls.Add(this.txtMobileNumber2);
             this.Controls.Add(this.txtMobileNumber1);
             this.Controls.Add(this.dataGridView1);
@@ -1016,5 +1118,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtMobileNumber1;
         private Syncfusion.Windows.Forms.Tools.IntegerTextBox txtMobileNumber2;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel21;
+        private Syncfusion.WinForms.Input.SfNumericTextBox txtYears;
+        private Syncfusion.WinForms.Input.SfNumericTextBox txtMonths;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel22;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel23;
+        private System.Windows.Forms.Label label13;
     }
 }

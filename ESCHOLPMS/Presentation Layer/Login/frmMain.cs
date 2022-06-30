@@ -208,5 +208,71 @@ namespace ESCHOLPMS
             frmProjectAccessPoints pa = new frmProjectAccessPoints();
             pa.Show();
         }
+
+        private void privateWorksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPrivateWorks fpw = new frmPrivateWorks();
+            fpw.Show();
+        }
+
+        private void stockIssueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStockIssueToPrivateWorks issue = new frmStockIssueToPrivateWorks();
+            issue.Show();
+        }
+
+        private void stockReturnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStockReturnFromPrivateWorks returns = new frmStockReturnFromPrivateWorks();
+            returns.Show();
+        }
+
+        private void stockReportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStockMovement sm = new frmStockMovement();
+            sm.Show();
+        }
+
+        private void accessCardsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmList_ForAccessCards ac = new frmList_ForAccessCards();
+            ac.Show();
+        }
+
+        private void sampleUserUploadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSampleUserUpload su = new frmSampleUserUpload();
+            su.Show();
+        }
+
+        private void listOfCompleteLaboursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmList_CompleteLabours cl = new frmList_CompleteLabours();
+            cl.Show();
+        }
+
+        private void listOfAccessCardsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListOfAccessCards LC = new frmListOfAccessCards();
+            LC.Show();
+        }
+
+        private void unAssignCardsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUnAssignAccessCard uc = new frmUnAssignAccessCard();
+            uc.Show();
+        }
+
+        private void assignCardsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAssignAccessCard ac = new frmAssignAccessCard();
+            ac.Show();
+        }
+
+        private void viewAttendanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLabourAttendance la = new frmLabourAttendance();
+            la.Show();
+        }
     }
 }

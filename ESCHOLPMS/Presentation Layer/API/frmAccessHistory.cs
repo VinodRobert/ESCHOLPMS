@@ -130,7 +130,7 @@ namespace ESCHOLPMS
             gridHistory.TableDescriptor.Columns[1].Width = 125;
 
             gridHistory.TableDescriptor.Columns[2].HeaderText = "Access Point Name";
-            gridHistory.TableDescriptor.Columns[2].Width = 125;
+            gridHistory.TableDescriptor.Columns[2].Width = 225;
             gridHistory.TableDescriptor.Columns[2].AllowFilter = true;
 
             gridHistory.TableDescriptor.Columns[3].HeaderText = "Access Card#";

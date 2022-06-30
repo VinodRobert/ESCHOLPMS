@@ -9,11 +9,15 @@ using System.Data.SqlClient;
 
 namespace ESCHOLPMS 
 {
-    class Labour
+    public class Labour
     {
-
-        
-
+        public DataSet FetchRejections(Int64 labourID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "Select RejectionDate,Remarks From Rejections where WorkerID=" + Convert.ToString(labourID);
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
         public int ChangeActiveStatus(Int64 labourRollNumber,int statusID,string comments)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
@@ -94,6 +98,35 @@ namespace ESCHOLPMS
              
         }
 
+        public DataSet FetchSingleLabour(string labourRollNumber)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT * FROM LABOURDETAILS WHERE LABOURROLLNO='" + Convert.ToString(labourRollNumber).Trim()+"'";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+
+        public int InsertRejection(Int64 workerID,string rejectionComment)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "INSERT INTO REJECTIONS(WORKERID,REJECTIONDATE,REMARKS) VALUES (" + Convert.ToString(workerID) + ",GETDATE(),'" + Convert.ToString(rejectionComment) + "')";
+            int j = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return j;
+        }
+        public int UpdateLabourReSubmissionStatus(Int64 labourID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "Update LabourDetails set STATUSID=13,SITEACTIONDATE=GETDATE(),Status='Re-Submission'  WHERE LABOURID=" + Convert.ToString(labourID);
+            int j = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return j;
+        }
+        public int UpdateLabourRejectionStatus(Int64 labourID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "Update LabourDetails set STATUSID=12,SITEACTIONDATE=GETDATE(),Status='Rejected'  WHERE LABOURID=" + Convert.ToString(labourID);
+            int j = SqlHelper.ExecuteNonQuery(_connectionString, CommandType.Text, sql);
+            return j;
+        }
         public int UpdateLabourStatus(string status, Int64 labourID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
@@ -104,7 +137,7 @@ namespace ESCHOLPMS
         public DataSet FetchSingleLabour(Int64 labourID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT * FROM LABOURDETAILS WHERE LABOURRUNNINGNUMBER=" + Convert.ToString(labourID);
+            string sql = "SELECT * FROM LABOURDETAILS WHERE LABOURID=" + Convert.ToString(labourID);
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
@@ -271,10 +304,20 @@ namespace ESCHOLPMS
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
+
+        public DataSet FetchActiveUsers(int costCentre)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT LASTCHECKIN,CHECKINCOUNT,SPINTLYUSERID SPINTLYID,ACCESSCARDNUMBER AccessCardNumber,LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
+            sql = sql + " FROM  LABOURDETAILS WHERE STATUS  IN ('Active User','New','Rejected','Re-Submission') AND CURRENTCOSTCENTREID= ";
+            sql = sql + Convert.ToString(costCentre) + "  ORDER BY LABOURNAME   ";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
         public DataSet FetchCompleteLabours(int costCentre)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT LABOURRUNNINGNUMBER LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
+            string sql = "SELECT SPINTLYUSERID SPINTLYID,ACCESSCARDNUMBER AccessCardNumber,LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
             sql = sql + " FROM  LABOURDETAILS WHERE STATUS NOT IN ('Terminated For Ever','Transferred Out','Terminated - Waiting HR Approval') AND CURRENTCOSTCENTREID= ";
             sql = sql +   Convert.ToString(costCentre)     +"  ORDER BY LABOURNAME   ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
@@ -323,7 +366,7 @@ namespace ESCHOLPMS
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,DATEOFJOINING,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
             sql = sql + ",DATEDIFF(day,CONVERT(DATE, DateOfJoining),GETDATE() ) AS DUE";
-            sql = sql + " FROM  LABOURDETAILS WHERE STATUS in ('New','Certificate Uploaded. Not Approved') AND CURRENTCOSTCENTREID= ";
+            sql = sql + " FROM  LABOURDETAILS WHERE STATUS in ('New','Certificate Uploaded. Not Approved','Rejected','Re-Submission') AND CURRENTCOSTCENTREID= ";
             sql = sql + Convert.ToString(costCentre) + "  ORDER BY LABOURROLLNO DESC ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
@@ -333,17 +376,18 @@ namespace ESCHOLPMS
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,DATEOFJOINING,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
-            sql =  sql + " FROM  LABOURDETAILS WHERE STATUS in ('Certificate Uploaded. Not Approved') ";
+            sql =  sql + " FROM  LABOURDETAILS WHERE STATUS in ('Certificate Uploaded. Not Approved','Rejected','Re-Submission') ";
             sql =  sql + "  ORDER BY LABOURROLLNO DESC ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
-        public DataSet FetchContractors(int costCentre)
+        public DataSet FetchContractors(int subbieTypeID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT S.CONTRACTORCODE,UPPER(S.CONTRACTORNAME) CONTRACTORNAME FROM EXT.SUBCONTRACTORS S ";
-            sql = sql + " WHERE CONTRACTORCODE IN(SELECT CONTRACTORID FROM EXT.PROJECTCONTRACTORS  ";
-            sql = sql + " WHERE COSTCENTREID = " + Convert.ToString(costCentre) + " ) ORDER BY CONTRACTORNAME ";
+            string sql = "SELECT UPPER(S.CONTRACTORNAME) SUBCONTRACTOR,S.CONTRACTORCODE SUBCONTRACTORCODE,S.CONTRACTORTYPEID,UPPER(T.SERVICE_MATERIAL) SUBCONTRACTORTYPE  ";
+            sql = sql + " FROM EXT.SUBCONTRACTORS S INNER JOIN EXT.[SubcontractorTypes] T ON S.CONTRACTORTYPEID = T.CONTRACTORTYPECODE ";
+            sql = sql + " WHERE S.CONTRACTORTYPEID = " + Convert.ToString(subbieTypeID);
+            sql = sql + " ORDER BY S.CONTRACTORNAME  ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
@@ -371,7 +415,7 @@ namespace ESCHOLPMS
         public DataSet FetchLabourTypes()
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT 'CompanyLabour' AS LabourType UNION SELECT 'SubContractor Labour' AS LabourType ";
+            string sql = "SELECT 'Company Labour' AS LabourType UNION SELECT 'SubContractor Labour' AS LabourType ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
@@ -379,7 +423,7 @@ namespace ESCHOLPMS
         public DataSet FetchJobTypes()
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT 'General' AS JobType UNION SELECT 'RCC' AS JobType UNION SELECT 'Masonry' AS JOBTYPE ";
+            string sql = "SELECT CONTRACTORTYPECODE,UPPER(SERVICE_MATERIAL) CONTRACTORTYPE FROM EXT.SUBCONTRACTORTYPES ORDER BY CONTRACTORTYPE";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }

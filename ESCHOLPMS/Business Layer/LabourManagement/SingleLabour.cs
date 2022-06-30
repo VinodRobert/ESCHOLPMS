@@ -36,6 +36,10 @@ namespace ESCHOLPMS
         public int CurrentCostCentreID { get; set; }
         public string AccessCardNumber { get; set; }
 
+        public DateTime lastCheckInDate { get; set; }
+
+        public int checkInCount { get; set; }
+
         public LabourDetails(long LabourID_, string LabourRollNo_, int TempRollNumber_, string LabourName_, string Gender_, DateTime DateOfBirth_, string ParentName_, string BloodGroup_, string PermanantAddress_, string CurrentAddress_, string State_, string PINCode_, string MobileNumber_, string PhoneNumber_, string IDProofSubmitted_, string IDProofNumber_, DateTime DateOfJoining_, string TypeOfLabour_, string SkillType_, string TypeOfJob_, int SubContractorID_, DateTime DateOfLeaving_, DateTime LastUpdateTime_, string Status_, string TraderCertificateUpload_, int CurrentCostCentreID_, string AccessCardNumber_)
         {
             this.LabourID = LabourID_;

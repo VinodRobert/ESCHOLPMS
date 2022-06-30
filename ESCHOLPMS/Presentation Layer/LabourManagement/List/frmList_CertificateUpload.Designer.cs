@@ -39,6 +39,10 @@
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn8 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn9 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn10 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn11 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn12 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn13 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
+            Syncfusion.WinForms.DataGrid.GridTextColumn gridTextColumn14 = new Syncfusion.WinForms.DataGrid.GridTextColumn();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.gridLabours = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.btnClose = new Syncfusion.WinForms.Controls.SfButton();
@@ -49,10 +53,10 @@
             // 
             this.autoLabel1.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel1.ForeColor = System.Drawing.Color.Blue;
-            this.autoLabel1.Location = new System.Drawing.Point(484, 9);
+            this.autoLabel1.Location = new System.Drawing.Point(493, 9);
             this.autoLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.autoLabel1.Name = "autoLabel1";
-            this.autoLabel1.Size = new System.Drawing.Size(249, 23);
+            this.autoLabel1.Size = new System.Drawing.Size(234, 22);
             this.autoLabel1.TabIndex = 0;
             this.autoLabel1.Text = "Document  Uploading ";
             // 
@@ -108,17 +112,37 @@
             gridTextColumn8.AllowFiltering = true;
             gridTextColumn8.HeaderText = "DueDay";
             gridTextColumn8.MappingName = "Due";
-            gridTextColumn8.Width = 70D;
+            gridTextColumn8.Width = 90D;
             gridTextColumn9.AllowEditing = false;
             gridTextColumn9.AllowFiltering = true;
             gridTextColumn9.HeaderText = "Status";
             gridTextColumn9.MappingName = "Status";
-            gridTextColumn9.Width = 220D;
+            gridTextColumn9.Width = 200D;
             gridTextColumn10.AllowEditing = false;
             gridTextColumn10.AllowFiltering = true;
             gridTextColumn10.HeaderText = "Column10";
             gridTextColumn10.MappingName = "MobileNumber";
             gridTextColumn10.Visible = false;
+            gridTextColumn11.AllowEditing = false;
+            gridTextColumn11.AllowFiltering = true;
+            gridTextColumn11.HeaderText = "Column12";
+            gridTextColumn11.MappingName = "CheckInCount";
+            gridTextColumn11.Visible = false;
+            gridTextColumn12.AllowEditing = false;
+            gridTextColumn12.AllowFiltering = true;
+            gridTextColumn12.HeaderText = "Column13";
+            gridTextColumn12.MappingName = "AccessCardNumber";
+            gridTextColumn12.Visible = false;
+            gridTextColumn13.AllowEditing = false;
+            gridTextColumn13.AllowFiltering = true;
+            gridTextColumn13.HeaderText = "Column14";
+            gridTextColumn13.MappingName = "SpintlyID";
+            gridTextColumn13.Visible = false;
+            gridTextColumn14.AllowEditing = false;
+            gridTextColumn14.AllowFiltering = true;
+            gridTextColumn14.HeaderText = "Column15";
+            gridTextColumn14.MappingName = "LastCheckIn";
+            gridTextColumn14.Visible = false;
             this.gridLabours.Columns.Add(gridTextColumn1);
             this.gridLabours.Columns.Add(gridTextColumn2);
             this.gridLabours.Columns.Add(gridTextColumn3);
@@ -130,12 +154,16 @@
             this.gridLabours.Columns.Add(gridTextColumn8);
             this.gridLabours.Columns.Add(gridTextColumn9);
             this.gridLabours.Columns.Add(gridTextColumn10);
+            this.gridLabours.Columns.Add(gridTextColumn11);
+            this.gridLabours.Columns.Add(gridTextColumn12);
+            this.gridLabours.Columns.Add(gridTextColumn13);
+            this.gridLabours.Columns.Add(gridTextColumn14);
             this.gridLabours.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLabours.Location = new System.Drawing.Point(11, 67);
             this.gridLabours.Margin = new System.Windows.Forms.Padding(2);
             this.gridLabours.Name = "gridLabours";
             this.gridLabours.PreviewRowHeight = 35;
-            this.gridLabours.Size = new System.Drawing.Size(1177, 468);
+            this.gridLabours.Size = new System.Drawing.Size(1173, 468);
             this.gridLabours.TabIndex = 1;
             this.gridLabours.Text = "sfDataGrid1";
             this.gridLabours.DrawCell += new Syncfusion.WinForms.DataGrid.Events.DrawCellEventHandler(this.gridLabours_DrawCell);
@@ -148,7 +176,7 @@
             this.btnClose.AccessibleName = "Button";
             this.btnClose.BackColor = System.Drawing.Color.Fuchsia;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnClose.Location = new System.Drawing.Point(1116, 28);
+            this.btnClose.Location = new System.Drawing.Point(1090, 26);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(72, 28);
@@ -158,17 +186,17 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // frmLabourListsCertificate
+            // frmList_CertificateUpload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1202, 546);
+            this.ClientSize = new System.Drawing.Size(1207, 546);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gridLabours);
             this.Controls.Add(this.autoLabel1);
             this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmLabourListsCertificate";
+            this.Name = "frmList_CertificateUpload";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Labour Lists | Upload Certificates";
             this.Load += new System.EventHandler(this.frmLabourLists_Load);

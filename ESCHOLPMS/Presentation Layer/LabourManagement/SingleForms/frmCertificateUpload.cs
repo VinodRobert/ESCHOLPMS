@@ -25,7 +25,7 @@ namespace ESCHOLPMS
         DataSet dsAttachments = new DataSet();
         string connectionString;
         SqlConnection cn;
-
+        DataSet dsRejection;
       
 
 
@@ -85,10 +85,16 @@ namespace ESCHOLPMS
         }
 
 
-
+        private void LoadRejection(Int64 labourID)
+        {
+            dsRejection = lab.FetchRejections(labourID);
+            gridRejection.DataSource = dsRejection.Tables[0];
+            gridRejection.Refresh();
+        }
         private void frmNewLabour_Load(object sender, EventArgs e)
         {
             ReSetAll();
+            LoadRejection(labourRollNumber);
             LoadLabour(labourRollNumber);
         }
 
@@ -154,6 +160,17 @@ namespace ESCHOLPMS
                     btnBrowseTradeCertificate.Enabled = false;
                     btnReUpload.Visible = true;
                     btnSave.Enabled = false;
+                }
+                else if (currentStatus == "Rejected")
+                {
+                    lblStatus.Text = "HR Rejected Submission";
+                    btnBrowseEnrollment.Enabled = false;
+                    btnBrowseIDProof.Enabled = false;
+                    btnBrowseTradeCertificate.Enabled = false;
+                    btnReUpload.Visible = true;
+                    btnSave.Enabled = false;
+                    btnReSubmission.Visible = true;
+                    panelRejection.Visible = true;
                 }
                 dtActionDate.Value = Convert.ToDateTime(dsWho["SiteActionDate"]);
                 lblStatus.Visible = true;
@@ -667,6 +684,17 @@ namespace ESCHOLPMS
                 btnBrowseTradeCertificate.Enabled = true;
                 lblStatus.Text = "Uploaded Files Removed. Upload New";
             }
+        }
+
+        private void btnCloseRejection_Click(object sender, EventArgs e)
+        {
+            panelRejection.Visible = false;
+        }
+
+        private void btnReSubmission_Click(object sender, EventArgs e)
+        {
+            int i = lab.UpdateLabourReSubmissionStatus(labourRollNumber);
+            this.Close();
         }
     }
 }

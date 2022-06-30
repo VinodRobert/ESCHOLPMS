@@ -365,8 +365,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Layer\AccessCard\AccessCard.cs" />
     <Compile Include="Business Layer\Accounts\Accounts.cs" />
     <Compile Include="Business Layer\AMS.cs" />
+    <Compile Include="Business Layer\API\AssignCardHeaderRequest.cs" />
+    <Compile Include="Business Layer\API\UnAssignCard.cs" />
     <Compile Include="Business Layer\API\AccessUserDump.cs" />
     <Compile Include="Business Layer\API\AccessHistoryRequest.cs" />
     <Compile Include="Business Layer\API\AccessHistoryResponse.cs" />
@@ -374,7 +377,9 @@
     <Compile Include="Business Layer\API\OauthToken.cs" />
     <Compile Include="Business Layer\API\AccessSites.cs" />
     <Compile Include="Business Layer\API\OrganizationID.cs" />
+    <Compile Include="Business Layer\API\SpintlyUserForUpload.cs" />
     <Compile Include="Business Layer\API\SpintlyUsers.cs" />
+    <Compile Include="Business Layer\CentralStores\privateWorks.cs" />
     <Compile Include="Business Layer\Common\Common.cs" />
     <Compile Include="Business Layer\Common\ImportProperty.cs" />
     <Compile Include="Business Layer\Common\QueryString.cs" />
@@ -396,6 +401,24 @@
     <Compile Include="Business Layer\MIS\MIS.CS" />
     <Compile Include="Business Layer\V2\EscholV2.cs" />
     <Compile Include="Data Layer\SQLHelper.cs" />
+    <Compile Include="Presentation Layer\Access Cards\frmListOfAccessCards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Access Cards\frmListOfAccessCards.Designer.cs">
+      <DependentUpon>frmListOfAccessCards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Access Cards\frmAssignAccessCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Access Cards\frmAssignAccessCard.Designer.cs">
+      <DependentUpon>frmAssignAccessCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Access Cards\frmUnAssignAccessCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Access Cards\frmUnAssignAccessCard.Designer.cs">
+      <DependentUpon>frmUnAssignAccessCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\Accounts\frmCheckLedgerCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -413,6 +436,12 @@
     </Compile>
     <Compile Include="Presentation Layer\Accounts\frmOpeningBalance.Designer.cs">
       <DependentUpon>frmOpeningBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\API\frmSampleUserUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\API\frmSampleUserUpload.Designer.cs">
+      <DependentUpon>frmSampleUserUpload.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\API\frmAccessHistory.cs">
       <SubType>Form</SubType>
@@ -456,6 +485,48 @@
     <Compile Include="Presentation Layer\API\frmAuthToken.Designer.cs">
       <DependentUpon>frmAuthToken.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmPrivateWorks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmPrivateWorks.Designer.cs">
+      <DependentUpon>frmPrivateWorks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmStockMovement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmStockMovement.Designer.cs">
+      <DependentUpon>frmStockMovement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmStockReturnFromPrivateWorks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmStockReturnFromPrivateWorks.Designer.cs">
+      <DependentUpon>frmStockReturnFromPrivateWorks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmStockIssueToPrivateWorks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmStockIssueToPrivateWorks.Designer.cs">
+      <DependentUpon>frmStockIssueToPrivateWorks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourAttendance\frmLabourAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourAttendance\frmLabourAttendance.Designer.cs">
+      <DependentUpon>frmLabourAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_CompleteLabourss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_CompleteLabourss.Designer.cs">
+      <DependentUpon>frmList_CompleteLabourss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForAccessCards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForAccessCards.Designer.cs">
+      <DependentUpon>frmList_ForAccessCards.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\LabourManagement\List\frmList_Complete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -479,6 +550,12 @@
     </Compile>
     <Compile Include="Presentation Layer\LabourManagement\List\frmList_ForTransferIn.Designer.cs">
       <DependentUpon>frmList_ForTransferIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmAccessCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmAccessCard.Designer.cs">
+      <DependentUpon>frmAccessCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\LabourManagement\SingleForms\frmApproveCertificate.cs">
       <SubType>Form</SubType>
@@ -644,6 +721,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation Layer\Access Cards\frmListOfAccessCards.resx">
+      <DependentUpon>frmListOfAccessCards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Access Cards\frmAssignAccessCard.resx">
+      <DependentUpon>frmAssignAccessCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Access Cards\frmUnAssignAccessCard.resx">
+      <DependentUpon>frmUnAssignAccessCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Accounts\frmCheckLedgerCode.resx">
       <DependentUpon>frmCheckLedgerCode.cs</DependentUpon>
     </EmbeddedResource>
@@ -652,6 +738,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Accounts\frmOpeningBalance.resx">
       <DependentUpon>frmOpeningBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\API\frmSampleUserUpload.resx">
+      <DependentUpon>frmSampleUserUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\API\frmAccessHistory.resx">
       <DependentUpon>frmAccessHistory.cs</DependentUpon>
@@ -674,6 +763,27 @@
     <EmbeddedResource Include="Presentation Layer\API\frmAuthToken.resx">
       <DependentUpon>frmAuthToken.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CentralStores\frmPrivateWorks.resx">
+      <DependentUpon>frmPrivateWorks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CentralStores\frmStockMovement.resx">
+      <DependentUpon>frmStockMovement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CentralStores\frmStockReturnFromPrivateWorks.resx">
+      <DependentUpon>frmStockReturnFromPrivateWorks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CentralStores\frmStockIssueToPrivateWorks.resx">
+      <DependentUpon>frmStockIssueToPrivateWorks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourAttendance\frmLabourAttendance.resx">
+      <DependentUpon>frmLabourAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_CompleteLabourss.resx">
+      <DependentUpon>frmList_CompleteLabourss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_ForAccessCards.resx">
+      <DependentUpon>frmList_ForAccessCards.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_Complete.resx">
       <DependentUpon>frmList_Complete.cs</DependentUpon>
     </EmbeddedResource>
@@ -685,6 +795,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_ForTransferIn.resx">
       <DependentUpon>frmList_ForTransferIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmAccessCard.resx">
+      <DependentUpon>frmAccessCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\SingleForms\frmApproveCertificate.resx">
       <DependentUpon>frmApproveCertificate.cs</DependentUpon>
