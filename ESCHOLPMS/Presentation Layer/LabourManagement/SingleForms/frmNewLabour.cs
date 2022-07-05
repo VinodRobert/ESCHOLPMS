@@ -61,10 +61,11 @@ namespace ESCHOLPMS
         string currentMobileNumber = string.Empty;
         string currentIDNumber = string.Empty;
         string newLabourNumber = string.Empty;
-
-        public frmNewLabour(Int64 rollNumber)
+        string controlStatus;
+        public frmNewLabour(Int64 rollNumber,string status)
         {
             labourRollNumber = rollNumber;
+            controlStatus = status;
             InitializeComponent();
         }
 
@@ -104,6 +105,15 @@ namespace ESCHOLPMS
             lblPhotoFileName.Text = "";
             cmbSubContractor.Enabled = true;
             cmbJobType.Enabled = true;
+
+            if (controlStatus=="Lock")
+            {
+                btnCancel.Enabled = false;
+                btnSave.Enabled = false;
+                btnClear.Enabled = false;
+                btnBrowse.Enabled = false;
+            }
+
         }
 
         private void formulateUser()

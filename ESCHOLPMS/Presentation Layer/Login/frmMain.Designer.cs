@@ -72,8 +72,6 @@
             this.labourManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newLabourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uploadDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transferOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transferInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateJobStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfSubContractorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approveDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,6 +79,32 @@
             this.listOfInactiveLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accessCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfCompleteLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.attendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.attendanceReportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.accessCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uploadBlankCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unAssignCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assignCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.listOfAssignCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.terminateLabourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transferOutLabourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subContractorLabourListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkInReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkInCheckOutReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listOfActiveLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.attendanceReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.accessCardReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accessCardsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listOfAccessCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unAssignCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assignCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labourAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,10 +122,6 @@
             this.stockReturnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accessCardsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listOfAccessCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unAssignCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assignCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLoginName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -431,15 +451,17 @@
             this.labourManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newLabourToolStripMenuItem,
             this.uploadDocumentsToolStripMenuItem,
-            this.transferOutToolStripMenuItem,
-            this.transferInToolStripMenuItem,
             this.updateJobStatusToolStripMenuItem,
             this.listOfSubContractorsToolStripMenuItem,
             this.approveDocumentsToolStripMenuItem,
             this.terminateLaboursToolStripMenuItem,
             this.listOfInactiveLaboursToolStripMenuItem,
             this.accessCardsToolStripMenuItem,
-            this.listOfCompleteLaboursToolStripMenuItem});
+            this.listOfCompleteLaboursToolStripMenuItem,
+            this.attendanceToolStripMenuItem,
+            this.accessCardToolStripMenuItem,
+            this.exitLaboursToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.labourManagementToolStripMenuItem.Name = "labourManagementToolStripMenuItem";
             this.labourManagementToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.labourManagementToolStripMenuItem.Text = "Labour Management";
@@ -457,20 +479,6 @@
             this.uploadDocumentsToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
             this.uploadDocumentsToolStripMenuItem.Text = "Upload Documents";
             this.uploadDocumentsToolStripMenuItem.Click += new System.EventHandler(this.uploadDocumentsToolStripMenuItem_Click);
-            // 
-            // transferOutToolStripMenuItem
-            // 
-            this.transferOutToolStripMenuItem.Name = "transferOutToolStripMenuItem";
-            this.transferOutToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
-            this.transferOutToolStripMenuItem.Text = "Transfer Out";
-            this.transferOutToolStripMenuItem.Click += new System.EventHandler(this.transferOutToolStripMenuItem_Click);
-            // 
-            // transferInToolStripMenuItem
-            // 
-            this.transferInToolStripMenuItem.Name = "transferInToolStripMenuItem";
-            this.transferInToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
-            this.transferInToolStripMenuItem.Text = "Transfer In";
-            this.transferInToolStripMenuItem.Click += new System.EventHandler(this.transferInToolStripMenuItem_Click);
             // 
             // updateJobStatusToolStripMenuItem
             // 
@@ -521,6 +529,190 @@
             this.listOfCompleteLaboursToolStripMenuItem.Text = "List of Complete Labours";
             this.listOfCompleteLaboursToolStripMenuItem.Click += new System.EventHandler(this.listOfCompleteLaboursToolStripMenuItem_Click);
             // 
+            // attendanceToolStripMenuItem
+            // 
+            this.attendanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateAttendanceToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.attendanceReportToolStripMenuItem1});
+            this.attendanceToolStripMenuItem.Name = "attendanceToolStripMenuItem";
+            this.attendanceToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
+            this.attendanceToolStripMenuItem.Text = "Attendance";
+            // 
+            // updateAttendanceToolStripMenuItem
+            // 
+            this.updateAttendanceToolStripMenuItem.Name = "updateAttendanceToolStripMenuItem";
+            this.updateAttendanceToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.updateAttendanceToolStripMenuItem.Text = "Update Attendance";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(226, 6);
+            // 
+            // attendanceReportToolStripMenuItem1
+            // 
+            this.attendanceReportToolStripMenuItem1.Name = "attendanceReportToolStripMenuItem1";
+            this.attendanceReportToolStripMenuItem1.Size = new System.Drawing.Size(229, 26);
+            this.attendanceReportToolStripMenuItem1.Text = "Attendance Report";
+            // 
+            // accessCardToolStripMenuItem
+            // 
+            this.accessCardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uploadBlankCardToolStripMenuItem,
+            this.unAssignCardToolStripMenuItem,
+            this.assignCardToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.listOfAssignCardsToolStripMenuItem});
+            this.accessCardToolStripMenuItem.Name = "accessCardToolStripMenuItem";
+            this.accessCardToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
+            this.accessCardToolStripMenuItem.Text = "Access Card";
+            // 
+            // uploadBlankCardToolStripMenuItem
+            // 
+            this.uploadBlankCardToolStripMenuItem.Name = "uploadBlankCardToolStripMenuItem";
+            this.uploadBlankCardToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.uploadBlankCardToolStripMenuItem.Text = "Upload Blank Card   ";
+            // 
+            // unAssignCardToolStripMenuItem
+            // 
+            this.unAssignCardToolStripMenuItem.Name = "unAssignCardToolStripMenuItem";
+            this.unAssignCardToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.unAssignCardToolStripMenuItem.Text = "Un-Assign Card";
+            // 
+            // assignCardToolStripMenuItem
+            // 
+            this.assignCardToolStripMenuItem.Name = "assignCardToolStripMenuItem";
+            this.assignCardToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.assignCardToolStripMenuItem.Text = "Assign Card";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(240, 6);
+            // 
+            // listOfAssignCardsToolStripMenuItem
+            // 
+            this.listOfAssignCardsToolStripMenuItem.Name = "listOfAssignCardsToolStripMenuItem";
+            this.listOfAssignCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.listOfAssignCardsToolStripMenuItem.Text = "List of Assign Cards";
+            // 
+            // exitLaboursToolStripMenuItem
+            // 
+            this.exitLaboursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.terminateLabourToolStripMenuItem,
+            this.transferOutLabourToolStripMenuItem});
+            this.exitLaboursToolStripMenuItem.Name = "exitLaboursToolStripMenuItem";
+            this.exitLaboursToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
+            this.exitLaboursToolStripMenuItem.Text = "Exit  Labours";
+            // 
+            // terminateLabourToolStripMenuItem
+            // 
+            this.terminateLabourToolStripMenuItem.Name = "terminateLabourToolStripMenuItem";
+            this.terminateLabourToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.terminateLabourToolStripMenuItem.Text = "Terminate / Transfer Out";
+            this.terminateLabourToolStripMenuItem.Click += new System.EventHandler(this.terminateLabourToolStripMenuItem_Click);
+            // 
+            // transferOutLabourToolStripMenuItem
+            // 
+            this.transferOutLabourToolStripMenuItem.Name = "transferOutLabourToolStripMenuItem";
+            this.transferOutLabourToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.transferOutLabourToolStripMenuItem.Text = "Transfer  In";
+            this.transferOutLabourToolStripMenuItem.Click += new System.EventHandler(this.transferOutLabourToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subContractorLabourListToolStripMenuItem,
+            this.checkInReportToolStripMenuItem,
+            this.checkInCheckOutReportToolStripMenuItem,
+            this.listOfActiveLaboursToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.attendanceReportToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.accessCardReportToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // subContractorLabourListToolStripMenuItem
+            // 
+            this.subContractorLabourListToolStripMenuItem.Name = "subContractorLabourListToolStripMenuItem";
+            this.subContractorLabourListToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
+            this.subContractorLabourListToolStripMenuItem.Text = "Sib Contractor - Worker List";
+            this.subContractorLabourListToolStripMenuItem.Click += new System.EventHandler(this.subContractorLabourListToolStripMenuItem_Click);
+            // 
+            // checkInReportToolStripMenuItem
+            // 
+            this.checkInReportToolStripMenuItem.Name = "checkInReportToolStripMenuItem";
+            this.checkInReportToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
+            this.checkInReportToolStripMenuItem.Text = "Check In Report";
+            // 
+            // checkInCheckOutReportToolStripMenuItem
+            // 
+            this.checkInCheckOutReportToolStripMenuItem.Name = "checkInCheckOutReportToolStripMenuItem";
+            this.checkInCheckOutReportToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
+            this.checkInCheckOutReportToolStripMenuItem.Text = "Check In - Check Out Report";
+            // 
+            // listOfActiveLaboursToolStripMenuItem
+            // 
+            this.listOfActiveLaboursToolStripMenuItem.Name = "listOfActiveLaboursToolStripMenuItem";
+            this.listOfActiveLaboursToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
+            this.listOfActiveLaboursToolStripMenuItem.Text = "List of Active Labours";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(301, 6);
+            // 
+            // attendanceReportToolStripMenuItem
+            // 
+            this.attendanceReportToolStripMenuItem.Name = "attendanceReportToolStripMenuItem";
+            this.attendanceReportToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
+            this.attendanceReportToolStripMenuItem.Text = "Attendance Report";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(301, 6);
+            // 
+            // accessCardReportToolStripMenuItem
+            // 
+            this.accessCardReportToolStripMenuItem.Name = "accessCardReportToolStripMenuItem";
+            this.accessCardReportToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
+            this.accessCardReportToolStripMenuItem.Text = "Access Card Report";
+            // 
+            // accessCardsToolStripMenuItem1
+            // 
+            this.accessCardsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listOfAccessCardsToolStripMenuItem,
+            this.unAssignCardsToolStripMenuItem,
+            this.assignCardsToolStripMenuItem});
+            this.accessCardsToolStripMenuItem1.Name = "accessCardsToolStripMenuItem1";
+            this.accessCardsToolStripMenuItem1.Size = new System.Drawing.Size(126, 24);
+            this.accessCardsToolStripMenuItem1.Text = "Access Cards";
+            // 
+            // listOfAccessCardsToolStripMenuItem
+            // 
+            this.listOfAccessCardsToolStripMenuItem.Name = "listOfAccessCardsToolStripMenuItem";
+            this.listOfAccessCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.listOfAccessCardsToolStripMenuItem.Text = "List of Access Cards";
+            this.listOfAccessCardsToolStripMenuItem.Click += new System.EventHandler(this.listOfAccessCardsToolStripMenuItem_Click);
+            // 
+            // unAssignCardsToolStripMenuItem
+            // 
+            this.unAssignCardsToolStripMenuItem.Name = "unAssignCardsToolStripMenuItem";
+            this.unAssignCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.unAssignCardsToolStripMenuItem.Text = "Un Assign Cards";
+            this.unAssignCardsToolStripMenuItem.Click += new System.EventHandler(this.unAssignCardsToolStripMenuItem_Click);
+            // 
+            // assignCardsToolStripMenuItem
+            // 
+            this.assignCardsToolStripMenuItem.Name = "assignCardsToolStripMenuItem";
+            this.assignCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.assignCardsToolStripMenuItem.Text = "Assign Cards";
+            this.assignCardsToolStripMenuItem.Click += new System.EventHandler(this.assignCardsToolStripMenuItem_Click);
+            // 
             // labourAttendanceToolStripMenuItem
             // 
             this.labourAttendanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -533,14 +725,14 @@
             // viewAttendanceToolStripMenuItem
             // 
             this.viewAttendanceToolStripMenuItem.Name = "viewAttendanceToolStripMenuItem";
-            this.viewAttendanceToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewAttendanceToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.viewAttendanceToolStripMenuItem.Text = "View Attendance";
             this.viewAttendanceToolStripMenuItem.Click += new System.EventHandler(this.viewAttendanceToolStripMenuItem_Click);
             // 
             // alterAttendanceToolStripMenuItem
             // 
             this.alterAttendanceToolStripMenuItem.Name = "alterAttendanceToolStripMenuItem";
-            this.alterAttendanceToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.alterAttendanceToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.alterAttendanceToolStripMenuItem.Text = "Alter Attendance";
             // 
             // utilityToolStripMenuItem
@@ -651,37 +843,6 @@
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
-            // 
-            // accessCardsToolStripMenuItem1
-            // 
-            this.accessCardsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listOfAccessCardsToolStripMenuItem,
-            this.unAssignCardsToolStripMenuItem,
-            this.assignCardsToolStripMenuItem});
-            this.accessCardsToolStripMenuItem1.Name = "accessCardsToolStripMenuItem1";
-            this.accessCardsToolStripMenuItem1.Size = new System.Drawing.Size(126, 24);
-            this.accessCardsToolStripMenuItem1.Text = "Access Cards";
-            // 
-            // listOfAccessCardsToolStripMenuItem
-            // 
-            this.listOfAccessCardsToolStripMenuItem.Name = "listOfAccessCardsToolStripMenuItem";
-            this.listOfAccessCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
-            this.listOfAccessCardsToolStripMenuItem.Text = "List of Access Cards";
-            this.listOfAccessCardsToolStripMenuItem.Click += new System.EventHandler(this.listOfAccessCardsToolStripMenuItem_Click);
-            // 
-            // unAssignCardsToolStripMenuItem
-            // 
-            this.unAssignCardsToolStripMenuItem.Name = "unAssignCardsToolStripMenuItem";
-            this.unAssignCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
-            this.unAssignCardsToolStripMenuItem.Text = "Un Assign Cards";
-            this.unAssignCardsToolStripMenuItem.Click += new System.EventHandler(this.unAssignCardsToolStripMenuItem_Click);
-            // 
-            // assignCardsToolStripMenuItem
-            // 
-            this.assignCardsToolStripMenuItem.Name = "assignCardsToolStripMenuItem";
-            this.assignCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
-            this.assignCardsToolStripMenuItem.Text = "Assign Cards";
-            this.assignCardsToolStripMenuItem.Click += new System.EventHandler(this.assignCardsToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -794,8 +955,6 @@
         private System.Windows.Forms.ToolStripMenuItem newLabourToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uploadDocumentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem approveDocumentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transferOutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transferInToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateJobStatusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOfInactiveLaboursToolStripMenuItem;
@@ -825,6 +984,28 @@
         private System.Windows.Forms.ToolStripMenuItem listOfAccessCardsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unAssignCardsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignCardsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem attendanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateAttendanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem attendanceReportToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem accessCardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uploadBlankCardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem unAssignCardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assignCardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem listOfAssignCardsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitLaboursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem terminateLabourToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transferOutLabourToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subContractorLabourListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkInReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkInCheckOutReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listOfActiveLaboursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem attendanceReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem accessCardReportToolStripMenuItem;
     }
 }
 

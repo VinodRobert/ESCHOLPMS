@@ -44,7 +44,7 @@ namespace ESCHOLPMS
         private void LoadLabours(int indexCode)
         {
             int costCentreID = Convert.ToInt16(GlobalVariables.costCentreID);
-            DataSet dslabours =  lab.FetchCompleteLaboursList(indexCode);
+            DataSet dslabours =  lab.FetchCompleteLaboursList(costCentreID,indexCode);
       
             List<LabourList> LabourListing = new List<LabourList>();
             LabourListing = CommonMethods.ConvertToList<LabourList>(dslabours.Tables[0]);
@@ -56,7 +56,7 @@ namespace ESCHOLPMS
         private void frmLabourLists_Load(object sender, EventArgs e)
         {
             FormatGrid();
-           
+            LoadLabours(1);
         }
 
         private void gridLabours_QueryRowStyle(object sender, Syncfusion.WinForms.DataGrid.Events.QueryRowStyleEventArgs e)

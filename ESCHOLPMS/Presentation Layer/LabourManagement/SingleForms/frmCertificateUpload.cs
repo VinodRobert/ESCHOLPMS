@@ -26,7 +26,7 @@ namespace ESCHOLPMS
         string connectionString;
         SqlConnection cn;
         DataSet dsRejection;
-      
+        int rejectedStatus;
 
 
         public frmCertificateUpload(Int64 rollNumber)
@@ -82,14 +82,24 @@ namespace ESCHOLPMS
                 File.Delete("TRADECERTIFICATE.pdf");
             }
 
+            panelRejection.Visible = false;
         }
 
 
         private void LoadRejection(Int64 labourID)
         {
             dsRejection = lab.FetchRejections(labourID);
-            gridRejection.DataSource = dsRejection.Tables[0];
-            gridRejection.Refresh();
+            int rejections = Convert.ToInt16(dsRejection.Tables[0].Rows.Count);
+            if (rejections == 0)
+            {
+                panelRejection.Visible = false;
+            }
+            else
+            {
+                gridRejection.DataSource = dsRejection.Tables[0];
+                gridRejection.Refresh();
+                panelRejection.Visible = true;
+            }
         }
         private void frmNewLabour_Load(object sender, EventArgs e)
         {
@@ -130,6 +140,9 @@ namespace ESCHOLPMS
 
         private void LoadLabour(Int64 who)
         {
+            panelRejection.Visible = false;
+            btnReSubmission.Visible = false;
+
             if (who != 0)
             {
                 GetImagesFromDatabase(who);
@@ -171,6 +184,7 @@ namespace ESCHOLPMS
                     btnSave.Enabled = false;
                     btnReSubmission.Visible = true;
                     panelRejection.Visible = true;
+                    rejectedStatus = 1;
                 }
                 dtActionDate.Value = Convert.ToDateTime(dsWho["SiteActionDate"]);
                 lblStatus.Visible = true;
@@ -250,8 +264,7 @@ namespace ESCHOLPMS
 
             if (txtIDProofAttachment.Text == "")
                 errorArea = "ID Proof Attachment Missing ";
-            if (txtEnrollmentAttachment.Text == "")
-                errorArea = "Enrollment  Attachment Missing ";
+           
             if (txtTradeCertificate.Text == "")
                 errorArea = "Trader Certificate Missing ";
 
@@ -287,27 +300,7 @@ namespace ESCHOLPMS
                 MessageBox.Show("Error during File Read " + ex.ToString());
             }
 
-            filename = txtEnrollmentAttachment.Text.Substring(Convert.ToInt32(txtEnrollmentAttachment.Text.LastIndexOf("\\")) + 1, txtEnrollmentAttachment.Text.Length - (Convert.ToInt32(txtEnrollmentAttachment.Text.LastIndexOf("\\")) + 1));
-            filetype = txtEnrollmentAttachment.Text.Substring(Convert.ToInt32(txtEnrollmentAttachment.Text.LastIndexOf(".")) + 1, txtEnrollmentAttachment.Text.Length - (Convert.ToInt32(txtEnrollmentAttachment.Text.LastIndexOf(".")) + 1));
-            if (filetype.ToUpper() != "PDF")
-            {
-                MessageBox.Show("Upload Only PDF Files");
-                return 0;
-            }
-            try
-            {
-                long allbytesEnroll = new FileInfo(txtEnrollmentAttachment.Text).Length;
-                if (allbytesEnroll > 1024000)
-                {
-                    MessageBox.Show("Enrollment  Attachment Size Must NOT Exceed 1 MB.");
-                    return 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error during File Read " + ex.ToString());
-            }
-
+            
             filename = txtTradeCertificate.Text.Substring(Convert.ToInt32(txtTradeCertificate.Text.LastIndexOf("\\")) + 1, txtTradeCertificate.Text.Length - (Convert.ToInt32(txtTradeCertificate.Text.LastIndexOf("\\")) + 1));
             filetype = txtTradeCertificate.Text.Substring(Convert.ToInt32(txtTradeCertificate.Text.LastIndexOf(".")) + 1, txtTradeCertificate.Text.Length - (Convert.ToInt32(txtTradeCertificate.Text.LastIndexOf(".")) + 1));
             if (filetype.ToUpper() != "PDF")
@@ -407,7 +400,10 @@ namespace ESCHOLPMS
                     {
                         UpdateLabourStatus();
                         int j = lab.UpdateLog(GlobalVariables.UserID, txtRollNumber.Text, GlobalVariables.costCentreID, 1);
-                        this.Close();
+                        if (rejectedStatus==0)
+                            this.Close();
+                        
+                            
                     }
                 }
                 
@@ -419,15 +415,15 @@ namespace ESCHOLPMS
         private int SaveAttachments()
         {
             MemoryStream streamIDProof = new MemoryStream();
-            MemoryStream streamEnrollment = new MemoryStream();
+          
             MemoryStream streamTrade = new MemoryStream();
             PdfLoadedDocument idProof;
-            PdfLoadedDocument idEnrollment;
+            
             PdfLoadedDocument idTrade;
             try
             {
                 idProof = new PdfLoadedDocument(txtIDProofAttachment.Text);
-                idEnrollment = new PdfLoadedDocument(txtEnrollmentAttachment.Text);
+               
                 idTrade = new PdfLoadedDocument(txtTradeCertificate.Text);
             }
             catch
@@ -441,12 +437,11 @@ namespace ESCHOLPMS
 
             
             idProof.Save(streamIDProof);
-            idEnrollment.Save(streamEnrollment);
+             
             idTrade.Save(streamTrade);
 
             string qry = "Update LabourAttachments SET ";
             qry = qry + "IDPROOF        = @ImageIDProof   , IDPROOFFILENAME    =@IDProofFileName, ";
-            qry = qry + "ENROLLMENTFORM = @ImageEnrollment, ENROLLMENTFILENAME =@EnrollmentFileName,";
             qry = qry + "TRADECERTIFICATE=@ImageTrade,      TRADECERTIFICATEFILENAME=@TradeCertificateFileName";
             qry = qry + "     WHERE WORKERID=@WORKERID";
             SqlCommand SqlCom = new SqlCommand(qry, cn);
@@ -454,7 +449,6 @@ namespace ESCHOLPMS
             SqlCom.Parameters.Add(new SqlParameter("@IDProofFileName", (object)txtIDProofAttachment.Text));
             SqlCom.Parameters.Add(new SqlParameter("@ImageIDProof", streamIDProof.ToArray())); 
             SqlCom.Parameters.Add(new SqlParameter("@EnrollmentFileName", (object)txtEnrollmentAttachment.Text));
-            SqlCom.Parameters.Add(new SqlParameter("@ImageEnrollment", streamEnrollment.ToArray()));
             SqlCom.Parameters.Add(new SqlParameter("@TradeCertificateFileName", (object)txtTradeCertificate.Text));
             SqlCom.Parameters.Add(new SqlParameter("@ImageTrade", streamTrade.ToArray()));
       

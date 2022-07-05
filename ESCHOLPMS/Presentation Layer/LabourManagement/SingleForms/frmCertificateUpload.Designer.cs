@@ -74,9 +74,9 @@
             this.dtActionDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.btnReSubmission = new Syncfusion.WinForms.Controls.SfButton();
             this.panelRejection = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.gridRejection = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.btnCloseRejection = new Syncfusion.WinForms.Controls.SfButton();
+            this.gridRejection = new Syncfusion.WinForms.DataGrid.SfDataGrid();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRollNumber)).BeginInit();
             this.panel1.SuspendLayout();
@@ -173,6 +173,7 @@
             this.btnBrowseEnrollment.TabIndex = 18;
             this.btnBrowseEnrollment.Text = "Browse";
             this.btnBrowseEnrollment.UseVisualStyleBackColor = false;
+            this.btnBrowseEnrollment.Visible = false;
             this.btnBrowseEnrollment.Click += new System.EventHandler(this.btnBrowseEnrollment_Click);
             // 
             // btnSave
@@ -274,6 +275,7 @@
             this.autoLabel3.Size = new System.Drawing.Size(188, 19);
             this.autoLabel3.TabIndex = 75;
             this.autoLabel3.Text = "Enrollment Attachment";
+            this.autoLabel3.Visible = false;
             // 
             // autoLabel4
             // 
@@ -294,6 +296,7 @@
             this.txtEnrollmentAttachment.Size = new System.Drawing.Size(687, 29);
             this.txtEnrollmentAttachment.TabIndex = 77;
             this.txtEnrollmentAttachment.Text = "Enrollment Attachment";
+            this.txtEnrollmentAttachment.Visible = false;
             // 
             // btnBrowseTradeCertificate
             // 
@@ -557,23 +560,26 @@
             // 
             // panelRejection
             // 
-            this.panelRejection.BackColor = System.Drawing.Color.Honeydew;
+            this.panelRejection.AutoScroll = true;
+            this.panelRejection.BackColor = System.Drawing.Color.Firebrick;
             this.panelRejection.Controls.Add(this.btnCloseRejection);
             this.panelRejection.Controls.Add(this.gridRejection);
             this.panelRejection.Controls.Add(this.label2);
-            this.panelRejection.Location = new System.Drawing.Point(544, 197);
+            this.panelRejection.Location = new System.Drawing.Point(596, 48);
             this.panelRejection.Name = "panelRejection";
             this.panelRejection.Size = new System.Drawing.Size(573, 333);
             this.panelRejection.TabIndex = 99;
             // 
-            // label2
+            // btnCloseRejection
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(197, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Rejection Remarks";
+            this.btnCloseRejection.AccessibleName = "Button";
+            this.btnCloseRejection.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnCloseRejection.Location = new System.Drawing.Point(225, 295);
+            this.btnCloseRejection.Name = "btnCloseRejection";
+            this.btnCloseRejection.Size = new System.Drawing.Size(96, 28);
+            this.btnCloseRejection.TabIndex = 2;
+            this.btnCloseRejection.Text = "Close";
+            this.btnCloseRejection.Click += new System.EventHandler(this.btnCloseRejection_Click);
             // 
             // gridRejection
             // 
@@ -595,16 +601,14 @@
             this.gridRejection.TabIndex = 1;
             this.gridRejection.Text = "sfDataGrid1";
             // 
-            // btnCloseRejection
+            // label2
             // 
-            this.btnCloseRejection.AccessibleName = "Button";
-            this.btnCloseRejection.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnCloseRejection.Location = new System.Drawing.Point(225, 295);
-            this.btnCloseRejection.Name = "btnCloseRejection";
-            this.btnCloseRejection.Size = new System.Drawing.Size(96, 28);
-            this.btnCloseRejection.TabIndex = 2;
-            this.btnCloseRejection.Text = "Close";
-            this.btnCloseRejection.Click += new System.EventHandler(this.btnCloseRejection_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(197, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 19);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Rejection Remarks";
             // 
             // frmCertificateUpload
             // 

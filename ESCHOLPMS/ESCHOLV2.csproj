@@ -515,6 +515,12 @@
     <Compile Include="Presentation Layer\LabourAttendance\frmLabourAttendance.Designer.cs">
       <DependentUpon>frmLabourAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmListSubContractor_Workers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LabourManagement\List\frmListSubContractor_Workers.Designer.cs">
+      <DependentUpon>frmListSubContractor_Workers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\LabourManagement\List\frmList_CompleteLabourss.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -777,6 +783,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourAttendance\frmLabourAttendance.resx">
       <DependentUpon>frmLabourAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmListSubContractor_Workers.resx">
+      <DependentUpon>frmListSubContractor_Workers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourManagement\List\frmList_CompleteLabourss.resx">
       <DependentUpon>frmList_CompleteLabourss.cs</DependentUpon>

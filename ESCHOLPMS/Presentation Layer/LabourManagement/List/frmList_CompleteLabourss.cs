@@ -23,7 +23,7 @@ namespace ESCHOLPMS
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            frmNewLabour nl = new frmNewLabour(0);
+            frmNewLabour nl = new frmNewLabour(0, "Open");
             nl.ShowDialog();
             LoadLabours();
         }
@@ -107,7 +107,7 @@ namespace ESCHOLPMS
             {
                 var record = (this.gridLabours.View.Records[rowIndex].Data as LabourList);
                 Int64 selectedLabour = Convert.ToInt64(record.LabourID.ToString());
-                frmNewLabour nl = new frmNewLabour(selectedLabour);
+                frmNewLabour nl = new frmNewLabour(selectedLabour,"Open");
                 nl.ShowDialog();
                 LoadLabours();
                  

@@ -70,10 +70,7 @@ namespace ESCHOLPMS
             {
                 File.Delete("IDProof.PDF");
             }
-            if (File.Exists("Enrollment.pdf"))
-            {
-                File.Delete("Enrollment.pdf");
-            }
+           
             if (File.Exists("TRADECERTIFICATE.pdf"))
             {
                 File.Delete("TRADECERTIFICATE.pdf");

@@ -127,8 +127,8 @@ namespace ESCHOLPMS
 
         private void listOfSubContractorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmContractorsLabours cl = new frmContractorsLabours();
-            //cl.Show();
+            frmListSubContractor_Workers cl = new frmListSubContractor_Workers();
+            cl.Show();
         }
 
         private void terminateLaboursToolStripMenuItem_Click(object sender, EventArgs e)
@@ -273,6 +273,24 @@ namespace ESCHOLPMS
         {
             frmLabourAttendance la = new frmLabourAttendance();
             la.Show();
+        }
+
+        private void terminateLabourToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmList_ForTransferOut to = new frmList_ForTransferOut();
+            to.Show();
+        }
+
+        private void transferOutLabourToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmList_ForTransferIn ti = new frmList_ForTransferIn();
+            ti.Show();
+        }
+
+        private void subContractorLabourListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListSubContractor_Workers cl = new frmListSubContractor_Workers();
+            cl.Show();
         }
     }
 }

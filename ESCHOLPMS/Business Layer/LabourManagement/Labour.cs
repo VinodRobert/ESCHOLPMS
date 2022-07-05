@@ -46,8 +46,8 @@ namespace ESCHOLPMS
             }
             else if (statusID == 4)
             {
-                statusName = "Permanent Labour";
-                statusIndex = 1;
+                statusName = "Active User";
+                statusIndex = 11;
             }
 
             string sql = "Update LabourDetails set SITEACTIONDATE=GETDATE(), Status='" + statusName.Trim() + "',STATUSID=" + Convert.ToString(statusIndex);
@@ -318,13 +318,13 @@ namespace ESCHOLPMS
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "SELECT SPINTLYUSERID SPINTLYID,ACCESSCARDNUMBER AccessCardNumber,LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
-            sql = sql + " FROM  LABOURDETAILS WHERE STATUS NOT IN ('Terminated For Ever','Transferred Out','Terminated - Waiting HR Approval') AND CURRENTCOSTCENTREID= ";
+            sql = sql + " FROM  LABOURDETAILS WHERE STATUS IN ('Active User') AND CURRENTCOSTCENTREID= ";
             sql = sql +   Convert.ToString(costCentre)     +"  ORDER BY LABOURNAME   ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds; 
         }
 
-        public DataSet FetchCompleteLaboursList(int indexCode)
+        public DataSet FetchCompleteLaboursList(int costCentreID, int indexCode)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "SELECT LABOURID LabourID,PROJECTNAME,LABOURROLLNO,LABOURNAME,MOBILENUMBER,TYPEOFLABOUR,SKILLTYPE,SUBCONTRACTORNAME,STATUS";
@@ -333,10 +333,12 @@ namespace ESCHOLPMS
             if (indexCode == 2)
                 sql = sql + " FROM  LABOURDETAILS WHERE STATUS  IN ('Transferred Out','Terminated - Waiting HR Approval')  ";
             if (indexCode == 3)
-                sql = sql + " FROM  LABOURDETAILS WHERE STATUS  IN  ('Terminated For Ever')  ";
-
-
-            sql = sql +   "  ORDER BY LABOURROLLNO DESC ";
+                sql = sql + " FROM  LABOURDETAILS WHERE STATUS  IN  ('Active User','Rejected','Re-Submission','New')  ";
+            sql = sql + " AND CURRENTCOSTCENTREID = " + Convert.ToString(costCentreID);
+            if (indexCode==3)
+               sql = sql + "  ORDER BY SUBCONTRACTORNAME,LABOURNAME  ";
+            else
+               sql = sql + "  ORDER BY LABOURROLLNO DESC ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
@@ -457,7 +459,7 @@ namespace ESCHOLPMS
         public int DuplicateMobileNumber(string mobileNumber)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT * FROM LABOURDETAILS WHERE MOBILENUMBER ='" + Convert.ToString(mobileNumber) + "'";
+            string sql = "SELECT * FROM LABOURDETAILS WHERE STATUS IN (0,11) AND  MOBILENUMBER ='" + Convert.ToString(mobileNumber) + "'";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             if ((ds.Tables[0].Rows.Count == 0))
                 return 0;
@@ -469,7 +471,7 @@ namespace ESCHOLPMS
         public int DuplicateIDProofNumber(string idProofNumber)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT * FROM LABOURDETAILS WHERE IDProofNumber ='" + Convert.ToString(idProofNumber) + "'";
+            string sql = "SELECT * FROM LABOURDETAILS WHERE STATUS IN (0,11) AND IDProofNumber ='" + Convert.ToString(idProofNumber) + "'";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             if (ds.Tables[0].Rows.Count == 0)
                 return 0;

@@ -70,9 +70,9 @@
             this.autoLabel9 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
             this.rejectionPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtRejectionComments = new System.Windows.Forms.TextBox();
             this.btnRejectionSave = new System.Windows.Forms.Button();
+            this.txtRejectionComments = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRollNumber)).BeginInit();
             this.panel1.SuspendLayout();
@@ -269,6 +269,7 @@
             this.autoLabel3.Size = new System.Drawing.Size(188, 19);
             this.autoLabel3.TabIndex = 75;
             this.autoLabel3.Text = "Enrollment Attachment";
+            this.autoLabel3.Visible = false;
             // 
             // autoLabel4
             // 
@@ -289,6 +290,7 @@
             this.txtEnrollmentAttachment.Size = new System.Drawing.Size(687, 29);
             this.txtEnrollmentAttachment.TabIndex = 77;
             this.txtEnrollmentAttachment.Text = "Enrollment Attachment";
+            this.txtEnrollmentAttachment.Visible = false;
             // 
             // btnBrowseTradeCertificate
             // 
@@ -524,6 +526,7 @@
             // 
             // rejectionPanel
             // 
+            this.rejectionPanel.AutoScroll = true;
             this.rejectionPanel.BackColor = System.Drawing.Color.LightCoral;
             this.rejectionPanel.Controls.Add(this.btnRejectionSave);
             this.rejectionPanel.Controls.Add(this.txtRejectionComments);
@@ -532,25 +535,6 @@
             this.rejectionPanel.Name = "rejectionPanel";
             this.rejectionPanel.Size = new System.Drawing.Size(593, 185);
             this.rejectionPanel.TabIndex = 101;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(215, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Rejection Comments";
-            // 
-            // txtRejectionComments
-            // 
-            this.txtRejectionComments.Location = new System.Drawing.Point(15, 23);
-            this.txtRejectionComments.MaxLength = 200;
-            this.txtRejectionComments.Multiline = true;
-            this.txtRejectionComments.Name = "txtRejectionComments";
-            this.txtRejectionComments.Size = new System.Drawing.Size(559, 105);
-            this.txtRejectionComments.TabIndex = 1;
             // 
             // btnRejectionSave
             // 
@@ -561,6 +545,25 @@
             this.btnRejectionSave.Text = "Save";
             this.btnRejectionSave.UseVisualStyleBackColor = true;
             this.btnRejectionSave.Click += new System.EventHandler(this.btnRejectionSave_Click);
+            // 
+            // txtRejectionComments
+            // 
+            this.txtRejectionComments.Location = new System.Drawing.Point(15, 23);
+            this.txtRejectionComments.MaxLength = 200;
+            this.txtRejectionComments.Multiline = true;
+            this.txtRejectionComments.Name = "txtRejectionComments";
+            this.txtRejectionComments.Size = new System.Drawing.Size(559, 105);
+            this.txtRejectionComments.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(215, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Rejection Comments";
             // 
             // frmApproveCertificate
             // 

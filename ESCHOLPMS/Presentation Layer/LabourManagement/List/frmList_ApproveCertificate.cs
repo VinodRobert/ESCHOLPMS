@@ -23,7 +23,7 @@ namespace ESCHOLPMS
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            frmNewLabour nl = new frmNewLabour(0);
+            frmNewLabour nl = new frmNewLabour(0,"Open");
             nl.ShowDialog();
             LoadLabours();
         }
