@@ -96,7 +96,7 @@ namespace ESCHOLPMS
         public DataSet FetchProjects(int loginID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT -1 PROJECTCODE,'HEAD OFFICE' AS PROJECTNAME  UNION ";
+            string sql = "";
             sql = sql +  "SELECT PROJECTCODE,LEFT(PROJECTNAME,50) PROJECTNAME FROM EXT.PROJECTS WHERE PROJECTSTATUS='Open' AND PROJECTCODE IN(SELECT PROJECTID ";
             sql = sql + " FROM USERPROJECT WHERE LOGINID = " + Convert.ToString(loginID) + " ) ORDER BY PROJECTNAME ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);

@@ -99,22 +99,38 @@ namespace ESCHOLPMS
                 loginID = Convert.ToInt16(dsLogin.Tables[0].Rows[0]["LOGINID"]);
                 GlobalVariables.LoginID = Convert.ToInt16(loginID);
                 GlobalVariables.UserName = Convert.ToString(dsLogin.Tables[0].Rows[0]["LOGINNAME"]);
-                dsProjects = ams.FetchProjects(loginID);
+                GlobalVariables.newLabour = Convert.ToBoolean(dsLogin.Tables[0].Rows[0]["NewLabour"]);
+                GlobalVariables.ttcApprover = Convert.ToBoolean(dsLogin.Tables[0].Rows[0]["TTCApprover"]);
+                GlobalVariables.viewerOnly = Convert.ToBoolean(dsLogin.Tables[0].Rows[0]["ViewerOnly"]);
+                GlobalVariables.mulipleProjects = Convert.ToBoolean(dsLogin.Tables[0].Rows[0]["MultipleProjects"]);
 
-                if (dsProjects.Tables[0].Rows.Count == 0)
+                if (GlobalVariables.mulipleProjects == true)
                 {
-                    MessageBox.Show("No Projects Attached To This User. Contact Admin ", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    dsProjects = ams.FetchProjects(loginID);
+
+                    if (dsProjects.Tables[0].Rows.Count == 0)
+                    {
+                        MessageBox.Show("No Projects Attached To This User. Contact Admin ", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                        btnLogin.Enabled = true;
+                        this.Close();
+                    }
+
+                    cmbProjects.DataSource = dsProjects.Tables[0];
+                    cmbProjects.Refresh();
+                    lblProject.Visible = true;
+                    cmbProjects.Visible = true;
+
+                    btnLogin.Text = "Select";
                     btnLogin.Enabled = true;
-                    this.Close();
                 }
-
-                cmbProjects.DataSource = dsProjects.Tables[0];
-                cmbProjects.Refresh();
-                lblProject.Visible = true;
-                cmbProjects.Visible = true;
-
-                btnLogin.Text = "Select";
-                btnLogin.Enabled = true;
+                else
+                {
+                    GlobalVariables.ProjectName = "Head Office";
+                    GlobalVariables.costCentreID = 0;
+                    this.Visible = false;
+                    frmMain _main = new frmMain();
+                    _main.Show();
+                }
             }
             else
             {
@@ -148,7 +164,7 @@ namespace ESCHOLPMS
                     GlobalVariables.spintlySiteID = Convert.ToInt16(dsAccessPoints.Tables[0].Rows[0]["GateWayID"]);
                     GlobalVariables.spintlyAccessPointID = Convert.ToInt16(dsAccessPoints.Tables[0].Rows[0]["AccessPointID"]);
                 }
-                    this.Visible = false;
+                this.Visible = false;
                 frmMain _main = new frmMain();
                 _main.Show();
             }

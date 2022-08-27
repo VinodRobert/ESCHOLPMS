@@ -24,5 +24,9 @@ namespace ESCHOLPMS
             public static Int16 spintlyOrgID;
             public static Int16 spintlySiteID;
             public static Int16 spintlyAccessPointID;
+            public static bool newLabour;
+            public static bool ttcApprover;
+            public static bool viewerOnly;
+            public static bool mulipleProjects;
     }
 }

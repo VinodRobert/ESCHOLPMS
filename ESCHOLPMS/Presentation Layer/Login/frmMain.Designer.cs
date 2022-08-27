@@ -30,25 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
-            this.mastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.departmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.designationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.subLedgerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.costCentresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuRegistration = new System.Windows.Forms.ToolStripMenuItem();
-            this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabAdministration = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLogins = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.workersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAttendance = new System.Windows.Forms.ToolStripMenuItem();
-            this.salaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setSalaryMonthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salaryPrepartionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splitSalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.postToAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuReports = new System.Windows.Forms.ToolStripMenuItem();
-            this.aPIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripMasters = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuProjects = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCostCentre = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDepartment = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDesignation = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEmployee = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuBank = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLedger = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSubLedger = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuContractors = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fixTBDifferenceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.missingLedgerCodesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openingBalanceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabGeneralInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuListOfProjects = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuListOfContractors = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabAPI = new System.Windows.Forms.ToolStripMenuItem();
             this.gettingKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getOrganizationIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fetchAccessPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,19 +59,7 @@
             this.fetchAccessHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assignAccessPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sampleUserUploadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginUnitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginAccessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mISToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.billOfMaterialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.laboursInProjectLiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.subContractorsInProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.subContractorBillsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dPRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.subContractorDebitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labourManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabProjectSite = new System.Windows.Forms.ToolStripMenuItem();
             this.newLabourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uploadDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateJobStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,32 +91,35 @@
             this.attendanceReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.accessCardReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accessCardsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listOfAccessCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unAssignCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assignCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labourAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.utilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listOfProjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listContractorsAndLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listEshcolLoginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.switchProjetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fixTBDifferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.missingLedgerCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openingBalanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.centralStoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabHRDepartment = new System.Windows.Forms.ToolStripMenuItem();
+            this.listActiveLaboursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.approveTTCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.attendanceReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.switchProjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabCentralStores = new System.Windows.Forms.ToolStripMenuItem();
             this.privateWorksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockIssueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockReturnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabBillingDepartment = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLinkedAccounts = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSubConDebits = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReorderBOQ = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuClientBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPurchaseDepartment = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabAccountsDepartment = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabInternalAuditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.switchProjectsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLoginName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.stripProjectName = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.viewAttendanceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterAttendanceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -136,163 +129,177 @@
             this.MainMenu.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mastersToolStripMenuItem,
-            this.menuRegistration,
-            this.menuAttendance,
-            this.salaryToolStripMenuItem,
-            this.menuReports,
-            this.aPIToolStripMenuItem,
-            this.loginsToolStripMenuItem,
-            this.mISToolStripMenuItem,
-            this.labourManagementToolStripMenuItem,
-            this.accessCardsToolStripMenuItem1,
-            this.labourAttendanceToolStripMenuItem,
-            this.utilityToolStripMenuItem,
-            this.centralStoresToolStripMenuItem,
-            this.logoutToolStripMenuItem});
+            this.tabAdministration,
+            this.tabGeneralInfo,
+            this.tabAPI,
+            this.tabProjectSite,
+            this.tabHRDepartment,
+            this.tabBillingDepartment,
+            this.tabPurchaseDepartment,
+            this.tabAccountsDepartment,
+            this.tabInternalAuditor,
+            this.tabCentralStores,
+            this.tabLogOut});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(1422, 28);
+            this.MainMenu.Size = new System.Drawing.Size(1831, 27);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "MenuStrip";
             // 
-            // mastersToolStripMenuItem
+            // tabAdministration
             // 
-            this.mastersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.departmentToolStripMenuItem,
-            this.designationToolStripMenuItem,
-            this.employeeToolStripMenuItem,
-            this.bankToolStripMenuItem,
-            this.subLedgerToolStripMenuItem,
-            this.costCentresToolStripMenuItem});
-            this.mastersToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mastersToolStripMenuItem.Name = "mastersToolStripMenuItem";
-            this.mastersToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
-            this.mastersToolStripMenuItem.Text = "Masters";
-            // 
-            // departmentToolStripMenuItem
-            // 
-            this.departmentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departmentToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.departmentToolStripMenuItem.Name = "departmentToolStripMenuItem";
-            this.departmentToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
-            this.departmentToolStripMenuItem.Text = "Department";
-            this.departmentToolStripMenuItem.Click += new System.EventHandler(this.departmentToolStripMenuItem_Click);
-            // 
-            // designationToolStripMenuItem
-            // 
-            this.designationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.designationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.designationToolStripMenuItem.Name = "designationToolStripMenuItem";
-            this.designationToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
-            this.designationToolStripMenuItem.Text = "Designation";
-            this.designationToolStripMenuItem.Click += new System.EventHandler(this.designationToolStripMenuItem_Click);
-            // 
-            // employeeToolStripMenuItem
-            // 
-            this.employeeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
-            this.employeeToolStripMenuItem.Text = "Employee";
-            this.employeeToolStripMenuItem.Click += new System.EventHandler(this.employeeToolStripMenuItem_Click);
-            // 
-            // bankToolStripMenuItem
-            // 
-            this.bankToolStripMenuItem.Name = "bankToolStripMenuItem";
-            this.bankToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
-            this.bankToolStripMenuItem.Text = "Bank";
-            // 
-            // subLedgerToolStripMenuItem
-            // 
-            this.subLedgerToolStripMenuItem.Name = "subLedgerToolStripMenuItem";
-            this.subLedgerToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
-            this.subLedgerToolStripMenuItem.Text = "Sub Ledger";
-            // 
-            // costCentresToolStripMenuItem
-            // 
-            this.costCentresToolStripMenuItem.Name = "costCentresToolStripMenuItem";
-            this.costCentresToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
-            this.costCentresToolStripMenuItem.Text = "Cost Centres";
-            this.costCentresToolStripMenuItem.Click += new System.EventHandler(this.costCentresToolStripMenuItem_Click);
-            // 
-            // menuRegistration
-            // 
-            this.menuRegistration.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.staffToolStripMenuItem,
+            this.tabAdministration.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuLogins,
             this.toolStripSeparator1,
-            this.workersToolStripMenuItem});
-            this.menuRegistration.Name = "menuRegistration";
-            this.menuRegistration.Size = new System.Drawing.Size(109, 24);
-            this.menuRegistration.Text = "Registration";
+            this.menuStripMasters,
+            this.accountsToolStripMenuItem});
+            this.tabAdministration.Name = "tabAdministration";
+            this.tabAdministration.Size = new System.Drawing.Size(126, 24);
+            this.tabAdministration.Text = "Administration";
             // 
-            // staffToolStripMenuItem
+            // menuLogins
             // 
-            this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
-            this.staffToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
-            this.staffToolStripMenuItem.Text = "Staff";
+            this.menuLogins.Name = "menuLogins";
+            this.menuLogins.Size = new System.Drawing.Size(160, 26);
+            this.menuLogins.Text = "Logins";
+            this.menuLogins.Click += new System.EventHandler(this.menuLogins_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(152, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
             // 
-            // workersToolStripMenuItem
+            // menuStripMasters
             // 
-            this.workersToolStripMenuItem.Name = "workersToolStripMenuItem";
-            this.workersToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
-            this.workersToolStripMenuItem.Text = "Workers";
+            this.menuStripMasters.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuProjects,
+            this.menuCostCentre,
+            this.menuDepartment,
+            this.menuDesignation,
+            this.menuEmployee,
+            this.menuBank,
+            this.menuLedger,
+            this.menuSubLedger,
+            this.menuContractors});
+            this.menuStripMasters.Name = "menuStripMasters";
+            this.menuStripMasters.Size = new System.Drawing.Size(160, 26);
+            this.menuStripMasters.Text = "Masters";
             // 
-            // menuAttendance
+            // menuProjects
             // 
-            this.menuAttendance.Name = "menuAttendance";
-            this.menuAttendance.Size = new System.Drawing.Size(105, 24);
-            this.menuAttendance.Text = "Attendance";
+            this.menuProjects.Name = "menuProjects";
+            this.menuProjects.Size = new System.Drawing.Size(211, 26);
+            this.menuProjects.Text = "Projects";
+            this.menuProjects.Click += new System.EventHandler(this.projectsToolStripMenuItem_Click);
             // 
-            // salaryToolStripMenuItem
+            // menuCostCentre
             // 
-            this.salaryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setSalaryMonthToolStripMenuItem,
-            this.salaryPrepartionToolStripMenuItem,
-            this.splitSalaryToolStripMenuItem,
-            this.postToAccountsToolStripMenuItem});
-            this.salaryToolStripMenuItem.Name = "salaryToolStripMenuItem";
-            this.salaryToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.salaryToolStripMenuItem.Text = "Salary";
+            this.menuCostCentre.Name = "menuCostCentre";
+            this.menuCostCentre.Size = new System.Drawing.Size(211, 26);
+            this.menuCostCentre.Text = "Cost Centres";
+            this.menuCostCentre.Click += new System.EventHandler(this.costCentresToolStripMenuItem1_Click);
             // 
-            // setSalaryMonthToolStripMenuItem
+            // menuDepartment
             // 
-            this.setSalaryMonthToolStripMenuItem.Name = "setSalaryMonthToolStripMenuItem";
-            this.setSalaryMonthToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
-            this.setSalaryMonthToolStripMenuItem.Text = "Set Salary Month";
+            this.menuDepartment.Name = "menuDepartment";
+            this.menuDepartment.Size = new System.Drawing.Size(211, 26);
+            this.menuDepartment.Text = "Department";
+            this.menuDepartment.Click += new System.EventHandler(this.departmentToolStripMenuItem1_Click);
             // 
-            // salaryPrepartionToolStripMenuItem
+            // menuDesignation
             // 
-            this.salaryPrepartionToolStripMenuItem.Name = "salaryPrepartionToolStripMenuItem";
-            this.salaryPrepartionToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
-            this.salaryPrepartionToolStripMenuItem.Text = "Salary Prepartion";
+            this.menuDesignation.Name = "menuDesignation";
+            this.menuDesignation.Size = new System.Drawing.Size(211, 26);
+            this.menuDesignation.Text = "Designation";
+            this.menuDesignation.Click += new System.EventHandler(this.designationToolStripMenuItem1_Click);
             // 
-            // splitSalaryToolStripMenuItem
+            // menuEmployee
             // 
-            this.splitSalaryToolStripMenuItem.Name = "splitSalaryToolStripMenuItem";
-            this.splitSalaryToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
-            this.splitSalaryToolStripMenuItem.Text = "Split Salary";
+            this.menuEmployee.Name = "menuEmployee";
+            this.menuEmployee.Size = new System.Drawing.Size(211, 26);
+            this.menuEmployee.Text = "Employee";
+            this.menuEmployee.Click += new System.EventHandler(this.employeeToolStripMenuItem1_Click);
             // 
-            // postToAccountsToolStripMenuItem
+            // menuBank
             // 
-            this.postToAccountsToolStripMenuItem.Name = "postToAccountsToolStripMenuItem";
-            this.postToAccountsToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
-            this.postToAccountsToolStripMenuItem.Text = "Post To Accounts";
+            this.menuBank.Name = "menuBank";
+            this.menuBank.Size = new System.Drawing.Size(211, 26);
+            this.menuBank.Text = "Bank";
             // 
-            // menuReports
+            // menuLedger
             // 
-            this.menuReports.Name = "menuReports";
-            this.menuReports.Size = new System.Drawing.Size(79, 24);
-            this.menuReports.Text = "Reports";
+            this.menuLedger.Name = "menuLedger";
+            this.menuLedger.Size = new System.Drawing.Size(211, 26);
+            this.menuLedger.Text = "Ledger";
             // 
-            // aPIToolStripMenuItem
+            // menuSubLedger
             // 
-            this.aPIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuSubLedger.Name = "menuSubLedger";
+            this.menuSubLedger.Size = new System.Drawing.Size(211, 26);
+            this.menuSubLedger.Text = "Sub Ledger";
+            // 
+            // menuContractors
+            // 
+            this.menuContractors.Name = "menuContractors";
+            this.menuContractors.Size = new System.Drawing.Size(211, 26);
+            this.menuContractors.Text = "Sub Contractors";
+            this.menuContractors.Click += new System.EventHandler(this.menuContractors_Click);
+            // 
+            // accountsToolStripMenuItem
+            // 
+            this.accountsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fixTBDifferenceToolStripMenuItem1,
+            this.missingLedgerCodesToolStripMenuItem,
+            this.openingBalanceToolStripMenuItem1});
+            this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.accountsToolStripMenuItem.Text = "Accounts";
+            // 
+            // fixTBDifferenceToolStripMenuItem1
+            // 
+            this.fixTBDifferenceToolStripMenuItem1.Name = "fixTBDifferenceToolStripMenuItem1";
+            this.fixTBDifferenceToolStripMenuItem1.Size = new System.Drawing.Size(250, 26);
+            this.fixTBDifferenceToolStripMenuItem1.Text = "Fix TB Difference";
+            this.fixTBDifferenceToolStripMenuItem1.Click += new System.EventHandler(this.fixTBDifferenceToolStripMenuItem1_Click);
+            // 
+            // missingLedgerCodesToolStripMenuItem
+            // 
+            this.missingLedgerCodesToolStripMenuItem.Name = "missingLedgerCodesToolStripMenuItem";
+            this.missingLedgerCodesToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.missingLedgerCodesToolStripMenuItem.Text = "Missing LedgerCodes";
+            this.missingLedgerCodesToolStripMenuItem.Click += new System.EventHandler(this.missingLedgerCodesToolStripMenuItem_Click);
+            // 
+            // openingBalanceToolStripMenuItem1
+            // 
+            this.openingBalanceToolStripMenuItem1.Name = "openingBalanceToolStripMenuItem1";
+            this.openingBalanceToolStripMenuItem1.Size = new System.Drawing.Size(250, 26);
+            this.openingBalanceToolStripMenuItem1.Text = "Opening Balance";
+            this.openingBalanceToolStripMenuItem1.Click += new System.EventHandler(this.openingBalanceToolStripMenuItem1_Click);
+            // 
+            // tabGeneralInfo
+            // 
+            this.tabGeneralInfo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuListOfProjects,
+            this.menuListOfContractors});
+            this.tabGeneralInfo.Name = "tabGeneralInfo";
+            this.tabGeneralInfo.Size = new System.Drawing.Size(113, 24);
+            this.tabGeneralInfo.Text = "General Info";
+            // 
+            // menuListOfProjects
+            // 
+            this.menuListOfProjects.Name = "menuListOfProjects";
+            this.menuListOfProjects.Size = new System.Drawing.Size(226, 26);
+            this.menuListOfProjects.Text = "List of Projects";
+            // 
+            // menuListOfContractors
+            // 
+            this.menuListOfContractors.Name = "menuListOfContractors";
+            this.menuListOfContractors.Size = new System.Drawing.Size(226, 26);
+            this.menuListOfContractors.Text = "List of Contractors";
+            // 
+            // tabAPI
+            // 
+            this.tabAPI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gettingKeyToolStripMenuItem,
             this.getOrganizationIDToolStripMenuItem,
             this.fetchAccessPointsToolStripMenuItem,
@@ -301,9 +308,9 @@
             this.fetchAccessHistoryToolStripMenuItem,
             this.assignAccessPointsToolStripMenuItem,
             this.sampleUserUploadToolStripMenuItem});
-            this.aPIToolStripMenuItem.Name = "aPIToolStripMenuItem";
-            this.aPIToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
-            this.aPIToolStripMenuItem.Text = "API";
+            this.tabAPI.Name = "tabAPI";
+            this.tabAPI.Size = new System.Drawing.Size(50, 24);
+            this.tabAPI.Text = "API";
             // 
             // gettingKeyToolStripMenuItem
             // 
@@ -361,94 +368,9 @@
             this.sampleUserUploadToolStripMenuItem.Text = "Sample User Upload";
             this.sampleUserUploadToolStripMenuItem.Click += new System.EventHandler(this.sampleUserUploadToolStripMenuItem_Click);
             // 
-            // loginsToolStripMenuItem
+            // tabProjectSite
             // 
-            this.loginsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loginUsersToolStripMenuItem,
-            this.loginUnitsToolStripMenuItem,
-            this.loginAccessToolStripMenuItem});
-            this.loginsToolStripMenuItem.Name = "loginsToolStripMenuItem";
-            this.loginsToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
-            this.loginsToolStripMenuItem.Text = "Logins";
-            // 
-            // loginUsersToolStripMenuItem
-            // 
-            this.loginUsersToolStripMenuItem.Name = "loginUsersToolStripMenuItem";
-            this.loginUsersToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-            this.loginUsersToolStripMenuItem.Text = "Login Users";
-            // 
-            // loginUnitsToolStripMenuItem
-            // 
-            this.loginUnitsToolStripMenuItem.Name = "loginUnitsToolStripMenuItem";
-            this.loginUnitsToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-            this.loginUnitsToolStripMenuItem.Text = "Login Units";
-            // 
-            // loginAccessToolStripMenuItem
-            // 
-            this.loginAccessToolStripMenuItem.Name = "loginAccessToolStripMenuItem";
-            this.loginAccessToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-            this.loginAccessToolStripMenuItem.Text = "Login Access";
-            // 
-            // mISToolStripMenuItem
-            // 
-            this.mISToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.billOfMaterialsToolStripMenuItem,
-            this.laboursInProjectLiveToolStripMenuItem,
-            this.subContractorsInProjectToolStripMenuItem,
-            this.clientBillToolStripMenuItem,
-            this.subContractorBillsToolStripMenuItem,
-            this.dPRToolStripMenuItem,
-            this.subContractorDebitsToolStripMenuItem});
-            this.mISToolStripMenuItem.Name = "mISToolStripMenuItem";
-            this.mISToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
-            this.mISToolStripMenuItem.Text = "MIS";
-            // 
-            // billOfMaterialsToolStripMenuItem
-            // 
-            this.billOfMaterialsToolStripMenuItem.Name = "billOfMaterialsToolStripMenuItem";
-            this.billOfMaterialsToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
-            this.billOfMaterialsToolStripMenuItem.Text = "Bill of Materials ";
-            // 
-            // laboursInProjectLiveToolStripMenuItem
-            // 
-            this.laboursInProjectLiveToolStripMenuItem.Name = "laboursInProjectLiveToolStripMenuItem";
-            this.laboursInProjectLiveToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
-            this.laboursInProjectLiveToolStripMenuItem.Text = "Labours In Project (Live)";
-            // 
-            // subContractorsInProjectToolStripMenuItem
-            // 
-            this.subContractorsInProjectToolStripMenuItem.Name = "subContractorsInProjectToolStripMenuItem";
-            this.subContractorsInProjectToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
-            this.subContractorsInProjectToolStripMenuItem.Text = "Sub Contractors In Project";
-            // 
-            // clientBillToolStripMenuItem
-            // 
-            this.clientBillToolStripMenuItem.Name = "clientBillToolStripMenuItem";
-            this.clientBillToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
-            this.clientBillToolStripMenuItem.Text = "Client Bill";
-            this.clientBillToolStripMenuItem.Click += new System.EventHandler(this.clientBillToolStripMenuItem_Click);
-            // 
-            // subContractorBillsToolStripMenuItem
-            // 
-            this.subContractorBillsToolStripMenuItem.Name = "subContractorBillsToolStripMenuItem";
-            this.subContractorBillsToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
-            this.subContractorBillsToolStripMenuItem.Text = "Sub Contractor Bills";
-            // 
-            // dPRToolStripMenuItem
-            // 
-            this.dPRToolStripMenuItem.Name = "dPRToolStripMenuItem";
-            this.dPRToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
-            this.dPRToolStripMenuItem.Text = "DPR";
-            // 
-            // subContractorDebitsToolStripMenuItem
-            // 
-            this.subContractorDebitsToolStripMenuItem.Name = "subContractorDebitsToolStripMenuItem";
-            this.subContractorDebitsToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
-            this.subContractorDebitsToolStripMenuItem.Text = "Sub Contractor Debits";
-            // 
-            // labourManagementToolStripMenuItem
-            // 
-            this.labourManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tabProjectSite.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newLabourToolStripMenuItem,
             this.uploadDocumentsToolStripMenuItem,
             this.updateJobStatusToolStripMenuItem,
@@ -461,10 +383,12 @@
             this.attendanceToolStripMenuItem,
             this.accessCardToolStripMenuItem,
             this.exitLaboursToolStripMenuItem,
-            this.reportsToolStripMenuItem});
-            this.labourManagementToolStripMenuItem.Name = "labourManagementToolStripMenuItem";
-            this.labourManagementToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
-            this.labourManagementToolStripMenuItem.Text = "Labour Management";
+            this.reportsToolStripMenuItem,
+            this.viewAttendanceToolStripMenuItem1,
+            this.alterAttendanceToolStripMenuItem1});
+            this.tabProjectSite.Name = "tabProjectSite";
+            this.tabProjectSite.Size = new System.Drawing.Size(107, 24);
+            this.tabProjectSite.Text = "Project Site";
             // 
             // newLabourToolStripMenuItem
             // 
@@ -579,12 +503,14 @@
             this.unAssignCardToolStripMenuItem.Name = "unAssignCardToolStripMenuItem";
             this.unAssignCardToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.unAssignCardToolStripMenuItem.Text = "Un-Assign Card";
+            this.unAssignCardToolStripMenuItem.Click += new System.EventHandler(this.unAssignCardToolStripMenuItem_Click);
             // 
             // assignCardToolStripMenuItem
             // 
             this.assignCardToolStripMenuItem.Name = "assignCardToolStripMenuItem";
             this.assignCardToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.assignCardToolStripMenuItem.Text = "Assign Card";
+            this.assignCardToolStripMenuItem.Click += new System.EventHandler(this.assignCardToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -596,6 +522,7 @@
             this.listOfAssignCardsToolStripMenuItem.Name = "listOfAssignCardsToolStripMenuItem";
             this.listOfAssignCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.listOfAssignCardsToolStripMenuItem.Text = "List of Assign Cards";
+            this.listOfAssignCardsToolStripMenuItem.Click += new System.EventHandler(this.listOfAssignCardsToolStripMenuItem_Click);
             // 
             // exitLaboursToolStripMenuItem
             // 
@@ -682,167 +609,164 @@
             this.accessCardReportToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.accessCardReportToolStripMenuItem.Text = "Access Card Report";
             // 
-            // accessCardsToolStripMenuItem1
+            // tabHRDepartment
             // 
-            this.accessCardsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listOfAccessCardsToolStripMenuItem,
-            this.unAssignCardsToolStripMenuItem,
-            this.assignCardsToolStripMenuItem});
-            this.accessCardsToolStripMenuItem1.Name = "accessCardsToolStripMenuItem1";
-            this.accessCardsToolStripMenuItem1.Size = new System.Drawing.Size(126, 24);
-            this.accessCardsToolStripMenuItem1.Text = "Access Cards";
+            this.tabHRDepartment.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listActiveLaboursToolStripMenuItem,
+            this.approveTTCToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.attendanceReportsToolStripMenuItem,
+            this.switchProjectsToolStripMenuItem});
+            this.tabHRDepartment.Name = "tabHRDepartment";
+            this.tabHRDepartment.Size = new System.Drawing.Size(134, 24);
+            this.tabHRDepartment.Text = "HR Department";
             // 
-            // listOfAccessCardsToolStripMenuItem
+            // listActiveLaboursToolStripMenuItem
             // 
-            this.listOfAccessCardsToolStripMenuItem.Name = "listOfAccessCardsToolStripMenuItem";
-            this.listOfAccessCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
-            this.listOfAccessCardsToolStripMenuItem.Text = "List of Access Cards";
-            this.listOfAccessCardsToolStripMenuItem.Click += new System.EventHandler(this.listOfAccessCardsToolStripMenuItem_Click);
+            this.listActiveLaboursToolStripMenuItem.Name = "listActiveLaboursToolStripMenuItem";
+            this.listActiveLaboursToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.listActiveLaboursToolStripMenuItem.Text = "List Active Labours";
             // 
-            // unAssignCardsToolStripMenuItem
+            // approveTTCToolStripMenuItem
             // 
-            this.unAssignCardsToolStripMenuItem.Name = "unAssignCardsToolStripMenuItem";
-            this.unAssignCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
-            this.unAssignCardsToolStripMenuItem.Text = "Un Assign Cards";
-            this.unAssignCardsToolStripMenuItem.Click += new System.EventHandler(this.unAssignCardsToolStripMenuItem_Click);
+            this.approveTTCToolStripMenuItem.Name = "approveTTCToolStripMenuItem";
+            this.approveTTCToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.approveTTCToolStripMenuItem.Text = "Approve TTC";
             // 
-            // assignCardsToolStripMenuItem
+            // toolStripSeparator6
             // 
-            this.assignCardsToolStripMenuItem.Name = "assignCardsToolStripMenuItem";
-            this.assignCardsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
-            this.assignCardsToolStripMenuItem.Text = "Assign Cards";
-            this.assignCardsToolStripMenuItem.Click += new System.EventHandler(this.assignCardsToolStripMenuItem_Click);
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(232, 6);
             // 
-            // labourAttendanceToolStripMenuItem
+            // attendanceReportsToolStripMenuItem
             // 
-            this.labourAttendanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewAttendanceToolStripMenuItem,
-            this.alterAttendanceToolStripMenuItem});
-            this.labourAttendanceToolStripMenuItem.Name = "labourAttendanceToolStripMenuItem";
-            this.labourAttendanceToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
-            this.labourAttendanceToolStripMenuItem.Text = "Labour Attendance";
+            this.attendanceReportsToolStripMenuItem.Name = "attendanceReportsToolStripMenuItem";
+            this.attendanceReportsToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.attendanceReportsToolStripMenuItem.Text = "Attendance Reports";
             // 
-            // viewAttendanceToolStripMenuItem
+            // switchProjectsToolStripMenuItem
             // 
-            this.viewAttendanceToolStripMenuItem.Name = "viewAttendanceToolStripMenuItem";
-            this.viewAttendanceToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
-            this.viewAttendanceToolStripMenuItem.Text = "View Attendance";
-            this.viewAttendanceToolStripMenuItem.Click += new System.EventHandler(this.viewAttendanceToolStripMenuItem_Click);
+            this.switchProjectsToolStripMenuItem.Name = "switchProjectsToolStripMenuItem";
+            this.switchProjectsToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.switchProjectsToolStripMenuItem.Text = "Switch Projects";
+            this.switchProjectsToolStripMenuItem.Click += new System.EventHandler(this.switchProjectsToolStripMenuItem_Click);
             // 
-            // alterAttendanceToolStripMenuItem
+            // tabCentralStores
             // 
-            this.alterAttendanceToolStripMenuItem.Name = "alterAttendanceToolStripMenuItem";
-            this.alterAttendanceToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
-            this.alterAttendanceToolStripMenuItem.Text = "Alter Attendance";
-            // 
-            // utilityToolStripMenuItem
-            // 
-            this.utilityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listOfProjectsToolStripMenuItem,
-            this.listContractorsAndLaboursToolStripMenuItem,
-            this.listEshcolLoginsToolStripMenuItem,
-            this.switchProjetsToolStripMenuItem,
-            this.fixTBDifferenceToolStripMenuItem,
-            this.missingLedgerCodeToolStripMenuItem,
-            this.openingBalanceToolStripMenuItem});
-            this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
-            this.utilityToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.utilityToolStripMenuItem.Text = "Utility";
-            // 
-            // listOfProjectsToolStripMenuItem
-            // 
-            this.listOfProjectsToolStripMenuItem.Name = "listOfProjectsToolStripMenuItem";
-            this.listOfProjectsToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
-            this.listOfProjectsToolStripMenuItem.Text = "List of Projects";
-            this.listOfProjectsToolStripMenuItem.Click += new System.EventHandler(this.listOfProjectsToolStripMenuItem_Click);
-            // 
-            // listContractorsAndLaboursToolStripMenuItem
-            // 
-            this.listContractorsAndLaboursToolStripMenuItem.Name = "listContractorsAndLaboursToolStripMenuItem";
-            this.listContractorsAndLaboursToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
-            this.listContractorsAndLaboursToolStripMenuItem.Text = "List Contractors and Labours";
-            this.listContractorsAndLaboursToolStripMenuItem.Click += new System.EventHandler(this.listContractorsAndLaboursToolStripMenuItem_Click);
-            // 
-            // listEshcolLoginsToolStripMenuItem
-            // 
-            this.listEshcolLoginsToolStripMenuItem.Name = "listEshcolLoginsToolStripMenuItem";
-            this.listEshcolLoginsToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
-            this.listEshcolLoginsToolStripMenuItem.Text = "List Eshcol Logins";
-            this.listEshcolLoginsToolStripMenuItem.Click += new System.EventHandler(this.listEshcolLoginsToolStripMenuItem_Click);
-            // 
-            // switchProjetsToolStripMenuItem
-            // 
-            this.switchProjetsToolStripMenuItem.Name = "switchProjetsToolStripMenuItem";
-            this.switchProjetsToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
-            this.switchProjetsToolStripMenuItem.Text = "Switch Projets";
-            this.switchProjetsToolStripMenuItem.Click += new System.EventHandler(this.switchProjetsToolStripMenuItem_Click);
-            // 
-            // fixTBDifferenceToolStripMenuItem
-            // 
-            this.fixTBDifferenceToolStripMenuItem.Name = "fixTBDifferenceToolStripMenuItem";
-            this.fixTBDifferenceToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
-            this.fixTBDifferenceToolStripMenuItem.Text = "Fix TB Difference";
-            this.fixTBDifferenceToolStripMenuItem.Click += new System.EventHandler(this.fixTBDifferenceToolStripMenuItem_Click);
-            // 
-            // missingLedgerCodeToolStripMenuItem
-            // 
-            this.missingLedgerCodeToolStripMenuItem.Name = "missingLedgerCodeToolStripMenuItem";
-            this.missingLedgerCodeToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
-            this.missingLedgerCodeToolStripMenuItem.Text = "Missing Ledger Code";
-            this.missingLedgerCodeToolStripMenuItem.Click += new System.EventHandler(this.missingLedgerCodeToolStripMenuItem_Click);
-            // 
-            // openingBalanceToolStripMenuItem
-            // 
-            this.openingBalanceToolStripMenuItem.Name = "openingBalanceToolStripMenuItem";
-            this.openingBalanceToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
-            this.openingBalanceToolStripMenuItem.Text = "Opening Balance";
-            this.openingBalanceToolStripMenuItem.Click += new System.EventHandler(this.openingBalanceToolStripMenuItem_Click);
-            // 
-            // centralStoresToolStripMenuItem
-            // 
-            this.centralStoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tabCentralStores.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.privateWorksToolStripMenuItem,
             this.stockIssueToolStripMenuItem,
             this.stockReturnToolStripMenuItem,
             this.stockReportsToolStripMenuItem});
-            this.centralStoresToolStripMenuItem.Name = "centralStoresToolStripMenuItem";
-            this.centralStoresToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
-            this.centralStoresToolStripMenuItem.Text = "Central Stores";
+            this.tabCentralStores.Name = "tabCentralStores";
+            this.tabCentralStores.Size = new System.Drawing.Size(127, 24);
+            this.tabCentralStores.Text = "Central Stores";
             // 
             // privateWorksToolStripMenuItem
             // 
             this.privateWorksToolStripMenuItem.Name = "privateWorksToolStripMenuItem";
-            this.privateWorksToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.privateWorksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.privateWorksToolStripMenuItem.Text = "Private Works";
             this.privateWorksToolStripMenuItem.Click += new System.EventHandler(this.privateWorksToolStripMenuItem_Click);
             // 
             // stockIssueToolStripMenuItem
             // 
             this.stockIssueToolStripMenuItem.Name = "stockIssueToolStripMenuItem";
-            this.stockIssueToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.stockIssueToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.stockIssueToolStripMenuItem.Text = "Stock Issue";
             this.stockIssueToolStripMenuItem.Click += new System.EventHandler(this.stockIssueToolStripMenuItem_Click);
             // 
             // stockReturnToolStripMenuItem
             // 
             this.stockReturnToolStripMenuItem.Name = "stockReturnToolStripMenuItem";
-            this.stockReturnToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.stockReturnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.stockReturnToolStripMenuItem.Text = "Stock Return";
             this.stockReturnToolStripMenuItem.Click += new System.EventHandler(this.stockReturnToolStripMenuItem_Click);
             // 
             // stockReportsToolStripMenuItem
             // 
             this.stockReportsToolStripMenuItem.Name = "stockReportsToolStripMenuItem";
-            this.stockReportsToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.stockReportsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.stockReportsToolStripMenuItem.Text = "Stock Reports";
             this.stockReportsToolStripMenuItem.Click += new System.EventHandler(this.stockReportsToolStripMenuItem_Click);
             // 
-            // logoutToolStripMenuItem
+            // tabBillingDepartment
             // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            this.tabBillingDepartment.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuLinkedAccounts,
+            this.menuSubConDebits,
+            this.menuReorderBOQ,
+            this.toolStripSeparator7,
+            this.menuClientBill});
+            this.tabBillingDepartment.Name = "tabBillingDepartment";
+            this.tabBillingDepartment.Size = new System.Drawing.Size(149, 24);
+            this.tabBillingDepartment.Text = "Billing Depatment";
+            // 
+            // menuLinkedAccounts
+            // 
+            this.menuLinkedAccounts.Name = "menuLinkedAccounts";
+            this.menuLinkedAccounts.Size = new System.Drawing.Size(254, 26);
+            this.menuLinkedAccounts.Text = "Linked Accounts";
+            this.menuLinkedAccounts.Click += new System.EventHandler(this.toolStripLinkedAccounts_Click);
+            // 
+            // menuSubConDebits
+            // 
+            this.menuSubConDebits.Name = "menuSubConDebits";
+            this.menuSubConDebits.Size = new System.Drawing.Size(254, 26);
+            this.menuSubConDebits.Text = "Sub Contractor Debits";
+            // 
+            // menuReorderBOQ
+            // 
+            this.menuReorderBOQ.Name = "menuReorderBOQ";
+            this.menuReorderBOQ.Size = new System.Drawing.Size(254, 26);
+            this.menuReorderBOQ.Text = "WBS - Reordering";
+            this.menuReorderBOQ.Click += new System.EventHandler(this.wBSReorderingToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(251, 6);
+            // 
+            // menuClientBill
+            // 
+            this.menuClientBill.Name = "menuClientBill";
+            this.menuClientBill.Size = new System.Drawing.Size(254, 26);
+            this.menuClientBill.Text = "Client BIll";
+            this.menuClientBill.Click += new System.EventHandler(this.clientBIllToolStripMenuItem1_Click);
+            // 
+            // tabPurchaseDepartment
+            // 
+            this.tabPurchaseDepartment.Name = "tabPurchaseDepartment";
+            this.tabPurchaseDepartment.Size = new System.Drawing.Size(182, 24);
+            this.tabPurchaseDepartment.Text = "Purchase Department";
+            // 
+            // tabAccountsDepartment
+            // 
+            this.tabAccountsDepartment.Name = "tabAccountsDepartment";
+            this.tabAccountsDepartment.Size = new System.Drawing.Size(180, 24);
+            this.tabAccountsDepartment.Text = "Accounts Department";
+            // 
+            // tabInternalAuditor
+            // 
+            this.tabInternalAuditor.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.switchProjectsToolStripMenuItem1});
+            this.tabInternalAuditor.Name = "tabInternalAuditor";
+            this.tabInternalAuditor.Size = new System.Drawing.Size(133, 24);
+            this.tabInternalAuditor.Text = "Internal Auditor";
+            // 
+            // switchProjectsToolStripMenuItem1
+            // 
+            this.switchProjectsToolStripMenuItem1.Name = "switchProjectsToolStripMenuItem1";
+            this.switchProjectsToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.switchProjectsToolStripMenuItem1.Text = "Switch Projects";
+            this.switchProjectsToolStripMenuItem1.Click += new System.EventHandler(this.switchProjectsToolStripMenuItem1_Click);
+            // 
+            // tabLogOut
+            // 
+            this.tabLogOut.Name = "tabLogOut";
+            this.tabLogOut.Size = new System.Drawing.Size(72, 24);
+            this.tabLogOut.Text = "Logout";
+            this.tabLogOut.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -854,7 +778,7 @@
             this.statusStrip.Location = new System.Drawing.Point(0, 825);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1422, 28);
+            this.statusStrip.Size = new System.Drawing.Size(1831, 28);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -883,11 +807,24 @@
             this.stripProjectName.Size = new System.Drawing.Size(125, 23);
             this.stripProjectName.Text = "Prroject Name";
             // 
+            // viewAttendanceToolStripMenuItem1
+            // 
+            this.viewAttendanceToolStripMenuItem1.Name = "viewAttendanceToolStripMenuItem1";
+            this.viewAttendanceToolStripMenuItem1.Size = new System.Drawing.Size(273, 26);
+            this.viewAttendanceToolStripMenuItem1.Text = "View Attendance";
+            this.viewAttendanceToolStripMenuItem1.Click += new System.EventHandler(this.viewAttendanceToolStripMenuItem1_Click);
+            // 
+            // alterAttendanceToolStripMenuItem1
+            // 
+            this.alterAttendanceToolStripMenuItem1.Name = "alterAttendanceToolStripMenuItem1";
+            this.alterAttendanceToolStripMenuItem1.Size = new System.Drawing.Size(273, 26);
+            this.alterAttendanceToolStripMenuItem1.Text = "Alter Attendance";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1422, 853);
+            this.ClientSize = new System.Drawing.Size(1831, 853);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.MainMenu);
             this.IsMdiContainer = true;
@@ -895,7 +832,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ESCHOL | Access Control System | HR";
+            this.Text = "ESCHOL Enhanced |  Version 3.0";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
@@ -914,65 +851,27 @@
         private System.Windows.Forms.ToolTip toolTip;
         private Syncfusion.Windows.Forms.Tools.StatusStripLabel stripLoginName;
         private Syncfusion.Windows.Forms.Tools.StatusStripLabel stripProjectName;
-        private System.Windows.Forms.ToolStripMenuItem menuRegistration;
-        private System.Windows.Forms.ToolStripMenuItem staffToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem workersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuAttendance;
-        private System.Windows.Forms.ToolStripMenuItem menuReports;
-        private System.Windows.Forms.ToolStripMenuItem mastersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem departmentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem designationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salaryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setSalaryMonthToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salaryPrepartionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem splitSalaryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem postToAccountsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aPIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tabAdministration;
+        private System.Windows.Forms.ToolStripMenuItem menuLogins;
+        private System.Windows.Forms.ToolStripMenuItem tabGeneralInfo;
+        private System.Windows.Forms.ToolStripMenuItem tabAPI;
         private System.Windows.Forms.ToolStripMenuItem gettingKeyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fetchAccessPointsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bankToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subLedgerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem costCentresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getOrganizationIDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fetchAccessPointsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem fetchUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fetchAccessHistoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginUsersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginUnitsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginAccessToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mISToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem billOfMaterialsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem laboursInProjectLiveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subContractorsInProjectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clientBillToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subContractorBillsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dPRToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subContractorDebitsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem labourManagementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tabProjectSite;
         private System.Windows.Forms.ToolStripMenuItem newLabourToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uploadDocumentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem approveDocumentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateJobStatusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tabLogOut;
         private System.Windows.Forms.ToolStripMenuItem listOfInactiveLaboursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOfSubContractorsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem labourAttendanceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewAttendanceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alterAttendanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem terminateLaboursToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem utilityToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listOfProjectsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listContractorsAndLaboursToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listEshcolLoginsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem switchProjetsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fixTBDifferenceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem missingLedgerCodeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openingBalanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignAccessPointsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem centralStoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tabCentralStores;
         private System.Windows.Forms.ToolStripMenuItem privateWorksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockIssueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockReturnToolStripMenuItem;
@@ -980,10 +879,6 @@
         private System.Windows.Forms.ToolStripMenuItem accessCardsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sampleUserUploadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOfCompleteLaboursToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accessCardsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem listOfAccessCardsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem unAssignCardsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem assignCardsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem attendanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateAttendanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
@@ -1006,6 +901,41 @@
         private System.Windows.Forms.ToolStripMenuItem attendanceReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem accessCardReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tabBillingDepartment;
+        private System.Windows.Forms.ToolStripMenuItem menuLinkedAccounts;
+        private System.Windows.Forms.ToolStripMenuItem menuSubConDebits;
+        private System.Windows.Forms.ToolStripMenuItem menuReorderBOQ;
+        private System.Windows.Forms.ToolStripMenuItem menuListOfProjects;
+        private System.Windows.Forms.ToolStripMenuItem menuListOfContractors;
+        private System.Windows.Forms.ToolStripMenuItem tabPurchaseDepartment;
+        private System.Windows.Forms.ToolStripMenuItem tabHRDepartment;
+        private System.Windows.Forms.ToolStripMenuItem listActiveLaboursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem approveTTCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem attendanceReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem switchProjectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tabAccountsDepartment;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem menuStripMasters;
+        private System.Windows.Forms.ToolStripMenuItem menuProjects;
+        private System.Windows.Forms.ToolStripMenuItem menuCostCentre;
+        private System.Windows.Forms.ToolStripMenuItem menuDepartment;
+        private System.Windows.Forms.ToolStripMenuItem menuDesignation;
+        private System.Windows.Forms.ToolStripMenuItem menuEmployee;
+        private System.Windows.Forms.ToolStripMenuItem menuBank;
+        private System.Windows.Forms.ToolStripMenuItem menuLedger;
+        private System.Windows.Forms.ToolStripMenuItem menuSubLedger;
+        private System.Windows.Forms.ToolStripMenuItem menuContractors;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem menuClientBill;
+        private System.Windows.Forms.ToolStripMenuItem tabInternalAuditor;
+        private System.Windows.Forms.ToolStripMenuItem switchProjectsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem accountsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fixTBDifferenceToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem missingLedgerCodesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openingBalanceToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem viewAttendanceToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem alterAttendanceToolStripMenuItem1;
     }
 }
 

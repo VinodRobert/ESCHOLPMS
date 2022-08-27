@@ -12,7 +12,20 @@ namespace ESCHOLPMS
 {
     class General
     {
-
+        public DataSet FetchAllTabs()
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT T.TABNAME,T.TABORDER FROM TABS T ";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
+        public DataSet FetchPermittedTabs(int loginID)
+        {
+            string _connectionString = SqlHelper.GetConnectionString(2);
+            string sql = "SELECT T.TABNAME,T.TABORDER FROM TABS T WHERE TABID IN (SELECT TABID FROM MENUROLES WHERE LOGINID=" + Convert.ToString(loginID) + " AND PERMIT=1) ";
+            DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
+            return ds;
+        }
         public int CreateNewLogin(string loginName,int  roleID, int siteID,int  companyID)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);

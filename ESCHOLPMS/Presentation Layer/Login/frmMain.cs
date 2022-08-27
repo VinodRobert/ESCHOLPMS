@@ -16,25 +16,52 @@ namespace ESCHOLPMS
         string UserName = ESCHOLPMS.GlobalVariables.UserName;
         string ProjectName = ESCHOLPMS.GlobalVariables.ProjectName;
         int UserRolesList = ESCHOLPMS.GlobalVariables.UserRole;
-
+        General gen = new General();
         public frmMain()
         {
             InitializeComponent();
         }
 
-        
+        private void DisableTabs()
+        {
+            DataSet ds = gen.FetchAllTabs();
+            int tabOrder;
+
+            for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+            {
+                tabOrder = Convert.ToInt16(ds.Tables[0].Rows[i]["TABORDER"]);
+                MainMenu.Items[tabOrder].Visible = false;
+
+            }
+        }
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             stripLoginName.Text = "Project :  " + ProjectName;
             stripProjectName.Text = "                                                                     Login User : " + UserName;
+          
+          
+            DisableTabs();
+            EnableTabs();
+        
         }
 
-        private void departmentToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EnableTabs()
         {
-            frmDepartment department = new frmDepartment();
-            department.Show();
+            int loginID = GlobalVariables.LoginID;
+            DataSet ds = gen.FetchPermittedTabs(loginID);
+            string tabName = string.Empty;
+            int tabOrder;
+       
+            for (int i = 0; i<= ds.Tables[0].Rows.Count-1; i++)
+            {
+                tabName = Convert.ToString(ds.Tables[0].Rows[i]["TabName"]);
+                tabOrder = Convert.ToInt16(ds.Tables[0].Rows[i]["TABORDER"]);
+                MainMenu.Items[tabOrder].Visible = true;
+            }
+            MainMenu.Items[1].Visible = true;
         }
+       
 
         private void gettingKeyToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -48,23 +75,9 @@ namespace ESCHOLPMS
             accessSites.Show();
         }
 
-        private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmListOfEmployees listEmployee = new frmListOfEmployees();
-            listEmployee.Show();
-        }
+       
 
-        private void designationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDesignation frmDesignation = new frmDesignation();
-            frmDesignation.Show();
-        }
-
-        private void costCentresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCostCentre costCentre = new frmCostCentre();
-            costCentre.Show();
-        }
+      
 
         private void getOrganizationIDToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -161,47 +174,7 @@ namespace ESCHOLPMS
             cl.Show();
         }
 
-        private void listOfProjectsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmListOfProjects lp = new frmListOfProjects();
-            lp.Show();
-        }
-
-        private void listContractorsAndLaboursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmContractLabours cl = new frmContractLabours();
-            cl.Show();
-        }
-
-        private void listEshcolLoginsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmEshcolLogins el = new frmEshcolLogins();
-            el.Show();
-        }
-
-        private void switchProjetsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmSwitchProjects sp = new frmSwitchProjects();
-            sp.Show();
-        }
-
-        private void fixTBDifferenceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmFixTB fixTB = new frmFixTB();
-            fixTB.Show();
-        }
-
-        private void missingLedgerCodeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCheckLedgerCode cl = new frmCheckLedgerCode();
-            cl.Show();
-        }
-
-        private void openingBalanceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmOpeningBalance op = new frmOpeningBalance();
-            op.Show();
-        }
+       
 
         private void assignAccessPointsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -251,30 +224,7 @@ namespace ESCHOLPMS
             cl.Show();
         }
 
-        private void listOfAccessCardsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmListOfAccessCards LC = new frmListOfAccessCards();
-            LC.Show();
-        }
-
-        private void unAssignCardsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmUnAssignAccessCard uc = new frmUnAssignAccessCard();
-            uc.Show();
-        }
-
-        private void assignCardsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAssignAccessCard ac = new frmAssignAccessCard();
-            ac.Show();
-        }
-
-        private void viewAttendanceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmLabourAttendance la = new frmLabourAttendance();
-            la.Show();
-        }
-
+     
         private void terminateLabourToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmList_ForTransferOut to = new frmList_ForTransferOut();
@@ -291,6 +241,142 @@ namespace ESCHOLPMS
         {
             frmListSubContractor_Workers cl = new frmListSubContractor_Workers();
             cl.Show();
+        }
+
+        private void subContractorDebitsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //frmSubContractorDebits sd = new frmSubContractorDebits();
+            //sd.Show();
+        }
+
+      
+
+        private void toolStripLinkedAccounts_Click(object sender, EventArgs e)
+        {
+            frmLinkedAccounts lc = new frmLinkedAccounts();
+            lc.Show();
+        }
+
+        private void wBSReorderingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmWBSRenumbering wbr = new frmWBSRenumbering();
+            wbr.Show();
+        }
+
+      
+
+        private void departmentToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmDepartment department = new frmDepartment();
+            department.Show();
+        }
+
+        private void designationToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmDesignation frmDesignation = new frmDesignation();
+            frmDesignation.Show();
+        }
+
+        private void employeeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmListOfEmployees listEmployee = new frmListOfEmployees();
+            listEmployee.Show();
+        }
+
+      
+
+        private void costCentresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCostCentre costCentre = new frmCostCentre();
+            costCentre.Show();
+        }
+
+       
+
+      
+
+       
+
+        private void clientBIllToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmClientBill clientBill = new frmClientBill();
+            clientBill.Show();
+        }
+
+
+        private void projectsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListOfProjects lp = new frmListOfProjects();
+            lp.Show();
+        }
+
+      
+        private void menuContractors_Click(object sender, EventArgs e)
+        {
+            frmContractLabours cl = new frmContractLabours();
+            cl.Show();
+        }
+
+        private void menuLogins_Click(object sender, EventArgs e)
+        {
+            frmEshcolLogins el = new frmEshcolLogins();
+            el.Show();
+        }
+
+        private void switchProjectsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSwitchProjects sp = new frmSwitchProjects();
+            sp.Show();
+        }
+
+        private void switchProjectsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSwitchProjects sp = new frmSwitchProjects();
+            sp.Show();
+        }
+
+        private void fixTBDifferenceToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmFixTB fixTB = new frmFixTB();
+            fixTB.Show();
+        }
+
+        private void missingLedgerCodesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCheckLedgerCode cl = new frmCheckLedgerCode();
+            cl.Show();
+        }
+
+        private void openingBalanceToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmOpeningBalance op = new frmOpeningBalance();
+            op.Show();
+        }
+
+        private void viewAttendanceToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmLabourAttendance la = new frmLabourAttendance();
+            la.Show();
+        }
+
+        
+
+        private void listOfAssignCardsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListOfAccessCards LC = new frmListOfAccessCards();
+            LC.Show();
+        }
+
+        private void unAssignCardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUnAssignAccessCard uc = new frmUnAssignAccessCard();
+            uc.Show();
+        }
+
+        private void assignCardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAssignAccessCard ac = new frmAssignAccessCard();
+            ac.Show();
         }
     }
 }
