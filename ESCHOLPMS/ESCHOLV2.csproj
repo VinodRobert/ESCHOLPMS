@@ -52,8 +52,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\Program Files (x86)\Syncfusion\Essential Studio\Windows\19.2.0.44\Assemblies\4.6\DemoCommon.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\Capacite Projects 2019\BSMIS\bin\Debug\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OfficeOpenXml.Core.ExcelPackage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OfficeOpenXml.Core.ExcelPackage.1.0.0\lib\net46\OfficeOpenXml.Core.ExcelPackage.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=106.12.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.12.0\lib\net452\RestSharp.dll</HintPath>
@@ -368,6 +374,12 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -378,6 +390,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Layer\AccessCard\AccessCard.cs" />
@@ -396,6 +409,7 @@
     <Compile Include="Business Layer\API\SpintlyUsers.cs" />
     <Compile Include="Business Layer\BillingDepartment\BillingDepartment.cs" />
     <Compile Include="Business Layer\CentralStores\privateWorks.cs" />
+    <Compile Include="Business Layer\CentralStores\TransferReports.cs" />
     <Compile Include="Business Layer\Common\Common.cs" />
     <Compile Include="Business Layer\Common\ImportProperty.cs" />
     <Compile Include="Business Layer\Common\QueryString.cs" />
@@ -513,6 +527,30 @@
     <Compile Include="Presentation Layer\Billing Department\frmWBSRenumbering.Designer.cs">
       <DependentUpon>frmWBSRenumbering.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmStockRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmStockRegister.Designer.cs">
+      <DependentUpon>frmStockRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmSSTMReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmSSTMReport.Designer.cs">
+      <DependentUpon>frmSSTMReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmISTMReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmISTMReport.Designer.cs">
+      <DependentUpon>frmISTMReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmCSTMReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CentralStores\frmCSTMReport.Designer.cs">
+      <DependentUpon>frmCSTMReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\CentralStores\frmPrivateWorks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -536,6 +574,12 @@
     </Compile>
     <Compile Include="Presentation Layer\CentralStores\frmStockIssueToPrivateWorks.Designer.cs">
       <DependentUpon>frmStockIssueToPrivateWorks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\HR\frmAttendanceOfTheDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\HR\frmAttendanceOfTheDay.Designer.cs">
+      <DependentUpon>frmAttendanceOfTheDay.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\LabourAttendance\frmLabourAttendance.cs">
       <SubType>Form</SubType>
@@ -809,6 +853,18 @@
     <EmbeddedResource Include="Presentation Layer\Billing Department\frmWBSRenumbering.resx">
       <DependentUpon>frmWBSRenumbering.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CentralStores\frmStockRegister.resx">
+      <DependentUpon>frmStockRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CentralStores\frmSSTMReport.resx">
+      <DependentUpon>frmSSTMReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CentralStores\frmISTMReport.resx">
+      <DependentUpon>frmISTMReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CentralStores\frmCSTMReport.resx">
+      <DependentUpon>frmCSTMReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\CentralStores\frmPrivateWorks.resx">
       <DependentUpon>frmPrivateWorks.cs</DependentUpon>
     </EmbeddedResource>
@@ -820,6 +876,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\CentralStores\frmStockIssueToPrivateWorks.resx">
       <DependentUpon>frmStockIssueToPrivateWorks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\HR\frmAttendanceOfTheDay.resx">
+      <DependentUpon>frmAttendanceOfTheDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\LabourAttendance\frmLabourAttendance.resx">
       <DependentUpon>frmLabourAttendance.cs</DependentUpon>

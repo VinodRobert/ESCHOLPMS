@@ -139,6 +139,7 @@
             this.txtName.Size = new System.Drawing.Size(422, 29);
             this.txtName.TabIndex = 1;
             this.txtName.Text = "textBoxExt2";
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // autoLabel3
             // 
@@ -328,6 +329,7 @@
             this.txtIDProofNumberGiven.Size = new System.Drawing.Size(226, 29);
             this.txtIDProofNumberGiven.TabIndex = 13;
             this.txtIDProofNumberGiven.Text = "textBoxExt9";
+            this.txtIDProofNumberGiven.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDProofNumberGiven_KeyPress);
             // 
             // autoLabel16
             // 
@@ -621,6 +623,7 @@
             this.cmbIDProof.Style.TokenStyle.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDProof.TabIndex = 12;
             this.cmbIDProof.ValueMember = "IDPROOF";
+            this.cmbIDProof.SelectedIndexChanged += new System.EventHandler(this.cmbIDProof_SelectedIndexChanged);
             // 
             // autoLabel19
             // 

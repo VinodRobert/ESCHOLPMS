@@ -27,6 +27,10 @@ using Syncfusion.WinForms.DataGridConverter;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Grid;
+using SQLHelper;
+using System.Data.SqlClient;
+using System.Globalization;
+using Syncfusion.WinForms.DataGrid;
 
 namespace ESCHOLPMS 
 {
@@ -47,10 +51,66 @@ namespace ESCHOLPMS
             InitializeComponent();
         }
 
-        private void UpdateTodaysSwipes()
+        private void UpdateThisDaySwipes()
         {
             FormRequestHeader();
             FetchAcessHistory();
+        }
+        private void FormRequestHeader()
+        {
+            DateTime thisDay = DateTime.Today;
+            string thisDayString = thisDay.ToString("d");
+
+            AccessFetchPagination ap = new AccessFetchPagination();
+            ap.perPage = 10000;
+            ap.page = 1;
+
+            historyRequest = new AccessHistoryRequest();
+
+            Filters f = new Filters();
+
+            DateTime startTime;
+            string beginTimeString;
+            DataSet dsLastFetch = pms.FetchAccessHitoryFetch();
+            beginTimeString = Convert.ToString(dsLastFetch.Tables[0].Rows[0]["LastFetchDate"]).Trim();
+
+            if (beginTimeString == "")
+            {
+                beginTimeString = "2022-NOV-04";
+                startTime = DateTime.Parse(beginTimeString);
+            }
+            else
+            {
+                startTime = Convert.ToDateTime(dsLastFetch.Tables[0].Rows[0]["LastFetchDate"]);
+            }
+
+            string endDate = "2022-NOV-04";
+            DateTime endTime = DateTime.Parse(endDate);
+            //string startTimeString = Convert.ToDateTime(startTime).ToString("yyyy-MM-dd HH:mm:ss +05:30");
+            //string endTimeString = Convert.ToDateTime(endTime).ToString("yyyy-MM-dd 23:59:59 +05:30");
+            DateTime yesterDay = DateTime.Today.AddDays(-1);
+            string dtTimeSheet = Convert.ToString(dtAttendance.Value);
+            DateTime thisDate = Convert.ToDateTime(dtTimeSheet);
+            string startTimeString = thisDate.ToString("yyyy-MM-dd 00:00:00 +05:30");
+            string endTimeString = thisDate.ToString("yyyy-MM-dd 23:59:59 +05:30");
+
+
+            f.start = startTimeString;
+            f.end = endTimeString;
+
+
+            historyRequest.pagination = ap;
+            historyRequest.filters = f;
+            strJsonRequest = String.Empty;
+            try
+            {
+                strJsonRequest = JsonConvert.SerializeObject(historyRequest);
+            }
+            catch (Exception ex)
+            {
+                string errorJson = "Your Data Failed To Convert To Json " + ex.Message;
+                MessageBox.Show(errorJson);
+            }
         }
 
         private async void FetchAcessHistory()
@@ -104,10 +164,21 @@ namespace ESCHOLPMS
                 string datePortion;
                 string timePortion;
 
+
+                DataTable tabAccessHistory = new DataTable("AccessHistory");
+                // construct DataTable
+                tabAccessHistory.Columns.Add(new DataColumn("HistoryID", typeof(int)));
+                tabAccessHistory.Columns.Add(new DataColumn("AccessPointID", typeof(int)));
+                tabAccessHistory.Columns.Add(new DataColumn("UserID", typeof(int)));
+                tabAccessHistory.Columns.Add(new DataColumn("RevisedDateString", typeof(string)));
+
+
+                int cnt = 0;
                 string userName;
                 System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
                 foreach (AccessHistory al in accessHistoryLists.message.accessHistory)
                 {
+                    cnt = cnt + 1;
                     accessPointID = Convert.ToInt64(al.accessPoint.id);
                     swipeTime = new DateTime(1970, 1, 1, 0, 0, 0, 0); //from start epoch time
                     accessID = Convert.ToInt64(al.id);
@@ -122,77 +193,46 @@ namespace ESCHOLPMS
                     monthID = Convert.ToInt16(dateInfo[1]) - 1;
                     monthShortName = Convert.ToString(months[monthID]);
                     revisedDateString = Convert.ToString(dateInfo[0]) + "/" + monthShortName + "/" + Convert.ToString(dateInfo[2]) + " " + timePortion;
+
                     userID = Convert.ToInt64(al.user.id);
                     userName = Convert.ToString(al.user.name);
-                    success = pms.InsertAccessHistory(accessPointID, userID, revisedDateString);
+                    //  success = pms.InsertAccessHistory(cnt,accessPointID, userID, revisedDateString);
+                    tabAccessHistory.Rows.Add(cnt, accessPointID, userID, revisedDateString);
+
                 }
 
+                try
+                {
+                    string _connectionString = SqlHelper.GetConnectionString(2);
+                    using (SqlBulkCopy bulkCopy = new SqlBulkCopy(_connectionString))
+                    {
+                        bulkCopy.BulkCopyTimeout = 600; // in seconds
+                        bulkCopy.DestinationTableName = "AccessHistory";
+                        bulkCopy.WriteToServer(tabAccessHistory);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Failed To Save to History Table-Check Column Width and Column Data ", "Failed To Save ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    return;
+
+                }
             }
             catch (Exception d)
             {
                 string errorJson = "Error In Calling Access Points List " + d.Message;
                 MessageBox.Show(errorJson);
             }
-        }
-        private void FormRequestHeader()
-        {
-            DateTime thisDay = DateTime.Today;
-            string thisDayString = thisDay.ToString("d");
-
-            AccessFetchPagination ap = new AccessFetchPagination();
-            ap.perPage = 10000;
-            ap.page = 1;
-
-            historyRequest = new AccessHistoryRequest();
-
-            Filters f = new Filters();
-
-            DateTime startTime;
-            string beginTimeString;
-            DataSet dsLastFetch = pms.FetchAccessHitoryFetch();
-            beginTimeString = Convert.ToString(dsLastFetch.Tables[0].Rows[0]["LastFetchDate"]).Trim();
-
-
-            if (beginTimeString == "")
-            {
-                beginTimeString = attendanceDate;
-                startTime = DateTime.Parse(beginTimeString);
-            }
-            else
-            {
-                startTime = Convert.ToDateTime(dsLastFetch.Tables[0].Rows[0]["LastFetchDate"]);
-            }
-
-            string endDate = attendanceDate;
-            DateTime endTime = DateTime.Parse(endDate);
-            string startTimeString = Convert.ToDateTime(startTime).ToString("yyyy-MM-dd HH:mm:ss +05:30");
-            string endTimeString = Convert.ToDateTime(endTime).ToString("yyyy-MM-dd 23:59:59 +05:30");
-
-            f.start = startTimeString;
-            f.end = endTimeString;
-
-
-            historyRequest.pagination = ap;
-            historyRequest.filters = f;
-            strJsonRequest = String.Empty;
-            try
-            {
-                strJsonRequest = JsonConvert.SerializeObject(historyRequest);
-            }
-            catch (Exception ex)
-            {
-                string errorJson = "Your Data Failed To Convert To Json " + ex.Message;
-                MessageBox.Show(errorJson);
-            }
-
-
-
-
 
         }
+
+
+        
 
         private void frmLabourAttendance_Load(object sender, EventArgs e)
         {
+            ResetAll();
+
             DateTime thisDay = DateTime.Today;
             dtAttendance.MaxDateTime = thisDay;
 
@@ -201,9 +241,94 @@ namespace ESCHOLPMS
             string year = Convert.ToString(thisDay.Year);
 
             attendanceDate = year.Trim() + "-" + month.Trim() + "-" + day.Trim();
-            UpdateTodaysSwipes();
-        }
+            UpdateThisDaySwipes();
 
+          
+            
+        }
+        private void FormTheGrid()
+        {
+            NumberFormatInfo numberFormat = Application.CurrentCulture.NumberFormat.Clone() as NumberFormatInfo;
+            numberFormat.NumberDecimalDigits = 3;
+            numberFormat.NumberDecimalSeparator = ".";
+            numberFormat.NumberGroupSizes = new int[] { };
+            this.gridAttendance.Columns.Add(new GridNumericColumn()
+            {
+                HeaderText = "LabourID",
+                MappingName = "LABOURID",
+                Visible = false
+            });
+
+            this.gridAttendance.Columns.Add(new GridNumericColumn()
+            {
+                HeaderText = "Roll No",
+                MappingName = "LABOURROLLNO",
+                Visible = true
+            });
+
+            this.gridAttendance.Columns.Add(new GridTextColumn
+            {
+                HeaderText = "Name",
+                MappingName = "LABOURNAME",
+                Visible = true,
+                Width = 180
+            });
+
+            this.gridAttendance.Columns.Add(new GridDateTimeColumn
+            {
+                HeaderText = "CheckIn",
+                MappingName = "INTIME",
+                Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom,Format = "hh:mm",
+                Visible = true,
+                Width=90
+            });
+
+            this.gridAttendance.Columns.Add(new GridDateTimeColumn
+            {
+                HeaderText = "CheckOut",
+                MappingName = "OUTTIME",
+                Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom,Format = "hh:mm",
+                Visible = true,
+                Width=90
+            });
+
+            this.gridAttendance.Columns.Add(new GridDateTimeColumn
+            {
+                HeaderText = "Hours",
+                MappingName = "WORKINGTIME",
+                Pattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom,Format = "hh:mm",
+                Visible = true,
+                Width=90
+            });
+
+            this.gridAttendance.Columns.Add(new GridNumericColumn
+            {
+                HeaderText = "Day",
+                MappingName = "WORKINGDAY",
+                Visible = true,
+                FormatMode = FormatMode.Numeric,
+                NumberFormatInfo = numberFormat,
+                Width=90
+            });
+
+            this.gridAttendance.Columns.Add(new GridNumericColumn
+            {
+                HeaderText = "OTHour",
+                MappingName = "OTHOURS",
+                Visible = true,
+                Width = 80
+            });
+
+            this.gridAttendance.Columns.Add(new GridTextColumn
+            {
+                HeaderText = "Remarks",
+                MappingName = "REMARKS",
+                Visible = true,
+                Width = 180
+            }) ;
+
+
+        }
         private void ResetAll()
         {
             this.gridAttendance.ShowRowHeader = true;
@@ -211,14 +336,24 @@ namespace ESCHOLPMS
             this.gridAttendance.Style.RowHeaderStyle.SelectionMarkerThickness = 4;
             this.gridAttendance.Style.RowHeaderStyle.SelectionMarkerColor = Color.Red;
             this.gridAttendance.Style.RowHeaderStyle.SelectionBackColor = Color.White;
+
+            btnExport.Visible = false;
+            btnPost.Visible = false;
+            btnFetch.Visible = false;
+            btnExtract.Visible = true;
+
         }
         private void btnFetch_Click(object sender, EventArgs e)
         {
             string dtTimeSheet = Convert.ToString(dtAttendance.Value);
             Int32 accessPointID = GlobalVariables.spintlyAccessPointID;
             DataSet dsAccessHistory = ac.FetchAccessHistory(accessPointID, dtTimeSheet);
+            FormTheGrid();
             gridAttendance.DataSource = dsAccessHistory.Tables[0];
             gridAttendance.Refresh();
+            btnFetch.Enabled = false;
+            btnPost.Visible = true;
+            btnExport.Visible = false;
         }
 
 
@@ -282,6 +417,20 @@ namespace ESCHOLPMS
                     System.Diagnostics.Process.Start(saveFileDialog.FileName);
                 }
             }
+        }
+
+        private void btnExtract_Click(object sender, EventArgs e)
+        {
+            UpdateThisDaySwipes();
+            btnExport.Visible = false;
+            btnPost.Visible = false;
+            btnFetch.Visible = true;
+            btnExtract.Enabled = false;
+        }
+
+        private void gridAttendance_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

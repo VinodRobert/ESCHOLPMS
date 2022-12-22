@@ -99,8 +99,8 @@ namespace ESCHOLPMS
 
         private void fetchAccessHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAccessHistory accessHistory = new frmAccessHistory();
-            accessHistory.Show();
+            //frmAttendnaceOfTheDay accessHistory = new frmAttendanceOfTheDay();
+            //accessHistory.Show();
         }
 
         private void clientBillToolStripMenuItem_Click(object sender, EventArgs e)
@@ -377,6 +377,42 @@ namespace ESCHOLPMS
         {
             frmAssignAccessCard ac = new frmAssignAccessCard();
             ac.Show();
+        }
+
+        private void fetchAccessHistoryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //frmAttendnaceOfTheDay accessHistory = new frmAttendanceOfTheDay();
+            //accessHistory.Show();
+        }
+
+        private void attendanceOfADayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAttendanceOfTheDay ad = new frmAttendanceOfTheDay();
+            ad.Show();
+        }
+
+        private void cSTMSUMMARYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCSTMReport cstm = new frmCSTMReport();
+            cstm.Show();
+        }
+
+        private void iSTMSUMMARYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmISTMReport istm = new frmISTMReport();
+            istm.Show();
+        }
+
+        private void sSTMSUMMARYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSSTMReport cstm = new frmSSTMReport();
+            cstm.Show();
+        }
+
+        private void stockRegisterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStockRegister sr = new frmStockRegister();
+            sr.Show();
         }
     }
 }

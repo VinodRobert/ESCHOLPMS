@@ -49,7 +49,9 @@ namespace ESCHOLPMS
             string _connectionString = SqlHelper.GetConnectionString(2);
             string sql = "SELECT  A.CARDNUMBER  ";
             sql = sql + " FROM ACCESSCARD A  ";
-            sql = sql + " WHERE A.COSTCENTREID = " + Convert.ToString(costCentreID) + " AND A.CARDNUMBER='" + Convert.ToString(cardNumber) + "' AND A.STATUS=0";
+            sql = sql + " WHERE   A.CARDNUMBER='" + Convert.ToString(cardNumber) + "' AND A.STATUS=0";
+
+          //  sql = sql + " WHERE A.COSTCENTREID = " + Convert.ToString(costCentreID) + " AND A.CARDNUMBER='" + Convert.ToString(cardNumber) + "' AND A.STATUS=0";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }

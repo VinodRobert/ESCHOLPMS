@@ -397,8 +397,9 @@ namespace ESCHOLPMS
         public DataSet FetchAccessCards(int costCentre)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT  CARDNUMBER  FROM ACCESSCARD where status=0 and COSTCENTREID= ";
-            sql = sql + Convert.ToString(costCentre) + "  ORDER BY CARDNUMBER ";
+            string sql = "SELECT  CARDNUMBER  FROM ACCESSCARD where status=0 ";
+        //    sql = sql +" and COSTCENTREID= + Convert.ToString(costCentre) ;
+            sql = sql +  "  ORDER BY CARDNUMBER ";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             return ds;
         }
@@ -459,7 +460,7 @@ namespace ESCHOLPMS
         public int DuplicateMobileNumber(string mobileNumber)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT * FROM LABOURDETAILS WHERE STATUS IN (0,11) AND  MOBILENUMBER ='" + Convert.ToString(mobileNumber) + "'";
+            string sql = "SELECT * FROM LABOURDETAILS WHERE STATUSID IN (0,11) AND  MOBILENUMBER ='" + Convert.ToString(mobileNumber) + "'";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             if ((ds.Tables[0].Rows.Count == 0))
                 return 0;
@@ -471,7 +472,7 @@ namespace ESCHOLPMS
         public int DuplicateIDProofNumber(string idProofNumber)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            string sql = "SELECT * FROM LABOURDETAILS WHERE STATUS IN (0,11) AND IDProofNumber ='" + Convert.ToString(idProofNumber) + "'";
+            string sql = "SELECT * FROM LABOURDETAILS WHERE STATUSID IN (0,11) AND IDProofNumber ='" + Convert.ToString(idProofNumber) + "'";
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.Text, sql);
             if (ds.Tables[0].Rows.Count == 0)
                 return 0;

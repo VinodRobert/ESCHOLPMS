@@ -252,16 +252,18 @@ namespace ESCHOLPMS
             return j;
         }
 
-        public DataSet  UpdateAttendanceHistory(string startDate,string endDate,int accessPointID)
+        public DataSet  UpdateAttendanceHistory(string startDate,string endDate,int accessPointID,int reportType)
         {
             string _connectionString = SqlHelper.GetConnectionString(2);
-            SqlParameter[] arParms = new SqlParameter[3];
+            SqlParameter[] arParms = new SqlParameter[4];
             arParms[0] = new SqlParameter("@STARTDATESTRING", SqlDbType.Text);
             arParms[0].Value = startDate;
             arParms[1] = new SqlParameter("@ENDDATESTRING", SqlDbType.Text);
             arParms[1].Value = endDate;
             arParms[2] = new SqlParameter("@ACCESSPOINTID", SqlDbType.Int);
             arParms[2].Value = accessPointID;
+            arParms[3] = new SqlParameter("@REPORTTYPE", SqlDbType.Int);
+            arParms[3].Value = reportType;
             DataSet ds = SqlHelper.ExecuteDataset(_connectionString, CommandType.StoredProcedure, "UpdateAttendanceHistory",arParms);
             return ds;
         }

@@ -53,7 +53,7 @@ namespace ESCHOLPMS
         Int64 newLabourIDKey;
 
 
-
+        int noPhoto;
 
         Int64 labourRollNumber;
         Labour lab = new Labour();
@@ -105,6 +105,17 @@ namespace ESCHOLPMS
             lblPhotoFileName.Text = "";
             cmbSubContractor.Enabled = true;
             cmbJobType.Enabled = true;
+            this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtName.MaxLength = 100;
+            DateTime maximumDOB = DateTime.Today.AddYears(-18);
+            DateTime minimumDOB   = DateTime.Today.AddYears(-40);
+
+            dtDOB.MinDateTime = minimumDOB;
+            dtDOB.MaxDateTime = maximumDOB;
+
+            cmbGender.Text = "Male";
+            cmbBloodGroup.Text = "O+";
+            txtIDProofNumberGiven.MaxLength = 15;
 
             if (controlStatus=="Lock")
             {
@@ -138,7 +149,7 @@ namespace ESCHOLPMS
             single.accessPoints = accessPointLists;
             single.card = true;
             single.clickToAccessRange = "5";
-            single.credentialId = accessCardNumber;
+         //   single.credentialId = accessCardNumber;
             single.deviceLock = false;
             
             single.joiningDate = DateTime.UtcNow.ToString("dd-MMM-yyyy");
@@ -312,12 +323,24 @@ namespace ESCHOLPMS
                 //Initialize Dataset.
                 DataSet DS = new DataSet();
 
+                if (DS.Tables.Count == 0)
+                {
+                    noPhoto = 1;
+                    lblPhotoFileName.Text = "No Photo Uploaded";
+                }
+                else
+                {
+                    noPhoto = 0;
+                    lblPhotoFileName.Text = Convert.ToString(DS.Tables[0].Rows[0]["PHOTOFILENAME"]);
+                }
+
                 //Fill dataset with ImagesStore table.
                 ADAP.Fill(DS, "Photo");
 
                 //Fill Grid with dataset.
                 dataGridView1.DataSource = DS.Tables["Photo"];
-                lblPhotoFileName.Text = Convert.ToString(DS.Tables[0].Rows[0]["PHOTOFILENAME"]);
+                
+                
             }
             catch (Exception ex)
             {
@@ -401,7 +424,8 @@ namespace ESCHOLPMS
                 currentMobileNumber = Convert.ToString(txtMobileNumber1.Text);
                 LockAllInputs();
                 string currentStatus = Convert.ToString(dsWho["Status"]);
-                ShowPhoto();
+                if (noPhoto==0)
+                    ShowPhoto();
                 btnSave.Text = "Update";
                 if (currentStatus == "New")
                     OpenAllInputs();
@@ -843,6 +867,28 @@ namespace ESCHOLPMS
         {
             int subbieContractorTypeID = Convert.ToInt32(cmbJobType.SelectedValue);
             LoadSubContractors(subbieContractorTypeID);
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) &&  !char.IsControl(e.KeyChar)  &&  !char.IsWhiteSpace(e.KeyChar) )
+                e.Handled = true;
+        }
+
+        private void txtIDProofNumberGiven_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cmbIDProof.Text=="Aadhar")
+            {
+                txtIDProofNumberGiven.MaxLength = 12;
+                if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                    e.Handled = true;
+            }
+        }
+
+        private void cmbIDProof_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtIDProofNumberGiven.Text = "";
+            txtIDProofNumberGiven.MaxLength = 20;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ESCHOLPMS 
 {
-    partial class frmAccessHistory
+    partial class frmAttendnaceOfTheDay
     {
         /// <summary>
         /// Required designer variable.
